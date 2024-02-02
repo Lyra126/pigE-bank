@@ -16,15 +16,17 @@ function Login(){
     return(
         <div className='d-flex vh-100 justify-content-center align-items-center bg-success'> {/* Change bg-primary to bg-success */}
             <div className='p-3 bg-white w-25'>
+            <img src="pig.jpg" alt="pig"  width="300" height="300"/>
                 <form onSubmit={handleSubmit}>
                     <div className='mb-3'>
                         <label htmlFor='username'>Username</label>
                         <input type='username' placeholder='Enter Username' className='form-control'
-                        onChange={u => setUsername(u.target.value)} />
+                        onChange={e => setUsername(e.target.value)} />
                     </div>
                     <div className='mb-3'>
                         <label htmlFor='password'>Password</label>
-                        <input type='password' placeholder='Enter Password' className='form-control'/>
+                        <input type='password' placeholder='Enter Password' className='form-control'
+                        onChange={e => setPassword(e.target.value)}/>
                     </div>
                     <button className='btn btn-success'>Login</button>
                 </form>
