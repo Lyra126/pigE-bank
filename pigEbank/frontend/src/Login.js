@@ -16,10 +16,16 @@ function Login(){
     }
     
     return(
-        <div className='d-flex vh-100 justify-content-center align-items-center bg-success'> {/* Change bg-primary to bg-success */}
-            <div className='p-3 bg-white w-25'>
-            <img src="pig.jpg" alt="pig"  width="300" height="300"/>
+        
+        <div className='gradient_bg_green d-flex flex-column vh-100 justify-content-center align-items-center'> {/* Change bg-primary to bg-success */}
+        {/* // want to add a header here */}
+                {/* Pig E-Bank Title*/} 
+                <h2 className="p-8 text-center w-25">Pig E-Bank</h2>
+                <h1 className="p-8 text-center "> Howdy! Great to see you again!</h1>
+            <div className='p-3 login_box'>
                 <form onSubmit={handleSubmit}>
+                {/* Logo Image */}
+                <img src="favicon.ico" alt="pig" className = "login_piggy"/>
                     <div className='mb-3'>
                         <label htmlFor='username'>Username</label>
                         <input type='username' placeholder='Enter Username' className='form-control'
@@ -30,7 +36,11 @@ function Login(){
                         <input type='password' placeholder='Enter Password' className='form-control'
                         onChange={e => setPassword(e.target.value)}/>
                     </div>
-                    <button className='btn btn-success'>Login</button>
+                    <div className = 'd-flex flex-column'>
+                        <button className='btn btn-success'>Login</button>
+                        <text>No account? Make one today!</text>
+                        <button className='btn btn-success'>Create an Account</button>
+                    </div>
                 </form>
             </div>
         </div>
