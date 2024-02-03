@@ -16,9 +16,11 @@ function Login(){
     }
     
     return(
-        
-        <div className='gradient_bg_green d-flex flex-column vh-100 justify-content-center align-items-center'> {/* Change bg-primary to bg-success */}
-        {/* // want to add a header here */}
+        <div className='gradient_bg_green d-flex flex-column vh-100 justify-content-center align-items-center'>
+            <nav className="navbar">
+                 <text className ="site-title"> lallala</text>
+            </nav>
+
                 {/* Pig E-Bank Title*/} 
                 <h2 className="p-8 text-center w-25">Pig E-Bank</h2>
                 <h1 className="p-8 text-center "> Howdy! Great to see you again!</h1>
