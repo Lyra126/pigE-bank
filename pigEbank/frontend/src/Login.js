@@ -46,18 +46,20 @@ function Login(){
                 {/* Logo Image */}
                 <img src="favicon.ico" alt="pig" className = "login_piggy"/>
                     <div className='mb-3'>
-                        <label htmlFor='username'>Username</label>
+                        <label htmlFor='username' style={{ fontFamily: 'DM_Sans-Medium' }}>Username</label>
                         <input type='username' placeholder='Enter Username' className='form-control'
                         onChange={e => setUsername(e.target.value)} />
                     </div>
                     <div className='mb-3'>
-                        <label htmlFor='password'>Password</label>
+                        <label htmlFor='password' style={{ fontFamily: 'DM_Sans-Medium' }}>Password</label>
                         <input type='password' placeholder='Enter Password' className='form-control'
                         onChange={e => setPassword(e.target.value)}/>
                     </div>
                     <div className = 'd-flex flex-column'>
-                        <button className='btn btn-success'>Login</button>
-                        <text>No account? Make one today!</text>
+                        <button className='btn btn-success' style={{ fontFamily: 'DM_Sans-Medium' }}>Login</button>
+                            {/* If username/password is incorrect */}
+                            <text style ={{fontSize: 12, marginTop: 4, color: "red"}}>Your username or password is incorrect. Please try again.</text>
+                        <text style={{marginTop: 20}}>No account? Make one today!</text>
                         <button className='btn btn-success'>Create an Account</button>
                     </div>
                 </form>

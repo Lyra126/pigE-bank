@@ -1,33 +1,48 @@
 @font-face {
+  font-family: Poppins-Regular;
+  src: url(../public/fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
   font-family: Poppins-Medium;
-  src: url(../public/Poppins/Poppins-Medium.ttf);
+  src: url(../public/fonts/Poppins/Poppins-Medium.ttf);
 }
 
 @font-face {
   font-family: Poppins-SemiBold;
-  src: url(../public/Poppins/Poppins-SemiBold.ttf);
+  src: url(../public/fonts/Poppins/Poppins-SemiBold.ttf);
 }
 
 @font-face {
   font-family: Poppins-Bold;
-  src: url(../public/Poppins/Poppins-Bold.ttf);
+  src: url(../public/fonts/Poppins/Poppins-Bold.ttf);
 }
 
 @font-face {
   font-family: Poppins-ExtraBold;
-  src: url(../public/Poppins/Poppins-ExtraBold.ttf);
+  src: url(../public/fonts/Poppins/Poppins-ExtraBold.ttf);
+}
+
+@font-face{
+  font-family: DM_Sans-Regular;
+  src: url(../public/fonts/DM_Sans/static/DMSans-Regular.ttf)
+}
+
+@font-face{
+  font-family: DM_Sans-Medium;
+  src: url(../public/fonts/DM_Sans/static/DMSans-Medium.ttf)
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: Poppins-Medium, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
+code{
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
@@ -36,6 +51,7 @@ nav{
   background-color: rgb(225, 255, 208);
   padding-top: 0;
   box-shadow: 0 0 5px rgba(55, 57, 55, 0.268);
+  font-family: DM_Sans-Medium;
 }
 
 .gradient_bg_green{
@@ -51,6 +67,7 @@ nav{
   box-shadow: black;
 }
 
+/* LOGIN */
 .login_title_message{
   margin-top: 40px;
   font-family: Poppins-SemiBold;
@@ -62,6 +79,7 @@ nav{
   box-shadow: 0 0 15px rgba(24, 99, 32, 0.268);
   background-color: white;
   width: 50vh;
+  font-family: DM_Sans-Regular;
 }
 
 .login_piggy{
