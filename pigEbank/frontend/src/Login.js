@@ -16,19 +16,29 @@ function Login(){
     }
     
     return(
-        <div className='gradient_bg_green d-flex flex-column vh-100 justify-content-center align-items-center'>
-            {/* add a navigation bar */}
-            <div id="pageHeader" className = "websiteHeader">
-                <nav class = "nav">
-                <p id="name">Pig E-Bank</p>
-                    <ul>
-                        <li><a id = "homePage" href = "Homepage.js" target ="_blank">Home</a></li>
-                        <li><a id = "aboutUsPage" href = "Homepage.js" target ="_blank">About Us</a></li>
-                    </ul>
-                </nav>
+        <div> 
+            {/* navigation bar */}
+            <nav className="navbar navbar-expand-lg">
+                <div className="container-fluid">
+                    <a className="navbar-brand">Pig E-Bank</a>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+            <div className="collapse navbar-collapse" id="navbarNav">
+                <ul className="navbar-nav ms-auto">
+                <li className="nav-item">
+                    <a className="nav-link" href="createAccount">Home Page</a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link" href="Homepage">About Us</a>
+                </li>
+                </ul>
             </div>
-                {/* Pig E-Bank Title*/} 
-                <h2 className="p-8 text-center w-25">Pig E-Bank</h2>
+            </div>
+        </nav>
+
+        {/* Main Login Stuff */}
+        <div className='gradient_bg_green d-flex flex-column vh-100 justify-content-center align-items-center'>
                 {/* Login Message */}
                 <h1 className="p-8 text-center login_title_message"> Howdy! Great to see you again!</h1>
             <div className='p-3 login_box'>
@@ -51,6 +61,7 @@ function Login(){
                         <button className='btn btn-success'>Create an Account</button>
                     </div>
                 </form>
+             </div>
             </div>
         </div>
     )
