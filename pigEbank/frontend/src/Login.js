@@ -17,13 +17,20 @@ function Login(){
     
     return(
         <div className='gradient_bg_green d-flex flex-column vh-100 justify-content-center align-items-center'>
-            <nav className="navbar">
-                 <text className ="site-title"> lallala</text>
-            </nav>
-
+            {/* add a navigation bar */}
+            <div id="pageHeader" className = "websiteHeader">
+                <nav class = "nav">
+                <p id="name">Pig E-Bank</p>
+                    <ul>
+                        <li><a id = "homePage" href = "Homepage.js" target ="_blank">Home</a></li>
+                        <li><a id = "aboutUsPage" href = "Homepage.js" target ="_blank">About Us</a></li>
+                    </ul>
+                </nav>
+            </div>
                 {/* Pig E-Bank Title*/} 
                 <h2 className="p-8 text-center w-25">Pig E-Bank</h2>
-                <h1 className="p-8 text-center "> Howdy! Great to see you again!</h1>
+                {/* Login Message */}
+                <h1 className="p-8 text-center login_title_message"> Howdy! Great to see you again!</h1>
             <div className='p-3 login_box'>
                 <form onSubmit={handleSubmit}>
                 {/* Logo Image */}
