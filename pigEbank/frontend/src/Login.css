@@ -1,0 +1,26 @@
+
+.login_title_message{
+    margin-top: 40px;
+    font-family: Poppins-SemiBold;
+    margin-bottom: 25px;
+}
+  
+.login_box{
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(24, 99, 32, 0.268);
+    background-color: white;
+    width: 50vh;
+    font-family: DM_Sans-Regular;
+}
+  
+.login_piggy{
+    width: 70%;
+    height: 70%;
+    margin-top: -25px;
+    margin-bottom: -15px;
+    margin-left: 50px;
+}
+  
+  
+  
+  

@@ -1,3 +1,5 @@
+/* GENERAL MAIN CSS COMPONENTS OF WEBSITE! */
+
 @font-face {
   font-family: Poppins-Regular;
   src: url(../public/fonts/Poppins/Poppins-Regular.ttf);
@@ -33,6 +35,11 @@
   src: url(../public/fonts/DM_Sans/static/DMSans-Medium.ttf)
 }
 
+@font-face{
+  font-family: DM_Sans-SemiBold;
+  src: url(../public/fonts/DM_Sans/static/DMSans-SemiBold.ttf)
+}
+
 body {
   margin: 0;
   font-family: Poppins-Medium, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -54,6 +61,10 @@ nav{
   font-family: DM_Sans-Medium;
 }
 
+.box_shadow{
+  box-shadow: 0 0 5px rgba(55, 57, 55, 0.268);
+}
+
 .gradient_bg_green{
   background: rgb(55,196,143);
   background: linear-gradient(0deg, rgba(55,196,143,1) 0%, rgba(174,255,145,1) 100%); ;
@@ -65,29 +76,4 @@ nav{
   background-color: rgba(255,255,255,0.5);
   box-shadow: black;
 }
-
-/* LOGIN */
-.login_title_message{
-  margin-top: 40px;
-  font-family: Poppins-SemiBold;
-  margin-bottom: 25px;
-}
-
-.login_box{
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(24, 99, 32, 0.268);
-  background-color: white;
-  width: 50vh;
-  font-family: DM_Sans-Regular;
-}
-
-.login_piggy{
-  width: 70%;
-  height: 70%;
-  margin-top: -25px;
-  margin-bottom: -15px;
-  margin-left: 50px;
-}
-
-
 

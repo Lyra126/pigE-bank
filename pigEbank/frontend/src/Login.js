@@ -1,4 +1,5 @@
 import React, { useState } from 'react'; // Import useState from React
+import './Login.css'; // Importing Login specific css
 import './bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
@@ -55,11 +56,11 @@ function Login(){
                         onChange={e => setPassword(e.target.value)}/>
                     </div>
                     <div className = 'd-flex flex-column'>
-                        <button className='btn btn-success' style={{ fontFamily: 'DM_Sans-Medium' }}>Login</button>
+                        <button className='btn btn-success' style={{ fontFamily: 'DM_Sans-Medium', objectPosition: "center", minWidth: 300}}>Login</button>
                             {/* If username/password is incorrect */}
-                            <text style ={{fontSize: 12, marginTop: 4, color: "red"}}>Your username or password is incorrect. Please try again.</text>
-                        <text style={{marginTop: 20, marginLeft: 60}}>No account? Make one today!</text>
-                        <button className='btn btn-outline-success'>Create an Account</button>
+                            <text style ={{fontSize: 12, marginTop: 4, color: "red", textAlign: 'center'}}>Your username or password is incorrect. Please try again.</text>
+                        <text style={{marginTop: 20, marginLeft: 60, marginBottom: 5}}>No account? Make one today!</text>
+                        <button className='btn btn-outline-success' style ={{objectPosition: "center", minWidth: 300}}>Create an Account</button>
                     </div>
                 </form>
              </div>
