@@ -6,12 +6,6 @@
     font-family: Poppins-Bold;
 }
 
-.developer {
-    margin: 20px;
-    text-align: center;
-    font-family: Poppins-Medium;
-}
-
 .developer img {
     border-radius: 50%;
 }
@@ -19,6 +13,6 @@
 footer {
     text-align: center;
     padding: 20px 0;
-    font-family: Poppins-Regular;
+    font-family: DM_Sans-Regular;
 }
 
