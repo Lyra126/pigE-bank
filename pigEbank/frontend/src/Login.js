@@ -59,8 +59,8 @@ function Login(){
                         <button className='btn btn-success' style={{ fontFamily: 'DM_Sans-Medium' }}>Login</button>
                             {/* If username/password is incorrect */}
                             <text style ={{fontSize: 12, marginTop: 4, color: "red"}}>Your username or password is incorrect. Please try again.</text>
-                        <text style={{marginTop: 20}}>No account? Make one today!</text>
-                        <button className='btn btn-success'>Create an Account</button>
+                        <text style={{marginTop: 20, marginLeft: 60}}>No account? Make one today!</text>
+                        <button className='btn btn-outline-success'>Create an Account</button>
                     </div>
                 </form>
              </div>
