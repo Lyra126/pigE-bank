@@ -4,7 +4,7 @@ import './Homepage.css'; // Import a separate CSS file for component-specific st
 function Homepage() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-success">
+      <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">Pig E-Bank</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
