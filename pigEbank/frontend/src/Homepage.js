@@ -3,9 +3,9 @@ import React from 'react';
 function Homepage() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-success"> {/* Use bg-success for background color */}
+      <nav className="navbar navbar-expand-lg navbar-light"> {/* Use bg-success for background color */}
         <div className="container-fluid">
-          <a className="navbar-brand" href="Homepage">Website Description</a>
+          <a className="navbar-brand" href="Homepage">Pig E-Bank</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -23,9 +23,9 @@ function Homepage() {
       </nav>
 
       
-      <div className="container">
+      <div className="gradient_bg_green">
         <header>
-          <h1>Pig E-Bank</h1>
+          <h1>About Us</h1>
           <p>We propose a comprehensive personal finance management software. Not only does this software keep track of users, their account balances, and implements user authentication, but its core feature is that it has the ability to create savings goals that prevent withdrawals until the goal is met, preventing the user from spending their hard earned money on unnecessary items. The UI is modeled after a "Piggy bank" aesthetic, encouraging users to stay on track to their financial goals To enhance security, a lock feature on the user’s savings will be implemented, however in emergencies, we will implement a perma-lock and emergency lock to allow the user to access any necessary funds. Users can contribute to their savings via a cartoon UI, and an optional automatic mode ensures discretion by not displaying the amount. A dynamic progression bar visually represents the percentage of goal fulfillment.</p>
         </header>
         <br/>
