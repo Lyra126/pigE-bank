@@ -31,29 +31,46 @@ function Homepage() {
         </header>
         </div>
         <br/>
+
+        {/* Clarissa */}
         <section className="container" style = {{textAlign: "center"}}>
           <h2 style ={{fontSize: 35, textAlign: 'center', fontFamily: "Poppins-SemiBold", marginBottom: 20}}>Who's in our team?</h2>
           <div className = "d-flex">
           <div className="developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, marginRight: 10, minWidth: 300}}>
-            <h2 style = {{fontFamily: "DM_Sans-Medium"}}>Clarissa Cheung</h2>
-            <img src="luxray.jpg" alt="luxray"  width="200" height="200"/>
-            <p>2nd year computer science major and economics minor.</p>
+            <h2 style = {{fontFamily: "DM_Sans-Medium", marginTop: 20}}>Clarissa Cheung</h2>
+            <img src="luxray.jpg" alt="luxray"  width="200" height="200" className = "developer-img"/>
+            <p style ={{margin: 15}}>2nd year computer science major and economics minor.</p>
+            <a href="https://instagram.com"><img src = "instagram_logo.png" width="50" height="50"/></a>
+            <a href="https://linkedIn.com"><img src = "linkedIn_logo.png" width="40" height="40"/></a>
           </div>
+
+          {/* Rachel */}
           <div className="developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, marginRight: 10, minWidth: 300}}>
-            <h2 style = {{fontFamily: "DM_Sans-Medium"}}>Rachel Pu</h2>
-            {/* Add Image */}
-            <p>Hello! I'm Rachel Pu, and I'm currently a 2nd year Computer Science major at UF.</p>
+            <h2 style = {{fontFamily: "DM_Sans-Medium", marginTop: 20}}>Rachel Pu</h2>
+            <img src="Rachel_Pu.png" alt="Rachel Pu"  width="200" height="200" className = "developer-img"/>
+            <p style ={{margin: 15}}> Hello! I'm Rachel Pu, and I'm currently a 2nd year Computer Science major at UF.</p>
+            <a href="https://instagram.com"><img src = "instagram_logo.png" width="50" height="50"/></a>
+            <a href="https://linkedIn.com"><img src = "linkedIn_logo.png" width="40" height="40"/></a>
           </div>
+
+          {/* Ibet */}
           <div className="developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, marginRight: 10, minWidth: 300}}>
-            <h2 style = {{fontFamily: "DM_Sans-Medium"}}>Ibet Gonzalez</h2>
+            <h2 style = {{fontFamily: "DM_Sans-Medium", marginTop: 20}}>Ibet Gonzalez</h2>
             {/* Add Image */}
-            <p>Developer 3</p>
+            <p style ={{margin: 15}}>Developer 3</p>
+            <a href="https://instagram.com"><img src = "instagram_logo.png" width="50" height="50"/></a>
+            <a href="https://linkedIn.com"><img src = "linkedIn_logo.png" width="40" height="40"/></a>
           </div>
+
+          {/* Michael */}
           <div className="developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, minWidth: 300}}>
-            <h2 style = {{fontFamily: "DM_Sans-Medium"}}>Michael Knauf</h2>
+            <h2 style = {{fontFamily: "DM_Sans-Medium", marginTop: 20}}>Michael Knauf</h2>
             {/* Add Image */}
-            <p>Developer 4</p>
+            <p style ={{margin: 15}}>Developer 4</p>
+            <a href="https://instagram.com"><img src = "instagram_logo.png" width="50" height="50"/></a>
+            <a href="https://linkedIn.com"><img src = "linkedIn_logo.png" width="40" height="40"/></a>
           </div>
+
           </div>
         </section>
         <br/>

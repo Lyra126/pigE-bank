@@ -6,8 +6,13 @@
     font-family: Poppins-Bold;
 }
 
-.developer img {
+.developer-img {
     border-radius: 50%;
+    border-color: rgb(67, 32, 32);
+    border-width: thick;
+    border:5px solid rgb(255, 255, 255);
+    -webkit-border-radius: 500px;
+    -moz-border-radius: 500px;
 }
 
 footer {

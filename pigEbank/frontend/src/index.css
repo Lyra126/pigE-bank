@@ -1,3 +1,5 @@
+/* GENERAL MAIN CSS COMPONENTS OF WEBSITE! */
+
 @font-face {
   font-family: Poppins-Regular;
   src: url(../public/fonts/Poppins/Poppins-Regular.ttf);
@@ -74,29 +76,4 @@ nav{
   background-color: rgba(255,255,255,0.5);
   box-shadow: black;
 }
-
-/* LOGIN */
-.login_title_message{
-  margin-top: 40px;
-  font-family: Poppins-SemiBold;
-  margin-bottom: 25px;
-}
-
-.login_box{
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(24, 99, 32, 0.268);
-  background-color: white;
-  width: 50vh;
-  font-family: DM_Sans-Regular;
-}
-
-.login_piggy{
-  width: 70%;
-  height: 70%;
-  margin-top: -25px;
-  margin-bottom: -15px;
-  margin-left: 50px;
-}
-
-
 
