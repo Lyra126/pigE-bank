@@ -22,3 +22,36 @@ footer {
     font-family: Poppins-Regular;
 }
 
+.header-container {
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
+  }
+  
+  .header-content {
+    flex: 1;
+    padding-right: 20px; /* Adjust as needed */
+    text-align: center; /* Center the text within the header content */
+  }
+  
+  .header-image {
+    flex: 1; /* Adjust the width of the image container */
+    text-align: center; /* Center the image */
+  }
+  
+  .header-image img {
+    max-width: 100%; /* Adjust the width of the image */
+    height: auto;
+  }
+
+  .get-started-button {
+    background-color: white; /* White background */
+    color: #000; /* Black text */
+    padding: 10px 20px; /* Adjust padding as needed */
+    border: 2px solid #024002; /* Black border */
+    text-decoration: none; /* Remove default link styling */
+    display: inline-block; /* Display as inline block */
+    font-size: 16px; /* Adjust font size */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 20px; /* Add space between the image and the button */
+  }

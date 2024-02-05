@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './WelcomePage.css';
 
 function WelcomePage() {
@@ -27,10 +28,21 @@ function WelcomePage() {
       </nav>
 
       <div className="gradient_bg_green">
-        <header className="about-header">
-          <h1>About Us</h1>
-          <p>We propose a comprehensive personal finance management software. Not only does this software keep track of users, their account balances, and implements user authentication, but its core feature is that it has the ability to create savings goals that prevent withdrawals until the goal is met, preventing the user from spending their hard-earned money on unnecessary items. The UI is modeled after a "Piggy bank" aesthetic, encouraging users to stay on track to their financial goals To enhance security, a lock feature on the user’s savings will be implemented, however in emergencies, we will implement a perma-lock and emergency lock to allow the user to access any necessary funds. Users can contribute to their savings via a cartoon UI, and an optional automatic mode ensures discretion by not displaying the amount. A dynamic progression bar visually represents the percentage of goal fulfillment.</p>
-        </header>
+        <div className="header-container">
+          <div className="header-content">
+            <h2>Welcome to Your New</h2>
+            <h1>PIG E-BANK!!</h1>
+            <p>Welcome to our cutting-edge personal finance management solution! Picture this: a powerful platform designed to revolutionize the way you manage your finances. Our software not only tracks your accounts and balances but also provides robust user authentication to keep your information secure.</p>
+            <p>But here's where the magic happens: our core feature sets us apart. Imagine setting savings goals and having the confidence that your funds are safe until you reach them. No more impulse spending, no more unnecessary purchases. Our intuitive interface, inspired by the timeless charm of a "Piggy bank," motivates you to stay focused on your financial objectives.</p>
+            <p>Security is our top priority. With our innovative lock feature, your savings are safeguarded. In emergencies, rest assured, our perma-lock and emergency lock options ensure quick access to your funds when you need them most.</p>
+            <p>Track your progress effortlessly with our dynamic progression bar, visually representing your journey to financial success. Join us today and take the first step towards a brighter financial future!</p>
+            <Link to="/createAccount" className="get-started-button">Get Started</Link>
+          </div>
+          <div className="header-image">
+            <img src="favicon.ico" alt="pig" />
+          </div>
+        </div>
+        <br/>
         
         <footer>
           <p>&copy; 2024 Pig E-Bank</p>
