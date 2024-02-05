@@ -33,6 +33,11 @@
   src: url(../public/fonts/DM_Sans/static/DMSans-Medium.ttf)
 }
 
+@font-face{
+  font-family: DM_Sans-SemiBold;
+  src: url(../public/fonts/DM_Sans/static/DMSans-SemiBold.ttf)
+}
+
 body {
   margin: 0;
   font-family: Poppins-Medium, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -52,6 +57,10 @@ nav{
   padding-top: 0;
   box-shadow: 0 0 5px rgba(55, 57, 55, 0.268);
   font-family: DM_Sans-Medium;
+}
+
+.box_shadow{
+  box-shadow: 0 0 5px rgba(55, 57, 55, 0.268);
 }
 
 .gradient_bg_green{
