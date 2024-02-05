@@ -32,7 +32,7 @@ function Homepage() {
         </div>
         <br/>
         <section className="container" style = {{textAlign: "center"}}>
-          <h2 style ={{fontSize: 35, textAlign: 'center', fontFamily: "Poppins-SemiBold", marginBottom: 0}}>Who's in our team?</h2>
+          <h2 style ={{fontSize: 35, textAlign: 'center', fontFamily: "Poppins-SemiBold", marginBottom: 20}}>Who's in our team?</h2>
           <div className = "d-flex">
           <div className="developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, marginRight: 10, minWidth: 300}}>
             <h2 style = {{fontFamily: "DM_Sans-Medium"}}>Clarissa Cheung</h2>
