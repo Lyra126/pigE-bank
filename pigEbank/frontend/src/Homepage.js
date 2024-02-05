@@ -1,7 +1,7 @@
 import React from 'react';
-import './HomePage.css';
+import './Homepage.css';
 
-function HomePage() {
+function Homepage() {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light">
@@ -83,4 +83,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default Homepage;

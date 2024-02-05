@@ -1,7 +1,7 @@
 import React from 'react';
-import './AboutUs.css'; // Import a separate CSS file for component-specific styles
+import './Aboutus.css'; // Import a separate CSS file for component-specific styles
 
-function AboutUs() {
+function Aboutus() {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-success">
@@ -56,4 +56,4 @@ function AboutUs() {
   );
 }
 
-export default AboutUs;
+export default Aboutus;

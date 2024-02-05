@@ -4,8 +4,8 @@ import WelcomePage from './WelcomePage';
 import Login from './Login';
 import CreateAccount from './createAccount';
 import CreateNewGoal from './createNewGoal';
-import AboutUs from './AboutUs';
-import HomePage from './HomePage';
+import Aboutus from './Aboutus';
+import HomePage from './Homepage';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<WelcomePage />} />
-          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/aboutus" element={<Aboutus />} />
           <Route path="/login" element={<Login />} />
           <Route path="/createAccount" element={<CreateAccount />} />
           <Route path="/homePage" element={<HomePage />} />
