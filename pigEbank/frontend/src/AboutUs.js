@@ -30,8 +30,7 @@ function Aboutus() {
           <p>We propose a new and unique personal finance management software. Not only does this software keep track of users, their account balances, and implements user authentication, but its core feature is that it has the ability to create savings goals that prevent withdrawals until the goal is met, preventing the user from spending their hard earned money on unnecessary items. The UI is modeled after a "Piggy bank" aesthetic, encouraging users to stay on track to their financial goals To enhance security, a lock feature on the user’s savings will be implemented, however in emergencies, we will implement a perma-lock and emergency lock to allow the user to access any necessary funds. Users can contribute to their savings via a cartoon UI, and an optional automatic mode ensures discretion by not displaying the amount. A dynamic progression bar visually represents the percentage of goal fulfillment.</p>
         </header>
         </div>
-        <br/>
-
+        <img src = "pig_team.png" alt = "team_piggy" style = {{marginBottom: 15, alignContent: 'center'}}/>
         {/* Clarissa */}
         <section className="container" style = {{textAlign: "center"}}>
           <h2 style ={{fontSize: 35, textAlign: 'center', fontFamily: "Poppins-SemiBold", marginBottom: 20}}>Who's in our team?</h2>

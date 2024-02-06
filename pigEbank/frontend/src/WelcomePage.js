@@ -5,7 +5,7 @@ import './WelcomePage.css';
 function WelcomePage() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-success">
+      <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">Pig E-Bank</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +39,7 @@ function WelcomePage() {
             <Link to="/createAccount" className="get-started-button">Get Started</Link>
           </div>
           <div className="header-image">
-            <img src="favicon.ico" alt="pig" />
+            <img src="money_pig.png" alt="pig" />
           </div>
         </div>
         <br/>
