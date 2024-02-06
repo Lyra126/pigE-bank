@@ -1,6 +1,7 @@
 import React, { useState } from 'react'; // Import useState from React
 import './Login.css'; // Importing Login specific css
 import './bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 function Login(){
@@ -38,7 +39,7 @@ function Login(){
             </nav>
 
         {/* Main Login Stuff */}
-        <div className='gradient_bg_green d-flex flex-column vh-100 justify-content-center align-items-center'>
+        <div className='d-flex flex-column vh-100 justify-content-center align-items-center'>
                 {/* Login Message */}
                 <h1 className="p-8 text-center login_title_message"> Howdy! Great to see you again!</h1>
             <div className='p-3 login_box'>
@@ -60,8 +61,7 @@ function Login(){
                             {/* If username/password is incorrect */}
                             <text style ={{fontSize: 12, marginTop: 4, color: "red", textAlign: 'center'}}>Your username or password is incorrect. Please try again.</text>
                         <text style={{marginTop: 20, marginLeft: 60, marginBottom: 5}}>No account? Make one today!</text>
-                        {/* need help fixing the button so it when pressed it goes to the create account page  */}
-                        <a className="nav-link" href = "/createAccount"><button className='btn btn-outline-success' style ={{objectPosition: "center", minWidth: 300}}>Create an Account</button></a>
+                        <Link to = "/createAccount" className='btn btn-outline-success' style ={{objectPosition: "center", minWidth: 300}}>Create an Account</Link>
                     </div>
                 </form>
              </div>

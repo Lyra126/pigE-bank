@@ -39,7 +39,7 @@ function CreateAccount() {
             </nav>
 
         {/* Create Account Div */}
-            <div className="top-div gradient_bg_green">
+            <div className="top-div">
                 <div className="create-account-container box_shadow">
                     <h1 className="text-center mb-4" style = {{marginTop: 20, fontFamily: "Poppins-SemiBold"}}>Create Your Account</h1>
                     <p className = "text-center" style = {{marginTop: -20}}>We're excited to see you've joined us!</p>

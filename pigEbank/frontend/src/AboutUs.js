@@ -25,7 +25,7 @@ function Aboutus() {
       </nav>
 
       {/* About Us */}
-      <div className = "gradient_bg_green d-flex flex-column justify-content-center">
+      <div className = "d-flex flex-column justify-content-center" style = {{marginTop: -35}}>
         {/* Header */}
       <div className="container" style = {{fontFamily: "DM_Sans-Regular"}}>
         <div>
