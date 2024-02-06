@@ -27,10 +27,10 @@ function Login(){
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ms-auto">
                     <li className="nav-item">
-                        <a className="nav-link" href="/">Home Page</a>
+                        <a className="nav-link" href="aboutus">About Us</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="createAccount">CreateAccount</a>
+                        <a className="nav-link" href="/">Home Page</a>
                     </li>
                     </ul>
                 </div>
@@ -60,7 +60,8 @@ function Login(){
                             {/* If username/password is incorrect */}
                             <text style ={{fontSize: 12, marginTop: 4, color: "red", textAlign: 'center'}}>Your username or password is incorrect. Please try again.</text>
                         <text style={{marginTop: 20, marginLeft: 60, marginBottom: 5}}>No account? Make one today!</text>
-                        <button className='btn btn-outline-success' style ={{objectPosition: "center", minWidth: 300}}>Create an Account</button>
+                        {/* need help fixing the button so it when pressed it goes to the create account page  */}
+                        <a className="nav-link" href = "/createAccount"><button className='btn btn-outline-success' style ={{objectPosition: "center", minWidth: 300}}>Create an Account</button></a>
                     </div>
                 </form>
              </div>

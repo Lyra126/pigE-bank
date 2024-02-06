@@ -5,12 +5,17 @@
     height: 100vh;
 }
 
+label{
+    font-family: DM_Sans-SemiBold;
+}
+
 .create-account-container {
     padding: 20px;
     background-color: #ffffff;
-    border-radius: 0.25rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
     width: 50%;
+    margin-top: 50px;
+    font-family: DM_Sans-Regular;
 }
 
 .form-container {

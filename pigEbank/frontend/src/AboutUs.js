@@ -29,14 +29,17 @@ function Aboutus() {
         {/* Header */}
       <div className="container" style = {{fontFamily: "DM_Sans-Regular"}}>
         <div>
-            <h1 style ={{fontSize: 60, marginTop: 80, textAlign: 'center', fontFamily: "Poppins-SemiBold"}}>About Us</h1>
-            <p>We propose a new and unique personal finance management software. Not only does this software keep track of users, their account balances, and implements user authentication, but its core feature is that it has the ability to create savings goals that prevent withdrawals until the goal is met, preventing the user from spending their hard earned money on unnecessary items. The UI is modeled after a "Piggy bank" aesthetic, encouraging users to stay on track to their financial goals To enhance security, a lock feature on the user’s savings will be implemented, however in emergencies, we will implement a perma-lock and emergency lock to allow the user to access any necessary funds. Users can contribute to their savings via a cartoon UI, and an optional automatic mode ensures discretion by not displaying the amount. A dynamic progression bar visually represents the percentage of goal fulfillment.</p>
+            <h1 style ={{fontSize: 60, marginTop: 80, textAlign: 'center', fontFamily: "Poppins-SemiBold"}}>So, why Pig E-Bank?</h1>
+            <h2 style ={{fontSize: 30, textAlign: 'center', fontFamily: "DM_Sans-Regular", marginTop: 25}}>Well, we're really bad saving money.</h2>
+            <p style = {{fontSize: 30, textAlign: 'center', marginTop: -10}}>So, we made a website that helps take care of that. </p>
+            <p style = {{textAlign: 'center'}}>
+            We propose a unique way to save money that not only keeps track of your balances, but also has the ability to prevent withdrawals until your savings goal has been met. We modeled our website after a real piggy bank, encouraging users to stay on track to their financial goals.               </p>
         </div>
         </div>
         <img src="team_pig_horizontal.png" alt = "team_piggy"/>
         {/* Clarissa */}
         <section className="developer-section">
-          <h2 style ={{fontSize: 35, textAlign: 'center', fontFamily: "Poppins-SemiBold", marginBottom: 20}}>Who's in our team?</h2>
+          <h2 style ={{marginTop: 40, fontSize: 45, textAlign: 'center', fontFamily: "Poppins-SemiBold", marginBottom: 20}}>Who's in our team?</h2>
           <div className = "developer-container">
           <div className="developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, marginRight: 10, width: 280}}>
             <h2 style = {{fontFamily: "DM_Sans-Medium", marginTop: 20}}>Clarissa Cheung</h2>
@@ -53,7 +56,7 @@ function Aboutus() {
           <div className="developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, marginRight: 10, width: 280}}>
             <h2 style = {{fontFamily: "DM_Sans-Medium", marginTop: 20}}>Rachel Pu</h2>
             <img src="Rachel_Pu.png" alt="Rachel Pu"  width="200" height="200" className = "developer-img"/>
-            <p style ={{margin: 15}}> Hello! I'm Rachel Pu, and I'm currently a 2nd year Computer Science major at UF.</p>
+            <p style ={{margin: 15}}> Hello! I'm Rachel Pu, and I'm currently a 2nd year Computer Science major at UF. I enjoy drawing colorful, silly pigs and eating bacon.</p>
               <section className = "socials">
             <a href="https://instagram.com/kazuhimi"><img src = "instagram_logo.png" width="50" height="50"/></a>
             <a href="https://www.linkedin.com/in/rachel-pu-ufl/"><img src = "linkedIn_logo.png" width="40" height="40"/></a>

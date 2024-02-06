@@ -28,7 +28,7 @@ function CreateAccount() {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ms-auto">
                     <li className="nav-item">
-                        <a className="nav-link" href="/">Home Page</a>
+                        <a className="nav-link" href="Aboutus">About Us</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="Login">Login</a>
@@ -37,9 +37,13 @@ function CreateAccount() {
                 </div>
                 </div>
             </nav>
+
+        {/* Create Account Div */}
             <div className="top-div gradient_bg_green">
-                <div className="create-account-container">
-                    <h1 className="text-center mb-4">Create An Account</h1>
+                <div className="create-account-container box_shadow">
+                    <h1 className="text-center mb-4" style = {{marginTop: 20, fontFamily: "Poppins-SemiBold"}}>Create Your Account</h1>
+                    <p className = "text-center" style = {{marginTop: -20}}>We're excited to see you've joined us!</p>
+                    <p className = "text-center" style = {{marginTop: -15}}>Just a few more steps and you'll be apart of our Pig-E family!</p>
                     <form onSubmit={handleSubmit} className="form-container">
                         <div className='input-field'>
                             <label htmlFor='firstName'>First Name</label>
@@ -66,7 +70,7 @@ function CreateAccount() {
                             <input type='password' placeholder='Confirm Password' className='form-control'
                                 onChange={e => setConfPassword(e.target.value)} />
                         </div>
-                        <button className='btn btn-success'>Create Account</button>
+                        <button className='btn btn-success' >Create Account</button>
                     </form>
                 </div>
             </div>
