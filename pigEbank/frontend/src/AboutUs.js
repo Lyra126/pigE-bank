@@ -32,11 +32,12 @@ function Aboutus() {
             <h1 style ={{fontSize: 60, marginTop: 80, textAlign: 'center', fontFamily: "Poppins-SemiBold"}}>So, why Pig E-Bank?</h1>
             <h2 style ={{fontSize: 30, textAlign: 'center', fontFamily: "DM_Sans-Regular", marginTop: 25}}>Well, we're really bad saving money.</h2>
             <p style = {{fontSize: 30, textAlign: 'center', marginTop: -10}}>So, we made a website that helps take care of that. </p>
-            <p style = {{textAlign: 'center'}}>
-            We propose a unique way to save money that not only keeps track of your balances, but also has the ability to prevent withdrawals until your savings goal has been met. We modeled our website after a real piggy bank, encouraging users to stay on track to their financial goals.               </p>
-        </div>
+            <p style = {{textAlign: 'center', paddingTop: 15, paddingBottom: 15}}> As college students, we have to balance a lot of different financial things, whether that's getting groceries, purchasing new textbooks, or paying rent. Sometimes, it's hard to keep track of our money, especially if we're trying to save up for our own personal stuff. Many popular savings websites are boring, and sometimes we want to be rewarded for the money we save. So our team proposed a unique way to save money that not only keeps track of your balances, but also makes it fun!</p>
+            <p style = {{textAlign: 'center'}}> We took inspiration from our childhood games, changing it up to help us out with our finances. We've customized Pig E-Bank to feel fun and engaging, allowing for people of all ages to take charge of their money. We understand that saving money can be difficult (we're college students, we know), but that doesn't mean it should feel boring! </p>
+            </div>
         </div>
         <img src="team_pig_horizontal.png" alt = "team_piggy"/>
+
         {/* Clarissa */}
         <section className="developer-section">
           <h2 style ={{marginTop: 40, fontSize: 45, textAlign: 'center', fontFamily: "Poppins-SemiBold", marginBottom: 20}}>Who's in our team?</h2>
@@ -56,7 +57,7 @@ function Aboutus() {
           <div className="developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, marginRight: 10, width: 280}}>
             <h2 style = {{fontFamily: "DM_Sans-Medium", marginTop: 20}}>Rachel Pu</h2>
             <img src="Rachel_Pu.png" alt="Rachel Pu"  width="200" height="200" className = "developer-img"/>
-            <p style ={{margin: 15}}> Hello! I'm Rachel Pu, and I'm currently a 2nd year Computer Science major at UF. I enjoy drawing colorful, silly pigs and eating bacon.</p>
+            <p style ={{margin: 15}}> Hello! I'm Rachel Pu, and I'm a 2nd year Computer Science major at UF. I enjoy drawing colorful, silly pigs and giving them sunglasses.</p>
               <section className = "socials">
             <a href="https://instagram.com/kazuhimi"><img src = "instagram_logo.png" width="50" height="50"/></a>
             <a href="https://www.linkedin.com/in/rachel-pu-ufl/"><img src = "linkedIn_logo.png" width="40" height="40"/></a>
