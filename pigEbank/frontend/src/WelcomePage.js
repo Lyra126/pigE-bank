@@ -33,12 +33,9 @@ function WelcomePage() {
             <h2 style = {{fontFamily: "DM_Sans-SemiBold", fontSize: 40}}>Welcome to your new</h2>
             <h1 style = {{fontFamily: "Poppins-Bold", fontSize: 150, marginTop: -20}}> PIG E-BANK!</h1>
             <h2 style = {{fontFamily: "DM_Sans-SemiBold", fontSize: 25, marginTop: -20, marginBottom: 20}}>(Piggy Bank)</h2>
-            </div>
+        </div>
         <div className="header-container">
           <div className="header-content container" style = {{marginTop: 150}}>
-            {/* <h2 style = {{fontFamily: "DM_Sans-SemiBold", fontSize: 40}}>Welcome to your new</h2>
-            <h1 style = {{fontFamily: "Poppins-Bold", fontSize: 100, marginTop: -20}}> PIG E-BANK!</h1>
-            <h2 style = {{fontFamily: "DM_Sans-SemiBold", fontSize: 25, marginTop: -20, marginBottom: 20}}>(Piggy Bank)</h2> */}
             <p>Welcome to our cutting-edge personal finance management solution! Picture this: a powerful platform designed to revolutionize the way you manage your finances. Our software not only tracks your accounts and balances but also provides robust user authentication to keep your information secure.</p>
             <p>But here's where the magic happens: our core feature sets us apart. Imagine setting savings goals and having the confidence that your funds are safe until you reach them. No more impulse spending, no more unnecessary purchases. Our intuitive interface, inspired by the timeless charm of a "Piggy bank," motivates you to stay focused on your financial objectives.</p>
             <p>Security is our top priority. With our innovative lock feature, your savings are safeguarded. In emergencies, rest assured, our perma-lock and emergency lock options ensure quick access to your funds when you need them most.</p>
