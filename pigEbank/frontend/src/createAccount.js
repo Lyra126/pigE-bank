@@ -65,7 +65,7 @@ function CreateAccount() {
                             <label htmlFor='password'>Password</label>
                             <input type='password' placeholder='Enter Password' className='form-control'
                                 onChange={e => setPassword(e.target.value)} required pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"/>
-                                <p className = "instruction"> Your password must include: upper case, lower case, a number, and a special character </p>
+                                <p className = "instruction"> Password must include upper case, lower case, a number, and a special character </p>
                         </div>
                         <div className='input-field'>
                             <label htmlFor='confPassword'>Re-enter Password</label>

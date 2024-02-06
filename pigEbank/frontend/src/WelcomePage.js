@@ -31,7 +31,7 @@ function WelcomePage() {
       <div>
         <div className = "title-container">
             <h2 style = {{fontFamily: "DM_Sans-SemiBold", fontSize: 40}}>Welcome to your new</h2>
-            <h1 style = {{fontFamily: "Poppins-Bold", fontSize: 150, marginTop: -20}}> PIG E-BANK!</h1>
+            <h1 style = {{fontFamily: "Righteous-Regular", fontSize: 150, marginTop: -20}}> PIG E-BANK!</h1>
             <h2 style = {{fontFamily: "DM_Sans-SemiBold", fontSize: 25, marginTop: -20, marginBottom: 20}}>(Piggy Bank)</h2>
         </div>
         <div className="header-container">

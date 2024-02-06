@@ -40,6 +40,12 @@
   src: url(../public/fonts/DM_Sans/static/DMSans-SemiBold.ttf)
 }
 
+@font-face{
+  font-family: Righteous-Regular;
+  src: url(../public/fonts/Righteous/Righteous-Regular.ttf)
+
+}
+
 body {
   margin: 0;
   font-family: Poppins-Medium, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
