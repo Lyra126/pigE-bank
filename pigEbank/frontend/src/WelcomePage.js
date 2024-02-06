@@ -34,24 +34,36 @@ function WelcomePage() {
             <h1 style = {{fontFamily: "PaytoneOne-Regular", fontSize: 160, marginTop: -40}}> Pig E-Bank!</h1>
             <h2 style = {{fontFamily: "DM_Sans-SemiBold", fontSize: 20, marginTop: -20, marginBottom: 20, marginLeft: 8}}>(Piggy Bank)</h2>
         </div>
+        <p className = "text-center" style = {{fontSize: 20, marginTop: -23, fontFamily: "DM_Sans-Regular"}}>Say hello to your newest financial companion.</p>
+        <p className = "text-center" style = {{fontSize: 20, marginTop: -15, paddingBottom: 30, fontFamily: "DM_Sans-Regular"}}>Not only is he cute, but he's here to help you save your money!</p>
+
         <div className = "description-container">
 
           <div className="container-1">
-              <p className="container-text">Welcome to our cutting-edge personal finance management solution! Picture this: a powerful platform designed to revolutionize the way you manage your finances. Our software not only tracks your accounts and balances but also provides robust user authentication to keep your information secure.</p>
+              <div className="container-text">
+              <h2 style ={{fontFamily: "PaytoneOne-Regular"}}>Take hold of your money</h2>
+              <p>Welcome to our cutting-edge personal finance management solution! Picture this: a powerful platform designed to revolutionize the way you manage your finances. Our software not only tracks your accounts and balances but also provides robust user authentication to keep your information secure.</p>
+              </div>
               <div className="header-image" style = {{marginTop: 100}}>
               <img src="money_pig.png" alt="money_pig"/>
               </div>
           </div>
 
           <div className="container-2">
-           <p className="container-text"> But here's where the magic happens: our core feature sets us apart. Imagine setting savings goals and having the confidence that your funds are safe until you reach them. No more impulse spending, no more unnecessary purchases. Our intuitive interface, inspired by the timeless charm of a "Piggy bank," motivates you to stay focused on your financial objectives.</p>
+              <div className="container-text">
+              <h2 style ={{fontFamily: "PaytoneOne-Regular"}}>Take hold of your money</h2>
+              <p>Welcome to our cutting-edge personal finance management solution! Picture this: a powerful platform designed to revolutionize the way you manage your finances. Our software not only tracks your accounts and balances but also provides robust user authentication to keep your information secure.</p>
+              </div>
             <div className="header-image" style = {{marginTop: 100}}>
             <img src="money_pig.png" alt="money_pig"/></div>
 
            </div>
            
            <div className="container-1">
-              <p className="container-text">Welcome to our cutting-edge personal finance management solution! Picture this: a powerful platform designed to revolutionize the way you manage your finances. Our software not only tracks your accounts and balances but also provides robust user authentication to keep your information secure.</p>
+           <div className="container-text">
+              <h2 style ={{fontFamily: "PaytoneOne-Regular"}}>Take hold of your money</h2>
+              <p>Welcome to our cutting-edge personal finance management solution! Picture this: a powerful platform designed to revolutionize the way you manage your finances. Our software not only tracks your accounts and balances but also provides robust user authentication to keep your information secure.</p>
+              </div>
               <div className="header-image" style = {{marginTop: 100}}>
               <img src="money_pig.png" alt="money_pig"/>
               </div>

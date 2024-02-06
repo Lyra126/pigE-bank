@@ -46,6 +46,9 @@ footer {
   font-family: DM_Sans-Regular;
 }
 
+.container-text.h2{
+  font-family: Poppins-Bold;
+}
 .container-1{
   background: #f4f4f4;
   display:flex;
