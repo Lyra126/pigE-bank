@@ -48,27 +48,29 @@ function CreateAccount() {
                         <div className='input-field'>
                             <label htmlFor='firstName'>First Name</label>
                             <input type='text' placeholder='Enter your first name' className='form-control'
-                                onChange={e => setFirstName(e.target.value)} />
+                                onChange={e => setFirstName(e.target.value)} required/>
                         </div>
                         <div className='input-field'>
                             <label htmlFor='lastName'>Last Name</label>
                             <input type='text' placeholder='Enter your last name' className='form-control'
-                                onChange={e => setLastName(e.target.value)} />
+                                onChange={e => setLastName(e.target.value)} required/>
                         </div>
                         <div className='input-field'>
                             <label htmlFor='username'>Username</label>
                             <input type='text' placeholder='Enter Username' className='form-control'
-                                onChange={e => setUsername(e.target.value)} />
+                                onChange={e => setUsername(e.target.value)} required pattern="[a-zA-Z0-9]{4,10}"/>
+                            <p className = "instruction"> Please only enter letters and numbers! </p>
                         </div>
                         <div className='input-field'>
                             <label htmlFor='password'>Password</label>
                             <input type='password' placeholder='Enter Password' className='form-control'
-                                onChange={e => setPassword(e.target.value)} />
+                                onChange={e => setPassword(e.target.value)} required pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"/>
+                                <p className = "instruction"> Your password must include: upper case, lower case, a number, and a special character </p>
                         </div>
                         <div className='input-field'>
                             <label htmlFor='confPassword'>Re-enter Password</label>
                             <input type='password' placeholder='Confirm Password' className='form-control'
-                                onChange={e => setConfPassword(e.target.value)} />
+                                onChange={e => setConfPassword(e.target.value)} required/>
                         </div>
                         <button className='btn btn-success' >Create Account</button>
                     </form>
