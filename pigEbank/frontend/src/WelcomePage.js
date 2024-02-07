@@ -30,18 +30,18 @@ function WelcomePage() {
 {/* Welcome Page Div */}
       <div>
         <div className = "title-container">
-            <h2 style = {{fontFamily: "DM_Sans-SemiBold", fontSize: 40}}>Welcome to your new</h2>
+            <h2 style = {{fontFamily: "DM_Sans-SemiBold", fontSize: 40, marginTop: -30}}>Welcome to your new</h2>
             <h1 style = {{fontFamily: "PaytoneOne-Regular", fontSize: 160, marginTop: -40}}> Pig E-Bank!</h1>
             <h2 style = {{fontFamily: "DM_Sans-SemiBold", fontSize: 20, marginTop: -20, marginBottom: 20, marginLeft: 8}}>(Piggy Bank)</h2>
         </div>
         <p className = "text-center" style = {{fontSize: 20, marginTop: -23, fontFamily: "DM_Sans-Regular"}}>Say hello to your newest financial companion.</p>
-        <p className = "text-center" style = {{fontSize: 20, marginTop: -15, paddingBottom: 30, fontFamily: "DM_Sans-Regular"}}>Not only is he cute, but he's here to help you save your money!</p>
+        <p className = "text-center" style = {{fontSize: 20, marginTop: -15, paddingBottom: 50, fontFamily: "DM_Sans-Regular"}}>Not only is he cute, but he's here to help you save your money!</p>
 
         <div className = "description-container">
 
           <div className="container-1">
               <div className="container-text">
-              <h2 style ={{fontFamily: "PaytoneOne-Regular"}}>Take hold of your money</h2>
+              <h2 className = "description-header">Take hold of your money</h2>
               <p>Welcome to our cutting-edge personal finance management solution! Picture this: a powerful platform designed to revolutionize the way you manage your finances. Our software not only tracks your accounts and balances but also provides robust user authentication to keep your information secure.</p>
               </div>
               <div className="header-image" style = {{marginTop: 100}}>
@@ -51,7 +51,7 @@ function WelcomePage() {
 
           <div className="container-2">
               <div className="container-text">
-              <h2 style ={{fontFamily: "PaytoneOne-Regular"}}>Take hold of your money</h2>
+              <h2 className = "description-header">Take hold of your money</h2>
               <p>Welcome to our cutting-edge personal finance management solution! Picture this: a powerful platform designed to revolutionize the way you manage your finances. Our software not only tracks your accounts and balances but also provides robust user authentication to keep your information secure.</p>
               </div>
             <div className="header-image" style = {{marginTop: 100}}>
@@ -61,7 +61,7 @@ function WelcomePage() {
            
            <div className="container-1">
            <div className="container-text">
-              <h2 style ={{fontFamily: "PaytoneOne-Regular"}}>Take hold of your money</h2>
+              <h2 className = "description-header">Take hold of your money</h2>
               <p>Welcome to our cutting-edge personal finance management solution! Picture this: a powerful platform designed to revolutionize the way you manage your finances. Our software not only tracks your accounts and balances but also provides robust user authentication to keep your information secure.</p>
               </div>
               <div className="header-image" style = {{marginTop: 100}}>
