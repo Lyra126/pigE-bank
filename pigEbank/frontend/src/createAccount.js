@@ -12,9 +12,18 @@ function CreateAccount() {
     function handleSubmit(event) {
         event.preventDefault();
         // Add data validation and other checks here
-        axios.post('http://localhost:8081/createAccount', { firstName, lastName, username, password })
-            .then(res => console.log(res))
-            .catch(err => console.log(err));
+        const user={firstName, lastName, username}
+        console.log(user)
+        // axios.post('http://localhost:8080/user/add', {firstName, lastName, username, password })
+        //     .then(res => console.log(res))
+        //     .catch(err => console.log(err));
+        fetch('http://localhost:8080/user/add', {
+            method: "POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify(user)
+        } ).then(()=>{
+            console.log("New User Added")
+        })
     }
 
     return (
