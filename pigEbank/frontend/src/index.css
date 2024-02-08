@@ -40,6 +40,26 @@
   src: url(../public/fonts/DM_Sans/static/DMSans-SemiBold.ttf)
 }
 
+@font-face{
+  font-family: Righteous-Regular;
+  src: url(../public/fonts/Righteous/Righteous-Regular.ttf)
+}
+
+@font-face{
+  font-family: BlackHanSans-Regular;
+  src: url(../public/fonts/Black_Han_Sans/BlackHanSans-Regular.ttf)
+}
+
+@font-face{
+  font-family: PaytoneOne-Regular;
+  src: url(../public/fonts/Paytone_One/PaytoneOne-Regular.ttf)
+}
+
+/* @font-face {
+  font-family: ;
+  src: url();
+} */
+
 body {
   margin: 0;
   font-family: Poppins-Medium, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

@@ -29,7 +29,7 @@ function Aboutus() {
         {/* Header */}
       <div className="container" style = {{fontFamily: "DM_Sans-Regular"}}>
         <div>
-            <h1 style ={{fontSize: 60, marginTop: 80, textAlign: 'center', fontFamily: "Poppins-SemiBold"}}>So, why Pig E-Bank?</h1>
+            <h1 style ={{fontSize: 60, marginTop: 80, textAlign: 'center', fontFamily: "PaytoneOne-Regular"}}>So, why Pig E-Bank?</h1>
             <h2 style ={{fontSize: 30, textAlign: 'center', fontFamily: "DM_Sans-Regular", marginTop: 25}}>Well, we're really bad saving money.</h2>
             <p style = {{fontSize: 30, textAlign: 'center', marginTop: -10}}>So, we made a website that helps take care of that. </p>
             <p style = {{textAlign: 'center', paddingTop: 15, paddingBottom: 15}}> As college students, we have to balance a lot of different financial things, whether that's getting groceries, purchasing new textbooks, or paying rent. Sometimes, it's hard to keep track of our money, especially if we're trying to save up for our own personal stuff. Many popular savings websites are boring, and sometimes we want to be rewarded for the money we save. So our team proposed a unique way to save money that not only keeps track of your balances, but also makes it fun!</p>
