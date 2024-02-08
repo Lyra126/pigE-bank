@@ -1,9 +1,20 @@
 /* Homepage.css */
 
+body{
+  background: rgb(55,196,143);
+  background: linear-gradient(0deg, rgba(55,196,143,1) 0%, rgba(174,255,145,1) 100%); ;
+  width: 100vh;
+  height: 100vh;
+}
+
 .about-header {
     padding: 20px;
     margin-top: 30px;
     font-family: Poppins-Bold;
+}
+
+.welcome_page_div{
+  font-family: DM_Sans-Regular;
 }
 
 .developer {
@@ -18,40 +29,89 @@
 
 footer {
     text-align: center;
-    padding: 20px 0;
+    padding-top: 20px 0;
     font-family: Poppins-Regular;
+    margin-bottom: -50px;
 }
 
-.header-container {
-    display: flex;
-    justify-content: center; /* Center the items horizontally */
-    align-items: center; /* Center the items vertically */
-  }
-  
-  .header-content {
-    flex: 1;
-    padding-right: 20px; /* Adjust as needed */
-    text-align: center; /* Center the text within the header content */
-  }
-  
-  .header-image {
-    flex: 1; /* Adjust the width of the image container */
-    text-align: center; /* Center the image */
-  }
-  
-  .header-image img {
-    max-width: 100%; /* Adjust the width of the image */
-    height: auto;
-  }
+.title-container{
+  padding: 20px;
+  margin: 45px;
+  margin-top: 10%;
+  margin-left: 19%;
+}
 
-  .get-started-button {
-    background-color: white; /* White background */
-    color: #000; /* Black text */
-    padding: 10px 20px; /* Adjust padding as needed */
-    border: 2px solid #024002; /* Black border */
-    text-decoration: none; /* Remove default link styling */
-    display: inline-block; /* Display as inline block */
-    font-size: 16px; /* Adjust font size */
-    border-radius: 5px; /* Rounded corners */
-    margin-top: 20px; /* Add space between the image and the button */
-  }
+.description-container{
+  position: absolute;
+  font-family: DM_Sans-Regular;
+}
+
+.container-text{
+  padding: 8rem;
+  margin: 50px;
+ }
+
+ .description-header{
+  font-family: PaytoneOne-Regular;
+  font-size: 40px;
+ }
+
+.container-1{
+  background: #f4f4f4;
+  display:flex;
+  padding: 4em 0;
+  align-items: center;
+}
+
+.container-2{
+  width: auto;
+  background-color: aqua;
+  padding: 4em 0;
+  display:flex;
+  align-items: center;
+  text-align: right;
+  flex-direction: row-reverse;
+}
+
+.container-3{
+  background: #f4f4f4;
+  display:flex;
+  padding: 4em 0;
+  align-items: center;
+}
+
+.container-4{
+  background-color: aqua;
+  display: flex;
+  padding: 4em 0;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.header-content {
+  flex: 1;
+  padding-right: 20px; /* Adjust as needed */
+  text-align: center; /* Center the text within the header content */
+}
+  
+.header-image {
+    /* Adjust the width of the image container */
+  text-align: center; /* Center the image */
+}
+
+.header-image img {
+  max-width: 80%; /* Adjust the width of the image */
+  height: auto;
+}
+
+.get-started-button {
+  background-color: white; /* White background */
+  color: #000; /* Black text */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border: 2px solid #024002; /* Black border */
+  text-decoration: none; /* Remove default link styling */
+  display: inline-block; /* Display as inline block */
+  font-size: 16px; /* Adjust font size */
+  border-radius: 5px; /* Rounded corners */
+  margin-top: 20px; /* Add space between the image and the button */
+}

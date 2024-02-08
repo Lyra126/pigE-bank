@@ -4,7 +4,7 @@ import WelcomePage from './WelcomePage';
 import Login from './Login';
 import CreateAccount from './createAccount';
 import CreateNewGoal from './createNewGoal';
-import Aboutus from './Aboutus';
+import Aboutus from './AboutUs';
 import HomePage from './Homepage';
 
 function App() {

@@ -21,14 +21,14 @@ function CreateAccount() {
         <div>
             <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid">
-                    <a className="navbar-brand">Pig E-Bank</a>
+                    <a className="navbar-brand" href="/">Pig E-Bank</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ms-auto">
                     <li className="nav-item">
-                        <a className="nav-link" href="/">Home Page</a>
+                        <a className="nav-link" href="Aboutus">About Us</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="Login">Login</a>
@@ -37,36 +37,42 @@ function CreateAccount() {
                 </div>
                 </div>
             </nav>
-            <div className="top-div gradient_bg_green">
-                <div className="create-account-container">
-                    <h1 className="text-center mb-4">Create An Account</h1>
+
+        {/* Create Account Div */}
+            <div className="top-div">
+                <div className="create-account-container box_shadow">
+                    <h1 className="text-center mb-4" style = {{marginTop: 20, fontFamily: "Poppins-SemiBold"}}>Create Your Account</h1>
+                    <p className = "text-center" style = {{marginTop: -20}}>We're excited to see you've joined us!</p>
+                    <p className = "text-center" style = {{marginTop: -15}}>Just a few more steps and you'll be apart of our Pig-E family!</p>
                     <form onSubmit={handleSubmit} className="form-container">
                         <div className='input-field'>
                             <label htmlFor='firstName'>First Name</label>
                             <input type='text' placeholder='Enter your first name' className='form-control'
-                                onChange={e => setFirstName(e.target.value)} />
+                                onChange={e => setFirstName(e.target.value)} required/>
                         </div>
                         <div className='input-field'>
                             <label htmlFor='lastName'>Last Name</label>
                             <input type='text' placeholder='Enter your last name' className='form-control'
-                                onChange={e => setLastName(e.target.value)} />
+                                onChange={e => setLastName(e.target.value)} required/>
                         </div>
                         <div className='input-field'>
                             <label htmlFor='username'>Username</label>
                             <input type='text' placeholder='Enter Username' className='form-control'
-                                onChange={e => setUsername(e.target.value)} />
+                                onChange={e => setUsername(e.target.value)} required pattern="[a-zA-Z0-9]{4,10}"/>
+                            <p className = "instruction"> Please only enter letters and numbers! </p>
                         </div>
                         <div className='input-field'>
                             <label htmlFor='password'>Password</label>
                             <input type='password' placeholder='Enter Password' className='form-control'
-                                onChange={e => setPassword(e.target.value)} />
+                                onChange={e => setPassword(e.target.value)} required pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"/>
+                                <p className = "instruction"> Password must include upper case, lower case, a number, and a special character </p>
                         </div>
                         <div className='input-field'>
                             <label htmlFor='confPassword'>Re-enter Password</label>
                             <input type='password' placeholder='Confirm Password' className='form-control'
-                                onChange={e => setConfPassword(e.target.value)} />
+                                onChange={e => setConfPassword(e.target.value)} required/>
                         </div>
-                        <button className='btn btn-success'>Create Account</button>
+                        <button className='btn btn-success' >Create Account</button>
                     </form>
                 </div>
             </div>

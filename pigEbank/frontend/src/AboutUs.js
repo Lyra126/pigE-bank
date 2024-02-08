@@ -1,10 +1,11 @@
 import React from 'react';
-import './Aboutus.css'; // Import a separate CSS file for component-specific styles
+import './AboutUs.css'; // Import a separate CSS file for component-specific styles
 
 function Aboutus() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-success">
+      {/* Navigation bar */}
+      <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">Pig E-Bank</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,36 +24,77 @@ function Aboutus() {
         </div>
       </nav>
 
-      <div className="gradient_bg_green">
-        <header className="about-header">
-          <h1>About Us</h1>
-        </header>
-        
-        <section className="container">
-          <div className="developer">
-            <img src="luxray.jpg" alt="Clarissa Cheung" />
-            <h2>Clarissa Cheung</h2>
-            <p>2nd-year Computer Science major and Economics minor.</p>
+      {/* About Us */}
+      <div className = "d-flex flex-column justify-content-center" style = {{marginTop: -35}}>
+        {/* Header */}
+      <div className="container" style = {{fontFamily: "DM_Sans-Regular"}}>
+        <div>
+            <h1 style ={{fontSize: 60, marginTop: 80, textAlign: 'center', fontFamily: "PaytoneOne-Regular"}}>So, why Pig E-Bank?</h1>
+            <h2 style ={{fontSize: 30, textAlign: 'center', fontFamily: "DM_Sans-Regular", marginTop: 25}}>Well, we're really bad saving money.</h2>
+            <p style = {{fontSize: 30, textAlign: 'center', marginTop: -10}}>So, we made a website that helps take care of that. </p>
+            <p style = {{textAlign: 'center', paddingTop: 15, paddingBottom: 15}}> As college students, we have to balance a lot of different financial things, whether that's getting groceries, purchasing new textbooks, or paying rent. Sometimes, it's hard to keep track of our money, especially if we're trying to save up for our own personal stuff. Many popular savings websites are boring, and sometimes we want to be rewarded for the money we save. So our team proposed a unique way to save money that not only keeps track of your balances, but also makes it fun!</p>
+            <p style = {{textAlign: 'center'}}> We took inspiration from our childhood games, changing it up to help us out with our finances. We've customized Pig E-Bank to feel fun and engaging, allowing for people of all ages to take charge of their money. We understand that saving money can be difficult (we're college students, we know), but that doesn't mean it should feel boring! </p>
+            </div>
+        </div>
+        <img src="team_pig_horizontal.png" alt = "team_piggy"/>
+
+        {/* Clarissa */}
+        <section className="developer-section">
+          <h2 style ={{marginTop: 40, fontSize: 45, textAlign: 'center', fontFamily: "Poppins-SemiBold", marginBottom: 20}}>Who's in our team?</h2>
+          <div className = "developer-container">
+          <div className="developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, marginRight: 10, width: 280}}>
+            <h2 style = {{fontFamily: "DM_Sans-Medium", marginTop: 20}}>Clarissa Cheung</h2>
+            <img src="luxray.jpg" alt="luxray"  width="200" height="200" className = "developer-img"/>
+            <p style ={{margin: 15}}>2nd year computer science major and economics minor.</p>
+            <br/>
+              <section className = "socials">
+            <a href="https://instagram.com"><img src = "instagram_logo.png" width="50" height="50"/></a>
+            <a href="https://linkedIn.com"><img src = "linkedIn_logo.png" width="40" height="40"/></a>
+              </section> 
           </div>
-          <div className="developer">
-            <h2>Rachel Pu</h2>
-            <p>Developer 2</p>
+
+          {/* Rachel */}
+          <div className="developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, marginRight: 10, width: 280}}>
+            <h2 style = {{fontFamily: "DM_Sans-Medium", marginTop: 20}}>Rachel Pu</h2>
+            <img src="Rachel_Pu.png" alt="Rachel Pu"  width="200" height="200" className = "developer-img"/>
+            <p style ={{margin: 15}}> Hello! I'm Rachel Pu, and I'm a 2nd year Computer Science major at UF. I enjoy drawing colorful, silly pigs and giving them sunglasses.</p>
+              <section className = "socials">
+            <a href="https://instagram.com/kazuhimi"><img src = "instagram_logo.png" width="50" height="50"/></a>
+            <a href="https://www.linkedin.com/in/rachel-pu-ufl/"><img src = "linkedIn_logo.png" width="40" height="40"/></a>
+              </section> 
           </div>
-          <div className="developer">
-            <h2>Ibet Gonzalez</h2>
-            <p>Developer 3</p>
+
+          {/* Ibet */}
+          <div className="developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, marginRight: 10, width: 280}}>
+            <h2 style = {{fontFamily: "DM_Sans-Medium", marginTop: 20}}>Ibet Gonzalez</h2>
+            <img src="money_pig.png" alt="luxray"  width="200" height="200" className = "developer-img"/>
+            <p style ={{margin: 15}}>Developer 3</p>
+            <section className = "socials">
+            <a href="https://instagram.com"><img src = "instagram_logo.png" width="50" height="50"/></a>
+            <a href="https://linkedIn.com"><img src = "linkedIn_logo.png" width="40" height="40"/></a>
+              </section> 
           </div>
-          <div className="developer">
-            <h2>Michael Knauf</h2>
-            <p>Developer 4</p>
+
+          {/* Michael */}
+          <div className="developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, width: 280}}>
+            <h2 style = {{fontFamily: "DM_Sans-Medium", marginTop: 20}}>Michael Knauf</h2>
+            <img src="money_pig.png" alt="luxray"  width="200" height="200" className = "developer-img"/>
+            <p style ={{margin: 15}}>Developer 4</p>
+            <section className = "socials">
+            <a href="https://instagram.com"><img src = "instagram_logo.png" width="50" height="50"/></a>
+            <a href="https://linkedIn.com"><img src = "linkedIn_logo.png" width="40" height="40"/></a>
+              </section> 
+          </div>
+
           </div>
         </section>
-
+        <br/>
         <footer>
           <p>&copy; 2024 Pig E-Bank</p>
         </footer>
-      </div>
+      
     </div>
+  </div>
   );
 }
 
