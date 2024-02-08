@@ -41,7 +41,7 @@ function CreateAccount() {
         {/* Create Account Div */}
             <div className="top-div">
                 <div className="create-account-container box_shadow">
-                    <h1 className="text-center mb-4" style = {{marginTop: 20, fontFamily: "Poppins-SemiBold"}}>Create Your Account</h1>
+                    <h1 className="text-center mb-4" style = {{marginTop: 20, fontFamily: "Poppins-SemiBold", paddingBottom: 10}}>Create Your Account</h1>
                     <p className = "text-center" style = {{marginTop: -20}}>We're excited to see you've joined us!</p>
                     <p className = "text-center" style = {{marginTop: -15}}>Just a few more steps and you'll be apart of our Pig-E family!</p>
                     <form onSubmit={handleSubmit} className="form-container">
@@ -72,7 +72,7 @@ function CreateAccount() {
                             <input type='password' placeholder='Confirm Password' className='form-control'
                                 onChange={e => setConfPassword(e.target.value)} required/>
                         </div>
-                        <button className='btn btn-success' >Create Account</button>
+                        <button className='btn btn-success'>Create Account</button>
                     </form>
                 </div>
             </div>
