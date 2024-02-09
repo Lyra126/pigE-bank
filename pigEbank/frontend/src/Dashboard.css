@@ -1,48 +1,38 @@
 /* Dashboard.css */
 
 .background {
-    margin: 0;
-    padding: 0;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Make the background fill the entire viewport */
     font-family: Arial, sans-serif;
-    height: 100vh;
     background-color: #fff;
-}
-
-.content {
-    padding: 10px; /* Add padding around the content */
-}
-
-.about-header {
-    padding: 20px;
-    margin-top: 30px;
-    font-family: Poppins-Bold;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three columns */
-    gap: 20px;
-    justify-content: center; /* Center the grid items horizontally */
-    align-items: center; /* Center the grid items vertically */
-    padding: 20px;
-  }
-  
-  .grid-item {
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-  }
-  
-  .grid-item img {
+    grid-template-columns: repeat(3, 1fr); /* Adjust as needed */
+    gap: 20px; /* Adjust the gap between grid items */
+    background-color: #67430a;
+    padding: 20px; /* Add some padding around the grid */
+    border-radius: 10px; /* Add rounded corners to the grid */
+    
+}
+
+
+.content button {
+    margin-top: 10px;
+}
+
+.grid-item img {
     max-width: 100%;
     height: auto;
-    width: 150px; /* Set the desired width */
-    height: 150px; /* Set the desired height */
+    width: 100px; /* Set the desired width */
+    height: 100px; /* Set the desired height */
     object-fit: cover; /* Ensure the image maintains its aspect ratio */
-  }
-  
-  .grid-item button {
+}
+
+.grid-item button {
     background-color: #056646;
     color: #fff;
     border: none;
@@ -50,9 +40,49 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+
+.grid-item button:hover {
+    background-color: #0db47c;
+}
+
+.grid-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    position: relative; /* Add relative positioning to the grid item */
   }
   
-  .grid-item button:hover {
-    background-color: #0db47c;
+  .overlay {
+    position: absolute; /* Position the overlay relative to the grid item */
+    top: 0; /* Position it at the top of the grid item */
+    left: 0; /* Position it at the left of the grid item */
+    width: 100%; /* Make it span the entire width of the grid item */
+    height: 100%; /* Make it span the entire height of the grid item */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    color: white; /* White text */
+    opacity: 0; /* Initially make it transparent */
+    transition: opacity 0.3s; /* Add transition effect for opacity */
+  }
+  
+  .grid-item:hover .overlay {
+    opacity: 1; /* Show the overlay on hover */
+  }
+  
+  .overlay:hover {
+    opacity: 1; /* Keep the overlay visible when hovered over */
+  }
+  
+  
+  .content:hover .overlay {
+    visibility: visible;
+    opacity: 1;
   }
   

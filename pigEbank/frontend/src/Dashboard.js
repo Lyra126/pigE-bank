@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Dashboard() {
   return (
-    <div className='background'>
+    <div>
       <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">Pig E-Bank</a>
@@ -23,69 +23,19 @@ function Dashboard() {
           </div>
         </div>
       </nav>
-
-      <title>Interactive Dashboard</title>
-
-      <div className="grid-container">
-        <div className="grid-item">
-          <div className="content">
-            <img src="favicon.ico" alt="Pig 1" />
-          </div>
-          <div className="content">
-          <Link to={{ pathname: "/PigInfo/Pig1" }}>
-              <button>Visit</button>
-            </Link>
-          </div>
-        </div>
-        <div className="grid-item">
-          <div className="content">
-            <img src="favicon.ico" alt="Pig 2" />
-          </div>
-          <div className="content">
-          <Link to={{ pathname: "/PigInfo/Pig2" }}>
-              <button>Visit</button>
-            </Link>
-          </div>
-        </div>
-        <div className="grid-item">
-          <div className="content">
-            <img src="favicon.ico" alt="Pig 3" />
-          </div>
-          <div className="content">
-          <Link to={{ pathname: "/PigInfo/Pig3" }}>
-              <button>Visit</button>
-            </Link>
-          </div>
-        </div>
-        <div className="grid-item">
-          <div className="content">
-            <img src="favicon.ico" alt="Pig 4" />
-          </div>
-          <div className="content">
-            <Link to={{ pathname: "/PigInfo/Pig4" }}>
-              <button>Visit</button>
-            </Link>
-          </div>
-        </div>
-        <div className="grid-item">
-          <div className="content">
-            <img src="favicon.ico" alt="Pig 5" />
-          </div>
-          <div className="content">
-            <Link to={{ pathname: "/PigInfo/Pig5" }}>
-              <button>Visit</button>
-            </Link>
-          </div>
-        </div>
-        <div className="grid-item">
-          <div className="content">
-            <img src="favicon.ico" alt="Pig 6" />
-          </div>
-          <div className="content">
-            <Link to={{ pathname: "/PigInfo/Pig6" }}>
-              <button>Visit</button>
-            </Link>
-          </div>
+      <div className='background'>
+        <title>Interactive Dashboard</title>
+        <div className="grid-container">
+          {[1, 2, 3, 4, 5, 6].map(index => (
+            <div className="grid-item" key={index}>
+              <div className="content">
+                <Link to={`/PigInfo/Pig${index}`}>
+                  <img src="favicon.ico" alt={`Pig ${index}`} />
+                  <div className="overlay">Visit</div>
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

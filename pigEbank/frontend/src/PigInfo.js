@@ -5,7 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 function PigInfo() {
     const { pigName } = useParams();
     return (
-        <div className='background'>
+        <div>
             <nav className="navbar navbar-expand-lg navbar-light">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="/">Pig E-Bank</a>
@@ -25,11 +25,13 @@ function PigInfo() {
                 </div>
             </nav>
 
-            <title>Pig Info</title>
-                    
-            <div>
-                <h1>Pig Information</h1>
-                <p>This is information about {pigName}.</p>
+            <div className='background'>
+                <title>Pig Info</title>
+                        
+                <div>
+                    <h1>Pig Information</h1>
+                    <p>This is information about {pigName}.</p>
+                </div>
             </div>
         </div>
     );
