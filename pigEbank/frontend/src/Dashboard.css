@@ -1,0 +1,58 @@
+/* Dashboard.css */
+
+.background {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background-color: #fff;
+}
+
+.content {
+    padding: 10px; /* Add padding around the content */
+}
+
+.about-header {
+    padding: 20px;
+    margin-top: 30px;
+    font-family: Poppins-Bold;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    gap: 20px;
+    justify-content: center; /* Center the grid items horizontally */
+    align-items: center; /* Center the grid items vertically */
+    padding: 20px;
+  }
+  
+  .grid-item {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .grid-item img {
+    max-width: 100%;
+    height: auto;
+    width: 150px; /* Set the desired width */
+    height: 150px; /* Set the desired height */
+    object-fit: cover; /* Ensure the image maintains its aspect ratio */
+  }
+  
+  .grid-item button {
+    background-color: #056646;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .grid-item button:hover {
+    background-color: #0db47c;
+  }
+  

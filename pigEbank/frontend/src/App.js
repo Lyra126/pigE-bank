@@ -5,7 +5,8 @@ import Login from './Login';
 import CreateAccount from './createAccount';
 import CreateNewGoal from './createNewGoal';
 import Aboutus from './AboutUs';
-import HomePage from './Homepage';
+import Dashboard from './Dashboard';
+import PigInfo from './PigInfo';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
           <Route path="/aboutus" element={<Aboutus />} />
           <Route path="/login" element={<Login />} />
           <Route path="/createAccount" element={<CreateAccount />} />
-          <Route path="/homePage" element={<HomePage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/PigInfo/:pigName" element={<PigInfo />} />
           <Route path="/createNewGoal" element={<CreateNewGoal />} />
         </Routes>
       </Router>
