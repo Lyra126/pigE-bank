@@ -7,6 +7,7 @@ import CreateNewGoal from './createNewGoal';
 import Aboutus from './AboutUs';
 import Dashboard from './Dashboard';
 import PigInfo from './PigInfo';
+import Profile from './Profile';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/PigInfo/:pigName" element={<PigInfo />} />
           <Route path="/createNewGoal" element={<CreateNewGoal />} />
+          <Route path="/Profile" element={<Profile />} />
         </Routes>
       </Router>
     </div>

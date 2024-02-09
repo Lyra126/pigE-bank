@@ -14,10 +14,7 @@ function Dashboard() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <a className="nav-link" href="/login">Login</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/createAccount">Create Account</a>
+                <a className="nav-link" href="/Profile">Profile</a>
               </li>
             </ul>
           </div>
@@ -26,7 +23,7 @@ function Dashboard() {
 
       <div className='background'>
         <div className="grid-container">
-          {[1, 2, 3, 4, 5, 6].map(index => (
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(index => (
             <div className="grid-item" key={index}>
               <div className="content">
                 <Link to={`/PigInfo/Pig${index}`}>

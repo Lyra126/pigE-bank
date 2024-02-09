@@ -11,7 +11,7 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Adjust as needed */
+    grid-template-columns: repeat(4, 1fr); /* Adjust as needed */
     gap: 20px; /* Adjust the gap between grid items */
     background-color: #67430a;
     padding: 20px; /* Add some padding around the grid */
@@ -27,8 +27,8 @@
 .grid-item img {
     max-width: 100%;
     height: auto;
-    width: 100px; /* Set the desired width */
-    height: 100px; /* Set the desired height */
+    width: 200px; /* Set the desired width */
+    height: 150px; /* Set the desired height */
     object-fit: cover; /* Ensure the image maintains its aspect ratio */
 }
 

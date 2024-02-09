@@ -27,7 +27,7 @@ function Profile() {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ms-auto">
                             <li className="nav-item">
-                                <Link className="nav-link" to="/">Home Page</Link>
+                                <Link className="nav-link" to="/dashboard"> Dashboard</Link>
                             </li>
                         </ul>
                     </div>
