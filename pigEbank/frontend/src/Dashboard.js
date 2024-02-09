@@ -23,8 +23,8 @@ function Dashboard() {
           </div>
         </div>
       </nav>
+
       <div className='background'>
-        <title>Interactive Dashboard</title>
         <div className="grid-container">
           {[1, 2, 3, 4, 5, 6].map(index => (
             <div className="grid-item" key={index}>

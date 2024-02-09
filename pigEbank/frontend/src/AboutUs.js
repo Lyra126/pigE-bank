@@ -44,8 +44,8 @@ function Aboutus() {
           <div className = "developer-container">
           <div className="developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, marginRight: 10, width: 280}}>
             <h2 style = {{fontFamily: "DM_Sans-Medium", marginTop: 20}}>Clarissa Cheung</h2>
-            <img src="luxray.jpg" alt="luxray"  width="200" height="200" className = "developer-img"/>
-            <p style ={{margin: 15}}>2nd year computer science major and economics minor.</p>
+            <img src="CC.jpg" alt="CC"  width="200" height="200" className = "developer-img"/>
+            <p style ={{margin: 15}}>Hi! I'm Clarissa Cheung, and I'm a 2nd year computer science major and economics minor at UF.</p>
             <br/>
               <section className = "socials">
             <a href="https://instagram.com"><img src = "instagram_logo.png" width="50" height="50"/></a>
