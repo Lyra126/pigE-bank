@@ -106,13 +106,35 @@ footer {
 }
 
 .get-started-button {
-  background-color: white; /* White background */
-  color: #000; /* Black text */
-  padding: 10px 20px; /* Adjust padding as needed */
-  border: 2px solid #024002; /* Black border */
-  text-decoration: none; /* Remove default link styling */
-  display: inline-block; /* Display as inline block */
-  font-size: 16px; /* Adjust font size */
-  border-radius: 5px; /* Rounded corners */
-  margin-top: 20px; /* Add space between the image and the button */
+  background-color: rgb(7, 67, 5);
+  color: #ffffff;
+  padding: 10px 20px;
+  border: 5px solid #033403;
+  text-decoration: none;
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center text vertically */
+  font-size: 25px;
+  border-radius: 5px;
+  font-family: PaytoneOne-Regular;
+  margin-top: 20px;
+  width: 250px; /* Adjust as needed */
+  height: 80px; /* Adjust as needed */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+.get-started-button:hover {
+  background-color: #047704; /* Change background color on hover */
+  color: white; /* Change text color on hover */
+}
+
+.button-container{
+  position: fixed; /* Position the container relative to the viewport */
+  bottom: 30px; /* Adjust as needed */
+  left: 95%; /* Position the container horizontally */
+  transform: translateX(-50%); /* Center the container horizontally */
+  text-align: center; /* Center the button */
+  width: 100%; /* Ensure full width */
 }

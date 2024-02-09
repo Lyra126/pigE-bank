@@ -48,8 +48,8 @@ function Aboutus() {
             <p style ={{margin: 15}}>Hi! I'm Clarissa Cheung, and I'm a 2nd year computer science major and economics minor at UF.</p>
             <br/>
               <section className = "socials">
-            <a href="https://instagram.com"><img src = "images/instagram_logo.png" width="50" height="50"/></a>
-            <a href="https://linkedIn.com"><img src = "images/linkedIn_logo.png" width="40" height="40"/></a>
+            <a href="https://instagram.com/clynae2"><img src = "images/instagram_logo.png" width="50" height="50"/></a>
+            <a href="www.linkedin.com/in/clarissa-cheung2"><img src = "images/linkedIn_logo.png" width="40" height="40"/></a>
               </section> 
           </div>
 

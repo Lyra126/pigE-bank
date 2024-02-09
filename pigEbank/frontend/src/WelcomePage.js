@@ -41,7 +41,7 @@ function WelcomePage() {
 
           <div className="container-1">
               <div className="container-text">
-              <h2 className = "description-header">Take hold of your money</h2>
+              <h2 className = "description-header">Take hold of your money!</h2>
               <p>Welcome to our cutting-edge personal finance management solution! Picture this: a powerful platform designed to revolutionize the way you manage your finances. Our software not only tracks your accounts and balances but also provides robust user authentication to keep your information secure.</p>
               </div>
               <div className="header-image" style = {{marginTop: 100}}>
@@ -51,8 +51,8 @@ function WelcomePage() {
 
           <div className="container-2">
               <div className="container-text">
-              <h2 className = "description-header">Take hold of your money</h2>
-              <p>Welcome to our cutting-edge personal finance management solution! Picture this: a powerful platform designed to revolutionize the way you manage your finances. Our software not only tracks your accounts and balances but also provides robust user authentication to keep your information secure.</p>
+              <h2 className = "description-header">Transform your saving goals into delightful adventures with our charming Pig Banks!</h2>
+              <p> Each Pig Bank represents a unique savings goal waiting to be achieved. Work diligently towards your goal to unlock exciting accessories and bring your Pig Bank's dream of becoming a real pig to life!</p>
               </div>
             <div className="header-image" style = {{marginTop: 100}}>
             <img src="images/money_pig.png" alt="money_pig"/></div>
@@ -60,27 +60,23 @@ function WelcomePage() {
            </div>
            
            <div className="container-1">
-           <div className="container-text">
-              <h2 className = "description-header">Take hold of your money</h2>
-              <p>Welcome to our cutting-edge personal finance management solution! Picture this: a powerful platform designed to revolutionize the way you manage your finances. Our software not only tracks your accounts and balances but also provides robust user authentication to keep your information secure.</p>
-              </div>
-              <div className="header-image" style = {{marginTop: 100}}>
-              <img src="images/money_pig.png" alt="money_pig"/>
-              </div>
+            <div className="container-text">
+              <h2 className="description-header">Tend to your stables and watch your savings flourish!</h2>
+              <p>With each Pig added to the stable, unlock a plethora of prizes and rewards. Aim high and complete all five saving goal categories, plus other achievements, to uncover special surprises waiting just for you! Start saving today and turn your dreams into reality!</p>
+            </div>
+            <div className="header-image" style={{ marginTop: 100 }}>
+              <img src="images/money_pig.png" alt="money_pig" />
+            </div>
           </div>
 
-          <div className="container-4 bg-success">
-            <p className="container-text">But here's where the magic happens: our core feature sets us apart. Imagine setting savings goals and having the confidence that your funds are safe until you reach them. No more impulse spending, no more unnecessary purchases. Our intuitive interface, inspired by the timeless charm of a "Piggy bank," motivates you to stay focused on your financial objectives.</p>
-            <div className="header-image" style = {{marginTop: 100}}>
-            <img src="images/money_pig.png" alt="money_pig"/></div>
-           </div>
-
-            <div className = "text-center"><Link to="/createAccount" className="get-started-button">Get Started</Link></div>
+            
           </div>
           
         </div>
         <br/>
-        
+        <div className="button-container">
+              <Link to="/createAccount" className="get-started-button">Get Started</Link>
+        </div>
         <footer>
           <p>&copy; 2024 Pig E-Bank</p>
         </footer>
