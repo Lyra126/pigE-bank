@@ -30,7 +30,7 @@ function Dashboard() {
             <div className="grid-item" key={index}>
               <div className="content">
                 <Link to={`/PigInfo/Pig${index}`}>
-                  <img src="favicon.ico" alt={`Pig ${index}`} />
+                  <img src="images/favicon.ico" alt={`Pig ${index}`} />
                   <div className="overlay">Visit</div>
                 </Link>
               </div>

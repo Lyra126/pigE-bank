@@ -45,7 +45,7 @@ function Login(){
             <div className='p-3 login_box'>
                 <form onSubmit={handleSubmit}>
                 {/* Logo Image */}
-                <img src="favicon.ico" alt="pig" className = "login_piggy"/>
+                <img src="images/favicon.ico" alt="pig" className = "login_piggy"/>
                     <div className='mb-3'>
                         <label htmlFor='username' style={{ fontFamily: 'DM_Sans-Medium' }}>Username</label>
                         <input type='username' placeholder='Enter Username' className='form-control'
