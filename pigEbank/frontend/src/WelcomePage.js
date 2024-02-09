@@ -45,7 +45,7 @@ function WelcomePage() {
               <p>Welcome to our cutting-edge personal finance management solution! Picture this: a powerful platform designed to revolutionize the way you manage your finances. Our software not only tracks your accounts and balances but also provides robust user authentication to keep your information secure.</p>
               </div>
               <div className="header-image" style = {{marginTop: 100}}>
-              <img src="money_pig.png" alt="money_pig"/>
+              <img src="images/money_pig.png" alt="money_pig"/>
               </div>
           </div>
 
@@ -55,7 +55,7 @@ function WelcomePage() {
               <p>Welcome to our cutting-edge personal finance management solution! Picture this: a powerful platform designed to revolutionize the way you manage your finances. Our software not only tracks your accounts and balances but also provides robust user authentication to keep your information secure.</p>
               </div>
             <div className="header-image" style = {{marginTop: 100}}>
-            <img src="money_pig.png" alt="money_pig"/></div>
+            <img src="images/money_pig.png" alt="money_pig"/></div>
 
            </div>
            
@@ -65,14 +65,14 @@ function WelcomePage() {
               <p>Welcome to our cutting-edge personal finance management solution! Picture this: a powerful platform designed to revolutionize the way you manage your finances. Our software not only tracks your accounts and balances but also provides robust user authentication to keep your information secure.</p>
               </div>
               <div className="header-image" style = {{marginTop: 100}}>
-              <img src="money_pig.png" alt="money_pig"/>
+              <img src="images/money_pig.png" alt="money_pig"/>
               </div>
           </div>
 
           <div className="container-4 bg-success">
             <p className="container-text">But here's where the magic happens: our core feature sets us apart. Imagine setting savings goals and having the confidence that your funds are safe until you reach them. No more impulse spending, no more unnecessary purchases. Our intuitive interface, inspired by the timeless charm of a "Piggy bank," motivates you to stay focused on your financial objectives.</p>
             <div className="header-image" style = {{marginTop: 100}}>
-            <img src="money_pig.png" alt="money_pig"/></div>
+            <img src="images/money_pig.png" alt="money_pig"/></div>
            </div>
 
             <div className = "text-center"><Link to="/createAccount" className="get-started-button">Get Started</Link></div>
