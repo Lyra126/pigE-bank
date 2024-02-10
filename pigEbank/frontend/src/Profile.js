@@ -29,6 +29,9 @@ function Profile() {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/dashboard"> Dashboard</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/createNewGoal"> Create New Goal</Link>
+                            </li>
                         </ul>
                     </div>
                 </div>
