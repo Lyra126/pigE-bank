@@ -1,0 +1,62 @@
+.background {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    width: 50%;
+    height: 600px;
+    margin: 50px auto; /* Center the container horizontally */
+    font-family: DM_Sans-Regular;
+}
+
+.edit-goal-btn {
+    padding: 5px 10px;
+    background-color: #0f995d;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: #86f85d; /* Start color */
+    }
+    100% {
+        background-color: #d9ff5c; /* End color */
+    }
+}
+
+.progress-bar {
+    animation: pulse 1.5s infinite alternate;
+}
+
+.input-form{
+    width: 300px;
+    text-align: center;
+}
+
+.update-button {
+    background-color: rgb(7, 67, 5);
+    color: #ffffff;
+    padding: 10px 20px;
+    border: 5px solid #033403;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 5px;
+    font-family: PaytoneOne-Regular;
+    margin-top: 20px;
+    width: 180px; /* Adjust as needed */
+    height: 70px; /* Adjust as needed */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  
+.update-button:hover {
+    background-color: #047704; /* Change background color on hover */
+    color: white; /* Change text color on hover */
+}
