@@ -8,9 +8,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping("/newAccounts")
+@RequestMapping("/Accounts")
 public class AccountController {
     @Autowired
     private AccountService accountService;
@@ -20,5 +21,9 @@ public class AccountController {
         return new ResponseEntity<List<Account>>(accountService.getAllAccounts(), HttpStatus.OK);
     }
 
+    @GetMapping("/{username}")
+    ResponseEntity<Optional<Account>> getSingleAccount(@PathVariable String username) {
+        return new ResponseEntity<Optional<Account>>(accountService.findAccountByUsername(username), HttpStatus.OK);
+    }
 
 }
