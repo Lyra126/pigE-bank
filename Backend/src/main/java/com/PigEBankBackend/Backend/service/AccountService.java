@@ -31,4 +31,26 @@ public class AccountService {
         accountRepository.deleteById(findAccountByUsername(username).get().getId());
         return username + " was deleted";
     }
+
+    public Account updateAccountAll(Account account) {
+        Account currentAccount = accountRepository.findById(account.getId()).get();
+        currentAccount.setUsername(account.getUsername());
+        currentAccount.setFirstName(account.getFirstName());
+        currentAccount.setLastName(account.getLastName());
+        currentAccount.setPassword(account.getPassword());
+        currentAccount.setNumOfGoals(account.getNumOfGoals());
+        return accountRepository.save(currentAccount);
+    }
+
+    public Account updateAccountPassword(Account account) {
+        Account currentAccount = accountRepository.findById(account.getId()).get();
+        currentAccount.setPassword(account.getPassword());
+        return accountRepository.save(currentAccount);
+    }
+
+    public Account updateNumOfGoals(Account account) {
+        Account currentAccount = accountRepository.findById(account.getId()).get();
+        currentAccount.setNumOfGoals(account.getNumOfGoals());
+        return accountRepository.save(currentAccount);
+    }
 }

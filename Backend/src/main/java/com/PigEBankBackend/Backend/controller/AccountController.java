@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/Accounts")
+@RequestMapping("/accounts")
 public class AccountController {
     @Autowired
     private AccountService accountService;
@@ -30,6 +30,21 @@ public class AccountController {
     @ResponseStatus(HttpStatus.CREATED)
     public Account createAccount(@RequestBody Account account) {
         return accountService.addAccount(account);
+    }
+
+    @PutMapping
+    public Account updateAccountAll(@RequestBody Account account) {
+        return accountService.updateAccountAll(account);
+    }
+
+    @PutMapping("/updatePassword")
+    public Account updatePassword(@RequestBody Account account) {
+        return accountService.updateAccountPassword(account);
+    }
+
+    @PutMapping("/updateNumOfGoals")
+    public Account updateNumOfGoals(@RequestBody Account account) {
+        return accountService.updateNumOfGoals(account);
     }
 
     @DeleteMapping("/remove/{username}")
