@@ -26,4 +26,15 @@ public class AccountController {
         return new ResponseEntity<Optional<Account>>(accountService.findAccountByUsername(username), HttpStatus.OK);
     }
 
+    @PostMapping("/newAccount")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Account createAccount(@RequestBody Account account) {
+        return accountService.addAccount(account);
+    }
+
+    @DeleteMapping("/remove/{username}")
+    public String deleteAccount(@PathVariable String username) {
+        return accountService.deleteAccount(username);
+    }
+
 }
