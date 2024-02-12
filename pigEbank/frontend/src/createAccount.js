@@ -14,16 +14,9 @@ function CreateAccount() {
         // Add data validation and other checks here
         const user={firstName, lastName, username}
         console.log(user)
-        // axios.post('http://localhost:8080/user/add', {firstName, lastName, username, password })
-        //     .then(res => console.log(res))
-        //     .catch(err => console.log(err));
-        fetch('http://localhost:8080/user/add', {
-            method: "POST",
-            headers:{"Content-Type":"application/json"},
-            body:JSON.stringify(user)
-        } ).then(()=>{
-            console.log("New User Added")
-        })
+        axios.post("/accounts/newAccount", {firstName: firstName, lastName: lastName, username: username, password: password, numOfGoals: 0})
+            .then(res => console.log(res))
+            .catch(err => console.log(err));
     }
 
     return (
