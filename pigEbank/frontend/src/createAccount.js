@@ -14,6 +14,12 @@ function CreateAccount() {
         // Add data validation and other checks here
         const user={firstName, lastName, username}
         console.log(user)
+
+        //To make sure another doesn't have the same username, should there be a function that checks before adding it into the database?
+            //Problems w/ making unique usernames
+                //Searching for a similar username can be a hassel bc of how capital and lowercase letters work
+                //Putting the username in lowercase removes any captial letters a user may want -> iAmAUser vs iamauser
+                    //Solution -> lowercase only or have another attribute for username or use unique emails instead
         axios.post("/accounts/newAccount", {firstName: firstName, lastName: lastName, username: username, password: password, numOfGoals: 0})
             .then(res => console.log(res))
             .catch(err => console.log(err));
@@ -61,13 +67,13 @@ function CreateAccount() {
                             <label htmlFor='username'>Username</label>
                             <input type='text' placeholder='Enter Username' className='form-control'
                                 onChange={e => setUsername(e.target.value)} required pattern="[a-zA-Z0-9]{4,10}"/>
-                            <p className = "instruction"> Please only enter letters and numbers! </p>
+                            <p className = "instruction"> Username must be 4-10 characters long and must contain only letters and numbers </p>
                         </div>
                         <div className='input-field'>
                             <label htmlFor='password'>Password</label>
                             <input type='password' placeholder='Enter Password' className='form-control'
                                 onChange={e => setPassword(e.target.value)} required pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"/>
-                                <p className = "instruction"> Password must include upper case, lower case, a number, and a special character </p>
+                                <p className = "instruction"> Password must include upper case, lower case, a number, a special character, and must be at least 8 characters long </p>
                         </div>
                         <div className='input-field'>
                             <label htmlFor='confPassword'>Re-enter Password</label>

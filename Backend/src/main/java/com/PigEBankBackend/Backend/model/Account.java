@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.DocumentReference;
+
+import java.util.List;
 
 @Document(collection = "account")
 @Data
@@ -21,15 +24,10 @@ public class Account {
 
     //Find out how to encrypt
     private String password;
-
     private int numOfGoals;
 
-    public Account(String username, String firstName, String lastName, String password, int numOfGoals) {
-        this.username = username;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.password = password;
-        this.numOfGoals = numOfGoals;
-    }
+    @DocumentReference
+    private List<Goals> goalsList;
+
 
 }
