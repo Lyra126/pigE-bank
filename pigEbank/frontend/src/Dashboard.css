@@ -1,6 +1,6 @@
 /* Dashboard.css */
 
-.background {
+.background2 {
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
@@ -19,7 +19,6 @@
     background-color: #67430a;
     padding: 20px; /* Add some padding around the grid */
     border-radius: 10px; /* Add rounded corners to the grid */
-    
 }
 
 
