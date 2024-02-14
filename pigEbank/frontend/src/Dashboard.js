@@ -24,7 +24,7 @@ function Dashboard() {
         </div>
       </nav>
 
-      <div className='background'>
+      <div className='background2'>
         <div className="grid-container">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(index => (
             <div className="grid-item" key={index}>
