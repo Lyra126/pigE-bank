@@ -8,6 +8,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Document(collection = "account")
@@ -26,8 +27,10 @@ public class Account {
     private String password;
     private int numOfGoals;
 
+    private LocalDate creation;
+
     @DocumentReference
-    private List<Goals> goalsList;
+    private List<Goal> goalsID;
 
 
 }

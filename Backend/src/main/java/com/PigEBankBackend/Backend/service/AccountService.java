@@ -12,6 +12,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -42,6 +43,7 @@ public class AccountService {
     }
     public Account addAccount(Account account) {
         account.setId(new ObjectId());
+        account.setCreation(LocalDate.now());
         return accountRepository.save(account);
     }
 

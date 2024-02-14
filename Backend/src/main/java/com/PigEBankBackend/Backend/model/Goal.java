@@ -7,18 +7,22 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDate;
+
 @Document(collection = "goals")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Goals {
+public class Goal {
 
 
     @Id
     private ObjectId id;
-
     private String pigName;
+    private String goalName;
+    private String ownerUsername;
     private int currentSavings;
     private int savingsGoal;
+    private LocalDate creation;
 
 }
