@@ -29,7 +29,7 @@ public class Account {
 
     private LocalDate creation;
 
-    private List<Goal> goalsID;
+    private List<ObjectId> goalsID;
 
 
 }
