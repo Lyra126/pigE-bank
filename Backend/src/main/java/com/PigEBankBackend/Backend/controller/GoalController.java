@@ -15,7 +15,7 @@ public class GoalController {
     @Autowired
     GoalService goalService;
 
-    @GetMapping
+    @GetMapping("/getAll")
     public ResponseEntity<List<Goal>> getAllGoals() {
         return new ResponseEntity<List<Goal>>(goalService.getAllGoals(), HttpStatus.OK);
     }
