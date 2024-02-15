@@ -29,7 +29,6 @@ public class Account {
 
     private LocalDate creation;
 
-    @DocumentReference
     private List<Goal> goalsID;
 
 
