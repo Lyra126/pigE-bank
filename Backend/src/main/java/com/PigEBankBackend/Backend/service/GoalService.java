@@ -36,6 +36,9 @@ public class GoalService {
         Query query = new Query();
         query.addCriteria(Criteria.where("username").is(goal.getOwnerUsername()));
 
+        Update update = new Update().push("goalsID").value(goal.getId());
+        mongoTemplate.updateFirst(query, update, Account.class);
+
         return goalRepository.save(goal);
     }
 }
