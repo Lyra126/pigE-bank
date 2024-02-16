@@ -1,5 +1,10 @@
 /* GENERAL MAIN CSS COMPONENTS OF WEBSITE! */
 
+/* @font-face {
+  font-family: ;
+  src: url();
+} */
+
 @font-face {
   font-family: Poppins-Regular;
   src: url(../public/fonts/Poppins/Poppins-Regular.ttf);
@@ -55,10 +60,25 @@
   src: url(../public/fonts/Paytone_One/PaytoneOne-Regular.ttf)
 }
 
-/* @font-face {
-  font-family: ;
-  src: url();
-} */
+@font-face{
+  font-family: Lexend-Regular;
+  src: url(../public/fonts/Lexend/static/Lexend-Regular.ttf)
+}
+
+@font-face {
+  font-family: Lexend-Bold;
+  src: url(../public/fonts/Lexend/static/Lexend-Bold.ttf)
+}
+
+@font-face {
+  font-family: Lexend-SemiBold;
+  src: url(../public/fonts/Lexend/static/Lexend-SemiBold.ttf)
+}
+
+@font-face{
+  font-family: Lexend-Black;
+  src: url(../public/fonts/Lexend/static/Lexend-Black.ttf)
+}
 
 body {
   margin: 0;
