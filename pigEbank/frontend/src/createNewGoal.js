@@ -49,6 +49,7 @@ function CreateNewGoal() {
                         </div>
                       
                         <button className='btn btn-success'>Submit</button>
+                        <Link to = "/calculator" className='btn btn-outline-success' style ={{objectPosition: "center", minWidth: 300}}>Calculator</Link>
                     </form>
                 </div>
             </div>

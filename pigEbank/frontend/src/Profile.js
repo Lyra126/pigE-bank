@@ -30,7 +30,7 @@ function Profile() {
                                 <Link className="nav-link" to="/dashboard"> Dashboard</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/createNewGoal"> Create New Goal</Link>
+                                <Link className="nav-link" to="/">Log Out</Link>
                             </li>
                         </ul>
                     </div>
