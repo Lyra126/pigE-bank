@@ -8,9 +8,6 @@ function WelcomePage() {
       <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">Pig E-Bank</a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
             <li className="nav-item">
@@ -39,6 +36,7 @@ function WelcomePage() {
 
         <div className = "description-container">
 
+            {/* container 1 */}
           <div className="container-1">
               <div className="container-text">
               <h2 className = "description-header">Take hold of your money!</h2>
@@ -49,6 +47,7 @@ function WelcomePage() {
               </div>
           </div>
 
+            {/* container 2 */}
           <div className="container-2">
               <div className="container-text">
               <h2 className = "description-header">Transform your saving goals into delightful adventures with our charming Pig Banks!</h2>
@@ -58,7 +57,8 @@ function WelcomePage() {
             <img src="images/money_pig.png" alt="money_pig"/></div>
 
            </div>
-           
+
+            {/* container 3 */}
            <div className="container-1">
             <div className="container-text">
               <h2 className="description-header">Tend to your stables and watch your savings flourish!</h2>
@@ -69,17 +69,17 @@ function WelcomePage() {
             </div>
           </div>
 
-            
+            <div className="button-container">
+                <h2 className = "get-started-description-header" style={{paddingTop: 60}}> Ready to raise your piggy? </h2>
+                <Link to="/createAccount" className="get-started-button">Get Started</Link>
+                <footer style={{paddingTop: 60}}>
+                    <p>&copy; 2024 Pig E-Bank</p>
+                </footer>
+            </div>
+
           </div>
-          
+        {/*  button */}
         </div>
-        <br/>
-        <div className="button-container">
-              <Link to="/createAccount" className="get-started-button">Get Started</Link>
-        </div>
-        <footer>
-          <p>&copy; 2024 Pig E-Bank</p>
-        </footer>
         </div>
       
       

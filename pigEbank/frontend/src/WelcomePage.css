@@ -7,7 +7,6 @@ body{
   height: 100vh;
 }
 
-
 .about-header {
     padding: 20px;
     margin-top: 30px;
@@ -67,26 +66,11 @@ footer {
 
 .container-2{
   width: auto;
-  background-color: aqua;
+  background-color: #e9eee2;
   padding: 4em 0;
   display:flex;
   align-items: center;
   text-align: right;
-  flex-direction: row-reverse;
-}
-
-.container-3{
-  background: #f4f4f4;
-  display:flex;
-  padding: 4em 0;
-  align-items: center;
-}
-
-.container-4{
-  background-color: aqua;
-  display: flex;
-  padding: 4em 0;
-  align-items: center;
   flex-direction: row-reverse;
 }
 
@@ -106,25 +90,29 @@ footer {
   height: auto;
 }
 
+.get-started-description-header{
+    font-family: DM_Sans-SemiBold;
+    font-size: 40px;
+}
+
 .get-started-button {
-  background-color: rgb(7, 67, 5);
+  background-color: rgb(97, 166, 96);
   color: #ffffff;
   padding: 10px 20px;
-  border: 5px solid #033403;
+  /*border: 5px solid #033403;*/
   text-decoration: none;
   display: flex; /* Use flexbox */
   justify-content: center; /* Center text horizontally */
   align-items: center; /* Center text vertically */
   font-size: 25px;
-  border-radius: 5px;
-  font-family: PaytoneOne-Regular;
+  border-radius: 8px;
+  font-family: DM_Sans-SemiBold;
   margin-top: 20px;
-  width: 250px; /* Adjust as needed */
-  height: 80px; /* Adjust as needed */
+  width: 20%; /* Adjust as needed */
+  height: 90px; /* Adjust as needed */
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
 
 .get-started-button:hover {
   background-color: #047704; /* Change background color on hover */
@@ -132,10 +120,13 @@ footer {
 }
 
 .button-container{
-  position: fixed; /* Position the container relative to the viewport */
-  bottom: 30px; /* Adjust as needed */
-  left: 95%; /* Position the container horizontally */
-  transform: translateX(-50%); /* Center the container horizontally */
-  text-align: center; /* Center the button */
-  width: 100%; /* Ensure full width */
+    width: auto;
+    background-color: #e5e5e5;
+    padding: 4em 0;
+    display:flex;
+    flex-direction: column; /* Changing the flex box direction to go up and down */
+    align-items: center;
+    text-align: right;
+    justify-content: center;
+
 }
