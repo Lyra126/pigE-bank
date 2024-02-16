@@ -7,6 +7,16 @@ body{
   height: 100vh;
 }
 
+.tag {
+    opacity: 0%;
+    transform: translate(0, 10vh);
+    transition: all 2s;
+}
+
+.tag.visible {
+    opacity: 1;
+    transform: translate(0, 0);
+}
 
 .about-header {
     padding: 20px;
@@ -72,6 +82,7 @@ body{
   display:flex;
   padding: 4em 0;
   align-items: center;
+    height: 100vh;
 }
 
 .container-2{
@@ -82,6 +93,7 @@ body{
   align-items: center;
   text-align: right;
   flex-direction: row-reverse;
+    height: 100vh;
 }
 
 .header-content {
