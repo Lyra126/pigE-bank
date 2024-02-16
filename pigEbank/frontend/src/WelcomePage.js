@@ -27,12 +27,11 @@ function WelcomePage() {
 {/* Welcome Page Div */}
       <div>
         <div className = "title-container">
-            <h2 style = {{fontFamily: "DM_Sans-SemiBold", fontSize: 40, marginTop: -30}}>Welcome to your new</h2>
-            <h1 style = {{fontFamily: "PaytoneOne-Regular", fontSize: 160, marginTop: -40}}> Pig E-Bank!</h1>
-            <h2 style = {{fontFamily: "DM_Sans-SemiBold", fontSize: 20, marginTop: -20, marginBottom: 20, marginLeft: 8}}>(Piggy Bank)</h2>
+            <h2 className = "h2-subtitle">Welcome to your new</h2>
+            <h1 className = "h1-title"> Pig E-Bank!</h1>
         </div>
         <p className = "text-center" style = {{fontSize: 20, marginTop: -23, fontFamily: "DM_Sans-Regular"}}>Say hello to your newest financial companion.</p>
-        <p className = "text-center" style = {{fontSize: 20, marginTop: -15, paddingBottom: 50, fontFamily: "DM_Sans-Regular"}}>Not only is he cute, but he's here to help you save your money!</p>
+        <p className = "text-center" style = {{fontSize: 20, marginTop: -15, paddingBottom: 80, fontFamily: "DM_Sans-Regular"}}>Not only is he cute, but he's here to help you save your money!</p>
 
         <div className = "description-container">
 

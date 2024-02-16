@@ -7,6 +7,7 @@ body{
   height: 100vh;
 }
 
+
 .about-header {
     padding: 20px;
     margin-top: 30px;
@@ -27,19 +28,28 @@ body{
     border-radius: 50%;
 }
 
-footer {
-    text-align: center;
-    padding-top: 20px 0;
-    font-family: Poppins-Regular;
-    margin-bottom: -50px;
+.title-container{
+    padding: 20px;
+    margin: 45px;
+    margin-top: 10%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
 }
 
-.title-container{
-  padding: 20px;
-  margin: 45px;
-  margin-top: 10%;
-  margin-left: 19%;
-  align-items: center;
+.h2-subtitle{
+    font-family: "DM_Sans-SemiBold";
+    font-size: 40px;
+    margin-top: -30px;
+}
+
+.h1-title{
+    font-family: "PaytoneOne-Regular";
+    font-size: 170px;
+    margin-top: -40px;
+    text-align: center;
+    padding-bottom: 40px;
 }
 
 .description-container{
@@ -66,7 +76,7 @@ footer {
 
 .container-2{
   width: auto;
-  background-color: #e9eee2;
+  background-color: #e8e8e8;
   padding: 4em 0;
   display:flex;
   align-items: center;
@@ -91,37 +101,36 @@ footer {
 }
 
 .get-started-description-header{
-    font-family: DM_Sans-SemiBold;
+    font-family: Poppins-Bold;
     font-size: 40px;
 }
 
 .get-started-button {
-  background-color: rgb(97, 166, 96);
-  color: #ffffff;
-  padding: 10px 20px;
-  /*border: 5px solid #033403;*/
-  text-decoration: none;
-  display: flex; /* Use flexbox */
-  justify-content: center; /* Center text horizontally */
-  align-items: center; /* Center text vertically */
-  font-size: 25px;
-  border-radius: 8px;
-  font-family: DM_Sans-SemiBold;
-  margin-top: 20px;
-  width: 20%; /* Adjust as needed */
-  height: 90px; /* Adjust as needed */
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    background-color: rgb(97, 166, 96);
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    font-size: 25px;
+    border-radius: 8px;
+    font-family: DM_Sans-SemiBold;
+    margin-top: 20px;
+    width: 20%; /* Adjust as needed */
+    height: 90px; /* Adjust as needed */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .get-started-button:hover {
-  background-color: #047704; /* Change background color on hover */
+  background-color: #61be5a; /* Change background color on hover */
   color: white; /* Change text color on hover */
 }
 
 .button-container{
     width: auto;
-    background-color: #e5e5e5;
+    background-color: #E8E8E8FF;
     padding: 4em 0;
     display:flex;
     flex-direction: column; /* Changing the flex box direction to go up and down */
@@ -129,4 +138,11 @@ footer {
     text-align: right;
     justify-content: center;
 
+}
+
+footer {
+    text-align: center;
+    padding-top: 20px 0;
+    font-family: Poppins-Regular;
+    margin-bottom: -50px;
 }
