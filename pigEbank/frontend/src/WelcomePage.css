@@ -1,12 +1,5 @@
 /* WelcomePage.css */
 
-body{
-  background: rgb(55,196,143);
-  background: linear-gradient(0deg, rgba(55,196,143,1) 0%, rgba(174,255,145,1) 100%); ;
-  width: 100vh;
-  height: 100vh;
-}
-
 .tag {
     opacity: 0%;
     transform: translate(0, 10vh);
