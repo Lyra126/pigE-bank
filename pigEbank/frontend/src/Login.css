@@ -11,7 +11,7 @@ body{
     margin-bottom: 25px;
     margin-top: -35px;
 }
-  
+
 .login_box{
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(24, 99, 32, 0.268);
@@ -19,7 +19,7 @@ body{
     width: 50vh;
     font-family: DM_Sans-Regular;
 }
-  
+
 .login_piggy{
     width: 70%;
     height: 70%;
@@ -27,7 +27,6 @@ body{
     margin-bottom: -15px;
     margin-left: 50px;
 }
-  
-  
-  
-  
+
+
+

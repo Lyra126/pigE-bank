@@ -22,7 +22,7 @@
 }
 
 .progress {
-    
+
     width: 300px !important;
     height: 150px !important;
 }
@@ -57,7 +57,7 @@
 .btn-container {
     display: flex;
     justify-content: space-between;
-    width: 100%; 
+    width: 100%;
 
 }
 
@@ -70,11 +70,11 @@
     background-color: #3e6e37; /* Set background color */
     border: none;
     cursor: pointer;
-    text-decoration: none !important; 
+    text-decoration: none !important;
     display: inline-block ;
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: PaytoneOne-Regular;
     padding: 12px 24px; /* Adjust padding */
     font-size: 18px; /* Adjust font size */
