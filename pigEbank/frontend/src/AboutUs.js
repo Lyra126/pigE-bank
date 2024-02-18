@@ -82,14 +82,11 @@ function Aboutus() {
             <a href="https://linkedIn.com"><img src = "images/linkedIn_logo.png" width="40" height="40"/></a>
               </section> 
           </div>
-
           </div>
         </section>
-        <br/>
         <footer>
           <p>&copy; 2024 Pig E-Bank</p>
         </footer>
-      
     </div>
   </div>
   );

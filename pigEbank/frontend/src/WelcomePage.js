@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './WelcomePage.css';
-import "animate.css/animate.min.css";
-import ScrollAnimation from 'react-animate-on-scroll';
+// import "animate.css/animate.min.css";
+// import ScrollAnimation from 'react-animate-onnp-scroll';
 
 function WelcomePage() {
   return (
@@ -51,7 +51,7 @@ function WelcomePage() {
 
             {/* container 2 */}
           <div className="container-2 ">
-              <ScrollAnimation animateIn="fadeIn">
+
               <div className="container-text">
               <h2 className = "description-header">Transform your saving goals into delightful adventures with our charming Pig Banks!</h2>
               <p> Each Pig Bank represents a unique savings goal waiting to be achieved. Work diligently towards your goal to unlock exciting accessories and bring your Pig Bank's dream of becoming a real pig to life!</p>
@@ -59,7 +59,7 @@ function WelcomePage() {
             <div className="header-image" style = {{marginTop: 100}}>
             <img src="images/money_pig.png" alt="money_pig"/>
             </div>
-              </ScrollAnimation>
+
 
            </div>
 
