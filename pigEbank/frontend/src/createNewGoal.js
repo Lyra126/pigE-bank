@@ -48,8 +48,8 @@ function CreateNewGoal() {
                                 onChange={e => setGoalAmount(e.target.value)} required/>
                         </div>
                       
-                        <button className='btn btn-success'>Submit</button>
-                        <Link to = "/calculator" className='btn btn-outline-success' style ={{objectPosition: "center", minWidth: 300}}>Calculator</Link>
+                        <button className='btn-goal'>Submit</button>
+                        <Link to = "/calculator" className='btn-goal' style ={{objectPosition: "center", minWidth: 300}}>Calculator</Link>
                     </form>
                 </div>
             </div>

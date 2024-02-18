@@ -1,0 +1,17 @@
+.btn-goal {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #1b9140;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+.btn-goal:hover {
+    background-color: #26c480;
+}
