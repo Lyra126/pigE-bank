@@ -44,7 +44,7 @@ public class AccountController {
         return accountService.addAccount(account);
     }
 
-    @PutMapping
+    @PutMapping("/updateAll")
     public Account updateAccountAll(@RequestBody Account account) {
         return accountService.updateAccountAll(account);
     }
