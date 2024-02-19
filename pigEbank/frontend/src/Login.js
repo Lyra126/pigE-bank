@@ -1,13 +1,22 @@
-import React, { useState } from 'react'; // Import useState from React
-import './Login.css'; // Importing Login specific css
+import React, { useState, useEffect } from 'react';
+import './Login.css';
 import './bootstrap/dist/css/bootstrap.min.css';
-import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function Login() {
-    const [username, setUsername] = useState(''); // Define username state
-    const [password, setPassword] = useState(''); // Define password state
-    const navigate = useNavigate(); // Get the navigate function
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setErrorMessage('');
+        }, 30000); // Hides the error message after 30 seconds
+
+        return () => clearTimeout(timer);
+    }, [errorMessage]);
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -19,14 +28,13 @@ function Login() {
                     navigate('/dashboard');
                     document.cookie = `username=${authenticatedUser.username}`;
                 } else {
-                    alert("Login failed. Invalid username or password.");
+                    setErrorMessage("Login failed. Invalid username or password.");
                 }
             })
             .catch(error => {
-                alert("An error occurred while fetching user data. Please try again later.", error);
+                setErrorMessage("An error occurred while fetching user data. Please try again later.");
             });
     }
-    
 
     return (
         <div>
@@ -46,9 +54,7 @@ function Login() {
                 </div>
             </nav>
 
-            {/* Main Login Stuff */}
             <div className='d-flex flex-column vh-100 justify-content-center align-items-center'>
-                {/* Login Message */}
                 <h1 className="p-8 text-center login_title_message" style={{ marginTop: 10 }}> Howdy! Great to see you again!</h1>
                 <div className='p-3 login_box'>
                     <form onSubmit={handleSubmit}>
@@ -66,14 +72,12 @@ function Login() {
                         </div>
                         <div className='d-flex flex-column'>
                             <button className='btn btn-success' style={{ fontFamily: 'DM_Sans-Medium', objectPosition: "center", minWidth: 300 }}>Login</button>
-                            {/* If username/password is incorrect */}
-                            <text style={{ fontSize: 12, marginTop: 4, color: "red", textAlign: 'center', visibility: 'hidden' }}>Your username or password is incorrect. Please try again.</text>
-                            <text style={{ marginTop: 20, marginLeft: 60, marginBottom: 5 }}>No account? Make one today!</text>
+                            <p style={{ fontSize: 12, marginTop: 4, color: "red", textAlign: 'center', visibility: errorMessage ? 'visible' : 'hidden' }}>{errorMessage}</p>
+                            <p style={{ marginTop: 20, marginLeft: 60, marginBottom: 5 }}>No account? Make one today!</p>
                             <Link to="/createAccount" className='btn btn-outline-success' style={{ objectPosition: "center", minWidth: 300 }}>Create an Account</Link>
                         </div>
                     </form>
                 </div>
-
             </div>
         </div>
     )
