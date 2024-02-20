@@ -11,6 +11,10 @@ function CreateNewGoal() {
       
   }
 
+  const logout = () => {
+    document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+  };
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg">
@@ -26,6 +30,9 @@ function CreateNewGoal() {
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/profile"> Profile</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/" onClick={logout}>Log Out</Link>
                             </li>
                         </ul>
                     </div>

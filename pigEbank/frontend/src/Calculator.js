@@ -31,6 +31,11 @@ function Calculator() {
         clearVariablesAndMessage();
     }, [location.pathname]);
 
+    const logout = () => {
+        document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    };
+    
+
     return (
         <div className='bg'>
             <nav className="navbar navbar-expand-lg">
@@ -45,7 +50,7 @@ function Calculator() {
                                 <Link className="nav-link" to="/dashboard"> Dashboard</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/">Log Out</Link>
+                                <Link className="nav-link" to="/" onClick={logout}>Log Out</Link>
                             </li>
                         </ul>
                     </div>
