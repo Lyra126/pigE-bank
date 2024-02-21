@@ -55,7 +55,7 @@ function Dashboard() {
               {index < numberOfGoals ? (
                 <Link to={`/PigInfo/Pig${index + 1}`}>
                   <img src={`images/favicon.ico`} alt={`Pig ${index + 1}`} />
-                  {index === 0 && <div className="overlay">Visit</div>}
+                  {<div className="overlay">Visit</div>}
                 </Link>
               ) : index === numberOfGoals ? (
                 <Link to={`/createNewGoal`}>

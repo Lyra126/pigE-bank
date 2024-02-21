@@ -76,7 +76,7 @@ function Aboutus() {
           <div className="developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, width: 280}}>
             <h2 style = {{fontFamily: "DM_Sans-Medium", marginTop: 20}}>Michael Knauf</h2>
             <img src="images/michael.png" alt="luxray"  width="200" height="200" className = "developer-img"/>
-            <p style ={{margin: 15}}>Hi! I'm Michael Knauf, and I'm a 2nd year Computer Science major at UF.</p>
+            <p style ={{margin: 15}}>Hi! I'm Michael Knauf, and I'm a 2nd year Computer Engineering major at UF.</p>
             <section className = "socials">
             <a href="https://instagram.com"><img src = "images/instagram_logo.png" width="50" height="50"/></a>
             <a href="https://linkedIn.com"><img src = "images/linkedIn_logo.png" width="40" height="40"/></a>
