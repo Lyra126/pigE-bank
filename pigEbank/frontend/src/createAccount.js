@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
-import './createAccount.css'; // Import CSS file for custom styles
+import './createAccount.css';
 
 function CreateAccount() {
     const [firstName, setFirstName] = useState('');
@@ -34,9 +35,6 @@ function CreateAccount() {
                     <ul className="navbar-nav ms-auto">
                     <li className="nav-item">
                         <a className="nav-link" href="Aboutus">About Us</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="Login">Login</a>
                     </li>
                     </ul>
                 </div>
@@ -78,6 +76,7 @@ function CreateAccount() {
                                 onChange={e => setConfPassword(e.target.value)} required/>
                         </div>
                         <button className='btn btn-success'>Create Account</button>
+                        <Link className='btn btn-success' to='/login'>Already have an Account?</Link>
                     </form>
                 </div>
             </div>

@@ -1,3 +1,9 @@
+.top-div2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 200px;
+}
+
 .btn-goal {
     padding: 10px;
     font-size: 16px;

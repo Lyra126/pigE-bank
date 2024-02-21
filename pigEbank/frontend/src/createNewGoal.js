@@ -39,7 +39,7 @@ function CreateNewGoal() {
                 </div>
             </nav>
 
-            <div className="top-div">
+            <div className="top-div2">
                 <div className="create-account-container box_shadow">
                     <h1 className="text-center mb-4" style = {{marginTop: 20, fontFamily: "Poppins-SemiBold", paddingBottom: 10}}>Create a New Goal</h1>
                     <p className = "text-center" style = {{marginTop: -20}}>Add a new pig to your stables!</p>
