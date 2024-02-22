@@ -4,6 +4,7 @@ import axios from 'axios';
 import './createAccount.css';
 
 function CreateAccount() {
+    const [email, setEmail] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [username, setUsername] = useState('');
@@ -21,7 +22,7 @@ function CreateAccount() {
                 //Searching for a similar username can be a hassel bc of how capital and lowercase letters work
                 //Putting the username in lowercase removes any captial letters a user may want -> iAmAUser vs iamauser
                     //Solution -> lowercase only or have another attribute for username or use unique emails instead
-        axios.post("/accounts/newAccount", {firstName: firstName, lastName: lastName, username: username, password: password, numOfGoals: 0})
+        axios.post("/accounts/newAccount", {firstName: firstName, lastName: lastName, email: email, username: username, password: password, numOfGoals: 0})
             .then(res => console.log(res))
             .catch(err => console.log(err));
     }
@@ -57,6 +58,11 @@ function CreateAccount() {
                             <label htmlFor='lastName'>Last Name</label>
                             <input type='text' placeholder='Enter your last name' className='form-control'
                                 onChange={e => setLastName(e.target.value)} required/>
+                        </div>
+                        <div className='input-field'>
+                            <label htmlFor='email'>Email</label>
+                            <input type='text' placeholder='Enter your email' className='form-control'
+                                onChange={e => setEmail(e.target.value)} required/>
                         </div>
                         <div className='input-field'>
                             <label htmlFor='username'>Username</label>

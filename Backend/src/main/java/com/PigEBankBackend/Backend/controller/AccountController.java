@@ -35,7 +35,7 @@ public class AccountController {
 
     @GetMapping("/{username}/fullName")
     ResponseEntity<String> getAccountFullName(@PathVariable String username) {
-        return  new ResponseEntity<String>(accountService.getAccountFullName(username), HttpStatus.OK);
+        return new ResponseEntity<String>(accountService.getAccountFullName(username), HttpStatus.OK);
     }
 
     @PostMapping("/newAccount")

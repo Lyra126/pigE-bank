@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function Login() {
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
@@ -23,12 +23,13 @@ function Login() {
         axios.get('/accounts')
             .then(response => {
                 const users = response.data;
-                const authenticatedUser = users.find(user => user.username === username && user.password === password);
+                const authenticatedUser = users.find(user => user.email === email && user.password === password);
                 if (authenticatedUser) {
                     navigate('/dashboard');
                     document.cookie = `username=${authenticatedUser.username}`;
+                    document.cookie = `email=${authenticatedUser.email}`
                 } else {
-                    setErrorMessage("Login failed. Invalid username or password.");
+                    setErrorMessage("Login failed. Invalid email or password.");
                 }
             })
             .catch(error => {
@@ -61,9 +62,9 @@ function Login() {
                         {/* Logo Image */}
                         <img src="images/favicon.ico" alt="pig" className="login_piggy" />
                         <div className='mb-3'>
-                            <label htmlFor='username' style={{ fontFamily: 'DM_Sans-Medium' }}>Username</label>
-                            <input type='username' placeholder='Enter Username' className='form-control'
-                                onChange={e => setUsername(e.target.value)} />
+                            <label htmlFor='email' style={{ fontFamily: 'DM_Sans-Medium' }}>Email</label>
+                            <input type='email' placeholder='Enter Email' className='form-control'
+                                onChange={e => setEmail(e.target.value)} />
                         </div>
                         <div className='mb-3'>
                             <label htmlFor='password' style={{ fontFamily: 'DM_Sans-Medium' }}>Password</label>
