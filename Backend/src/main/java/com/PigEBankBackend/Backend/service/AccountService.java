@@ -64,7 +64,7 @@ public class AccountService {
 
     public String updateAccountPassword(Account account) {
         Query query = new Query();
-        query.addCriteria(Criteria.where("username").is(account.getUsername()));
+        query.addCriteria(Criteria.where("email").is(account.getEmail()));
 
         Update update = new Update().set("password", account.getPassword());
         UpdateResult updateResult = mongoTemplate.updateFirst(query, update, Account.class);
@@ -73,7 +73,7 @@ public class AccountService {
 
     public String updateAccountNumOfGoals(Account account) {
         Query query = new Query();
-        query.addCriteria(Criteria.where("username").is(account.getUsername()));
+        query.addCriteria(Criteria.where("email").is(account.getEmail()));
 
         Update update = new Update().set("numOfGoals", account.getNumOfGoals());
         UpdateResult updateResult = mongoTemplate.updateFirst(query, update, Account.class);
@@ -83,11 +83,22 @@ public class AccountService {
     public String updateAccountFirstName(Account account) {
 
         Query query = new Query();
-        query.addCriteria(Criteria.where("username").is(account.getUsername()));
+        query.addCriteria(Criteria.where("email").is(account.getEmail()));
 
         Update update = new Update().set("firstName", account.getFirstName());
         UpdateResult updateResult = mongoTemplate.updateFirst(query, update, Account.class);
 
         return "Updated firstName: " + updateResult.getMatchedCount();
+    }
+
+    public String updateAccountUsername(Account account) {
+
+        Query query = new Query();
+        query.addCriteria(Criteria.where("email").is(account.getEmail()));
+
+        Update update = new Update().set("username", account.getUsername());
+        UpdateResult updateResult = mongoTemplate.updateFirst(query, update, Account.class);
+
+        return "Updated username: " + updateResult.getMatchedCount();
     }
 }

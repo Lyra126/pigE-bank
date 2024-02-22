@@ -9,6 +9,7 @@ import Dashboard from './Dashboard';
 import PigInfo from './PigInfo';
 import Profile from './Profile';
 import Calculator from './Calculator';
+import Settings from './Settings';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/createNewGoal" element={<CreateNewGoal />} />
           <Route path="/Profile" element={<Profile />} />
           <Route path="/calculator" element={<Calculator />} />
+          <Route path="/settings" element={<Settings />} />
         </Routes>
       </Router>
     </div>

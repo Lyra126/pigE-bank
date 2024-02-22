@@ -9,7 +9,8 @@ function Profile() {
     const [numberOfGoals, setNumberOfGoals] = useState(0);
     const [showPassword, setShowPassword] = useState(false);
     const [totalCurrency, setTotalCurrency] = useState(100);
-    const [accountCreationDate, setCreationDate] = useState('Feb 8th');
+    const [accountCreationDate, setCreationDate] = useState('');
+    const [email, setEmail]  = useState('');
 
     // Function to toggle password visibility
     const togglePasswordVisibility = () => {
@@ -25,6 +26,8 @@ function Profile() {
                     setUsername(user.username);
                     setPassword(user.password);
                     setNumberOfGoals(user.numOfGoals);
+                    setCreationDate(user.creation);
+                    setEmail(user.email);
                 }
             })
             .catch(error => {
@@ -62,6 +65,7 @@ function Profile() {
                     <h1 className="p-8 text-center login_title_message" style={{ marginTop: 10 }}>Welcome Back {username}!</h1>
                     <div className='p-3'>
                     <p>Username: {username}</p>
+                    <p>Email: {email}</p>
 
                         
                         <div className='mb-3'>
