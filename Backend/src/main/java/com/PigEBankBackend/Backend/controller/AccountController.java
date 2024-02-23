@@ -69,9 +69,9 @@ public class AccountController {
         return new ResponseEntity<String>(accountService.updateAccountUsername(account), HttpStatus.OK);
     }
 
-    @DeleteMapping("/remove/{username}")
-    public String deleteAccount(@PathVariable String username) {
-        return accountService.deleteAccount(username);
+    @DeleteMapping("/deleteAccount/{email}")
+    public ResponseEntity<String> deleteAccount(@PathVariable String email) {
+        return new ResponseEntity<String>(accountService.deleteAccount(email), HttpStatus.OK);
     }
 
 }

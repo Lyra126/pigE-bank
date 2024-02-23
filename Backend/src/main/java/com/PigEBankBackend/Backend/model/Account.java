@@ -27,6 +27,7 @@ public class Account {
     //Find out how to encrypt
     private String password;
     private int numOfGoals;
+    private int totalSavings;
 
     private LocalDate creation;
 
