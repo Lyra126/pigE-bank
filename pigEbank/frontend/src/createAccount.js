@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './createAccount.css';
 
@@ -9,21 +9,31 @@ function CreateAccount() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [confPassword, setConfPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+    const navigate = useNavigate();
 
     function handleSubmit(event) {
         event.preventDefault();
-        // Add data validation and other checks here
         const user={firstName, lastName, username}
         console.log(user)
 
-        //To make sure another doesn't have the same username, should there be a function that checks before adding it into the database?
-            //Problems w/ making unique usernames
-                //Searching for a similar username can be a hassel bc of how capital and lowercase letters work
-                //Putting the username in lowercase removes any captial letters a user may want -> iAmAUser vs iamauser
-                    //Solution -> lowercase only or have another attribute for username or use unique emails instead
-        axios.post("/accounts/newAccount", {firstName: firstName, lastName: lastName, username: username, password: password, numOfGoals: 0})
-            .then(res => console.log(res))
-            .catch(err => console.log(err));
+        if(password!=confPassword){
+            setErrorMessage("Error: Passwords don't match.");
+        } else{
+
+            //To make sure another doesn't have the same username, should there be a function that checks before adding it into the database?
+                //Problems w/ making unique usernames
+                    //Searching for a similar username can be a hassel bc of how capital and lowercase letters work
+                    //Putting the username in lowercase removes any captial letters a user may want -> iAmAUser vs iamauser
+                        //Solution -> lowercase only or have another attribute for username or use unique emails instead
+            axios.post("/accounts/newAccount", {firstName: firstName, lastName: lastName, username: username, password: password, numOfGoals: 0})
+                .then(res => {
+                    console.log(res);       
+                    document.cookie = `username=${username}`;             
+                    navigate('/dashboard');
+                })
+                .catch(err => console.log(err));    
+        }
     }
 
     return (
@@ -75,6 +85,7 @@ function CreateAccount() {
                             <input type='password' placeholder='Confirm Password' className='form-control'
                                 onChange={e => setConfPassword(e.target.value)} required/>
                         </div>
+                        <p style={{ fontSize: 20, marginTop: 4, color: "red", textAlign: 'center', fontFamily: 'DM_Sans-SemiBold', visibility: errorMessage ? 'visible' : 'hidden' }}>{errorMessage}</p>
                         <button className='btn btn-success'>Create Account</button>
                         <Link className='btn btn-success' to='/login'>Already have an Account?</Link>
                     </form>

@@ -19,7 +19,7 @@ function CreateNewGoal() {
         <div>
             <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid">
-                    <Link className="navbar-brand" to="/">Pig E-Bank</Link>
+                    <Link className="navbar-brand" to="/dashboard">Pig E-Bank</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -56,7 +56,7 @@ function CreateNewGoal() {
                         </div>
                       
                         <button className='btn-goal'>Submit</button>
-                        <Link to = "/calculator" className='btn-goal' style ={{objectPosition: "center", minWidth: 300}}>Calculator</Link>
+                        
                     </form>
                 </div>
             </div>
