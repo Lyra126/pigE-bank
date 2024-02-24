@@ -22,10 +22,12 @@ public class Account {
     private String username;
     private String firstName;
     private String lastName;
+    private String email;
 
     //Find out how to encrypt
     private String password;
     private int numOfGoals;
+    private int totalSavings;
 
     private LocalDate creation;
 

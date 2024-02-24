@@ -35,7 +35,7 @@ public class AccountController {
 
     @GetMapping("/{username}/fullName")
     ResponseEntity<String> getAccountFullName(@PathVariable String username) {
-        return  new ResponseEntity<String>(accountService.getAccountFullName(username), HttpStatus.OK);
+        return new ResponseEntity<String>(accountService.getAccountFullName(username), HttpStatus.OK);
     }
 
     @PostMapping("/newAccount")
@@ -64,9 +64,14 @@ public class AccountController {
         return new ResponseEntity<String>(accountService.updateAccountFirstName(account), HttpStatus.OK);
     }
 
-    @DeleteMapping("/remove/{username}")
-    public String deleteAccount(@PathVariable String username) {
-        return accountService.deleteAccount(username);
+    @PutMapping("/updateUsername")
+    public ResponseEntity<String> updateAccountUsername(@RequestBody Account account) {
+        return new ResponseEntity<String>(accountService.updateAccountUsername(account), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/deleteAccount/{email}")
+    public ResponseEntity<String> deleteAccount(@PathVariable String email) {
+        return new ResponseEntity<String>(accountService.deleteAccount(email), HttpStatus.OK);
     }
 
 }

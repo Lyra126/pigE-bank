@@ -4,6 +4,7 @@ import axios from 'axios';
 import './createAccount.css';
 
 function CreateAccount() {
+    const [email, setEmail] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [username, setUsername] = useState('');
@@ -36,6 +37,7 @@ function CreateAccount() {
         }
     }
 
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg">
@@ -67,6 +69,11 @@ function CreateAccount() {
                             <label htmlFor='lastName'>Last Name</label>
                             <input type='text' placeholder='Enter your last name' className='form-control'
                                 onChange={e => setLastName(e.target.value)} required/>
+                        </div>
+                        <div className='input-field'>
+                            <label htmlFor='email'>Email</label>
+                            <input type='text' placeholder='Enter your email' className='form-control'
+                                onChange={e => setEmail(e.target.value)} required/>
                         </div>
                         <div className='input-field'>
                             <label htmlFor='username'>Username</label>
