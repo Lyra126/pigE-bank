@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import './Login.css';
+import './AccountRecovery.css';
 import './bootstrap/dist/css/bootstrap.min.css';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-function Login() {
+function AccountRecovery() {
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [username, setUsername] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
 
@@ -23,13 +23,12 @@ function Login() {
         axios.get('/accounts')
             .then(response => {
                 const users = response.data;
-                const authenticatedUser = users.find(user => user.email === email && user.password === password);
+                const authenticatedUser = users.find(user => user.email === email && user.username === username);
                 if (authenticatedUser) {
-                    navigate('/dashboard');
-                    document.cookie = `username=${authenticatedUser.username}`;
-                    document.cookie = `email=${authenticatedUser.email}`
+                    navigate('/resetPassword');
+                    document.cookie = `tempEmail=${authenticatedUser.email}`
                 } else {
-                    setErrorMessage("Login failed. Invalid email or password.");
+                    setErrorMessage("Invalid Email and/or username");
                 }
             })
             .catch(error => {
@@ -56,7 +55,7 @@ function Login() {
             </nav>
 
             <div className='d-flex flex-column vh-100 justify-content-center align-items-center'>
-                <h1 className="p-8 text-center login_title_message" style={{ marginTop: 10 }}> Howdy! Great to see you again!</h1>
+                <h1 className="p-8 text-center login_title_message" style={{ marginTop: 10 }}>Account Recovery</h1>
                 <div className='p-3 login_box'>
                     <form onSubmit={handleSubmit}>
                         {/* Logo Image */}
@@ -67,16 +66,13 @@ function Login() {
                                 onChange={e => setEmail(e.target.value)} />
                         </div>
                         <div className='mb-3'>
-                            <label htmlFor='password' style={{ fontFamily: 'DM_Sans-Medium' }}>Password</label>
-                            <input type='password' placeholder='Enter Password' className='form-control'
-                                onChange={e => setPassword(e.target.value)} />
-                            <Link to="/accountRecovery" style={{ objectPosition: "center", minWidth: 300 }}>Forgot Password</Link>
+                            <label htmlFor='username' style={{ fontFamily: 'DM_Sans-Medium' }}>Username</label>
+                            <input type='username' placeholder='Enter Username' className='form-control'
+                                onChange={e => setUsername(e.target.value)} />
                         </div>
                         <div className='d-flex flex-column'>
-                            <button className='btn btn-success' style={{ fontFamily: 'DM_Sans-Medium', objectPosition: "center", minWidth: 300 }}>Login</button>
+                            <button className='btn btn-success' style={{ fontFamily: 'DM_Sans-Medium', objectPosition: "center", minWidth: 300 }}>Find account</button>
                             <p style={{ fontSize: 12, marginTop: 4, color: "red", textAlign: 'center', visibility: errorMessage ? 'visible' : 'hidden' }}>{errorMessage}</p>
-                            <p style={{ marginTop: 20, marginLeft: 60, marginBottom: 5 }}>No account? Make one today!</p>
-                            <Link to="/createAccount" className='btn btn-outline-success' style={{ objectPosition: "center", minWidth: 300 }}>Create an Account</Link>
                         </div>
                     </form>
                 </div>
@@ -85,4 +81,4 @@ function Login() {
     )
 }
 
-export default Login;
+export default AccountRecovery;
