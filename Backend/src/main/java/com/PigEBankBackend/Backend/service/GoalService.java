@@ -28,6 +28,7 @@ public class GoalService {
     }
 
     public Goal addGoal(Goal goal) {
+
         //Create the goal
         goal.setId(new ObjectId());
         goal.setCreation(LocalDate.now());

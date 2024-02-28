@@ -13,6 +13,7 @@ import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -39,6 +40,21 @@ public class AccountService {
     public String getAccountFullName(String username) {
         Account current = accountRepository.findAccountByUsername(username).get();
         return current.getFirstName() + " " + current.getLastName();
+    }
+
+    public List<Goal> getAllGoals(Account account) {
+        Query findAccount = new Query();
+        findAccount.addCriteria(Criteria.where("email").is(account.getEmail()));
+        List<Account> user = mongoTemplate.find(findAccount, Account.class);
+
+        List<Goal> goals = new ArrayList<>();
+        for(int i = 0; i < user.get(0).getGoalsID().size(); i++) {
+            //Find the goals associated with the account
+            Query findGoal = new Query();
+            findGoal.addCriteria(Criteria.where("id").is(user.get(0).getGoalsID().get(i)));
+            goals.add(mongoTemplate.find(findGoal, Goal.class).getFirst());
+        }
+        return goals;
     }
 
     public String updateTotalSavings(Account account) {

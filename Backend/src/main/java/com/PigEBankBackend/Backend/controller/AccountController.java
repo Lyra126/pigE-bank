@@ -1,6 +1,7 @@
 package com.PigEBankBackend.Backend.controller;
 
 import com.PigEBankBackend.Backend.model.Account;
+import com.PigEBankBackend.Backend.model.Goal;
 import com.PigEBankBackend.Backend.service.AccountService;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,11 @@ public class AccountController {
     @GetMapping("/{username}/fullName")
     ResponseEntity<String> getAccountFullName(@PathVariable String username) {
         return new ResponseEntity<String>(accountService.getAccountFullName(username), HttpStatus.OK);
+    }
+
+    @GetMapping("/allGoals")
+    ResponseEntity<List<Goal>> getAccountFullName(@RequestBody Account account) {
+        return new ResponseEntity<List<Goal>>(accountService.getAllGoals(account), HttpStatus.OK);
     }
 
     @PutMapping("/updateTotalSavings")
