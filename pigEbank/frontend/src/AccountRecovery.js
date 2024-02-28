@@ -20,6 +20,7 @@ function AccountRecovery() {
 
     function handleSubmit(event) {
         event.preventDefault();
+
         axios.get('/accounts')
             .then(response => {
                 const users = response.data;

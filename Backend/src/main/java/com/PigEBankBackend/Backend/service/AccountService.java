@@ -4,7 +4,6 @@ import com.PigEBankBackend.Backend.model.Account;
 import com.PigEBankBackend.Backend.model.Goal;
 import com.PigEBankBackend.Backend.repository.AccountRepository;
 import com.mongodb.client.result.UpdateResult;
-import com.mongodb.internal.bulk.UpdateRequest;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -16,7 +15,6 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @Service
 public class AccountService {
@@ -43,7 +41,7 @@ public class AccountService {
         return current.getFirstName() + " " + current.getLastName();
     }
 
-    public String getTotalSavings(Account account) {
+    public String updateTotalSavings(Account account) {
         //FIXME May become obsolete if the goal class updates this value instead
         //Find account with the email
         Query findAccount = new Query();

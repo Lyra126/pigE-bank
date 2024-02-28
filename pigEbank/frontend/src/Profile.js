@@ -18,10 +18,15 @@ function Profile() {
     };
 
     useEffect(() => {
-        const username = document.cookie.split('; ').find(row => row.startsWith('username=')).split('=')[1];
+        const email = document.cookie.split('; ').find(row => row.startsWith('email=')).split('=')[1];
+
+        axios.put("/accounts/updateTotalSavings", {email: email})
+            .then(res => console.log(res))
+            .catch(err => console.log(err));
+
         axios.get('/accounts')
             .then(response => {
-                const user = response.data.find(user => user.username === username);
+                const user = response.data.find(user => user.email === email);
                 if (user) {
                     setUsername(user.username);
                     setPassword(user.password);

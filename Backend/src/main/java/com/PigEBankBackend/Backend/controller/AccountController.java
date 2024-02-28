@@ -9,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -38,9 +37,9 @@ public class AccountController {
         return new ResponseEntity<String>(accountService.getAccountFullName(username), HttpStatus.OK);
     }
 
-    @GetMapping("/getTotalSavings")
-    ResponseEntity<String> getAccountTotalSavings(@RequestBody Account account) {
-        return new ResponseEntity<String>(accountService.getTotalSavings(account), HttpStatus.OK);
+    @PutMapping("/updateTotalSavings")
+    ResponseEntity<String> updateAccountTotalSavings(@RequestBody Account account) {
+        return new ResponseEntity<String>(accountService.updateTotalSavings(account), HttpStatus.OK);
     }
 
     @PostMapping("/newAccount")
