@@ -57,15 +57,16 @@ function Settings() {
         <div className='d-flex flex-column vh-100 justify-content-center align-items-center'>
             <div className="container-fluid bg-white py-4"> 
                 <h1 className="p-8 text-center login_title_message" style={{ marginTop: 10 }}>Settings</h1>
-                <button className="open-modal" onClick={() => {setPasswordModalOpen(true);}}> Change Password </button>
+
+                <p><button className="btn open-modal" onClick={() => {setPasswordModalOpen(true);}}> Change Password </button></p>
                 {passwordModalOpen && <PasswordModal setOpenPasswordModal={setPasswordModalOpen} />}
 
                 <p></p>
-                <p><button className="open-modal" onClick={() => {setUsernameModalOpen(true);}}> Change Username </button></p>
+                <p><button className="btn open-modal" onClick={() => {setUsernameModalOpen(true);}}> Change Username </button></p>
                 {usernameModalOpen && <UsernameModal setOpenUsernameModal={setUsernameModalOpen} />}
 
                 <p></p>
-                <p> <button className="delete-btn" onClick={()=> {deleteAccount(email)}}> Delete Account </button></p>
+                <p> <button className="btn delete-btn" onClick={()=> {deleteAccount(email)}}> Delete Account </button></p>
 
             </div>
         </div>
