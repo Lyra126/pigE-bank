@@ -73,6 +73,7 @@ function Profile() {
                             <button className='btn btn-success' style={{ fontFamily: 'DM_Sans-Medium', objectPosition: "center", minWidth: 300 }} onClick={togglePasswordVisibility}>
                                 {showPassword ? 'Hide Password' : 'Show Password'}
                             </button>
+                            <Link to="/settings" style={{ objectPosition: "center", minWidth: 300 }}>Settings</Link>
                         </div>
                         
                     </div>

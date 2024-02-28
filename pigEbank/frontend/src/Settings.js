@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';import './Settings.css';
+import { Link, useNavigate } from 'react-router-dom';
+import './Settings.css';
 import axios from 'axios';
 import PasswordModal from "./update/updatePassword";
 import UsernameModal from "./update/updateUsername";
@@ -41,6 +42,9 @@ function Settings() {
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item">
                             <Link className="nav-link" to="/dashboard"> Dashboard</Link>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="/Profile">Profile</a>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/" onClick={logout}>Log Out</Link>

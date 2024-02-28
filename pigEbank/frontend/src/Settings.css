@@ -19,7 +19,7 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
     margin: 20px auto; /* Center the box and add margin on top and bottom */
-    max-width: 200px; /* Set max-width to limit the width of the box */
+    max-width: 600px; /* Set max-width to limit the width of the box */
     padding: 20px; /* Add padding inside the box */
 }
 
