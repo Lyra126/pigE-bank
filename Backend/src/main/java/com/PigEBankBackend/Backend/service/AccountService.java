@@ -44,11 +44,28 @@ public class AccountService {
     }
 
     public String getTotalSavings(Account account) {
-        //Find all goals
-        //Add up each value
-        //For loop?
+        //FIXME May become obsolete if the goal class updates this value instead
+        //Find account with the email
+        Query findAccount = new Query();
+        findAccount.addCriteria(Criteria.where("email").is(account.getEmail()));
+        List<Account> user = mongoTemplate.find(findAccount, Account.class);
 
-        return "0";
+        //Get the total savings
+        int totalSavings = 0;
+        for(int i = 0; i < user.get(0).getGoalsID().size(); i++) {
+            //Find the goals associated with the account
+            Query findGoal = new Query();
+            findGoal.addCriteria(Criteria.where("id").is(user.get(0).getGoalsID().get(i)));
+            List<Goal> goals = mongoTemplate.find(findGoal, Goal.class);
+
+            totalSavings += goals.getFirst().getCurrentSavings();
+        }
+
+        Update update = new Update().set("totalSavings", totalSavings);
+        UpdateResult updateResult = mongoTemplate.updateFirst(findAccount, update, Account.class);
+
+        String totalSavingsString = Integer.toString(totalSavings);
+        return "Updated totalSavings: " + updateResult.getMatchedCount() + "\ntotal = "+totalSavingsString;
     }
     public Account addAccount(Account account) {
         account.setId(new ObjectId());

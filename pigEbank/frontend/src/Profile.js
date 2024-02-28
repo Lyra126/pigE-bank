@@ -8,7 +8,7 @@ function Profile() {
     const [password, setPassword] = useState('');
     const [numberOfGoals, setNumberOfGoals] = useState(0);
     const [showPassword, setShowPassword] = useState(false);
-    const [totalCurrency, setTotalCurrency] = useState(100);
+    const [totalCurrency, setTotalCurrency] = useState('0');
     const [accountCreationDate, setCreationDate] = useState('');
     const [email, setEmail]  = useState('');
 
@@ -28,6 +28,7 @@ function Profile() {
                     setNumberOfGoals(user.numOfGoals);
                     setCreationDate(user.creation);
                     setEmail(user.email);
+                    setTotalCurrency(user.totalSavings)
                 }
             })
             .catch(error => {

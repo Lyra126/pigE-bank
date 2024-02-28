@@ -30,12 +30,17 @@ public class AccountController {
 
     @GetMapping("/{username}/id")
     ResponseEntity<ObjectId> getAccountID(@PathVariable String username) {
-        return  new ResponseEntity<ObjectId>(accountService.getAccountID(username), HttpStatus.OK);
+        return new ResponseEntity<ObjectId>(accountService.getAccountID(username), HttpStatus.OK);
     }
 
     @GetMapping("/{username}/fullName")
     ResponseEntity<String> getAccountFullName(@PathVariable String username) {
         return new ResponseEntity<String>(accountService.getAccountFullName(username), HttpStatus.OK);
+    }
+
+    @GetMapping("/getTotalSavings")
+    ResponseEntity<String> getAccountTotalSavings(@RequestBody Account account) {
+        return new ResponseEntity<String>(accountService.getTotalSavings(account), HttpStatus.OK);
     }
 
     @PostMapping("/newAccount")
