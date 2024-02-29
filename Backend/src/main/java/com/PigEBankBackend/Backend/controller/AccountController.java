@@ -1,6 +1,7 @@
 package com.PigEBankBackend.Backend.controller;
 
 import com.PigEBankBackend.Backend.model.Account;
+import com.PigEBankBackend.Backend.model.Goal;
 import com.PigEBankBackend.Backend.service.AccountService;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -30,12 +30,22 @@ public class AccountController {
 
     @GetMapping("/{username}/id")
     ResponseEntity<ObjectId> getAccountID(@PathVariable String username) {
-        return  new ResponseEntity<ObjectId>(accountService.getAccountID(username), HttpStatus.OK);
+        return new ResponseEntity<ObjectId>(accountService.getAccountID(username), HttpStatus.OK);
     }
 
     @GetMapping("/{username}/fullName")
     ResponseEntity<String> getAccountFullName(@PathVariable String username) {
         return new ResponseEntity<String>(accountService.getAccountFullName(username), HttpStatus.OK);
+    }
+
+    @GetMapping("/allGoals")
+    ResponseEntity<List<Goal>> getAccountFullName(@RequestBody Account account) {
+        return new ResponseEntity<List<Goal>>(accountService.getAllGoals(account), HttpStatus.OK);
+    }
+
+    @PutMapping("/updateTotalSavings")
+    ResponseEntity<String> updateAccountTotalSavings(@RequestBody Account account) {
+        return new ResponseEntity<String>(accountService.updateTotalSavings(account), HttpStatus.OK);
     }
 
     @PostMapping("/newAccount")
@@ -69,9 +79,9 @@ public class AccountController {
         return new ResponseEntity<String>(accountService.updateAccountUsername(account), HttpStatus.OK);
     }
 
-    @DeleteMapping("/remove/{username}")
-    public String deleteAccount(@PathVariable String username) {
-        return accountService.deleteAccount(username);
+    @DeleteMapping("/deleteAccount/{email}")
+    public ResponseEntity<String> deleteAccount(@PathVariable String email) {
+        return new ResponseEntity<String>(accountService.deleteAccount(email), HttpStatus.OK);
     }
 
 }

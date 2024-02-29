@@ -37,9 +37,6 @@ function Dashboard() {
                 <a className="nav-link" href="/Profile">Profile</a>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/createNewGoal"> Create New Goal</Link>
-              </li>
-              <li className="nav-item">
                   <Link className="nav-link" to="/" onClick={logout}>Log Out</Link>
               </li>
             </ul>

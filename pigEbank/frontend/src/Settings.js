@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Settings.css';
 import axios from 'axios';
 import PasswordModal from "./update/updatePassword";
@@ -8,17 +8,23 @@ import UsernameModal from "./update/updateUsername";
 function Settings() {
     const [passwordModalOpen, setPasswordModalOpen] = useState(false);
     const [usernameModalOpen, setUsernameModalOpen] = useState(false);
+    const navigate = useNavigate();
+    const email = document.cookie.split('; ').find(row => row.startsWith('email=')).split('=')[1];
     // Function to toggle password visibility
 
-    useEffect(() => {
-        axios.get('/accounts')
-            .then(response => {
-               console.log('yep')
-            })
-            .catch(error => {
-                console.error('Error fetching user data:', error);
-            });
-    }, []);
+    const deleteAccount = (email) => {
+        var url = "/accounts/deleteAccount/" + email
+        console.log(email);
+        axios.delete(url)
+        .then(response => {
+            navigate('/');
+        })
+        .catch(error => {
+            console.log("Could not delete Account.");
+        });
+       
+        
+    }
 
     const logout = () => {
         document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
@@ -38,6 +44,9 @@ function Settings() {
                             <Link className="nav-link" to="/dashboard"> Dashboard</Link>
                         </li>
                         <li className="nav-item">
+                            <a className="nav-link" href="/Profile">Profile</a>
+                        </li>
+                        <li className="nav-item">
                             <Link className="nav-link" to="/" onClick={logout}>Log Out</Link>
                         </li>
                     </ul>
@@ -48,12 +57,16 @@ function Settings() {
         <div className='d-flex flex-column vh-100 justify-content-center align-items-center'>
             <div className="container-fluid bg-white py-4"> 
                 <h1 className="p-8 text-center login_title_message" style={{ marginTop: 10 }}>Settings</h1>
-                <button className="openModalBtn" onClick={() => {setPasswordModalOpen(true);}}> Change Password </button>
+
+                <p><button className="btn open-modal" onClick={() => {setPasswordModalOpen(true);}}> Change Password </button></p>
                 {passwordModalOpen && <PasswordModal setOpenPasswordModal={setPasswordModalOpen} />}
 
                 <p></p>
-                <p><button className="openModalBtn" onClick={() => {setUsernameModalOpen(true);}}> Change Username </button></p>
+                <p><button className="btn open-modal" onClick={() => {setUsernameModalOpen(true);}}> Change Username </button></p>
                 {usernameModalOpen && <UsernameModal setOpenUsernameModal={setUsernameModalOpen} />}
+
+                <p></p>
+                <p> <button className="btn delete-btn" onClick={()=> {deleteAccount(email)}}> Delete Account </button></p>
 
             </div>
         </div>

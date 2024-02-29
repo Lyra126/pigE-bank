@@ -1,9 +1,9 @@
 package com.PigEBankBackend.Backend.service;
 
 import com.PigEBankBackend.Backend.model.Account;
+import com.PigEBankBackend.Backend.model.Goal;
 import com.PigEBankBackend.Backend.repository.AccountRepository;
 import com.mongodb.client.result.UpdateResult;
-import com.mongodb.internal.bulk.UpdateRequest;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -13,9 +13,9 @@ import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @Service
 public class AccountService {
@@ -41,15 +41,58 @@ public class AccountService {
         Account current = accountRepository.findAccountByUsername(username).get();
         return current.getFirstName() + " " + current.getLastName();
     }
+
+    public List<Goal> getAllGoals(Account account) {
+        Query findAccount = new Query();
+        findAccount.addCriteria(Criteria.where("email").is(account.getEmail()));
+        List<Account> user = mongoTemplate.find(findAccount, Account.class);
+
+        List<Goal> goals = new ArrayList<>();
+        for(int i = 0; i < user.get(0).getGoalsID().size(); i++) {
+            //Find the goals associated with the account
+            Query findGoal = new Query();
+            findGoal.addCriteria(Criteria.where("id").is(user.get(0).getGoalsID().get(i)));
+            goals.add(mongoTemplate.find(findGoal, Goal.class).getFirst());
+        }
+        return goals;
+    }
+
+    public String updateTotalSavings(Account account) {
+        //FIXME May become obsolete if the goal class updates this value instead
+        //Find account with the email
+        Query findAccount = new Query();
+        findAccount.addCriteria(Criteria.where("email").is(account.getEmail()));
+        List<Account> user = mongoTemplate.find(findAccount, Account.class);
+
+        //Get the total savings
+        int totalSavings = 0;
+        for(int i = 0; i < user.get(0).getGoalsID().size(); i++) {
+            //Find the goals associated with the account
+            Query findGoal = new Query();
+            findGoal.addCriteria(Criteria.where("id").is(user.get(0).getGoalsID().get(i)));
+            List<Goal> goals = mongoTemplate.find(findGoal, Goal.class);
+
+            totalSavings += goals.getFirst().getCurrentSavings();
+        }
+
+        Update update = new Update().set("totalSavings", totalSavings);
+        UpdateResult updateResult = mongoTemplate.updateFirst(findAccount, update, Account.class);
+
+        String totalSavingsString = Integer.toString(totalSavings);
+        return "Updated totalSavings: " + updateResult.getMatchedCount() + "\ntotal = "+totalSavingsString;
+    }
     public Account addAccount(Account account) {
         account.setId(new ObjectId());
         account.setCreation(LocalDate.now());
         return accountRepository.save(account);
     }
 
-    public String deleteAccount(String username) {
-        accountRepository.deleteById(findAccountByUsername(username).get().getId());
-        return username + " was deleted";
+    public String deleteAccount(String email) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("email").is(email));
+
+        mongoTemplate.remove(query, Account.class);
+        return "Account was deleted";
     }
 
     public Account updateAccountAll(Account account) {

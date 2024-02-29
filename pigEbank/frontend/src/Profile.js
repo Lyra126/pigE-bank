@@ -8,7 +8,7 @@ function Profile() {
     const [password, setPassword] = useState('');
     const [numberOfGoals, setNumberOfGoals] = useState(0);
     const [showPassword, setShowPassword] = useState(false);
-    const [totalCurrency, setTotalCurrency] = useState(100);
+    const [totalCurrency, setTotalCurrency] = useState('0');
     const [accountCreationDate, setCreationDate] = useState('');
     const [email, setEmail]  = useState('');
 
@@ -18,16 +18,22 @@ function Profile() {
     };
 
     useEffect(() => {
-        const username = document.cookie.split('; ').find(row => row.startsWith('username=')).split('=')[1];
+        const email = document.cookie.split('; ').find(row => row.startsWith('email=')).split('=')[1];
+
+        axios.put("/accounts/updateTotalSavings", {email: email})
+            .then(res => console.log(res))
+            .catch(err => console.log(err));
+
         axios.get('/accounts')
             .then(response => {
-                const user = response.data.find(user => user.username === username);
+                const user = response.data.find(user => user.email === email);
                 if (user) {
                     setUsername(user.username);
                     setPassword(user.password);
                     setNumberOfGoals(user.numOfGoals);
                     setCreationDate(user.creation);
                     setEmail(user.email);
+                    setTotalCurrency(user.totalSavings)
                 }
             })
             .catch(error => {
@@ -73,6 +79,7 @@ function Profile() {
                             <button className='btn btn-success' style={{ fontFamily: 'DM_Sans-Medium', objectPosition: "center", minWidth: 300 }} onClick={togglePasswordVisibility}>
                                 {showPassword ? 'Hide Password' : 'Show Password'}
                             </button>
+                            <Link to="/settings" style={{ objectPosition: "center", minWidth: 300 }}>Settings</Link>
                         </div>
                         
                     </div>
