@@ -3,6 +3,7 @@ import './Login.css';
 import './bootstrap/dist/css/bootstrap.min.css';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { notification } from 'antd';
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -20,6 +21,13 @@ function Login() {
         return () => clearTimeout(timer);
     }, [errorMessage]);
 
+    const showWelcomeBanner = (username) => {
+        notification.open({
+            message: `Welcome back, ${username}!`,
+            duration: 3, // Duration in seconds
+        });
+    };
+
     function handleSubmit(event) {
         event.preventDefault();
         if (cooldown) {
@@ -34,6 +42,7 @@ function Login() {
                     navigate('/dashboard');
                     document.cookie = `username=${authenticatedUser.username}`;
                     document.cookie = `email=${authenticatedUser.email}`;
+                     showWelcomeBanner(authenticatedUser.username);
                 } else {
                     setFailedAttempts(prevAttempts => prevAttempts + 1);
                     if (failedAttempts > 3) {
