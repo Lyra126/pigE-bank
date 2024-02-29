@@ -24,7 +24,7 @@ function Aboutus() {
       {/* About Us */}
       <div className = "d-flex flex-column justify-content-center" style = {{marginTop: -35}}>
         {/* Header */}
-      <div className="container" style = {{fontFamily: "DM_Sans-Regular"}}>
+      <div className="AboutUs-container" style = {{fontFamily: "DM_Sans-Regular"}}>
         <div>
             <h1 style ={{fontSize: 60, marginTop: 80, textAlign: 'center', fontFamily: "PaytoneOne-Regular"}}>So, why Pig E-Bank?</h1>
             <h2 style ={{fontSize: 30, textAlign: 'center', fontFamily: "DM_Sans-Regular", marginTop: 25}}>Well, we're really bad saving money.</h2>
@@ -38,46 +38,50 @@ function Aboutus() {
         {/* Clarissa */}
         <section className="developer-section">
           <h2 style ={{marginTop: 40, fontSize: 45, textAlign: 'center', fontFamily: "Poppins-SemiBold", marginBottom: 20}}>Who's in our team?</h2>
-          <div className = "developer-container">
+          <div className = "AboutUs-developer-container">
           <div className="developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, marginRight: 10, width: 280}}>
             <h2 style = {{fontFamily: "DM_Sans-Medium", marginTop: 20}}>Clarissa Cheung</h2>
-            <img src="images/CC.jpg" alt="CC"  width="200" height="200" className = "developer-img"/>
+            <img src="images/CC.jpg" alt="CC"  width="200" height="200" className = "AboutUs-AboutUs-developer-img"/>
             <p style ={{margin: 15}}>Hi! I'm Clarissa Cheung, and I'm a 2nd year Computer Science major and Economics minor at UF.</p>
             <br/>
-              <section className = "socials">
+              <section className = "AboutUs-socials">
             <a href="https://instagram.com/clynae2"><img src = "images/instagram_logo.png" width="50" height="50"/></a>
             <a href="www.linkedin.com/in/clarissa-cheung2"><img src = "images/linkedIn_logo.png" width="40" height="40"/></a>
-              </section> 
+              </section>
           </div>
 
           {/* Rachel */}
           <div className="developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, marginRight: 10, width: 280}}>
             <h2 style = {{fontFamily: "DM_Sans-Medium", marginTop: 20}}>Rachel Pu</h2>
-            <img src="images/Rachel_Pu.png" alt="Rachel Pu"  width="200" height="200" className = "developer-img"/>
+            <img src="images/Rachel_Pu.png" alt="Rachel Pu"  width="200" height="200" className = "AboutUs-developer-img"/>
             <p style ={{margin: 15}}> Hello! I'm Rachel Pu, and I'm a 2nd year Computer Science major at UF. I enjoy drawing colorful, silly pigs and giving them sunglasses.</p>
-              <section className = "socials">
+              <section className = "AboutUs-socials">
             <a href="https://instagram.com/kazuhimi"><img src = "images/instagram_logo.png" width="50" height="50"/></a>
             <a href="https://www.linkedin.com/in/rachel-pu-ufl/"><img src = "images/linkedIn_logo.png" width="40" height="40"/></a>
-              </section> 
+              </section>
           </div>
 
           {/* Ibet */}
           <div className="developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, marginRight: 10, width: 280}}>
             <h2 style = {{fontFamily: "DM_Sans-Medium", marginTop: 20}}>Ibet Gonzalez</h2>
-            <img src="images/ibet.png" alt="luxray"  width="200" height="200" className = "developer-img"/>
+            <img src="images/ibet.png" alt="luxray"  width="200" height="200" className = "AboutUs-developer-img"/>
             <p style ={{margin: 15}}>Hello! I'm Ibet Gonzalez, and I'm a 4th year Computer Science major at UF.</p>
-            <section className = "socials">
+            <br/>
+            <br/>
+            <section className = "AboutUs-socials">
             <a href="https://instagram.com"><img src = "images/instagram_logo.png" width="50" height="50"/></a>
             <a href="https://linkedIn.com"><img src = "images/linkedIn_logo.png" width="40" height="40"/></a>
-              </section> 
+              </section>
           </div>
 
           {/* Michael */}
           <div className="developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, width: 280}}>
             <h2 style = {{fontFamily: "DM_Sans-Medium", marginTop: 20}}>Michael Knauf</h2>
-            <img src="images/michael.png" alt="luxray"  width="200" height="200" className = "developer-img"/>
+            <img src="images/michael.png" alt="luxray"  width="200" height="200" className = "AboutUs-developer-img"/>
             <p style ={{margin: 15}}>Hi! I'm Michael Knauf, and I'm a 2nd year Computer Engineering major at UF.</p>
-            <section className = "socials">
+            <br/>
+            <br/>
+            <section className = "AboutUs-socials">
             <a href="https://instagram.com"><img src = "images/instagram_logo.png" width="50" height="50"/></a>
             <a href="https://linkedIn.com"><img src = "images/linkedIn_logo.png" width="40" height="40"/></a>
               </section> 

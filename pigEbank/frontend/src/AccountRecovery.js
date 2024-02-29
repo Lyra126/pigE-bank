@@ -55,29 +55,32 @@ function AccountRecovery() {
                 </div>
             </nav>
 
-            <div className='d-flex flex-column vh-100 justify-content-center align-items-center'>
-                <h1 className="p-8 text-center login_title_message" style={{ marginTop: 10 }}>Account Recovery</h1>
-                <div className='p-3 login_box'>
+            <div className='d-flex flex-column vh-100 justify-content-center align-items-center' style = {{marginTop: -50}}>
+                <h1 className="p-8 text-center AccountRecovery-title-message" style={{ marginTop: 10 }}>Account Recovery</h1>
+                <div className='p-3 AccountRecovery-box'>
                     <form onSubmit={handleSubmit}>
                         {/* Logo Image */}
-                        <img src="images/favicon.ico" alt="pig" className="login_piggy" />
+                        <img src="images/favicon.ico" alt="pig" className="AccountRecovery-piggy image-center" />
                         <div className='mb-3'>
-                            <label htmlFor='email' style={{ fontFamily: 'DM_Sans-Medium' }}>Email</label>
+                            <label htmlFor='email' style={{ fontFamily: 'DM_Sans-Medium', marginLeft: 3}}>Email</label>
                             <input type='email' placeholder='Enter Email' className='form-control'
                                 onChange={e => setEmail(e.target.value)} />
                         </div>
                         <div className='mb-3'>
-                            <label htmlFor='username' style={{ fontFamily: 'DM_Sans-Medium' }}>Username</label>
+                            <label htmlFor='username' style={{ fontFamily: 'DM_Sans-Medium', marginLeft: 3}}>Username</label>
                             <input type='username' placeholder='Enter Username' className='form-control'
                                 onChange={e => setUsername(e.target.value)} />
                         </div>
                         <div className='d-flex flex-column'>
                             <button className='btn btn-success' style={{ fontFamily: 'DM_Sans-Medium', objectPosition: "center", minWidth: 300 }}>Find account</button>
-                            <p style={{ fontSize: 12, marginTop: 4, color: "red", textAlign: 'center', visibility: errorMessage ? 'visible' : 'hidden' }}>{errorMessage}</p>
+                            <p style={{ fontSize: 12, marginTop: 15, color: "red", textAlign: 'center', visibility: errorMessage ? 'visible' : 'hidden', marginBottom: 5}}>{errorMessage}</p>
                         </div>
                     </form>
                 </div>
             </div>
+            <footer style = {{marginTop: -75}}>
+                <p>&copy; 2024 Pig E-Bank</p>
+            </footer>
         </div>
     )
 }

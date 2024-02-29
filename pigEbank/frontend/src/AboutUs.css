@@ -5,13 +5,13 @@
 /*  height: 100%;*/
 /*}*/
 
-.about-header {
+.AboutUs-about-header {
     padding: 20px;
     margin-top: 30px;
     font-family: Poppins-Bold;
 }
 
-.developer-img {
+.AboutUs-developer-img {
     border-radius: 50%;
     border-color: rgb(67, 32, 32);
     border-width: thick;
@@ -20,14 +20,14 @@
     -moz-border-radius: 500px;
 }
 
-.container{
+.AboutUs-container{
     margin: 100px auto;
     width: 60%;
     margin-bottom: -0px;
 
 }
 
-.developer-container{
+.AboutUs-developer-container{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -35,14 +35,8 @@
     justify-content: center;
 }
 
-.socials{
+.AboutUs-socials{
    padding-bottom: 10px;
    margin-top: -10px;
 }
 
-footer {
-    margin-top: 40px;
-    text-align: center;
-    padding: 20px 0;
-    font-family: DM_Sans-Regular;
-}

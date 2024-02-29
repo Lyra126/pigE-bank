@@ -62,7 +62,7 @@ function Login() {
                         {/* Logo Image */}
                         <img src="images/favicon.ico" alt="pig" className="login_piggy" />
                         <div className='mb-3'>
-                            <label htmlFor='email' style={{ fontFamily: 'DM_Sans-Medium' }}>Email</label>
+                            <label htmlFor='email' style={{ fontFamily: 'DM_Sans-Medium'}}>Email</label>
                             <input type='email' placeholder='Enter Email' className='form-control'
                                 onChange={e => setEmail(e.target.value)} />
                         </div>
