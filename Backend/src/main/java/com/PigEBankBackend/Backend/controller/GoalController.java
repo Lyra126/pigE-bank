@@ -35,9 +35,9 @@ public class GoalController {
         return new ResponseEntity<String>(goalService.updateGoalName(goal), HttpStatus.OK);
     }
 
-    @PutMapping("/updateOwnerUsername")
-    public ResponseEntity<String> updateOwnerUsername(@RequestBody Goal goal) {
-        return new ResponseEntity<String>(goalService.updateOwnerUsername(goal), HttpStatus.OK);
+    @PutMapping("/updateOwnerEmail")
+    public ResponseEntity<String> updateOwnerEmail(@RequestBody Goal goal) {
+        return new ResponseEntity<String>(goalService.updateOwnerEmail(goal), HttpStatus.OK);
     }
 
     @PutMapping("/updateCurrentSavings")

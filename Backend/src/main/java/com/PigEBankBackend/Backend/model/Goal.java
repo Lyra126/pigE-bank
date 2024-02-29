@@ -20,7 +20,7 @@ public class Goal {
     private ObjectId id;
     private String pigName;
     private String goalName;
-    private String ownerUsername;
+    private String ownerEmail;
     private int currentSavings;
     private int savingsGoal;
     private LocalDate creation;

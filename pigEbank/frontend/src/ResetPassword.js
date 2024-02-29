@@ -25,7 +25,6 @@ function ResetPassword() {
             .then(res => console.log(res))
             .catch(err => console.log(err));
             navigate('/login');
-            document.cookie = 'tempEmail=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
     }
 
     return (
@@ -47,11 +46,12 @@ function ResetPassword() {
             </nav>
 
             <div className='d-flex flex-column vh-100 justify-content-center align-items-center'>
-                <h1 className="p-8 text-center login_title_message" style={{ marginTop: 10 }}>New Password</h1>
                 <div className='p-3 login_box'>
                     <form onSubmit={handleSubmit}>
                         {/* Logo Image */}
                         <img src="images/favicon.ico" alt="pig" className="login_piggy" />
+                        <h1 className="p-8 text-center login_title_message" style={{ marginTop: 10 }}>New Password</h1>
+                        <p>You have 5 minutes to reset your password</p>
                         <div className='input-field'>
                             <label htmlFor='password'>Password</label>
                             <input type='password' placeholder='Enter Password' className='form-control'
