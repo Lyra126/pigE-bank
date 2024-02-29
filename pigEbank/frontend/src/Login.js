@@ -8,8 +8,9 @@ function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const [failedAttempts, setFailedAttempts] = useState(0);
+    const [cooldown, setCooldown] = useState(false);
     const navigate = useNavigate();
-
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -21,6 +22,10 @@ function Login() {
 
     function handleSubmit(event) {
         event.preventDefault();
+        if (cooldown) {
+            setErrorMessage('You have exceeded the maximum number of failed attempts. Please try again later.');
+            return;
+        }
         axios.get('/accounts')
             .then(response => {
                 const users = response.data;
@@ -28,15 +33,24 @@ function Login() {
                 if (authenticatedUser) {
                     navigate('/dashboard');
                     document.cookie = `username=${authenticatedUser.username}`;
-                    document.cookie = `email=${authenticatedUser.email}`
+                    document.cookie = `email=${authenticatedUser.email}`;
                 } else {
+                    setFailedAttempts(prevAttempts => prevAttempts + 1);
+                    if (failedAttempts > 3) {
+                        setCooldown(true);
+                        setTimeout(() => {
+                            setCooldown(false);
+                            setFailedAttempts(0);
+                        }, 300000); // 5 minutes cooldown
+                    }
                     setErrorMessage("Login failed. Invalid email or password.");
                 }
             })
             .catch(error => {
-                setErrorMessage("An error occurred while fetching user data. Please try again later.");
+                setErrorMessage("Invalid Login");
             });
     }
+    
 
     return (
         <div>
