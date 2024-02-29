@@ -24,4 +24,29 @@ public class GoalController {
     public ResponseEntity<Goal> createGoal(@RequestBody Goal goal) {
         return new ResponseEntity<Goal>(goalService.addGoal(goal), HttpStatus.OK);
     }
+
+    @PutMapping("/updatePigName")
+    public ResponseEntity<String> updatePigName(@RequestBody Goal goal) {
+        return new ResponseEntity<String>(goalService.updatePigName(goal), HttpStatus.OK);
+    }
+
+    @PutMapping("/updateGoalName")
+    public ResponseEntity<String> updateGoalName(@RequestBody Goal goal) {
+        return new ResponseEntity<String>(goalService.updateGoalName(goal), HttpStatus.OK);
+    }
+
+    @PutMapping("/updateOwnerUsername")
+    public ResponseEntity<String> updateOwnerUsername(@RequestBody Goal goal) {
+        return new ResponseEntity<String>(goalService.updateOwnerUsername(goal), HttpStatus.OK);
+    }
+
+    @PutMapping("/updateCurrentSavings")
+    public ResponseEntity<String> updateCurrentSavings(@RequestBody Goal goal) {
+        return new ResponseEntity<String>(goalService.updateCurrentSavings(goal), HttpStatus.OK);
+    }
+
+    @PutMapping("/updateSavingsGoal")
+    public ResponseEntity<String> updateSavingsGoal(@RequestBody Goal goal) {
+        return new ResponseEntity<String>(goalService.updateSavingsGoal(goal), HttpStatus.OK);
+    }
 }
