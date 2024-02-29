@@ -59,7 +59,7 @@ function Dashboard() {
                   <img src="images/testPlus.jpg" alt={`Pig ${index + 1}`} />
                 </Link>
               ) : (
-                <img src="images/emptyContainer.png" alt={`Pig ${index + 1}`} />
+                <img src="images/cobweb.jpg" alt={`Pig ${index + 1}`} />
               )}
             </div>
           </div>

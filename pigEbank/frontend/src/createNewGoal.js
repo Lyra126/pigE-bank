@@ -5,6 +5,12 @@ import './createNewGoal.css'; // Import CSS file for custom styles
 function CreateNewGoal() {
     const [goalName, setGoalName] = useState('');
     const [goalAmount, setGoalAmount] = useState('');
+    const [selectedOption, setSelectedOption] = useState('');
+
+    // Handler function to update the selected option
+    const handleSelectChange = (event) => {
+        setSelectedOption(event.target.value);
+    };
   
     function handleSubmit(event) {
       event.preventDefault();
@@ -53,6 +59,20 @@ function CreateNewGoal() {
                             <label>Goal Amount</label>
                             <input type='text' placeholder='Enter your desired goal amount' className='form-control'
                                 onChange={e => setGoalAmount(e.target.value)} required/>
+                        </div>
+
+                        <div>
+                        <label htmlFor="dropdown">Select an option:</label>
+                        <br/>
+                            <select id="dropdown" value={selectedOption} onChange={handleSelectChange}>
+                                <option value="">Choose an option</option>
+                                <option value="asset">Asset</option>
+                                <option value="necessities">Necessities</option>
+                                <option value="education">Education</option>
+                                <option value="vacation">Vacation</option>
+                                <option value="entertainment">Entertainment</option>
+                                <option value="richie">Other</option>
+                            </select>
                         </div>
                       
                         <button className='btn-goal'>Submit</button>
