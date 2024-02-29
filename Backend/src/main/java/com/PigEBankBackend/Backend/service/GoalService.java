@@ -46,53 +46,68 @@ public class GoalService {
     }
 
     public String updatePigName(Goal goal){
+        //find the goal to update from its ID
         Query query = new Query();
         query.addCriteria(Criteria.where("id").is(goal.getId()));
 
+        //update that goals pigName
         Update update = new Update().set("pigName", goal.getPigName());
         UpdateResult updateResult = mongoTemplate.updateFirst(query, update, Goal.class);
 
+        //return the result of 1 for success, 0 for failure
         return "Updated pigName: " + updateResult.getMatchedCount();
     }
 
     public String updateGoalName(Goal goal){
+        //find the goal to update from its ID
         Query query = new Query();
         query.addCriteria(Criteria.where("id").is(goal.getId()));
 
+        //update that goals goalName
         Update update = new Update().set("goalName", goal.getGoalName());
         UpdateResult updateResult = mongoTemplate.updateFirst(query, update, Goal.class);
 
+        //return the result of 1 for success, 0 for failure
         return "Updated goalName: " + updateResult.getMatchedCount();
     }
 
 
     public String updateOwnerUsername(Goal goal){
+        //find the goal to update from its ID
         Query query = new Query();
         query.addCriteria(Criteria.where("id").is(goal.getId()));
 
+        //update that goals ownerUsername
         Update update = new Update().set("ownerUsername", goal.getOwnerUsername());
         UpdateResult updateResult = mongoTemplate.updateFirst(query, update, Goal.class);
 
+        //return the result of 1 for success, 0 for failure
         return "Updated ownerUsername: " + updateResult.getMatchedCount();
     }
 
     public String updateCurrentSavings(Goal goal){
+        //find the goal to update from its ID
         Query query = new Query();
         query.addCriteria(Criteria.where("id").is(goal.getId()));
 
+        //update that goals current savings
         Update update = new Update().set("currentSavings", goal.getCurrentSavings());
         UpdateResult updateResult = mongoTemplate.updateFirst(query, update, Goal.class);
 
+        //return the result of 1 for success, 0 for failure
         return "Updated currentSavings: " + updateResult.getMatchedCount();
     }
 
     public String updateSavingsGoal(Goal goal){
+        //find the goal to update from its ID
         Query query = new Query();
         query.addCriteria(Criteria.where("id").is(goal.getId()));
 
+        //update that goals amount
         Update update = new Update().set("savingsGoal", goal.getSavingsGoal());
         UpdateResult updateResult = mongoTemplate.updateFirst(query, update, Goal.class);
 
+        //return the result of 1 for success, 0 for failure
         return "Updated savingsGoal: " + updateResult.getMatchedCount();
     }
 
