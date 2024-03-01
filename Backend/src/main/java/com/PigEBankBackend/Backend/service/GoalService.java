@@ -28,22 +28,28 @@ public class GoalService {
     }
 
     public String addGoal(Goal goal) {
+        //find the account first and check if they have 11 goals or less so they can add one
+        Query query = new Query();
+        query.addCriteria(Criteria.where("email").is(goal.getOwnerEmail()));
+
+        List<Account> accountList = mongoTemplate.find(query, Account.class);
+        Account account = accountList.get(0);
+        if(account.getNumOfGoals() > 11){
+            return "At max number of goals >:(";
+        }
 
         //Create the goal
         goal.setId(new ObjectId());
         goal.setCreation(LocalDate.now());
         goal.setCurrentSavings(0);
+        goal.setStage(1);
 
         //Update Account (Each goal must be associated w/ and account)
-        Query query = new Query();
-        query.addCriteria(Criteria.where("email").is(goal.getOwnerEmail()));
-
         Update update = new Update().push("goalsID").value(goal.getId());
         mongoTemplate.updateFirst(query, update, Account.class);
 
-        List<Account> accountList = mongoTemplate.find(query, Account.class);
-        Account account = accountList.get(0);
 
+        //increment the number of goals in the account
         Update updateNumOfGoals = new Update().set("numOfGoals", account.getNumOfGoals() + 1);
         UpdateResult updateResultNumOfGoals = mongoTemplate.updateFirst(query, updateNumOfGoals, Account.class);
 
