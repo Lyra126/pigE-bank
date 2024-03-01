@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
 import { Link } from 'react-router-dom'; 
 import axios from 'axios';
+import { Empty } from 'antd';
 
 
 function Dashboard() {
@@ -10,13 +11,30 @@ function Dashboard() {
   useEffect(() => {
     // Get username from cookie
     const username = document.cookie.split('; ').find(row => row.startsWith('username=')).split('=')[1];
+    const email = document.cookie.split('; ').find(row => row.startsWith('email=')).split('=')[1];
     axios.get('/accounts')
       .then(response => {
         // Find user by username
-        const user = response.data.find(user => user.username === username);
+        const user = response.data.find(user => user.email === email);
         if (user) {
           setNumberOfGoals(user.numOfGoals);
+
+          axios.get('/accounts/getGoals/'+email)
+          .then(res => {
+            const goalsID = user.goalsID;
+            // console.log(res.data[1].id);
+            
+            //Might need to make a for loop to get each goal
+            //Prints out the goalIds into the terminal :D  -- Delete later
+            for(let i = 0; i < numberOfGoals; i++) {
+              console.log("at " + i + ":")
+              console.log(res.data[i].id);
+            }
+            
+          })
+          .catch(err => console.log(err));
         }
+
       })
       .catch(error => {
         console.error('Error fetching number of goals:', error);

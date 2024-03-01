@@ -38,9 +38,9 @@ public class AccountController {
         return new ResponseEntity<String>(accountService.getAccountFullName(username), HttpStatus.OK);
     }
 
-    @GetMapping("/allGoals")
-    ResponseEntity<List<Goal>> getAccountGoals(@RequestBody Account account) {
-        return new ResponseEntity<List<Goal>>(accountService.getAllGoals(account), HttpStatus.OK);
+    @GetMapping("/getGoals/{email}")
+    ResponseEntity<List<Goal>> getAccountGoals(@PathVariable String email) {
+        return new ResponseEntity<List<Goal>>(accountService.getAllGoals(email), HttpStatus.OK);
     }
 
     @PutMapping("/updateTotalSavings")

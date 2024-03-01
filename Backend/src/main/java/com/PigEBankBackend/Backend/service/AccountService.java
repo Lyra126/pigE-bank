@@ -42,9 +42,9 @@ public class AccountService {
         return current.getFirstName() + " " + current.getLastName();
     }
 
-    public List<Goal> getAllGoals(Account account) {
+    public List<Goal> getAllGoals(String email) {
         Query findAccount = new Query();
-        findAccount.addCriteria(Criteria.where("email").is(account.getEmail()));
+        findAccount.addCriteria(Criteria.where("email").is(email));
         List<Account> user = mongoTemplate.find(findAccount, Account.class);
 
         List<Goal> goals = new ArrayList<>();
@@ -52,7 +52,19 @@ public class AccountService {
             //Find the goals associated with the account
             Query findGoal = new Query();
             findGoal.addCriteria(Criteria.where("id").is(user.get(0).getGoalsID().get(i)));
-            goals.add(mongoTemplate.find(findGoal, Goal.class).getFirst());
+            List<Goal> foundGoal = mongoTemplate.find(findGoal, Goal.class);
+
+            if(foundGoal.isEmpty()) {
+                //This goal doesn't exist for some reason, delete it
+                List<ObjectId> goalIds = user.getFirst().getGoalsID();
+                goalIds.remove(i);
+
+                user.getFirst().setGoalsID(goalIds);
+                accountRepository.save(user.getFirst());
+            } else {
+                goals.add(foundGoal.getFirst());
+            }
+
         }
         return goals;
     }
