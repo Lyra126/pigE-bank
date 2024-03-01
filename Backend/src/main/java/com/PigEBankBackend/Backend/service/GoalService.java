@@ -27,7 +27,7 @@ public class GoalService {
         return goalRepository.findAll();
     }
 
-    public Goal addGoal(Goal goal) {
+    public String addGoal(Goal goal) {
 
         //Create the goal
         goal.setId(new ObjectId());
@@ -46,7 +46,9 @@ public class GoalService {
         Update updateNumOfGoals = new Update().set("numOfGoals", account.getNumOfGoals() + 1);
         UpdateResult updateResultNumOfGoals = mongoTemplate.updateFirst(query, updateNumOfGoals, Account.class);
 
-        return goalRepository.save(goal);
+        goalRepository.save(goal);
+
+        return "Increment numOfGoals: " + updateResultNumOfGoals;
     }
 
     public String updatePigName(Goal goal){
@@ -100,6 +102,36 @@ public class GoalService {
 
         //return the result of 1 for success, 0 for failure
         return "Updated currentSavings: " + updateResult.getMatchedCount();
+    }
+
+    public String addToCurrentSavings(String id, int money){
+        Query findGoal = new Query();
+        findGoal.addCriteria(Criteria.where("id").is(id));
+
+        UpdateResult updateGoalResult;
+        UpdateResult updateAccountResult;
+        List<Goal> goal = mongoTemplate.find(findGoal, Goal.class);
+
+        if(!goal.isEmpty()) {
+            Update updateGoal = new Update().set("currentSavings", goal.get(0).getCurrentSavings() + money);
+            updateGoalResult = mongoTemplate.updateFirst(findGoal, updateGoal, Goal.class);
+
+            Query findAccount = new Query();
+            findAccount.addCriteria(Criteria.where("email").is(goal.get(0).getOwnerEmail()));
+            List<Account> user = mongoTemplate.find(findAccount, Account.class);
+
+            if (!user.isEmpty()) {
+                Update updateAccount = new Update().set("totalSavings", user.get(0).getTotalSavings() + money);
+                updateAccountResult = mongoTemplate.updateFirst(findAccount, updateAccount, Account.class);
+                return "addToGoal: " + updateGoalResult +"\naddToAccount: " + updateAccountResult;
+            }
+            return "addToGoal: " + updateGoalResult +"\naddToAccount: No Account Found";
+        }
+
+        return "addToGoal: No Goal Found";
+
+
+
     }
 
     public String updateSavingsGoal(Goal goal){

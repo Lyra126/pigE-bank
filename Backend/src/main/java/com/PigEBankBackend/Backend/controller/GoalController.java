@@ -1,8 +1,11 @@
 package com.PigEBankBackend.Backend.controller;
 
+import com.PigEBankBackend.Backend.model.Account;
 import com.PigEBankBackend.Backend.model.Goal;
 import com.PigEBankBackend.Backend.service.GoalService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,8 +24,8 @@ public class GoalController {
     }
 
     @PostMapping("/newGoal")
-    public ResponseEntity<Goal> createGoal(@RequestBody Goal goal) {
-        return new ResponseEntity<Goal>(goalService.addGoal(goal), HttpStatus.OK);
+    public ResponseEntity<String> createGoal(@RequestBody Goal goal) {
+        return new ResponseEntity<String>(goalService.addGoal(goal), HttpStatus.OK);
     }
 
     @PutMapping("/updatePigName")
@@ -43,6 +46,11 @@ public class GoalController {
     @PutMapping("/updateCurrentSavings")
     public ResponseEntity<String> updateCurrentSavings(@RequestBody Goal goal) {
         return new ResponseEntity<String>(goalService.updateCurrentSavings(goal), HttpStatus.OK);
+    }
+
+    @PutMapping("/addToCurrentSavings")
+    public ResponseEntity<String> addToCurrentSavings(String id, int money){
+        return new ResponseEntity<String>(goalService.addToCurrentSavings(id, money), HttpStatus.OK);
     }
 
     @PutMapping("/updateSavingsGoal")
