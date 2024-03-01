@@ -32,6 +32,7 @@ public class GoalService {
         //Create the goal
         goal.setId(new ObjectId());
         goal.setCreation(LocalDate.now());
+        goal.setCurrentSavings(0);
 
         //Update Account (Each goal must be associated w/ and account)
         Query query = new Query();
