@@ -56,7 +56,7 @@ function Login() {
                 }
             })
             .catch(error => {
-                setErrorMessage("Invalid Login");
+                setErrorMessage("Login failed. Invalid email or password.");
             });
     }
     
@@ -79,27 +79,27 @@ function Login() {
                 </div>
             </nav>
 
-            <div className='d-flex flex-column vh-100 justify-content-center align-items-center'>
-                <h1 className="p-8 text-center login_title_message" style={{ marginTop: 10 }}> Howdy! Great to see you again!</h1>
-                <div className='p-3 login_box'>
+            <div className='login-main-div'>
+                <h1 className="p-8 text-center login-title-message"> Howdy! Great to see you again!</h1>
+                <div className='p-3 login-box'>
                     <form onSubmit={handleSubmit}>
                         {/* Logo Image */}
-                        <img src="images/favicon.ico" alt="pig" className="login_piggy" />
+                        <img src="images/favicon.ico" alt="pig" className="login-piggy" />
                         <div className='mb-3'>
-                            <label htmlFor='email' style={{ fontFamily: 'DM_Sans-Medium'}}>Email</label>
+                            <login-label htmlFor='email'>Email</login-label>
                             <input type='email' placeholder='Enter Email' className='form-control'
                                 onChange={e => setEmail(e.target.value)} />
                         </div>
                         <div className='mb-3'>
-                            <label htmlFor='password' style={{ fontFamily: 'DM_Sans-Medium' }}>Password</label>
+                            <login-label htmlFor='password'>Password</login-label>
                             <input type='password' placeholder='Enter Password' className='form-control'
                                 onChange={e => setPassword(e.target.value)} />
-                            <Link to="/accountRecovery" style={{ objectPosition: "center", minWidth: 300 }}>Forgot Password</Link>
+                            <Link to="/accountRecovery" className = 'login-forgot-pass'>Forgot your password?</Link>
                         </div>
                         <div className='d-flex flex-column'>
-                            <button className='btn btn-success' style={{ fontFamily: 'DM_Sans-Medium', objectPosition: "center", minWidth: 300 }}>Login</button>
-                            <p style={{ fontSize: 12, marginTop: 4, color: "red", textAlign: 'center', visibility: errorMessage ? 'visible' : 'hidden' }}>{errorMessage}</p>
-                            <p style={{ marginTop: 20, marginLeft: 60, marginBottom: 5 }}>No account? Make one today!</p>
+                            <button className='btn btn-success' style={{ fontFamily: 'DM_Sans-Medium', objectPosition: "center", minWidth: 300, marginTop: 3}}>Login</button>
+                            <p style={{ fontSize: 14, marginTop: 10, color: "red", textAlign: 'center', visibility: errorMessage ? 'visible' : 'hidden' }}>{errorMessage}</p>
+                            <p className = 'login-no-account-label'>No account? Make one today!</p>
                             <Link to="/createAccount" className='btn btn-outline-success' style={{ objectPosition: "center", minWidth: 300 }}>Create an Account</Link>
                         </div>
                     </form>

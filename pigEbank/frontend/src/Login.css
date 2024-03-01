@@ -1,31 +1,55 @@
-
-body{
-  background: rgb(55,196,143);
-  background: linear-gradient(0deg, rgba(55,196,143,1) 0%, rgba(174,255,145,1) 100%); ;
-  width: 100%;
-  height: 100%;
+login-label{
+    font-family: DM_Sans-SemiBold;
+    margin-left: 2px;
 }
 
-.login_title_message{
+.login-main-div{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+}
+
+.login-title-message{
     font-family: Poppins-SemiBold;
     margin-bottom: 25px;
-    margin-top: -35px;
+    margin-top: -50px;
 }
 
-.login_box{
+.login-box{
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(24, 99, 32, 0.268);
     background-color: white;
     width: 50vh;
     font-family: DM_Sans-Regular;
+
 }
 
-.login_piggy{
+.login-piggy{
     width: 70%;
     height: 70%;
     margin-top: -25px;
     margin-bottom: -15px;
-    margin-left: 50px;
+
+}
+
+.login-no-account-label{
+    text-align: center;
+    margin-top: -5px;
+    margin-bottom: 5px;
+}
+
+.login-forgot-pass{
+    text-decoration: none;
+    color: gray;
+    font-size: 14px;
+    margin-left: 4px;
+    transition: color 0.2s ease;
+}
+
+.login-forgot-pass:hover{
+    color:darkslategrey;
 }
 
 

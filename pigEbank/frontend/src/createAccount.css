@@ -1,40 +1,51 @@
-.top-div {
+createAccount-label{
+    font-family: DM_Sans-SemiBold;
+    margin-left: 2px;
+}
+
+.createAccount-top-div {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 50px;
+    flex-direction: column;
 }
 
-
-label{
-    font-family: DM_Sans-SemiBold;
-}
-
-.create-account-container {
+.createAccount-create-account-container {
     padding: 20px;
     background-color: #ffffff;
     border-radius: 20px;
-    width: 40%;
+    width: 65vh;
     margin-top: 50px;
     font-family: DM_Sans-Regular;
 }
 
-.form-container {
+.createAccount-form-container {
     display: grid;
     gap: 1rem;
 }
 
-.instruction{
+.createAccount-instruction{
     color:rgba(0, 0, 0, 0.309);
     font-size: 13px;
     margin-bottom: -10px;
-    margin-left: 3px;
+    margin-left: 2px;
 }
 
 .btn {
     display: block;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
 }
 
-.input-field {
+.createAccount-input-field {
     margin-bottom: 10px;
 }
+
+.createAccount-alr-have-acc-btn{
+    text-decoration: none;
+    color: black;
+    margin: 0;
+    text-align: center;
+    padding-top: 10px
+}
+
