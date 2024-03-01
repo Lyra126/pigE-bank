@@ -15,18 +15,30 @@ function WelcomePage() {
         }
       });
     };
+  
 
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
+
+    const handleBeforeUnload = (event) => {
+      event.preventDefault();
+      event.returnValue = 'Are you sure you want to leave?';
+      window.location.reload();
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
   }, []); // Empty dependency array to ensure the effect runs only once
   
-  
+
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light">
+      <nav className="navbar navbar-expand-lg navbar-light fixed-top">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">Pig E-Bank</a>
           <div className="collapse navbar-collapse" id="navbarNav">
