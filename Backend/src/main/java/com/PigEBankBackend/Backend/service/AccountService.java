@@ -59,6 +59,7 @@ public class AccountService {
                 List<ObjectId> goalIds = user.getFirst().getGoalsID();
                 goalIds.remove(i);
 
+                user.getFirst().setNumOfGoals(goalIds.size());
                 user.getFirst().setGoalsID(goalIds);
                 accountRepository.save(user.getFirst());
             } else {
