@@ -28,9 +28,7 @@ public class Account {
     private String password;
     private int numOfGoals;
     private int totalSavings;
-
     private LocalDate creation;
-
     private List<ObjectId> goalsID;
 
 

@@ -39,7 +39,7 @@ public class AccountController {
     }
 
     @GetMapping("/allGoals")
-    ResponseEntity<List<Goal>> getAccountFullName(@RequestBody Account account) {
+    ResponseEntity<List<Goal>> getAccountGoals(@RequestBody Account account) {
         return new ResponseEntity<List<Goal>>(accountService.getAllGoals(account), HttpStatus.OK);
     }
 

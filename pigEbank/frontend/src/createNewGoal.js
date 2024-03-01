@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './createNewGoal.css'; // Import CSS file for custom styles
+import axios from 'axios';
 
 function CreateNewGoal() {
     const [goalName, setGoalName] = useState('');
-    const [goalAmount, setGoalAmount] = useState('');
+    const [pigName, setPigName] = useState('Pig');
+    const [savingsGoal, setSavingsGoal] = useState('');
     const [selectedOption, setSelectedOption] = useState('');
 
     // Handler function to update the selected option
@@ -14,7 +16,12 @@ function CreateNewGoal() {
   
     function handleSubmit(event) {
       event.preventDefault();
-      
+
+      //Add backend code
+      const email = document.cookie.split('; ').find(row => row.startsWith('email=')).split('=')[1];
+      axios.post("/goals/newGoal", {goalName: goalName, pigName: pigName, savingsGoal: savingsGoal, ownerEmail: email})
+        .then(res => console.log(res))
+        .catch(err => console.log(err));;
   }
 
   const logout = () => {
@@ -58,7 +65,7 @@ function CreateNewGoal() {
                         <div className='input-field'>
                             <label>Goal Amount</label>
                             <input type='text' placeholder='Enter your desired goal amount' className='form-control'
-                                onChange={e => setGoalAmount(e.target.value)} required/>
+                                onChange={e => setSavingsGoal(e.target.value)} required/>
                         </div>
 
                         <div>
