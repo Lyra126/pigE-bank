@@ -124,7 +124,6 @@ footer {
   background: linear-gradient(0deg, rgba(55,196,143,1) 0%, rgba(174,255,145,1) 100%); ;
   width: 100%;
   height: 100%;
-
 }
 
 .gradient_bg_white_transparent{
@@ -132,3 +131,6 @@ footer {
   box-shadow: black;
 }
 
+/*input::placeholder{*/
+/*  opacity: 100%;*/
+/*}*/

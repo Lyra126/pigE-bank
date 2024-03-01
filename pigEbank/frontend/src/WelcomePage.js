@@ -33,7 +33,7 @@ function WelcomePage() {
       window.removeEventListener('beforeunload', handleBeforeUnload);
     };
   }, []); // Empty dependency array to ensure the effect runs only once
-  
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light fixed-top">

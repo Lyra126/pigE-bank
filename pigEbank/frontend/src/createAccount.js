@@ -57,8 +57,9 @@ function CreateAccount() {
                 <div className="createAccount-create-account-container box_shadow">
                     <h1 className="text-center mb-4" style = {{marginTop: 20, fontFamily: "Poppins-SemiBold", paddingBottom: 10}}>Create Your Account</h1>
                     <p className = "text-center" style = {{marginTop: -20}}>We're excited to see you've joined us!</p>
-                    <p className = "text-center" style = {{marginTop: -15}}>Just a few more steps and you'll be apart of our Pig-E family!</p>
+                    <p className = "text-center" style = {{marginTop: -15, paddingBottom: 10}}>Just a few more steps and you'll be apart of our Pig-E family!</p>
                     <form onSubmit={handleSubmit} className="createAccount-form-container">
+                        <div className = 'createAccount-first-last-div'>
                         <div className='createAccount-input-field'>
                             <createAccount-label htmlFor='firstName'>First Name</createAccount-label>
                             <input type='text' placeholder='Enter your first name' className='form-control'
@@ -69,6 +70,7 @@ function CreateAccount() {
                             <input type='text' placeholder='Enter your last name' className='form-control'
                                 onChange={e => setLastName(e.target.value)} required/>
                         </div>
+                        </div>
                         <div className='createAccount-input-field'>
                             <createAccount-label htmlFor='email'>Email</createAccount-label>
                             <input type='text' placeholder='Enter your email' className='form-control'
@@ -78,12 +80,12 @@ function CreateAccount() {
                             <createAccount-label htmlFor='username'>Username</createAccount-label>
                             <input type='text' placeholder='Enter Username' className='form-control'
                                 onChange={e => setUsername(e.target.value)} required pattern="[a-zA-Z0-9]{4,}"/>
-                            <p className = "createAccount-instruction"> Username must be at least 4 characters long & contain only letters and numbers </p>
+                            <p className = "createAccount-instruction"> Username must be at least 4 characters & contain only letters and numbers </p>
                         </div>
                         <div className='createAccount-input-field'>
                             <createAccount-label htmlFor='password'>Password</createAccount-label>
                             <input type='password' placeholder='Enter Password' className='form-control'
-                                onChange={e => setPassword(e.target.value)} required pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]$"/>
+                                onChange={e => setPassword(e.target.value)} pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]+$"/>
                                 <p className = "createAccount-instruction"> Password must include upper case, lower case, a number & a special character</p>
                         </div>
                         <div className='createAccount-input-field'>
@@ -91,7 +93,7 @@ function CreateAccount() {
                             <input type='password' placeholder='Confirm Password' className='form-control'
                                 onChange={e => setConfPassword(e.target.value)} required/>
                         </div>
-                        <p style={{fontSize: 16, color: "red", textAlign: 'center', fontFamily: 'DM_Sans-SemiBold', visibility: errorMessage ? 'visible' : 'hidden', marginTop: -14}}>{errorMessage}</p>
+                        <p style={{fontSize: 14, color: "red", textAlign: 'center', fontFamily: 'DM_Sans-Regular', visibility: errorMessage ? 'visible' : 'hidden', marginTop: -14}}>{errorMessage}</p>
                         <button className='btn btn-success' style = {{marginTop: -17}}>Create Account</button>
                         <Link className='createAccount-alr-have-acc-btn' to='/login' style = {{marginTop: -12}}>Already have an account?</Link>
                     </form>
