@@ -19,7 +19,7 @@ function CreateAccount() {
         console.log(user)
 
         if(password!=confPassword){
-            setErrorMessage("Error: Passwords don't match.");
+            setErrorMessage("Passwords don't match!");
         } else{
 
             //To make sure another doesn't have the same username, should there be a function that checks before adding it into the database?
@@ -37,7 +37,6 @@ function CreateAccount() {
         }
     }
 
-
     return (
         <div>
             <nav className="navbar navbar-expand-lg">
@@ -54,47 +53,49 @@ function CreateAccount() {
             </nav>
 
         {/* Create Account Div */}
-            <div className="top-div">
-                <div className="create-account-container box_shadow">
+            <div className="createAccount-top-div">
+                <div className="createAccount-create-account-container box_shadow">
                     <h1 className="text-center mb-4" style = {{marginTop: 20, fontFamily: "Poppins-SemiBold", paddingBottom: 10}}>Create Your Account</h1>
                     <p className = "text-center" style = {{marginTop: -20}}>We're excited to see you've joined us!</p>
-                    <p className = "text-center" style = {{marginTop: -15}}>Just a few more steps and you'll be apart of our Pig-E family!</p>
-                    <form onSubmit={handleSubmit} className="form-container">
-                        <div className='input-field'>
-                            <label htmlFor='firstName'>First Name</label>
+                    <p className = "text-center" style = {{marginTop: -15, paddingBottom: 10}}>Just a few more steps and you'll be apart of our Pig-E family!</p>
+                    <form onSubmit={handleSubmit} className="createAccount-form-container">
+                        <div className = 'createAccount-first-last-div'>
+                        <div className='createAccount-input-field'>
+                            <createAccount-label htmlFor='firstName'>First Name</createAccount-label>
                             <input type='text' placeholder='Enter your first name' className='form-control'
                                 onChange={e => setFirstName(e.target.value)} required/>
                         </div>
-                        <div className='input-field'>
-                            <label htmlFor='lastName'>Last Name</label>
+                        <div className='createAccount-input-field'>
+                            <createAccount-label htmlFor='lastName'>Last Name</createAccount-label>
                             <input type='text' placeholder='Enter your last name' className='form-control'
                                 onChange={e => setLastName(e.target.value)} required/>
                         </div>
-                        <div className='input-field'>
-                            <label htmlFor='email'>Email</label>
+                        </div>
+                        <div className='createAccount-input-field'>
+                            <createAccount-label htmlFor='email'>Email</createAccount-label>
                             <input type='text' placeholder='Enter your email' className='form-control'
                                 onChange={e => setEmail(e.target.value)} required/>
                         </div>
-                        <div className='input-field'>
-                            <label htmlFor='username'>Username</label>
+                        <div className='createAccount-input-field'>
+                            <createAccount-label htmlFor='username'>Username</createAccount-label>
                             <input type='text' placeholder='Enter Username' className='form-control'
-                                onChange={e => setUsername(e.target.value)} required pattern="[a-zA-Z0-9]{4,10}"/>
-                            <p className = "instruction"> Username must be 4-10 characters long and must contain only letters and numbers </p>
+                                onChange={e => setUsername(e.target.value)} required pattern="[a-zA-Z0-9]{4,}"/>
+                            <p className = "createAccount-instruction"> Username must be at least 4 characters & contain only letters and numbers </p>
                         </div>
-                        <div className='input-field'>
-                            <label htmlFor='password'>Password</label>
+                        <div className='createAccount-input-field'>
+                            <createAccount-label htmlFor='password'>Password</createAccount-label>
                             <input type='password' placeholder='Enter Password' className='form-control'
-                                onChange={e => setPassword(e.target.value)} required pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"/>
-                                <p className = "instruction"> Password must include upper case, lower case, a number, a special character, and must be at least 8 characters long </p>
+                                onChange={e => setPassword(e.target.value)} pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]+$"/>
+                                <p className = "createAccount-instruction"> Password must include upper case, lower case, a number & a special character</p>
                         </div>
-                        <div className='input-field'>
-                            <label htmlFor='confPassword'>Re-enter Password</label>
+                        <div className='createAccount-input-field'>
+                            <createAccount-label htmlFor='confPassword'>Re-enter Password</createAccount-label>
                             <input type='password' placeholder='Confirm Password' className='form-control'
                                 onChange={e => setConfPassword(e.target.value)} required/>
                         </div>
-                        <p style={{ fontSize: 20, marginTop: 4, color: "red", textAlign: 'center', fontFamily: 'DM_Sans-SemiBold', visibility: errorMessage ? 'visible' : 'hidden' }}>{errorMessage}</p>
-                        <button className='btn btn-success'>Create Account</button>
-                        <Link className='btn btn-success' to='/login'>Already have an Account?</Link>
+                        <p style={{fontSize: 14, color: "red", textAlign: 'center', fontFamily: 'DM_Sans-Regular', visibility: errorMessage ? 'visible' : 'hidden', marginTop: -14}}>{errorMessage}</p>
+                        <button className='btn btn-success' style = {{marginTop: -17}}>Create Account</button>
+                        <Link className='createAccount-alr-have-acc-btn' to='/login' style = {{marginTop: -12}}>Already have an account?</Link>
                     </form>
                 </div>
             </div>

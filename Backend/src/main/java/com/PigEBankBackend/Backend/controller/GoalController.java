@@ -28,6 +28,12 @@ public class GoalController {
         return new ResponseEntity<String>(goalService.addGoal(goal), HttpStatus.OK);
     }
 
+    @DeleteMapping("/deleteGoal")
+    public ResponseEntity<String> deleteGoal(String id) {
+        return new ResponseEntity<String>(goalService.deleteGoal(id), HttpStatus.OK);
+    }
+
+
     @PutMapping("/updatePigName")
     public ResponseEntity<String> updatePigName(@RequestBody Goal goal) {
         return new ResponseEntity<String>(goalService.updatePigName(goal), HttpStatus.OK);
