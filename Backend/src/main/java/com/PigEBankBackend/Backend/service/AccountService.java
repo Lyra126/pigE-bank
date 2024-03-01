@@ -81,6 +81,7 @@ public class AccountService {
         String totalSavingsString = Integer.toString(totalSavings);
         return "Updated totalSavings: " + updateResult.getMatchedCount() + "\ntotal = "+totalSavingsString;
     }
+
     public Account addAccount(Account account) {
         account.setId(new ObjectId());
         account.setCreation(LocalDate.now());
