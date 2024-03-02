@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './createNewGoal.css'; // Import CSS file for custom styles
 import axios from 'axios';
 
 function CreateNewGoal() {
     const [goalName, setGoalName] = useState('');
-    const [pigName, setPigName] = useState('Pig');
+    const [pigName, setPigName] = useState('');
     const [savingsGoal, setSavingsGoal] = useState('');
     const [selectedOption, setSelectedOption] = useState('');
+    const navigate = useNavigate();
 
     // Handler function to update the selected option
     const handleSelectChange = (event) => {
@@ -20,7 +21,10 @@ function CreateNewGoal() {
       //Add backend code
       const email = document.cookie.split('; ').find(row => row.startsWith('email=')).split('=')[1];
       axios.post("/goals/newGoal", {goalName: goalName, pigName: pigName, savingsGoal: savingsGoal, ownerEmail: email})
-        .then(res => console.log(res))
+        .then(res => {
+            console.log(res)
+            navigate('/dashboard');
+        })
         .catch(err => console.log(err));;
   }
 
@@ -57,6 +61,11 @@ function CreateNewGoal() {
                     <h1 className="text-center mb-4" style = {{marginTop: 20, fontFamily: "Poppins-SemiBold", paddingBottom: 10}}>Create a New Goal</h1>
                     <p className = "text-center" style = {{marginTop: -20}}>Add a new pig to your stables!</p>
                     <form onSubmit={handleSubmit} className="form-container">
+                        <div className='input-field'>
+                            <label>Pig Name</label>
+                            <input type='text' placeholder='Enter your new pigs name' className='form-control'
+                                onChange={e => setPigName(e.target.value)} required/>
+                        </div>
                         <div className='input-field'>
                             <label>Goal Name</label>
                             <input type='text' placeholder='Enter your new goal name' className='form-control'
