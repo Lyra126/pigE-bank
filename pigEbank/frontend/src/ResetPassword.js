@@ -20,56 +20,78 @@ function ResetPassword() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        const email = document.cookie.split('; ').find(row => row.startsWith('tempEmail=')).split('=')[1];
-        axios.put("/accounts/updatePassword", {email: email, password: password})
-            .then(res => console.log(res))
-            .catch(err => console.log(err));
-            navigate('/login');
+        if (password !== confPassword) {
+            setErrorMessage("Passwords don't match, please try again.");
+        } else {
+            event.preventDefault();
+            const email = document.cookie.split('; ').find(row => row.startsWith('tempEmail=')).split('=')[1];
+
+            axios.put("/accounts/updatePassword", {email: email, password: password})
+                .then(res => {
+                    console.log(res);
+                    navigate('/login'); // assuming `navigate` is defined and used for routing
+                })
+                .catch(err => console.log(err));
+        }
     }
 
-    return (
-        <div>
-            <nav className="navbar navbar-expand-lg">
-                <div className="container-fluid">
-                    <a className="navbar-brand" href="/">Pig E-Bank</a>
-                    <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav ms-auto">
-                            <li className="nav-item">
-                                <a className="nav-link" href="aboutus">About Us</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="/">Home Page</a>
-                            </li>
-                        </ul>
+        return (
+            <div>
+                <nav className="navbar navbar-expand-lg">
+                    <div className="container-fluid">
+                        <a className="navbar-brand" href="/">Pig E-Bank</a>
+                        <div className="collapse navbar-collapse" id="navbarNav">
+                            <ul className="navbar-nav ms-auto">
+                                <li className="nav-item">
+                                    <a className="nav-link" href="aboutus">About Us</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/">Home Page</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div className='ResetPassword-bg d-flex flex-column vh-100 justify-content-center align-items-center'>
+                    <div className='p-3 ResetPassword-box'>
+                        <form onSubmit={handleSubmit} className="ResetPassword-form">
+                            <h1 className="ResetPassword-title" style={{marginTop: 10}}>New Password</h1>
+                            <p className="ResetPassword-5min-message">You have 5 minutes to reset your password!</p>
+                            <div className='input-field'>
+                                <label htmlFor='password'
+                                       style={{
+                                           marginLeft: 3,
+                                           fontFamily: "DM_Sans-SemiBold"
+                                        }}>Password</label>
+                                <input type='password' placeholder='Enter Password' className='form-control'
+                                       onChange={e => setPassword(e.target.value)} required
+                                       pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]+$"/>
+                                <p className="ResetPassword-instruction"> Password must include upper case, lower case,
+                                    a number & a special character </p>
+                            </div>
+                            <div className='input-field'>
+                                <label htmlFor='confPassword' style={{marginLeft: 3, fontFamily: "DM_Sans-SemiBold"}}>Re-enter
+                                    Password</label>
+                                <input type='password' placeholder='Confirm Password' className='form-control'
+                                       onChange={e => setConfPassword(e.target.value)} required/>
+                            </div>
+                            <p style={{
+                                fontSize: 14,
+                                marginTop: 10,
+                                color: "red",
+                                textAlign: 'center',
+                                visibility: errorMessage ? 'visible' : 'hidden',
+                                marginBottom: -7
+                            }}>{errorMessage}</p>
+                            <button className='btn btn-success ResetPassword-button' style={{marginBottom: 10, marginTop: 20}}>Reset Password
+                            </button>
+                        </form>
                     </div>
                 </div>
-            </nav>
-
-            <div className='d-flex flex-column vh-100 justify-content-center align-items-center'>
-                <div className='p-3 login_box'>
-                    <form onSubmit={handleSubmit}>
-                        {/* Logo Image */}
-                        <img src="images/favicon.ico" alt="pig" className="login_piggy" />
-                        <h1 className="p-8 text-center login_title_message" style={{ marginTop: 10 }}>New Password</h1>
-                        <p>You have 5 minutes to reset your password</p>
-                        <div className='input-field'>
-                            <label htmlFor='password'>Password</label>
-                            <input type='password' placeholder='Enter Password' className='form-control'
-                                onChange={e => setPassword(e.target.value)} required pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"/>
-                                <p className = "instruction"> Password must include upper case, lower case, a number, a special character, and must be at least 8 characters long </p>
-                        </div>
-                        <div className='input-field'>
-                            <label htmlFor='confPassword'>Re-enter Password</label>
-                            <input type='password' placeholder='Confirm Password' className='form-control'
-                                onChange={e => setConfPassword(e.target.value)} required/>
-                        </div>
-                        <p style={{ fontSize: 20, marginTop: 4, color: "red", textAlign: 'center', fontFamily: 'DM_Sans-SemiBold', visibility: errorMessage ? 'visible' : 'hidden' }}>{errorMessage}</p>
-                        <button className='btn btn-success'>Create Account</button>
-                    </form>
-                </div>
             </div>
-        </div>
-    )
-}
+        )
+    }
+
 
 export default ResetPassword;

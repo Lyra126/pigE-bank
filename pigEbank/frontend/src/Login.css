@@ -23,6 +23,12 @@ login-label{
     background-color: white;
     width: 50vh;
     font-family: DM_Sans-Regular;
+}
+
+.login-form-container{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
 
 }
 
@@ -30,8 +36,7 @@ login-label{
     width: 70%;
     height: 70%;
     margin-top: -25px;
-    margin-bottom: -15px;
-
+    margin-bottom: -25px;
 }
 
 .login-no-account-label{

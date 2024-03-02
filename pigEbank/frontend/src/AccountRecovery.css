@@ -1,23 +1,52 @@
-.AccountRecovery-title-message{
-  font-family: Poppins-SemiBold;
-  margin-bottom: 25px;
-  margin-top: -35px;
+.AccountRecovery-bg{
+  background: rgb(55,196,143);
+  background: linear-gradient(0deg, rgb(147, 229, 116) 0%, rgba(55,196,143,1)100%); ;
+  width: 100%;
+  height: 100%;
 }
 
 .AccountRecovery-box{
+  margin-top: 25px;
+  display:flex;
+  flex-direction: column;
+  justify-items: center;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(24, 99, 32, 0.268);
   background-color: white;
-  width: 45vh;
+  width: 52vh;
   font-family: DM_Sans-Regular;
+}
+
+.AccountRecovery-title-header-div{
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.AccountRecovery-title-message{
+  font-family: Poppins-SemiBold;
+  font-size: 31px;
+  margin-bottom: 25px;
+  margin-top: -35px;
+
+}
+
+.AccountRecovery-header-message{
+  margin-top: -15px;
 }
 
 .AccountRecovery-piggy{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: -10px;
+  margin-top: -20px;
+  margin-bottom: -10px;
   width: 50%;
+}
+
+.AccountRecovery-form{
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
   

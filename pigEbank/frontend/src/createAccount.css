@@ -16,7 +16,7 @@ createAccount-label{
     background-color: #ffffff;
     border-radius: 20px;
     width: 58vh;
-    margin-top: 50px;
+    margin-top: 65px;
     font-family: DM_Sans-Regular;
 }
 
@@ -41,7 +41,6 @@ createAccount-label{
 
 .btn {
     display: block;
-    /*margin: 0 auto;*/
 }
 
 .createAccount-input-field {
@@ -50,9 +49,14 @@ createAccount-label{
 
 .createAccount-alr-have-acc-btn{
     text-decoration: none;
-    color: black;
+    color: #656565;
     margin: 0;
     text-align: center;
-    padding-top: 10px
+    padding-top: 10px;
+    transition: color 0.3s ease
+}
+
+.createAccount-alr-have-acc-btn:hover{
+    color: darkslategrey;
 }
 

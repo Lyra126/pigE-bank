@@ -36,22 +36,22 @@ function Aboutus() {
         <img src="images/team_pig_horizontal.png" alt = "team_piggy"/>
 
         {/* Clarissa */}
-        <section className="developer-section">
+        <section className="AboutUs-developer-section">
           <h2 style ={{marginTop: 40, fontSize: 45, textAlign: 'center', fontFamily: "Poppins-SemiBold", marginBottom: 20}}>Who's in our team?</h2>
           <div className = "AboutUs-developer-container">
-          <div className="developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, marginRight: 10, width: 280}}>
+          <div className="AboutUs-developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, marginRight: 10, width: 280}}>
             <h2 style = {{fontFamily: "DM_Sans-Medium", marginTop: 20}}>Clarissa Cheung</h2>
-            <img src="images/CC.jpg" alt="CC"  width="200" height="200" className = "AboutUs-AboutUs-developer-img"/>
+            <img src="images/CC.jpg" alt="CC"  width="200" height="200" className = "AboutUs-developer-img"/>
             <p style ={{margin: 15}}>Hi! I'm Clarissa Cheung, and I'm a 2nd year Computer Science major and Economics minor at UF.</p>
             <br/>
               <section className = "AboutUs-socials">
-            <a href="https://instagram.com/clynae2"><img src = "images/instagram_logo.png" width="50" height="50"/></a>
-            <a href="www.linkedin.com/in/clarissa-cheung2"><img src = "images/linkedIn_logo.png" width="40" height="40"/></a>
+            <a href="https://instagram.com/clynae2"><img src = "images/instagram_logo.png" width="50" height="50" /></a>
+            <a href="www.linkedin.com/in/clarissa-cheung2" ><img src = "images/linkedIn_logo.png" width="40" height="40"/></a>
               </section>
           </div>
 
           {/* Rachel */}
-          <div className="developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, marginRight: 10, width: 280}}>
+          <div className="AboutUs-developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, marginRight: 10, width: 280}}>
             <h2 style = {{fontFamily: "DM_Sans-Medium", marginTop: 20}}>Rachel Pu</h2>
             <img src="images/Rachel_Pu.png" alt="Rachel Pu"  width="200" height="200" className = "AboutUs-developer-img"/>
             <p style ={{margin: 15}}> Hello! I'm Rachel Pu, and I'm a 2nd year Computer Science major at UF. I enjoy drawing colorful, silly pigs and giving them sunglasses.</p>
@@ -62,7 +62,7 @@ function Aboutus() {
           </div>
 
           {/* Ibet */}
-          <div className="developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, marginRight: 10, width: 280}}>
+          <div className="AboutUs-developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, marginRight: 10, width: 280}}>
             <h2 style = {{fontFamily: "DM_Sans-Medium", marginTop: 20}}>Ibet Gonzalez</h2>
             <img src="images/ibet.png" alt="luxray"  width="200" height="200" className = "AboutUs-developer-img"/>
             <p style ={{margin: 15}}>Hello! I'm Ibet Gonzalez, and I'm a 4th year Computer Science major at UF.</p>
@@ -75,7 +75,7 @@ function Aboutus() {
           </div>
 
           {/* Michael */}
-          <div className="developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, width: 280}}>
+          <div className="AboutUs-developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, width: 280}}>
             <h2 style = {{fontFamily: "DM_Sans-Medium", marginTop: 20}}>Michael Knauf</h2>
             <img src="images/michael.png" alt="luxray"  width="200" height="200" className = "AboutUs-developer-img"/>
             <p style ={{margin: 15}}>Hi! I'm Michael Knauf, and I'm a 2nd year Computer Engineering major at UF.</p>

@@ -1,12 +1,6 @@
 /* WelcomePage.css */
 
-.tag {
-  opacity: 0;
-  transform: translate(0, 10vh);
-  transition: all 1s;
-}
-
-.fade-in {
+.welcomePage-fade-in {
   opacity: 0;
   animation: fadeInAnimation 2s ease forwards;
 }
@@ -20,50 +14,22 @@
   }
 }
 
-
-
-.tag.visible {
-  opacity: 1;
-  transform: translate(0, 0);
-}
-
-.about-header {
-  padding: 20px;
-  margin-top: 30px;
-  font-family: Poppins-Bold;
-}
-
-.welcome_page_div{
-font-family: DM_Sans-Regular;
-}
-
-.developer {
-  margin: 20px;
-  text-align: center;
-  font-family: Poppins-Medium;
-}
-
-.developer img {
-  border-radius: 50%;
-}
-
-.title-container{
+.welcomePage-title-container{
   padding: 20px;
   margin: 45px;
-  margin-top: 10%;
+  margin-top: 20vh;
   align-items: center;
   display: flex;
   flex-direction: column;
-
 }
 
-.h2-subtitle{
+.welcomePage-h2-subtitle{
   font-family: "DM_Sans-SemiBold";
   font-size: 40px;
   margin-top: -30px;
 }
 
-.h1-title{
+.welcomePage-h1-title{
   font-family: "PaytoneOne-Regular";
   font-size: 170px;
   margin-top: -40px;
@@ -71,22 +37,22 @@ font-family: DM_Sans-Regular;
   padding-bottom: 40px;
 }
 
-.description-container{
+.welcomePage-description-container{
 position: absolute;
 font-family: DM_Sans-Regular;
 }
 
-.container-text{
+.welcomePage-container-text{
 padding: 8rem;
 margin: 50px;
 }
 
-.description-header{
+.welcomePage-description-header{
 font-family: PaytoneOne-Regular;
 font-size: 40px;
 }
 
-.container-1{
+.welcomePage-container-1{
 background: #f4f4f4;
 display:flex;
 padding: 4em 0;
@@ -94,7 +60,7 @@ align-items: center;
   height: 100vh;
 }
 
-.container-2{
+.welcomePage-container-2{
 width: auto;
 background-color: #e8e8e8;
 padding: 4em 0;
@@ -105,7 +71,7 @@ flex-direction: row-reverse;
   height: 100vh;
 }
 
-.container-3{
+.welcomePage-container-3{
   background: #f4f4f4;
   display:flex;
   padding: 4em 0;
@@ -113,51 +79,47 @@ flex-direction: row-reverse;
     height: 100vh;
   }
 
-.header-content {
-flex: 1;
-padding-right: 20px; /* Adjust as needed */
-text-align: center; /* Center the text within the header content */
-}
-
-.header-image {
+.welcomePage-header-image {
   /* Adjust the width of the image container */
 text-align: center; /* Center the image */
 }
 
-.header-image img {
+.welcomePage-header-image img {
 max-width: 80%; /* Adjust the width of the image */
 height: auto;
 }
 
-.get-started-description-header{
+.welcomePage-get-started-description-header{
   font-family: Poppins-Bold;
   font-size: 40px;
 }
 
-.get-started-button {
+.welcomePage-get-started-button {
   background-color: rgb(97, 166, 96);
   color: #ffffff;
   padding: 10px 20px;
   text-decoration: none;
   display: flex; /* Use flexbox */
   justify-content: center; /* Center text horizontally */
+  text-align: center;
   align-items: center; /* Center text vertically */
   font-size: 25px;
   border-radius: 8px;
   font-family: DM_Sans-SemiBold;
   margin-top: 20px;
-  width: 20%; /* Adjust as needed */
+  width: 30vh; /* Adjust as needed */
   height: 90px; /* Adjust as needed */
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.get-started-button:hover {
-background-color: #61be5a; /* Change background color on hover */
-color: white; /* Change text color on hover */
+.welcomePage-get-started-button:hover {
+  background-color: #61be5a; /* Change background color on hover */
+  color: white; /* Change text color on hover */
+  box-shadow: 0 4px 8px rgba(150, 150, 150, 0.5);
 }
 
-.button-container{
+.welcomePage-button-container{
   width: auto;
   background-color: #E8E8E8FF;
   padding: 4em 0;

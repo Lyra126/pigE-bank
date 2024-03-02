@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './AccountRecovery.css';
 import './bootstrap/dist/css/bootstrap.min.css';
-import { Link, useNavigate } from 'react-router-dom';
+import {Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function AccountRecovery() {
@@ -35,7 +35,7 @@ function AccountRecovery() {
 
                     document.cookie = 'tempEmail=; expires=' + experationDate.toUTCString() +'; path=/;';
                 } else {
-                    setErrorMessage("Invalid Email and/or username");
+                    setErrorMessage("Invalid email and/or username.");
                 }
             })
             .catch(error => {
@@ -45,7 +45,7 @@ function AccountRecovery() {
     }
 
     return (
-        <div>
+        <div className="AccountRecovery-bg">
             <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="/">Pig E-Bank</a>
@@ -63,24 +63,27 @@ function AccountRecovery() {
             </nav>
 
             <div className='d-flex flex-column vh-100 justify-content-center align-items-center' style = {{marginTop: -50}}>
-                <h1 className="p-8 text-center AccountRecovery-title-message" style={{ marginTop: 10 }}>Account Recovery</h1>
                 <div className='p-3 AccountRecovery-box'>
-                    <form onSubmit={handleSubmit}>
+                    <div className="AccountRecovery-title-header-div">
+                    <h1 className="AccountRecovery-title-message" style={{ marginTop: 10 }}>Forgot your password?</h1>
+                    <p className="AccountRecovery-header-message"> No worries! Just type in your account's username and email and you'll be prompted to change your password!</p>
+                    </div>
+                        <form onSubmit={handleSubmit} className = "AccountRecovery-form">
                         {/* Logo Image */}
-                        <img src="images/favicon.ico" alt="pig" className="AccountRecovery-piggy image-center" />
+                        <img src="images/favicon.ico" alt="pig" className="AccountRecovery-piggy image-center"/>
                         <div className='mb-3'>
-                            <label htmlFor='email' style={{ fontFamily: 'DM_Sans-Medium', marginLeft: 3}}>Email</label>
+                            <label htmlFor='email' style={{ fontFamily: 'DM_Sans-SemiBold', marginLeft: 3}}>Email</label>
                             <input type='email' placeholder='Enter Email' className='form-control'
                                 onChange={e => setEmail(e.target.value)} />
                         </div>
                         <div className='mb-3'>
-                            <label htmlFor='username' style={{ fontFamily: 'DM_Sans-Medium', marginLeft: 3}}>Username</label>
+                            <label htmlFor='username' style={{ fontFamily: 'DM_Sans-SemiBold', marginLeft: 3}}>Username</label>
                             <input type='username' placeholder='Enter Username' className='form-control'
                                 onChange={e => setUsername(e.target.value)} />
                         </div>
                         <div className='d-flex flex-column'>
                             <button className='btn btn-success' style={{ fontFamily: 'DM_Sans-Medium', objectPosition: "center", minWidth: 300 }}>Find account</button>
-                            <p style={{ fontSize: 12, marginTop: 15, color: "red", textAlign: 'center', visibility: errorMessage ? 'visible' : 'hidden', marginBottom: 5}}>{errorMessage}</p>
+                            <p style={{ fontSize: 14, marginTop: 10, color: "red", textAlign: 'center', visibility: errorMessage ? 'visible' : 'hidden', marginBottom: 3}}>{errorMessage}</p>
                         </div>
                     </form>
                 </div>

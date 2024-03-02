@@ -57,7 +57,7 @@ function CreateAccount() {
                 <div className="createAccount-create-account-container box_shadow">
                     <h1 className="text-center mb-4" style = {{marginTop: 20, fontFamily: "Poppins-SemiBold", paddingBottom: 10}}>Create Your Account</h1>
                     <p className = "text-center" style = {{marginTop: -20}}>We're excited to see you've joined us!</p>
-                    <p className = "text-center" style = {{marginTop: -15, paddingBottom: 10}}>Just a few more steps and you'll be apart of our Pig-E family!</p>
+                    <p className = "text-center" style = {{marginTop: -15, paddingBottom: 19}}>Just a few more steps and you'll be apart of our Pig-E family!</p>
                     <form onSubmit={handleSubmit} className="createAccount-form-container">
                         <div className = 'createAccount-first-last-div'>
                         <div className='createAccount-input-field'>

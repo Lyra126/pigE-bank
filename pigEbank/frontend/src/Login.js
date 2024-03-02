@@ -82,10 +82,12 @@ function Login() {
             <div className='login-main-div'>
                 <h1 className="p-8 text-center login-title-message"> Howdy! Great to see you again!</h1>
                 <div className='p-3 login-box'>
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit} className="login-form-container">
                         {/* Logo Image */}
-                        <img src="images/favicon.ico" alt="pig" className="login-piggy" />
-                        <div className='mb-3'>
+                        <div style = {{display: "flex", justifyContent: "center"}}>
+                        <img src="images/favicon.ico" alt="pig" className="login-piggy"/>
+                        </div>
+                            <div className='mb-3'>
                             <login-label htmlFor='email'>Email</login-label>
                             <input type='email' placeholder='Enter Email' className='form-control'
                                 onChange={e => setEmail(e.target.value)} />
