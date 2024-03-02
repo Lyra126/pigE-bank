@@ -1,16 +1,56 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './PigInfo.css';
 import { Link, useParams, useLocation } from 'react-router-dom';
+import axios from 'axios';
 
 function PigInfo() {
     const { pigName } = useParams();
-    const [currentSavings, setCurrentSavings] = useState(60);
-    const [savingsGoal, setSavingsGoal] = useState(100);
-    const [newGoal, setNewGoal] = useState('');
-    const [monthlyContribution, setMonthlyContribution] = useState(0);
-    const [goalAmount, setGoalAmount] = useState(0);
     const [timeToReachGoal, setTimeToReachGoal] = useState(0);
     const [showMessage, setShowMessage] = useState(false); // State to control message display
+
+    const [goalName, setGoalName] = useState('');
+    const [goalType, setGoalType] = useState('');
+    const [stage, setStage] = useState('');
+    const [currentSavings, setCurrentSavings] = useState(0);
+    const [newSavings, setNewSavings] = useState(); // State for newSavings
+    const [savingsGoal, setSavingsGoal] = useState(0);
+    const [creationDate, setCreationDate] = useState('');
+
+    const [monthlyContribution, setMonthlyContribution] = useState(0);
+    const [goalAmount, setGoalAmount] = useState(0);
+    const[progress, setProgress] = useState(0);
+    const [error, setError] = useState('');
+
+    useEffect(() => {
+        const username = document.cookie.split('; ').find(row => row.startsWith('username=')).split('=')[1];
+        const email = document.cookie.split('; ').find(row => row.startsWith('email=')).split('=')[1];
+      
+        axios.get('/accounts')
+          .then(response => {
+            const user = response.data.find(user => user.email === email);
+            if (user) {
+              axios.get('/accounts/getGoals/' + email)
+                .then(res => {
+                  const goals = res.data;
+                  const filteredGoals = goals.filter(goal => goal.pigName === pigName); // Filter goals by pigName
+                  if (filteredGoals.length > 0) {
+                    const { goalName, goalType, stage, ownerEmail, currentSavings, savingsGoal, creation } = filteredGoals[0];
+                    setGoalName(goalName);
+                    setGoalType(goalType);
+                    setStage(stage);
+                    setCurrentSavings(currentSavings);
+                    setSavingsGoal(savingsGoal);
+                    setCreationDate(creation);
+                    setProgress((currentSavings / savingsGoal) * 100);
+                  }
+                })
+                .catch(err => console.log(err));
+            }
+          })
+          .catch(error => {
+            console.error('Error fetching number of goals:', error);
+          });
+      }, [pigName]); // Add pigName to the dependency array
 
     const location = useLocation();
 
@@ -32,14 +72,30 @@ function PigInfo() {
         clearVariablesAndMessage();
     }, [location.pathname]);
 
+    useEffect(() => {
+        const newProgress = (currentSavings / savingsGoal) * 100;
+        setProgress(newProgress);
+    }, [currentSavings, savingsGoal]);    
     
-    const progress = (currentSavings / savingsGoal) * 100; 
 
-    const handleGoalUpdate = () => {
-        if (newGoal !== '') {
-            setSavingsGoal(parseFloat(newGoal));
-            setNewGoal('');
+
+    const handleGoalUpdate = (event) => {
+        const newValue = parseInt(event);
+        if (newValue < 0) {
+            setError('Value cannot be negative.');
+        } else if (newValue === 0) {
+            setError('You have not added new savings. Enter a value above 0.');
+        } else if (newValue + currentSavings > savingsGoal) {
+            window.alert("You've reached your goal of " + {goalAmount} + (currentSavings + newValue) - savingsGoal + " left over!!");
+            setCurrentSavings(savingsGoal);
+            setProgress((currentSavings / savingsGoal) * 100);
+            setError('');
+        } else {
+            setCurrentSavings(currentSavings + newValue);
+            setProgress((currentSavings / savingsGoal) * 100);
+            setError(''); // Reset error message
         }
+
     };
 
     return (
@@ -72,7 +128,10 @@ function PigInfo() {
                             <Link to="/dashboard" className='dbutton'>⬅</Link>
                         </div>
                          <h1>{pigName} </h1>
-                         <h1>Goal Name </h1>
+                         <h1>{goalName} </h1>
+                         <h1>Type: {goalType} </h1>
+                         <h1>Stage: {stage} </h1>
+                         <h1>creationDate: {creationDate} </h1>
                     </div>
                 </div>
                 <div className="top-right">
@@ -89,21 +148,21 @@ function PigInfo() {
                     
                     <div className="progress" style={{ height: '30px' }}>
                         <div className="progress-bar" role="progressbar" style={{ width: `${progress}%`, color: 'black' }} aria-valuenow={progress} aria-valuemin="0" aria-valuemax="100">
-                            {progress.toFixed(2)}% {/* Show progress with 2 decimal places */}
+                            {progress.toFixed(2)}%
                         </div>
                     </div>
-                
                     
                     <div>
                         <input
                             className='input-form'
                             type="number"
-                            value={newGoal}
-                            onChange={(e) => setNewGoal(e.target.value)}
+                            value={newSavings}
                             placeholder="Enter new Savings"
+                            onChange={e => setNewSavings(e.target.value)}
                         />
                     </div>
-                    <button className="update-button" onClick={handleGoalUpdate}>Update Goal</button>
+                    {error && <div className="error-message">{error}</div>}
+                    <button className="update-button" onClick={() => handleGoalUpdate(newSavings)}>Update Goal</button>
                     </div>
                     <div className="bot-right">
                         { /* Bottom-right container */}
