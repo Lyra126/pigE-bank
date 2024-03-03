@@ -15,6 +15,7 @@ function PigInfo() {
     const [newSavings, setNewSavings] = useState(); // State for newSavings
     const [savingsGoal, setSavingsGoal] = useState(0);
     const [creationDate, setCreationDate] = useState('');
+    const [pigId, setPigID] = useState('');
 
     const [monthlyContribution, setMonthlyContribution] = useState(0);
     const [goalAmount, setGoalAmount] = useState(0);
@@ -34,7 +35,7 @@ function PigInfo() {
                   const goals = res.data;
                   const filteredGoals = goals.filter(goal => goal.pigName === pigName); // Filter goals by pigName
                   if (filteredGoals.length > 0) {
-                    const { goalName, goalType, stage, ownerEmail, currentSavings, savingsGoal, creation } = filteredGoals[0];
+                    const { goalName, goalType, stage, ownerEmail, currentSavings, savingsGoal, creation, id } = filteredGoals[0];
                     setGoalName(goalName);
                     setGoalType(goalType);
                     setStage(stage);
@@ -42,6 +43,7 @@ function PigInfo() {
                     setSavingsGoal(savingsGoal);
                     setCreationDate(creation);
                     setProgress((currentSavings / savingsGoal) * 100);
+                    setPigID(id);
                   }
                 })
                 .catch(err => console.log(err));
@@ -59,6 +61,7 @@ function PigInfo() {
         setTimeToReachGoal(((goalAmount-currentSavings) / monthlyContribution).toFixed(2));
         setShowMessage(true); 
     }
+
 
     function clearVariablesAndMessage() {
         setCurrentSavings(0);
@@ -93,6 +96,11 @@ function PigInfo() {
         } else {
             setCurrentSavings(currentSavings + newValue);
             setProgress((currentSavings / savingsGoal) * 100);
+
+            axios.put("/goals/addToCurrentSavings?id=" + pigId + "&money="+ newValue)
+            .then(res => console.log(res))
+            .catch(err => console.log(err));
+
             setError(''); // Reset error message
         }
 
