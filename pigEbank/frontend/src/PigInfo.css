@@ -1,10 +1,9 @@
-.container {
+.PigInfo-container {
     margin: 0 auto;
-    padding: 20px;
+    padding: 25px;
     box-sizing: border-box;
     background-color: white;
-    background-color: white;
-    border: 1px solid ;
+    border: 2px solid ;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

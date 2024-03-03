@@ -16,11 +16,10 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* Adjust as needed */
   gap: 20px; /* Adjust the gap between grid items */
-  background-color: #67430a;
+  background-color: #5b3e27;
   padding: 20px; /* Add some padding around the grid */
   border-radius: 10px; /* Add rounded corners to the grid */
 }
-
 
 .content button {
   margin-top: 10px;

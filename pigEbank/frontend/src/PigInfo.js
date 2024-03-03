@@ -62,7 +62,6 @@ function PigInfo() {
         setShowMessage(true); 
     }
 
-
     function clearVariablesAndMessage() {
         setCurrentSavings(0);
         setMonthlyContribution(0);
@@ -79,7 +78,6 @@ function PigInfo() {
         const newProgress = (currentSavings / savingsGoal) * 100;
         setProgress(newProgress);
     }, [currentSavings, savingsGoal]);    
-    
 
 
     const handleGoalUpdate = (event) => {
@@ -127,12 +125,12 @@ function PigInfo() {
                 </div>
             </nav>
         
-        <div className="container">
+        <div className="PigInfo-container">
             <div className="row">
                 <div className="top-left">
                     {/* Top-left container */}
                     <div>
-                        <div className="dashboard-button">
+                        <div className="dashboard-button ">
                             <Link to="/dashboard" className='dbutton'>⬅</Link>
                         </div>
                          <h1>{pigName} </h1>
@@ -142,7 +140,7 @@ function PigInfo() {
                          <h1>creationDate: {creationDate} </h1>
                     </div>
                 </div>
-                <div className="top-right">
+                <div className="top-right gradient_bg_green">
                     {/* Top-right container */}
                     <div>
                     <img src="/images/favicon.ico" alt="pig"  />
