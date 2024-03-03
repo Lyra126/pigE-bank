@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import confetti from 'canvas-confetti';
 import axios from 'axios';
 import './createAccount.css';
 
@@ -32,6 +33,12 @@ function CreateAccount() {
                     console.log(res);       
                     document.cookie = `username=${username}`;             
                     navigate('/dashboard');
+                    confetti({
+                        particleCount: 500,
+                        spread: 100,
+                        origin: { x: 0.4, y: 0.5 },
+
+                    });
                 })
                 .catch(err => console.log(err));    
         }
