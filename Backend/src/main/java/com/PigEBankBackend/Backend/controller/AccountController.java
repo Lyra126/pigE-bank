@@ -61,7 +61,7 @@ public class AccountController {
 
     @PutMapping("/updatePassword")
     public ResponseEntity<String> updateAccountPassword(@RequestBody Account account) {
-        return new ResponseEntity<String>(accountService.updateAccountPassword(account), HttpStatus.OK);
+        return new ResponseEntity<String>(accountService.(account), HttpStatus.OK);
     }
 
     @PutMapping("/updateNumOfGoals")
