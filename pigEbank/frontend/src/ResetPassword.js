@@ -31,7 +31,7 @@ function ResetPassword() {
                     console.log(res);
                     navigate('/login'); // assuming `navigate` is defined and used for routing
                 })
-                .catch(err => console.log(err));
+                .catch(err => console.log("ERROR - PASSWORD COULD NOT BE CHANGED FOR SOME UNFATHIMABLE REASON!"));
         }
     }
 
