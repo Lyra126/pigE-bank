@@ -59,6 +59,7 @@
     border-radius: 5px;
 }
 
+/*#866148*/
 .PigInfo-savings-information{
     padding-top: 7px;
     background-color: #866148;
@@ -69,7 +70,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-
 }
 
 .PigInfo-savings-information h1 {
@@ -188,7 +188,10 @@
 
 .progress {
     width: 100vh !important;
-    height: 50px !important;
+    height: 70px !important;
+    font-family: DM_Sans-Medium;
+    font-size: 25px;
+
 }
 
 .progress-bar {
@@ -220,7 +223,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-family: PaytoneOne-Regular;
+    font-family: DM_Sans-Medium;
 }
 
 .update-button:hover {

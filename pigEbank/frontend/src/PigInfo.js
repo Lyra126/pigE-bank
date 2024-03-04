@@ -252,7 +252,7 @@ function PigInfo() {
 
                         {/* Updating savings */}
                         <div className = "PigInfo-update-savings">
-                            <h2 style = {{marginBottom: -10}}>Update Savings</h2>
+                            <h2 style = {{marginBottom: -10}}>Add Savings</h2>
                             <div>
                                 <input
                                     className='input-form PigInfo-input-form'
@@ -263,7 +263,7 @@ function PigInfo() {
                                 />
                             </div>
                             {error && <div className="error-message">{error}</div>}
-                            <button className="update-button" onClick={() => handleGoalUpdate(newSavings)}>Update Goal</button>
+                            <button className="update-button" onClick={() => handleGoalUpdate(newSavings)}>Add New Savings</button>
                         </div>
 
                         {/*Calculator*/}
