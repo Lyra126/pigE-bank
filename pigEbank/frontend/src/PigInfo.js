@@ -230,10 +230,14 @@ function PigInfo() {
                     <div className="Pig-Info-db-button-div ">
                         <Link to="/dashboard" className='Pig-Info-db-button'>⬅</Link>
                     </div>
-                {/* Div with Pig name and Goal name */}
-                    <div className="PigInfo-pigName-savingsGoal">
-                         <p style={{fontFamily: "Poppins-SemiBold", marginBottom: "1px", fontSize: "32px", marginTop: "-6px"}}>{pigName} </p>
-                        <p style={{fontFamily: "DM_Sans-Medium"}}>Savings Goal: ${savingsGoal} </p>
+                {/* Div with Pig name*/}
+                    <div className="PigInfo-pigName">
+                         {/*Name tag*/}
+                         <div className="hello-my-name-is">
+                             <p style = {{color: "white", fontFamily: "Poppins-Regular", marginTop: "2px"}}>Hello! My name is </p>
+                         </div>
+                         <p style={{fontFamily: "Poppins-SemiBold", marginBottom: "1px", fontSize: "32px", marginTop: "-1px"}}>{pigName} </p>
+                        <div></div>
                     </div>
 
                 </div>
@@ -245,8 +249,8 @@ function PigInfo() {
                     <div className = "PigInfo-savings-information">
                         <div className="PigInfo-current-savings">
                         {/*Current savings*/}
-                        <h1>Savings</h1>
-                            <h3 style = {{fontFamily: "DM_Sans-SemiBold"}}>Currently saved:</h3>
+                        {/*<h1>Savings</h1>*/}
+                            <h2 style = {{marginBottom: "-10px"}}>You've saved:</h2>
                             <p>${currentSavings} </p>
                         </div>
 
@@ -263,13 +267,13 @@ function PigInfo() {
                                 />
                             </div>
                             {error && <div className="error-message">{error}</div>}
-                            <button className="update-button" onClick={() => handleGoalUpdate(newSavings)}>Add New Savings</button>
+                            <button className="PigInfo-update-button" onClick={() => handleGoalUpdate(newSavings)}>Add New Savings</button>
                         </div>
 
                         {/*Calculator*/}
                         <div className = "PigInfo-calculator">
                             <h2>Calculator</h2>
-                            <p style = {{marginTop: "-14px", marginBottom: "2px"}}>What is this?</p>
+                            <p style = {{marginTop: "-10px", marginBottom: "10px"}}>What is this?</p>
                             <form onSubmit={calculateTimeToReachGoal}>
                                     <div>
                                         {/*Input*/}
@@ -316,25 +320,31 @@ function PigInfo() {
                             </form>
                         </div>
 
-
                     </div>
 
 
                     {/*pig image and percentage bar*/}
                     <div className="PigInfo-image-percentageBar">
-                        <img src="/images/test_bg_image.png" alt="pig" className = "PigInfo-pig-image"/>
+                        <img src="/images/pig_stage1_test.png" alt="pig" className = "PigInfo-pig-image"/>
                         <div className="progress" style={{ height: '40px' }}>
                             <div className="progress-bar" role="progressbar" style={{ width: `${progress}%`, color: 'black' }} aria-valuenow={progress} aria-valuemin="0" aria-valuemax="100">
                                 {progress.toFixed(2)}%
                             </div>
                         </div>
                     </div>
-                    <div className="PigInfo-piggy-information">
-                        <h3 style = {{fontFamily: "DM_Sans-SemiBold"}}>Pig Information</h3>
-                        <p style={{fontFamily: "DM_Sans-Medium",  marginBottom: "1px", marginTop: "-5px"}}>Goal Name: {goalName} </p>
-                        <p style={{fontFamily: "DM_Sans-Medium", marginBottom: "1px"}}>Type: {goalType} </p>
-                        <p style={{fontFamily: "DM_Sans-Medium"}}>Stage: {stage} </p>
-                        <p style={{fontFamily: "DM_Sans-Medium"}}>Creation Date: {creationDate} </p>
+                    <div className="PigInfo-piggyBank-information">
+                        {/*Pig information*/}
+                        <div className = "PigInfo-pig-info">
+                            <h3 style = {{fontFamily: "DM_Sans-SemiBold"}}>Pig Information</h3>
+                            <p style={{fontFamily: "DM_Sans-Medium"}}>Stage: {stage} </p>
+                        </div>
+                        {/*More information about savings*/}
+                        <div className="PigInfo-more-savings-info">
+                            <p style={{fontFamily: "DM_Sans-Medium"}}>Savings Goal: ${savingsGoal} </p>
+                            <p style={{fontFamily: "DM_Sans-Medium", marginBottom: "1px"}}>Type: {goalType} </p>
+                            <p style={{fontFamily: "DM_Sans-Medium",  marginBottom: "1px", marginTop: "-5px"}}>Goal Name: {goalName} </p>
+                            <p style={{fontFamily: "DM_Sans-Medium"}}>Creation Date: {creationDate} </p>
+                        </div>
                     </div>
                 </div>
 

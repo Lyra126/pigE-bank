@@ -4,7 +4,7 @@
     background-color: #bda48e;
     border-radius: 5px;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -12,7 +12,9 @@
 .PigInfo-top-row{
     width: 100%;
     height: 100px;
-    background-color: white;
+    margin-top: -15px;
+    margin-bottom: 10px;
+    background-color: #bda48e;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -36,11 +38,20 @@
     color: #594533;
 }
 
-.PigInfo-pigName-savingsGoal{
-    background-color: #d0b8b8;
+.hello-my-name-is{
+    background-color: red;
+    width: auto;
+    height: 30px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.PigInfo-pigName{
+    background-color: #f6f3f3;
     text-align: center;
-    padding: 10px;
-    width: 40%;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
     border-radius: 5px;
     margin: 10px auto;
     justify-self: center;
@@ -53,19 +64,17 @@
     display: flex;
     align-items: center; /* Center vertically */
     flex-direction: row;
-    padding: 25px;
-    padding-right: 0px;
-    padding-left: 0px;
+    justify-content: space-evenly;
+    padding-right: 25px;
+    padding-left: 25px;
     border-radius: 5px;
 }
 
 /*#866148*/
 .PigInfo-savings-information{
-    padding-top: 7px;
-    background-color: #866148;
-    height: 100%;
+    background-color: #ff0015;
+    height: 85vh;
     width: 20%;
-    margin: 30px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -77,23 +86,23 @@
     text-align: center;
     padding: 5px;
     border-radius: 5px;
-    font-size: 45px;
-    margin-bottom: 5px;
+    font-size: 40px;
+    margin-bottom: -2px;
 }
 
 .PigInfo-savings-information h2{
-    font-family:"Poppins-Bold";
+    font-family:"DM_Sans-SemiBold";
     text-align: center;
     padding: 5px;
     border-radius: 5px;
-    font-size: 30px;
+    font-size: 33px;
     margin-bottom: 5px;
 }
+
 
 .PigInfo-current-savings{
     text-align: center;
     background-color: #dcc8b8;
-
     border-radius: 10px;
 }
 
@@ -104,14 +113,31 @@
     margin-bottom: -5px;
 }
 
+.PigInfo-update-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #3e6e37;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: DM_Sans-Medium;
+    transition: background-color ease 0.3s;
+}
+
+.PigInfo-update-button:hover {
+    background-color: #335b36;
+}
+
 .PigInfo-calculator{
     text-align: center;
     display: flex;
-    justify-content: center; /* Center horizontally */
+    padding: 10px;
     align-items: center; /* Center vertically */
     background-color: #dcc8b8;
     flex-direction: column;
     border-radius: 8px;
+    height: 48%;
 }
 
 .PigInfo-form-input{
@@ -139,13 +165,27 @@
 }
 
 .PigInfo-btn-calculate{
+    margin-top: 5px;
+    padding: 10px 20px;
+    background-color: #3e6e37;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: DM_Sans-Medium;
+    transition: background-color ease 0.3s;
+}
 
+.PigInfo-btn-calculate:hover{
+    background-color: #335b36;
 }
 
 .PigInfo-update-savings{
     background-color: #dcc8b8;
     border-radius: 10px;
     padding: 10px;
+    padding-right: 50px;
+    padding-left: 50px;
     display: flex;
     flex-direction: column;
 }
@@ -160,27 +200,20 @@
 
 
 
-
-
-.PigInfo-piggy-information{
-    background-color: #b78a8a;
-    height: 100%;
-    width: 20%;
-    margin: 30px;
-    padding: 20px;
-    border-radius: 10px;
-}
-
 .PigInfo-image-percentageBar{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    background-color: red;
+    height: 85vh;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
 }
 
 .PigInfo-pig-image{
     align-content: center;
-    width: auto;
-    height: 650px;
+    width: 900px;
+    height: 650px !important;
     border: 15px solid #1f1d1b;
     border-radius: 5px;
     margin-bottom: 15px;
@@ -188,7 +221,7 @@
 
 .progress {
     width: 100vh !important;
-    height: 70px !important;
+    height: 60px !important;
     font-family: DM_Sans-Medium;
     font-size: 25px;
 
@@ -209,25 +242,27 @@
 }
 
 
+.PigInfo-piggyBank-information{
+    background-color: #ff0000;
+    height: 100%;
+    width: 20%;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.PigInfo-pig-info{
+    background-color: white;
+}
+
+.PigInfo-more-savings-info{
+    background-color: white;
+}
+
+
 .input-form {
     width: 100%; /* Adjusted width to fill the container */
     text-align: center;
     margin-top: 20px; /* Adjusted margin for consistency */
-}
-
-.update-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #3e6e37;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: DM_Sans-Medium;
-}
-
-.update-button:hover {
-    background-color: #52814a;
 }
 
 .edit-goal-btn {
