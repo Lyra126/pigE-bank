@@ -1,58 +1,210 @@
 .PigInfo-container {
-    margin: 0 auto;
     padding: 25px;
     box-sizing: border-box;
-    background-color: white;
-    border: 2px solid ;
+    background-color: #bda48e;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.piggy {
-    width: 100px; /* Set a specific width for the image */
-    height: auto; /* Allow the height to adjust proportionally */
-}
-
-
-.row {
-    justify-content: space-between;
-    align-items: flex-start; /* Adjusted alignment to start */
-}
-
-.top-left,
-.top-right,
-.bot-left,
-.bot-right {
-    width: 48%;
-    padding: 20px;
+.PigInfo-top-row{
+    width: 100%;
+    height: 100px;
     background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 5px;
 }
 
-.top-left h1,
-.bot-left h1 {
-    margin-bottom: 10px;
-    display: flex; /* Use flexbox */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+.Pig-Info-db-button-div {
+    margin: 10px;
+    margin-left: 40px;
+    margin-right:-75px;
+    font-size: 50px;
 }
 
-.top-right img {
-    max-width: 100%; /* Limit the maximum width of the image to its container's width */
-    height: auto; /* Maintain the aspect ratio of the image */
-    
+.Pig-Info-db-button{
+    text-decoration: none !important;
+    color: #805d53;
+    transition: color ease 0.3s;
+}
+
+.Pig-Info-db-button:hover{
+    color: #594533;
+}
+
+.PigInfo-pigName-savingsGoal{
+    background-color: #d0b8b8;
+    text-align: center;
+    padding: 10px;
+    width: 40%;
+    border-radius: 5px;
+    margin: 10px auto;
+    justify-self: center;
+}
+
+.PigInfo-middle-row{
+    background-color: #866148;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center; /* Center vertically */
+    flex-direction: row;
+    padding: 25px;
+    padding-right: 0px;
+    padding-left: 0px;
+    border-radius: 5px;
+}
+
+.PigInfo-savings-information{
+    padding-top: 7px;
+    background-color: #866148;
+    height: 100%;
+    width: 20%;
+    margin: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+
+.PigInfo-savings-information h1 {
+    font-family:"Poppins-Bold";
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 45px;
+    margin-bottom: 5px;
+}
+
+.PigInfo-savings-information h2{
+    font-family:"Poppins-Bold";
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.PigInfo-current-savings{
+    text-align: center;
+    background-color: #dcc8b8;
+
+    border-radius: 10px;
+}
+
+.PigInfo-current-savings p{
+    font-size: 50px;
+    font-family: DM_Sans-SemiBold;
+    margin-top: -10px;
+    margin-bottom: -5px;
+}
+
+.PigInfo-calculator{
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-color: #dcc8b8;
+    flex-direction: column;
+    border-radius: 8px;
+}
+
+.PigInfo-form-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.PigInfo-form-input label{
+    font-family: DM_Sans-Medium;
+    font-size: 17px;
+}
+
+.PigInfo-form-input input{
+    height: 30%;
+    justify-content: center;
+}
+
+.PigInfo-btn-group{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5px;
+}
+
+.PigInfo-btn-calculate{
+
+}
+
+.PigInfo-update-savings{
+    background-color: #dcc8b8;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.PigInfo-input-form{
+    border-radius: 10px;
+    height: 40px;
+    font-family: DM_Sans-Medium;
 }
 
 
+
+
+
+
+
+.PigInfo-piggy-information{
+    background-color: #b78a8a;
+    height: 100%;
+    width: 20%;
+    margin: 30px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.PigInfo-image-percentageBar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.PigInfo-pig-image{
+    align-content: center;
+    width: auto;
+    height: 650px;
+    border: 15px solid #1f1d1b;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
 
 .progress {
-    width: 100%; /* Adjusted width to fill the container */
-    height: 30px; /* Adjusted height for consistency */
+    width: 100vh !important;
+    height: 50px !important;
 }
 
 .progress-bar {
     animation: pulse 1.5s infinite alternate;
     height: 100%;
 }
+
+@keyframes pulse {
+    0% {
+        background-color: #86f85d; /* Start color */
+    }
+    100% {
+        background-color: #fcff5c; /* End color */
+    }
+}
+
 
 .input-form {
     width: 100%; /* Adjusted width to fill the container */
@@ -75,25 +227,6 @@
     background-color: #52814a;
 }
 
-.dashboard-button {
-    width: 25%;
-    margin-bottom: 20px; /* Added margin for spacing */
-
-    color: #fff !important;
-    background-color: #3e6e37;
-    border: none;
-    cursor: pointer;
-    text-decoration: none !important;
-    display: inline-block;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: PaytoneOne-Regular;
-    padding: 12px 24px;
-    font-size: 18px;
-    border-radius: 8px;
-}
-
 .edit-goal-btn {
     padding: 10px 20px;
     background-color: #3e6e37;
@@ -109,23 +242,3 @@
 }
 
 
-@keyframes pulse {
-    0% {
-        background-color: #86f85d; /* Start color */
-    }
-    100% {
-        background-color: #fcff5c; /* End color */
-    }
-}
-
-.progress {
-
-    width: 300px !important;
-    height: 50px !important;
-}
-
-.progress-bar {
-    animation: pulse 1.5s infinite alternate;
-    height: 100%;
-
-}
