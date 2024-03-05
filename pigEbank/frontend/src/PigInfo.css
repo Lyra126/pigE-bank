@@ -72,7 +72,7 @@
 
 /*#866148*/
 .PigInfo-savings-information{
-    background-color: #ff0015;
+    /*background-color: #ff0015;*/
     height: 85vh;
     width: 20%;
     border-radius: 10px;
@@ -140,6 +140,26 @@
     height: 48%;
 }
 
+.PigInfo-what-is-this{
+    cursor: pointer;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #775d49;
+    text-decoration:none;
+    transition: color ease 0.3s
+}
+
+.PigInfo-what-is-this:hover{
+    color: rgb(79, 61, 46);
+}
+
+.PigInfo-calculator .message-css{
+    background-color: white;
+    color: black;
+
+}
+
 .PigInfo-form-input{
     display: flex;
     flex-direction: column;
@@ -203,7 +223,7 @@
 .PigInfo-image-percentageBar{
     display: flex;
     flex-direction: column;
-    background-color: red;
+    /*background-color: red;*/
     height: 85vh;
     border-radius: 5px;
     justify-content: center;
@@ -220,11 +240,10 @@
 }
 
 .progress {
-    width: 100vh !important;
+    width: 97vh !important;
     height: 60px !important;
     font-family: DM_Sans-Medium;
     font-size: 25px;
-
 }
 
 .progress-bar {

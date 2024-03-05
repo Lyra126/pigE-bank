@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './PigInfo.css';
 import { Link, useParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
+import { Tooltip } from 'react-tooltip'
 
 function PigInfo() {
     const { pigName } = useParams();
@@ -273,7 +274,18 @@ function PigInfo() {
                         {/*Calculator*/}
                         <div className = "PigInfo-calculator">
                             <h2>Calculator</h2>
-                            <p style = {{marginTop: "-10px", marginBottom: "10px"}}>What is this?</p>
+                            <a data-tooltip-id="my-tooltip-click my-tooltip-children-multiline" className = "PigInfo-what-is-this" >What is this?</a>
+                            <Tooltip className="message-css"
+                                id="my-tooltip-click my-tooltip-children-multiline"
+                                place="right"
+                                offset={50}
+                                events={['click']}>
+                                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                    <span>We understand that knowing how long it'll take to save up for something can be </span>
+                                    <span>confusing, so we made this calculator for your ease in mind!</span>
+
+                                </div>
+                            </Tooltip>
                             <form onSubmit={calculateTimeToReachGoal}>
                                     <div>
                                         {/*Input*/}
