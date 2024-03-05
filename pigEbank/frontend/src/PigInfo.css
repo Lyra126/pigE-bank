@@ -39,7 +39,7 @@
 }
 
 .hello-my-name-is{
-    background-color: red;
+    background-color: #e03d3d;
     width: auto;
     height: 30px;
     border-top-right-radius: 5px;
@@ -137,7 +137,7 @@
     background-color: #dcc8b8;
     flex-direction: column;
     border-radius: 8px;
-    height: 48%;
+    height: 47%;
 }
 
 .PigInfo-what-is-this{
@@ -157,13 +157,19 @@
 .PigInfo-calculator .message-css{
     background-color: white;
     color: black;
+}
 
+.PigInfo-calculator .message-css-green{
+    background-color: darkolivegreen;
+    font-size: 25px;
 }
 
 .PigInfo-form-input{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
+    align-content: center;
     width: 100%;
     margin-bottom: 5px;
 }
@@ -212,8 +218,13 @@
 
 .PigInfo-input-form{
     border-radius: 10px;
-    height: 40px;
+    height: 55px;
+    font-size: 25px;
     font-family: DM_Sans-Medium;
+}
+
+.PigInfo-input-form::placeholder{
+    color: rgba(95, 101, 75, 0.47);
 }
 
 
