@@ -24,6 +24,22 @@ public class AccountService {
 
     @Autowired
     private MongoTemplate mongoTemplate;
+
+    private Account findAccount(String email){
+        Query findAccount = new Query();
+        findAccount.addCriteria(Criteria.where("email").is(email));
+        List<Account> user = mongoTemplate.find(findAccount, Account.class);
+
+        return user.getFirst();
+    }
+
+    private List<Account> findAccountList(String email){
+        Query findAccount = new Query();
+        findAccount.addCriteria(Criteria.where("email").is(email));
+        List<Account> user = mongoTemplate.find(findAccount, Account.class);
+
+        return user;
+    }
     public List<Account> getAllAccounts() {
         return accountRepository.findAll();
     }
@@ -43,9 +59,7 @@ public class AccountService {
     }
 
     public List<Goal> getAllGoals(String email) {
-        Query findAccount = new Query();
-        findAccount.addCriteria(Criteria.where("email").is(email));
-        List<Account> user = mongoTemplate.find(findAccount, Account.class);
+        List<Account> user = findAccountList(email);
 
         List<Goal> goals = new ArrayList<>();
         for(int i = 0; i < user.get(0).getGoalsID().size(); i++) {
@@ -68,6 +82,34 @@ public class AccountService {
 
         }
         return goals;
+    }
+
+    public List<Integer> getSecurityQs(String email) {
+        Account current = findAccount(email);
+
+        List<Integer> questions = new ArrayList<>();
+
+        if(current.getSecurityQA() != null) {
+            for (int i = 0; i < current.getSecurityQA().size(); i += 2) {
+                questions.add(Integer.valueOf(current.getSecurityQA().get(i)));
+            }
+        }
+
+        return questions;
+    }
+
+    public List<String> getSecurityAs(String email) {
+        Account current = findAccount(email);
+
+        List<String> answers = new ArrayList<>();
+
+        if(current.getSecurityQA() != null) {
+            for(int i = 1; i < current.getSecurityQA().size(); i+=2) {
+                answers.add(current.getSecurityQA().get(i));
+            }
+        }
+
+        return answers;
     }
 
     public String updateTotalSavings(Account account) {
@@ -107,6 +149,11 @@ public class AccountService {
 
         mongoTemplate.remove(query, Account.class);
         return "Account was deleted";
+    }
+
+    public String updateSecurityQA(Account account) {
+
+        return null;
     }
 
     public Account updateAccountAll(Account account) {

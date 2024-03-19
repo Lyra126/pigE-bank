@@ -43,6 +43,16 @@ public class AccountController {
         return new ResponseEntity<List<Goal>>(accountService.getAllGoals(email), HttpStatus.OK);
     }
 
+    @GetMapping("/getQs/{email}")
+    ResponseEntity<List<Integer>> getSecurityQuestions(@PathVariable String email) {
+        return new ResponseEntity<List<Integer>>(accountService.getSecurityQs(email), HttpStatus.OK);
+    }
+
+    @GetMapping("/getAs/{email}")
+    ResponseEntity<List<String>> getSecurityAnswers(@PathVariable String email) {
+        return new ResponseEntity<List<String>>(accountService.getSecurityAs(email), HttpStatus.OK);
+    }
+
     @PutMapping("/updateTotalSavings")
     ResponseEntity<String> updateAccountTotalSavings(@RequestBody Account account) {
         return new ResponseEntity<String>(accountService.updateTotalSavings(account), HttpStatus.OK);
@@ -54,6 +64,10 @@ public class AccountController {
         return accountService.addAccount(account);
     }
 
+    @PutMapping("/addSecurityQA")
+    public ResponseEntity<String> updateSecurityAQ(@RequestBody Account account) {
+        return new ResponseEntity<String>(accountService.updateSecurityQA(account), HttpStatus.OK);
+    }
     @PutMapping("/updateAll")
     public Account updateAccountAll(@RequestBody Account account) {
         return accountService.updateAccountAll(account);

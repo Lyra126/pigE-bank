@@ -10,6 +10,7 @@ import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 @Document(collection = "account")
 @Data
@@ -31,5 +32,6 @@ public class Account {
     private LocalDate creation;
     private List<ObjectId> goalsID;
 
+    private List<String> securityQA;
 
 }
