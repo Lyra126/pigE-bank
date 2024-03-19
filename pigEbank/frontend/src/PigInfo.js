@@ -3,7 +3,17 @@ import './PigInfo.css';
 import { Link, useParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { Tooltip } from 'react-tooltip'
+import confetti from 'canvas-confetti';
+import Popup from 'react-popup'; // Import Popup component
+import Prompt from './Prompt';
 
+function ShootConfetti(){
+    confetti({
+        particleCount: 100,
+        spread: 160,
+        origin: { x: 0.4, y: 0.5}
+    });
+}
 function PigInfo() {
     const { pigName } = useParams();
     const [timeToReachGoal, setTimeToReachGoal] = useState(0);
@@ -22,6 +32,7 @@ function PigInfo() {
     const [goalAmount, setGoalAmount] = useState(0);
     const[progress, setProgress] = useState(0);
     const [error, setError] = useState('');
+    const [showPrompt, setShowPrompt] = useState(false); // State to control prompt display
 
     useEffect(() => {
         const username = document.cookie.split('; ').find(row => row.startsWith('username=')).split('=')[1];
@@ -80,9 +91,21 @@ function PigInfo() {
         setProgress(newProgress);
     }, [currentSavings, savingsGoal]);    
 
+    const openPopup = () => {
+        setShowPrompt(true); // Set showPrompt state to true to display the prompt
+    };
+
+    const handlePromptClose = () => {
+        setShowPrompt(false); // Set showPrompt state to false to hide the prompt
+    };
+
+
 
     const handleGoalUpdate = (event) => {
         const newValue = parseInt(event);
+        if (newValue.empty){
+            alert("You have not entered a new value.");
+        }
         if (newValue < 0) {
             setError('Value cannot be negative.');
         } else if (newValue === 0) {
@@ -95,6 +118,7 @@ function PigInfo() {
         } else {
             setCurrentSavings(currentSavings + newValue);
             setProgress((currentSavings / savingsGoal) * 100);
+            ShootConfetti();
 
             axios.put("/goals/addToCurrentSavings?id=" + pigId + "&money="+ newValue)
             .then(res => console.log(res))
@@ -260,8 +284,9 @@ function PigInfo() {
                             <h2 style = {{marginBottom: -10}}>Add Savings</h2>
                             <div>
                                 <input
-                                    className='input-form PigInfo-input-form'
-                                    type="number"
+                                    className='input-form PigInfo-input-form form-control'
+                                    type="text"
+                                    pattern="[0-9]*"
                                     value={newSavings}
                                     placeholder="Enter here!"
                                     onChange={e => setNewSavings(e.target.value)}
@@ -283,7 +308,6 @@ function PigInfo() {
                                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                                     <span>We understand that knowing how long it'll take to save up for something can be </span>
                                     <span>confusing, so we made this calculator for your ease in mind!</span>
-
                                 </div>
                             </Tooltip>
                             <form onSubmit={calculateTimeToReachGoal}>
@@ -291,21 +315,22 @@ function PigInfo() {
                                         {/*Input*/}
                                         <div>
                                         <div className="form-group PigInfo-form-input">
+                                            <div className="form-group PigInfo-form-input">
+                                                <label htmlFor="currentSavings">Current Savings:</label>
+                                                <input
+                                                    type="number"
+                                                    id="currentSavings"
+                                                    value={currentSavings}
+                                                    className="form-control"
+                                                />
+                                            </div>
                                             <label htmlFor="goalAmount">Goal Amount:</label>
                                             <input
                                                 type="number"
                                                 id="goalAmount"
+                                                placeholder={savingsGoal}
                                                 value={goalAmount}
                                                 onChange={e => setGoalAmount(parseFloat(e.target.value))}
-                                                className="form-control"
-                                            />
-                                        </div>
-                                        <div className="form-group PigInfo-form-input">
-                                            <label htmlFor="currentSavings">Current Savings:</label>
-                                            <input
-                                                type="number"
-                                                id="currentSavings"
-                                                value={currentSavings}
                                                 className="form-control"
                                             />
                                         </div>
@@ -323,10 +348,16 @@ function PigInfo() {
                                         <div className="PigInfo-btn-group">
                                         {/*Buttons*/}
                                             <button type="button" className="PigInfo-btn-calculate" onClick={clearVariablesAndMessage}>Clear</button>
-                                            <button type="submit" className="PigInfo-btn-calculate">Calculate</button>
-                                        {showMessage && (
-                                            <p className="result-message">It will take approximately {timeToReachGoal} months to reach your savings goal.</p>
-                                        )}
+                                            <button type="submit" className="PigInfo-btn-calculate" data-tooltip-id="my-tooltip-click">Calculate</button>
+                                            <Tooltip className="message-css-green"
+                                                place = "top-end"
+                                                id="my-tooltip-click"
+                                                events={['click']}
+                                            >
+                                                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                                    <span>It'll take approximately {timeToReachGoal} months to reach your goal!</span>
+                                                </div>
+                                            </Tooltip>
                                         </div>
                                     </div>
                             </form>
@@ -357,6 +388,20 @@ function PigInfo() {
                             <p style={{fontFamily: "DM_Sans-Medium",  marginBottom: "1px", marginTop: "-5px"}}>Goal Name: {goalName} </p>
                             <p style={{fontFamily: "DM_Sans-Medium"}}>Creation Date: {creationDate} </p>
                         </div>
+                        <button className="popup-button" onClick={openPopup}>Edit Goal</button>
+
+                        {/* Render the prompt if showPrompt is true */}
+                        {showPrompt && (
+                            <Prompt
+                            onClose={handlePromptClose}
+                            onChange={(values) => {
+                                console.log('Pig Name:', values.pigName);
+                                console.log('Goal Name:', values.goalName);
+                                console.log('Goal Amount:', values.goalAmount);
+                                handlePromptClose(); // Close the prompt after handling the values
+                            }}
+                            />                        
+                        )}
                     </div>
                 </div>
 
