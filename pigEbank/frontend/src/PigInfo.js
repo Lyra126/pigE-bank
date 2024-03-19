@@ -4,6 +4,8 @@ import { Link, useParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { Tooltip } from 'react-tooltip'
 import confetti from 'canvas-confetti';
+import Popup from 'react-popup'; // Import Popup component
+import Prompt from './Prompt';
 
 function ShootConfetti(){
     confetti({
@@ -30,6 +32,7 @@ function PigInfo() {
     const [goalAmount, setGoalAmount] = useState(0);
     const[progress, setProgress] = useState(0);
     const [error, setError] = useState('');
+    const [showPrompt, setShowPrompt] = useState(false); // State to control prompt display
 
     useEffect(() => {
         const username = document.cookie.split('; ').find(row => row.startsWith('username=')).split('=')[1];
@@ -87,6 +90,15 @@ function PigInfo() {
         const newProgress = (currentSavings / savingsGoal) * 100;
         setProgress(newProgress);
     }, [currentSavings, savingsGoal]);    
+
+    const openPopup = () => {
+        setShowPrompt(true); // Set showPrompt state to true to display the prompt
+    };
+
+    const handlePromptClose = () => {
+        setShowPrompt(false); // Set showPrompt state to false to hide the prompt
+    };
+
 
 
     const handleGoalUpdate = (event) => {
@@ -376,6 +388,20 @@ function PigInfo() {
                             <p style={{fontFamily: "DM_Sans-Medium",  marginBottom: "1px", marginTop: "-5px"}}>Goal Name: {goalName} </p>
                             <p style={{fontFamily: "DM_Sans-Medium"}}>Creation Date: {creationDate} </p>
                         </div>
+                        <button className="popup-button" onClick={openPopup}>Edit Goal</button>
+
+                        {/* Render the prompt if showPrompt is true */}
+                        {showPrompt && (
+                            <Prompt
+                            onClose={handlePromptClose}
+                            onChange={(values) => {
+                                console.log('Pig Name:', values.pigName);
+                                console.log('Goal Name:', values.goalName);
+                                console.log('Goal Amount:', values.goalAmount);
+                                handlePromptClose(); // Close the prompt after handling the values
+                            }}
+                            />                        
+                        )}
                     </div>
                 </div>
 
