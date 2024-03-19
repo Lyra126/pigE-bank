@@ -152,8 +152,12 @@ public class AccountService {
     }
 
     public String updateSecurityQA(Account account) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("email").is(account.getEmail()));
 
-        return null;
+        Update update = new Update().set("securityQA", account.getSecurityQA());
+        UpdateResult updateResult = mongoTemplate.updateFirst(query, update, Account.class);
+        return "Updated NumOfGoals: " + updateResult.getMatchedCount();
     }
 
     public Account updateAccountAll(Account account) {
