@@ -2,6 +2,7 @@ package com.PigEBankBackend.Backend.service;
 
 import com.PigEBankBackend.Backend.model.Account;
 import com.PigEBankBackend.Backend.model.Goal;
+import com.PigEBankBackend.Backend.model.SecurityQs;
 import com.PigEBankBackend.Backend.repository.AccountRepository;
 import com.mongodb.client.result.UpdateResult;
 import org.bson.types.ObjectId;
@@ -84,14 +85,18 @@ public class AccountService {
         return goals;
     }
 
-    public List<Integer> getSecurityQs(String email) {
+    public List<String> getSecurityQs(String email) {
         Account current = findAccount(email);
 
-        List<Integer> questions = new ArrayList<>();
+        List<String> questions = new ArrayList<>();
+        List<String> securityList = current.getSecurityQA();
 
         if(current.getSecurityQA() != null) {
             for (int i = 0; i < current.getSecurityQA().size(); i += 2) {
-                questions.add(Integer.valueOf(current.getSecurityQA().get(i)));
+                Query findQ = new Query();
+                findQ.addCriteria(Criteria.where("associatedNum").is(Integer.valueOf(securityList.get(i))));
+                List<SecurityQs> sQuestions = mongoTemplate.find(findQ, SecurityQs.class);
+                questions.add(sQuestions.getFirst().getQuestion());
             }
         }
 

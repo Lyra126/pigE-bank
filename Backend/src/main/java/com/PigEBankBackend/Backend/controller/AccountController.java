@@ -44,8 +44,8 @@ public class AccountController {
     }
 
     @GetMapping("/getQs/{email}")
-    ResponseEntity<List<Integer>> getSecurityQuestions(@PathVariable String email) {
-        return new ResponseEntity<List<Integer>>(accountService.getSecurityQs(email), HttpStatus.OK);
+    ResponseEntity<List<String>> getSecurityQuestions(@PathVariable String email) {
+        return new ResponseEntity<List<String>>(accountService.getSecurityQs(email), HttpStatus.OK);
     }
 
     @GetMapping("/getAs/{email}")
