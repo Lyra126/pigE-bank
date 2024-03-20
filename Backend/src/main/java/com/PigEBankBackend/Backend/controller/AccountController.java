@@ -64,9 +64,14 @@ public class AccountController {
         return accountService.addAccount(account);
     }
 
-    @PutMapping("/addSecurityQA")
+    @PutMapping("/updateSecurityQA")
     public ResponseEntity<String> updateSecurityAQ(@RequestBody Account account) {
         return new ResponseEntity<String>(accountService.updateSecurityQA(account), HttpStatus.OK);
+    }
+
+    @PutMapping("/replaceSecurityQA")
+    public ResponseEntity<String> replaceSecurityAQ(@RequestBody Account account) {
+        return new ResponseEntity<String>(accountService.replaceSecurityQA(account), HttpStatus.OK);
     }
     @PutMapping("/updateAll")
     public Account updateAccountAll(@RequestBody Account account) {

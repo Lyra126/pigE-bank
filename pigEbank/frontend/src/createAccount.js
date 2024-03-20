@@ -31,7 +31,8 @@ function CreateAccount() {
             axios.post("/accounts/newAccount", {firstName: firstName, lastName: lastName, username: username, password: password, numOfGoals: 0})
                 .then(res => {
                     console.log(res);       
-                    document.cookie = `username=${username}`;             
+                    document.cookie = `username=${username}`;  
+                    document.cookie = `email=${email}`           
                     navigate('/dashboard');
                     confetti({
                         particleCount: 500,

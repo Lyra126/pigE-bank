@@ -160,6 +160,15 @@ public class AccountService {
         return "Updated NumOfGoals: " + updateResult.getMatchedCount();
     }
 
+    public String replaceSecurityQA(Account account) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("email").is(account.getEmail()));
+
+        Update update = new Update().set("securityQA", account.getSecurityQA());
+        UpdateResult updateResult = mongoTemplate.updateFirst(query, update, Account.class);
+        return "Updated NumOfGoals: " + updateResult.getMatchedCount();
+    }
+
     public Account updateAccountAll(Account account) {
         Account currentAccount = accountRepository.findById(account.getId()).get();
         currentAccount.setUsername(account.getUsername());
@@ -189,7 +198,6 @@ public class AccountService {
     }
 
     public String updateAccountFirstName(Account account) {
-
         Query query = new Query();
         query.addCriteria(Criteria.where("email").is(account.getEmail()));
 
