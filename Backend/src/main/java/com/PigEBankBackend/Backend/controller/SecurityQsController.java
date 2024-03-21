@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/securityQs")
 public class SecurityQsController {
@@ -28,5 +30,17 @@ public class SecurityQsController {
     public ResponseEntity<String> updateQuestion(@RequestBody SecurityQs securityQs) {
         return new ResponseEntity<String>(securityQsService.updateQuestion(securityQs), HttpStatus.OK);
     }
+
+    @GetMapping("/allQuestions")
+    ResponseEntity<List<SecurityQs>> getAllQuestions() {
+        return new ResponseEntity<List<SecurityQs>>(securityQsService.allQs(), HttpStatus.OK);
+    }
+
+    @GetMapping("/specificQuestion/{associatedNum}")
+    ResponseEntity<String> getSpecificQuestion(@PathVariable int associatedNum) {
+        return new ResponseEntity<String>(securityQsService.specificQ(associatedNum), HttpStatus.OK);
+    }
+
+
 
 }

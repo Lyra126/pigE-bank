@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import confetti from 'canvas-confetti';
 import axios from 'axios';
@@ -12,7 +12,29 @@ function CreateAccount() {
     const [password, setPassword] = useState('');
     const [confPassword, setConfPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const [securityAnswer1, setSecurityAnswer1] = useState('');
+    const [securityAnswer2, setSecurityAnswer2] = useState('');
+    const [securityAnswer3, setSecurityAnswer3] = useState('');
+    const [securityQuestions, setSecurityQuestions] = useState([]);
+    const [securityAnswers, setSecurityAnswers] = useState([]);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        axios.get('/securityQs/allQuestions')
+          .then(response => {
+            var emptyArray = [];
+            setSecurityQuestions(emptyArray);
+            console.log(response.data.length);
+            for(let i = 0; i < response.data.length; i++) {
+                securityQuestions.push(response.data[i]);
+            }
+
+            console.log(securityQuestions);
+          })
+          .catch(error => {
+            console.error('Error fetching questions:', error);
+          });
+      }, []); 
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -43,6 +65,10 @@ function CreateAccount() {
                 })
                 .catch(err => console.log(err));    
         }
+    }
+
+    function test(input) {
+        console.log(securityAnswers);
     }
 
     return (
@@ -100,6 +126,21 @@ function CreateAccount() {
                             <createAccount-label htmlFor='confPassword'>Re-enter Password</createAccount-label>
                             <input type='password' placeholder='Confirm Password' className='form-control'
                                 onChange={e => setConfPassword(e.target.value)} required/>
+                        </div>
+                        <div className='createAccount-input-field'>
+                            <createAccount-label htmlFor='Question1'>Response to Question 1</createAccount-label>
+                            <input type='securtyQuestion' placeholder='Response to Question 1' className='form-control'
+                                onChange={e => setSecurityAnswer1(e.target.value)} required/>
+                        </div>
+                        <div className='createAccount-input-field'>
+                            <createAccount-label htmlFor='Question2'>Response to Question 2</createAccount-label>
+                            <input type='securtyQuestion' placeholder='Response to Question 2' className='form-control'
+                                onChange={e => setSecurityAnswer2(e.target.value)} required/>
+                        </div>
+                        <div className='createAccount-input-field'>
+                            <createAccount-label htmlFor='Question3'>Response to Question 1</createAccount-label>
+                            <input type='securtyQuestion' placeholder='Response to Question 3' className='form-control'
+                                onChange={e => setSecurityAnswer3(e.target.value)} required/>
                         </div>
                         <p style={{fontSize: 14, color: "red", textAlign: 'center', fontFamily: 'DM_Sans-Regular', visibility: errorMessage ? 'visible' : 'hidden', marginTop: -14}}>{errorMessage}</p>
                         <button className='btn btn-success' style = {{marginTop: -17}}>Create Account</button>

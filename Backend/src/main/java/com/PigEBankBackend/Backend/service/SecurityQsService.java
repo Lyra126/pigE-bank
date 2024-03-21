@@ -12,6 +12,8 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SecurityQsService {
     @Autowired
@@ -41,5 +43,16 @@ public class SecurityQsService {
         UpdateResult updateResult = mongoTemplate.updateFirst(query, update, SecurityQs.class);
 
         return "Updated Question: " + updateResult.getMatchedCount();
+    }
+
+    public List<SecurityQs> allQs() {
+        return securityQsRepository.findAll();
+    }
+
+    public String specificQ(int associatedNum){
+        Query query = new Query();
+        query.addCriteria(Criteria.where("associatedNum").is(associatedNum));
+        String sQ = (mongoTemplate.find(query, SecurityQs.class)).getFirst().getQuestion();
+        return sQ;
     }
 }
