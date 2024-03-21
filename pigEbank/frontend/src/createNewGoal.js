@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './createNewGoal.css'; // Import CSS file for custom styles
 import axios from 'axios';
@@ -9,6 +9,13 @@ function CreateNewGoal() {
     const [savingsGoal, setSavingsGoal] = useState('');
     const [selectedOption, setSelectedOption] = useState('');
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!document.cookie) {
+          navigate('/login');
+          return;
+        }
+    });
 
     // Handler function to update the selected option
     const handleSelectChange = (event) => {
@@ -30,6 +37,7 @@ function CreateNewGoal() {
 
   const logout = () => {
     document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    document.cookie = 'email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
   };
 
     return (
