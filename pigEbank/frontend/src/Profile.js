@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Profile.css';
 import axios from 'axios';
 
@@ -11,6 +11,7 @@ function Profile() {
     const [totalCurrency, setTotalCurrency] = useState('0');
     const [accountCreationDate, setCreationDate] = useState('');
     const [email, setEmail]  = useState('');
+    const navigate = useNavigate();
 
     // Function to toggle password visibility
     const togglePasswordVisibility = () => {
@@ -18,6 +19,10 @@ function Profile() {
     };
 
     useEffect(() => {
+        if (!document.cookie) {
+            navigate('/login');
+            return;
+        }
         const email = document.cookie.split('; ').find(row => row.startsWith('email=')).split('=')[1];
 
         axios.put("/accounts/updateTotalSavings", {email: email})
@@ -43,6 +48,7 @@ function Profile() {
 
     const logout = () => {
         document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        document.cookie = 'email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
     };
 
     return (

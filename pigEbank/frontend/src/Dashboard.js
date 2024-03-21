@@ -1,17 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
-import { Link } from 'react-router-dom'; 
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Empty } from 'antd';
 
 function Dashboard() {
   const [numberOfGoals, setNumberOfGoals] = useState(0);
   const [goalNames, setGoalNames] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
+      if (!document.cookie) {
+        navigate('/login');
+        return;
+      }
+    
     const username = document.cookie.split('; ').find(row => row.startsWith('username=')).split('=')[1];
     const email = document.cookie.split('; ').find(row => row.startsWith('email=')).split('=')[1];
-
+    
     axios.get('/accounts')
       .then(response => {
         const user = response.data.find(user => user.email === email);
@@ -34,7 +40,9 @@ function Dashboard() {
 
   const logout = () => {
     document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    document.cookie = 'email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
   };
+  
 
   return (
     <div>

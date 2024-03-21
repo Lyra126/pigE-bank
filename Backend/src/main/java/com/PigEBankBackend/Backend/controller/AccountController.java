@@ -44,8 +44,8 @@ public class AccountController {
     }
 
     @GetMapping("/getQs/{email}")
-    ResponseEntity<List<Integer>> getSecurityQuestions(@PathVariable String email) {
-        return new ResponseEntity<List<Integer>>(accountService.getSecurityQs(email), HttpStatus.OK);
+    ResponseEntity<List<String>> getSecurityQuestions(@PathVariable String email) {
+        return new ResponseEntity<List<String>>(accountService.getSecurityQs(email), HttpStatus.OK);
     }
 
     @GetMapping("/getAs/{email}")
@@ -64,9 +64,14 @@ public class AccountController {
         return accountService.addAccount(account);
     }
 
-    @PutMapping("/addSecurityQA")
+    @PutMapping("/updateSecurityQA")
     public ResponseEntity<String> updateSecurityAQ(@RequestBody Account account) {
         return new ResponseEntity<String>(accountService.updateSecurityQA(account), HttpStatus.OK);
+    }
+
+    @PutMapping("/replaceSecurityQA")
+    public ResponseEntity<String> replaceSecurityAQ(@RequestBody Account account) {
+        return new ResponseEntity<String>(accountService.replaceSecurityQA(account), HttpStatus.OK);
     }
     @PutMapping("/updateAll")
     public Account updateAccountAll(@RequestBody Account account) {

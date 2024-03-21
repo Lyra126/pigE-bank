@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import confetti from 'canvas-confetti';
 import axios from 'axios';
@@ -12,7 +12,24 @@ function CreateAccount() {
     const [password, setPassword] = useState('');
     const [confPassword, setConfPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const [securityAnswer1, setSecurityAnswer1] = useState('');
+    const [securityAnswer2, setSecurityAnswer2] = useState('');
+    const [securityAnswer3, setSecurityAnswer3] = useState('');
+    const [securityQuestion1, setSecurityQuestion1] = useState('');
+    const [securityQuestion2, setSecurityQuestion2] = useState('');
+    const [securityQuestion3, setSecurityQuestion3] = useState('');
+    const [securityQuestions, setSecurityQuestions] = useState([]);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        axios.get('/securityQs/allQuestions')
+          .then(response => {
+            setSecurityQuestions(response.data);
+          })
+          .catch(error => {
+            console.error('Error fetching questions:', error);
+          });
+    }, []);
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -31,7 +48,8 @@ function CreateAccount() {
             axios.post("/accounts/newAccount", {firstName: firstName, lastName: lastName, username: username, password: password, numOfGoals: 0})
                 .then(res => {
                     console.log(res);       
-                    document.cookie = `username=${username}`;             
+                    document.cookie = `username=${username}`;  
+                    document.cookie = `email=${email}`           
                     navigate('/dashboard');
                     confetti({
                         particleCount: 500,
@@ -99,6 +117,59 @@ function CreateAccount() {
                             <createAccount-label htmlFor='confPassword'>Re-enter Password</createAccount-label>
                             <input type='password' placeholder='Confirm Password' className='form-control'
                                 onChange={e => setConfPassword(e.target.value)} required/>
+                        </div>
+                        {/* Dropdowns for security questions */}
+                        <div className='createAccount-input-field'>
+                            <createAccount-label htmlFor='securityQuestion1'>Security Question 1</createAccount-label>
+                            <select id='securityQuestion1' value={securityQuestion1} onChange={e => setSecurityQuestion1(e.target.value)} className='form-control'>
+                                <option value="">Choose a question</option>
+                                
+                                {securityQuestions.map((questionObj, index) => (
+                                    <option key={index} value={questionObj.question}>{questionObj.question}</option>
+                                ))}
+
+                            </select>
+                        </div>
+                        
+                        <div className='createAccount-input-field'>
+                            <createAccount-label htmlFor='Question1'>Response to Question 1</createAccount-label>
+                            <input type='securityQuestion' placeholder='Response to Question 1' className='form-control'
+                                onChange={e => setSecurityAnswer1(e.target.value)} required/>
+                        </div>
+                        {/* Dropdowns for security questions */}
+                        <div className='createAccount-input-field'>
+                            <createAccount-label htmlFor='securityQuestion2'>Security Question 2</createAccount-label>
+                            <select id='securityQuestion2' value={securityQuestion1} onChange={e => setSecurityQuestion2(e.target.value)} className='form-control'>
+                                <option value="">Choose a question</option>
+                                
+                                {securityQuestions.map((questionObj, index) => (
+                                    <option key={index} value={questionObj.question}>{questionObj.question}</option>
+                                ))}
+
+                            </select>
+                        </div>
+                        
+                        <div className='createAccount-input-field'>
+                            <createAccount-label htmlFor='Question2'>Response to Question 2</createAccount-label>
+                            <input type='securityQuestion' placeholder='Response to Question 2' className='form-control'
+                                onChange={e => setSecurityAnswer2(e.target.value)} required/>
+                        </div>
+                        {/* Dropdowns for security questions */}
+                        <div className='createAccount-input-field'>
+                            <createAccount-label htmlFor='securityQuestion3'>Security Question 3</createAccount-label>
+                            <select id='securityQuestion3' value={securityQuestion1} onChange={e => setSecurityQuestion3(e.target.value)} className='form-control'>
+                                <option value="">Choose a question</option>
+                                
+                                {securityQuestions.map((questionObj, index) => (
+                                    <option key={index} value={questionObj.question}>{questionObj.question}</option>
+                                ))}
+
+                            </select>
+                        </div>
+                        <div className='createAccount-input-field'>
+                            <createAccount-label htmlFor='Question3'>Response to Question 3</createAccount-label>
+                            <input type='securityQuestion' placeholder='Response to Question 3' className='form-control'
+                                onChange={e => setSecurityAnswer3(e.target.value)} required/>
                         </div>
                         <p style={{fontSize: 14, color: "red", textAlign: 'center', fontFamily: 'DM_Sans-Regular', visibility: errorMessage ? 'visible' : 'hidden', marginTop: -14}}>{errorMessage}</p>
                         <button className='btn btn-success' style = {{marginTop: -17}}>Create Account</button>
