@@ -6,11 +6,21 @@ import PasswordModal from "./update/updatePassword";
 import UsernameModal from "./update/updateUsername";
 
 function Settings() {
+    const navigate = useNavigate();
+    const email = "";
+    useEffect(() => {
+        if (!document.cookie) {
+          navigate('/login');
+          return;
+        }
+        const username = document.cookie.split('; ').find(row => row.startsWith('username=')).split('=')[1];
+        email = document.cookie.split('; ').find(row => row.startsWith('email=')).split('=')[1];
+    });
     const [passwordModalOpen, setPasswordModalOpen] = useState(false);
     const [usernameModalOpen, setUsernameModalOpen] = useState(false);
-    const navigate = useNavigate();
-    const email = document.cookie.split('; ').find(row => row.startsWith('email=')).split('=')[1];
+   
     // Function to toggle password visibility
+
 
     const deleteAccount = (email) => {
         var url = "/accounts/deleteAccount/" + email
@@ -22,13 +32,13 @@ function Settings() {
         .catch(error => {
             console.log("Could not delete Account.");
         });
-       
-        
+
     }
 
     const logout = () => {
         document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-    };
+        document.cookie = 'email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+      };
 
     return (
         <div>

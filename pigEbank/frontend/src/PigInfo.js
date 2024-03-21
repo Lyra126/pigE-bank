@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './PigInfo.css';
-import { Link, useParams, useLocation } from 'react-router-dom';
+import { Link, useParams, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Tooltip } from 'react-tooltip'
 import confetti from 'canvas-confetti';
@@ -33,8 +33,13 @@ function PigInfo() {
     const[progress, setProgress] = useState(0);
     const [error, setError] = useState('');
     const [showPrompt, setShowPrompt] = useState(false); // State to control prompt display
+    const navigate = useNavigate();
 
     useEffect(() => {
+        if (!document.cookie) {
+            navigate('/login');
+            return;
+        }
         const username = document.cookie.split('; ').find(row => row.startsWith('username=')).split('=')[1];
         const email = document.cookie.split('; ').find(row => row.startsWith('email=')).split('=')[1];
       
@@ -129,6 +134,11 @@ function PigInfo() {
 
     };
 
+    const logout = () => {
+        document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        document.cookie = 'email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    };
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light">
@@ -144,6 +154,9 @@ function PigInfo() {
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="/profile">Profile</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/logout">Logout</a>
                             </li>
                         </ul>
                     </div>
