@@ -22,9 +22,9 @@ function CreateAccount() {
     useEffect(() => {
         axios.get('/securityQs/allQuestions')
           .then(response => {
+            
             var emptyArray = [];
             setSecurityQuestions(emptyArray);
-            console.log(response.data.length);
             for(let i = 0; i < response.data.length; i++) {
                 securityQuestions.push(response.data[i]);
             }

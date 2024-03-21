@@ -26,7 +26,7 @@ function PigInfo() {
     const [newSavings, setNewSavings] = useState(); // State for newSavings
     const [savingsGoal, setSavingsGoal] = useState(0);
     const [creationDate, setCreationDate] = useState('');
-    const [pigId, setPigID] = useState('');
+    const [pigId, setPigID] = useState([]);
 
     const [monthlyContribution, setMonthlyContribution] = useState(0);
     const [goalAmount, setGoalAmount] = useState(0);
@@ -47,7 +47,7 @@ function PigInfo() {
                   const goals = res.data;
                   const filteredGoals = goals.filter(goal => goal.pigName === pigName); // Filter goals by pigName
                   if (filteredGoals.length > 0) {
-                    const { goalName, goalType, stage, ownerEmail, currentSavings, savingsGoal, creation, id } = filteredGoals[0];
+                    const {goalName, goalType, stage, ownerEmail, currentSavings, savingsGoal, creation, id} = filteredGoals[0];
                     setGoalName(goalName);
                     setGoalType(goalType);
                     setStage(stage);
@@ -149,104 +149,6 @@ function PigInfo() {
                     </div>
                 </div>
             </nav>
-        
-{/*        <div className="PigInfo-container">*/}
-{/*            <div className="row">*/}
-{/*                <div className="top-left">*/}
-{/*                    /!* Top-left container *!/*/}
-{/*                    <div>*/}
-{/*                        <div className="dashboard-button ">*/}
-{/*                            <Link to="/dashboard" className='dbutton'>⬅</Link>*/}
-{/*                        </div>*/}
-{/*                         <h1>{pigName} </h1>*/}
-{/*                         <h1>{goalName} </h1>*/}
-{/*                         <h1>Type: {goalType} </h1>*/}
-{/*                         <h1>Stage: {stage} </h1>*/}
-{/*                         <h1>creationDate: {creationDate} </h1>*/}
-{/*                    </div>*/}
-{/*                </div>*/}
-{/*                <div className="top-right gradient_bg_green">*/}
-{/*                    /!* Top-right container *!/*/}
-{/*                    <div>*/}
-{/*                    <img src="/images/favicon.ico" alt="pig"  />*/}
-{/*                    </div>*/}
-{/*                </div>*/}
-{/*            </div>*/}
-{/*            <div className="row">*/}
-{/*                <div className="bot-left">*/}
-{/*                    <h2>Current Savings: $ {currentSavings} </h2>*/}
-{/*                    <h2>Savings Goal: $ {savingsGoal} </h2>*/}
-{/*                    */}
-{/*                    <div className="progress" style={{ height: '30px' }}>*/}
-{/*                        <div className="progress-bar" role="progressbar" style={{ width: `${progress}%`, color: 'black' }} aria-valuenow={progress} aria-valuemin="0" aria-valuemax="100">*/}
-{/*                            {progress.toFixed(2)}%*/}
-{/*                        </div>*/}
-{/*                    </div>*/}
-{/*                    */}
-{/*                    <div>*/}
-{/*                        <input*/}
-{/*                            className='input-form'*/}
-{/*                            type="number"*/}
-{/*                            value={newSavings}*/}
-{/*                            placeholder="Enter new Savings"*/}
-{/*                            onChange={e => setNewSavings(e.target.value)}*/}
-{/*                        />*/}
-{/*                    </div>*/}
-{/*                    {error && <div className="error-message">{error}</div>}*/}
-{/*                    <button className="update-button" onClick={() => handleGoalUpdate(newSavings)}>Update Goal</button>*/}
-{/*                    </div>*/}
-{/*                    <div className="bot-right">*/}
-{/*                        { /* Bottom-right container *!/*/}
-{/*                        <div >*/}
-{/*                        <form onSubmit={calculateTimeToReachGoal}>*/}
-{/*    <button type="button" className="toggle-button" onClick={() => setShowMessage(prevState => !prevState)}>*/}
-{/*        {showMessage ? 'Calculator' : 'Calculator'}*/}
-{/*    </button>*/}
-{/*    {showMessage && (*/}
-{/*        <div>*/}
-{/*            <div className="form-group">*/}
-{/*                <label htmlFor="goalAmount">Goal Amount:</label>*/}
-{/*                <input*/}
-{/*                    type="number"*/}
-{/*                    id="goalAmount"*/}
-{/*                    value={goalAmount}*/}
-{/*                    onChange={e => setGoalAmount(parseFloat(e.target.value))}*/}
-{/*                    className="form-control"*/}
-{/*                />*/}
-{/*            </div>*/}
-{/*            <div className="form-group">*/}
-{/*                <label htmlFor="currentSavings">Current Savings:</label>*/}
-{/*                <input*/}
-{/*                    type="number"*/}
-{/*                    id="currentSavings"*/}
-{/*                    value={currentSavings}*/}
-{/*                    className="form-control"*/}
-{/*                />*/}
-{/*            </div>*/}
-{/*            <div className="form-group">*/}
-{/*                <label htmlFor="monthlyContribution">Monthly Contribution:</label>*/}
-{/*                <input*/}
-{/*                    type="number"*/}
-{/*                    id="monthlyContribution"*/}
-{/*                    value={monthlyContribution}*/}
-{/*                    onChange={e => setMonthlyContribution(parseFloat(e.target.value))}*/}
-{/*                    className="form-control"*/}
-{/*                />*/}
-{/*            </div>*/}
-{/*            <button type="submit" className="btn-calculate">Calculate</button>*/}
-{/*            <button type="button" className="btn-calculate" onClick={clearVariablesAndMessage}>Clear</button>*/}
-{/*            {showMessage && (*/}
-{/*                <p className="result-message">It will take approximately {timeToReachGoal} months to reach your savings goal.</p>*/}
-{/*            )}*/}
-{/*        </div>*/}
-{/*    )}*/}
-{/*</form>*/}
-
-{/*                        */}
-{/*                    </div>*/}
-{/*                    </div>*/}
-{/*                </div>*/}
-{/*            </div>*/}
 
             <div className="PigInfo-container">
                 {/* Top Row*/}
@@ -398,6 +300,8 @@ function PigInfo() {
                                 console.log('Pig Name:', values.pigName);
                                 console.log('Goal Name:', values.goalName);
                                 console.log('Goal Amount:', values.goalAmount);
+                                console.log('ID:', pigId);
+                            
                                 handlePromptClose(); // Close the prompt after handling the values
                             }}
                             />                        
