@@ -139,7 +139,7 @@ function CreateAccount() {
                         {/* Dropdowns for security questions */}
                         <div className='createAccount-input-field'>
                             <createAccount-label htmlFor='securityQuestion2'>Security Question 2</createAccount-label>
-                            <select id='securityQuestion2' value={securityQuestion1} onChange={e => setSecurityQuestion2(e.target.value)} className='form-control'>
+                            <select id='securityQuestion2' value={securityQuestion2} onChange={e => setSecurityQuestion2(e.target.value)} className='form-control'>
                                 <option value="">Choose a question</option>
                                 
                                 {securityQuestions.map((questionObj, index) => (
@@ -157,7 +157,7 @@ function CreateAccount() {
                         {/* Dropdowns for security questions */}
                         <div className='createAccount-input-field'>
                             <createAccount-label htmlFor='securityQuestion3'>Security Question 3</createAccount-label>
-                            <select id='securityQuestion3' value={securityQuestion1} onChange={e => setSecurityQuestion3(e.target.value)} className='form-control'>
+                            <select id='securityQuestion3' value={securityQuestion3} onChange={e => setSecurityQuestion3(e.target.value)} className='form-control'>
                                 <option value="">Choose a question</option>
                                 
                                 {securityQuestions.map((questionObj, index) => (

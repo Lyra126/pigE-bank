@@ -80,7 +80,7 @@ function WelcomePage() {
               <p>Welcome to our cutting-edge personal finance management solution! Picture this: a powerful platform designed to revolutionize the way you manage your finances. Our software not only tracks your accounts and balances but also provides robust user authentication to keep your information secure.</p>
             </div>
             <div className="welcomePage-header-image" style={{ marginTop: 100 }}>
-              <img src="images/money_pig.png" alt="money_pig" />
+              <img src="images/piggies/other/money_pig.png" alt="money_pig" />
             </div>
           </div>
 
@@ -91,7 +91,7 @@ function WelcomePage() {
               <p> Each Pig Bank represents a unique savings goal waiting to be achieved. Work diligently towards your goal to unlock exciting accessories and bring your Pig Bank's dream of becoming a real pig to life!</p>
             </div>
             <div className="welcomePage-header-image" style={{ marginTop: 100 }}>
-              <img src="images/money_pig.png" alt="money_pig" />
+              <img src="images/piggies/other/money_pig.png" alt="money_pig" />
             </div>
           </div>
 
@@ -102,7 +102,7 @@ function WelcomePage() {
               <p>With each Pig added to the stable, unlock a plethora of prizes and rewards. Aim high and complete all five saving goal categories, plus other achievements, to uncover special surprises waiting just for you! Start saving today and turn your dreams into reality!</p>
             </div>
             <div className="welcomePage-header-image" style={{ marginTop: 100 }}>
-              <img src="images/money_pig.png" alt="money_pig" />
+              <img src="images/piggies/other/money_pig.png" alt="money_pig" />
             </div>
           </div>
 

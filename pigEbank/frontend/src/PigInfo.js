@@ -162,7 +162,7 @@ function PigInfo() {
                     </div>
                 </div>
             </nav>
-
+        
             <div className="PigInfo-container">
                 {/* Top Row*/}
                 <div className = "PigInfo-top-row">
@@ -283,7 +283,7 @@ function PigInfo() {
 
                     {/*pig image and percentage bar*/}
                     <div className="PigInfo-image-percentageBar">
-                        <img src="/images/pig_stage1_test.png" alt="pig" className = "PigInfo-pig-image"/>
+                        <img src="/images/piggies/education/education_5.png" alt="pig" className = "PigInfo-pig-image"/>
                         <div className="progress" style={{ height: '40px' }}>
                             <div className="progress-bar" role="progressbar" style={{ width: `${progress}%`, color: 'black' }} aria-valuenow={progress} aria-valuemin="0" aria-valuemax="100">
                                 {progress.toFixed(2)}%

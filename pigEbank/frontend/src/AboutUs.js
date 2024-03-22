@@ -33,7 +33,7 @@ function Aboutus() {
             <p style = {{textAlign: 'center'}}> We took inspiration from our childhood games, changing it up to help us out with our finances. We've customized Pig E-Bank to feel fun and engaging, allowing for people of all ages to take charge of their money. We understand that saving money can be difficult (we're college students, we know), but that doesn't mean it should feel boring! </p>
             </div>
         </div>
-        <img src="images/team_pig_horizontal.png" alt = "team_piggy"/>
+        <img src="images/piggies/other/team_pig_horizontal.png" alt = "team_piggy"/>
 
         {/* Clarissa */}
         <section className="AboutUs-developer-section">
@@ -41,49 +41,49 @@ function Aboutus() {
           <div className = "AboutUs-developer-container">
           <div className="AboutUs-developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, marginRight: 10, width: 280}}>
             <h2 style = {{fontFamily: "DM_Sans-Medium", marginTop: 20}}>Clarissa Cheung</h2>
-            <img src="images/CC.jpg" alt="CC"  width="200" height="200" className = "AboutUs-developer-img"/>
+            <img src="images/developers/CC.jpg" alt="CC"  width="200" height="200" className = "AboutUs-developer-img"/>
             <p style ={{margin: 15}}>Hi! I'm Clarissa Cheung, and I'm a 2nd year Computer Science major and Economics minor at UF.</p>
             <br/>
               <section className = "AboutUs-socials">
-            <a href="https://instagram.com/clynae2"><img src = "images/instagram_logo.png" width="50" height="50" /></a>
-            <a href="www.linkedin.com/in/clarissa-cheung2" ><img src = "images/linkedIn_logo.png" width="40" height="40"/></a>
+            <a href="https://instagram.com/clynae2"><img src = "images/icons/instagram_logo.png" width="50" height="50" /></a>
+            <a href="www.linkedin.com/in/clarissa-cheung2" ><img src = "images/icons/linkedIn_logo.png" width="40" height="40"/></a>
               </section>
           </div>
 
           {/* Rachel */}
           <div className="AboutUs-developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, marginRight: 10, width: 280}}>
             <h2 style = {{fontFamily: "DM_Sans-Medium", marginTop: 20}}>Rachel Pu</h2>
-            <img src="images/Rachel_Pu.png" alt="Rachel Pu"  width="200" height="200" className = "AboutUs-developer-img"/>
+            <img src="images/developers/Rachel_Pu.png" alt="Rachel Pu"  width="200" height="200" className = "AboutUs-developer-img"/>
             <p style ={{margin: 15}}> Hello! I'm Rachel Pu, and I'm a 2nd year Computer Science major at UF. I enjoy drawing colorful, silly pigs and giving them sunglasses.</p>
               <section className = "AboutUs-socials">
-            <a href="https://instagram.com/kazuhimi"><img src = "images/instagram_logo.png" width="50" height="50"/></a>
-            <a href="https://www.linkedin.com/in/rachel-pu-ufl/"><img src = "images/linkedIn_logo.png" width="40" height="40"/></a>
+            <a href="https://instagram.com/kazuhimi"><img src = "images/icons/instagram_logo.png" width="50" height="50"/></a>
+            <a href="https://www.linkedin.com/in/rachel-pu-ufl/"><img src = "images/icons/linkedIn_logo.png" width="40" height="40"/></a>
               </section>
           </div>
 
           {/* Ibet */}
           <div className="AboutUs-developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, marginRight: 10, width: 280}}>
             <h2 style = {{fontFamily: "DM_Sans-Medium", marginTop: 20}}>Ibet Gonzalez</h2>
-            <img src="images/ibet.png" alt="luxray"  width="200" height="200" className = "AboutUs-developer-img"/>
+            <img src="images/developers/ibet.png" alt="Ibet Gonzalez"  width="200" height="200" className = "AboutUs-developer-img"/>
             <p style ={{margin: 15}}>Hello! I'm Ibet Gonzalez, and I'm a 4th year Computer Science major at UF.</p>
             <br/>
             <br/>
             <section className = "AboutUs-socials">
-            <a href="https://instagram.com"><img src = "images/instagram_logo.png" width="50" height="50"/></a>
-            <a href="https://linkedIn.com"><img src = "images/linkedIn_logo.png" width="40" height="40"/></a>
+            <a href="https://instagram.com"><img src = "images/icons/instagram_logo.png" width="50" height="50"/></a>
+            <a href="https://linkedIn.com"><img src = "images/icons/linkedIn_logo.png" width="40" height="40"/></a>
               </section>
           </div>
 
           {/* Michael */}
           <div className="AboutUs-developer gradient_bg_white_transparent box_shadow" style = {{borderRadius: 12, width: 280}}>
             <h2 style = {{fontFamily: "DM_Sans-Medium", marginTop: 20}}>Michael Knauf</h2>
-            <img src="images/michael.png" alt="luxray"  width="200" height="200" className = "AboutUs-developer-img"/>
+            <img src="images/developers/michael.png" alt="Michael Knauf"  width="200" height="200" className = "AboutUs-developer-img"/>
             <p style ={{margin: 15}}>Hi! I'm Michael Knauf, and I'm a 2nd year Computer Engineering major at UF.</p>
             <br/>
             <br/>
             <section className = "AboutUs-socials">
-            <a href="https://instagram.com"><img src = "images/instagram_logo.png" width="50" height="50"/></a>
-            <a href="https://linkedIn.com"><img src = "images/linkedIn_logo.png" width="40" height="40"/></a>
+            <a href="https://instagram.com"><img src = "images/icons/instagram_logo.png" width="50" height="50"/></a>
+            <a href="https://linkedIn.com"><img src = "images/icons/linkedIn_logo.png" width="40" height="40"/></a>
               </section> 
           </div>
           </div>
