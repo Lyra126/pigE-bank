@@ -69,7 +69,7 @@ function AccountRecovery() {
                     </div>
                         <form onSubmit={handleSubmit} className = "AccountRecovery-form">
                         {/* Logo Image */}
-                        <img src="images/favicon.ico" alt="pig" className="AccountRecovery-piggy image-center"/>
+                        <img src="images/piggies/other/favicon.ico" alt="pig" className="AccountRecovery-piggy image-center"/>
                         <div className='mb-3'>
                             <label htmlFor='email' style={{ fontFamily: 'DM_Sans-SemiBold', marginLeft: 3}}>Email</label>
                             <input type='email' placeholder='Enter Email' className='form-control'
