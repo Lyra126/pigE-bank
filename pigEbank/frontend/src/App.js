@@ -11,6 +11,7 @@ import Profile from './Profile';
 import Settings from './Settings';
 import AccountRecovery from './AccountRecovery';
 import ResetPassword from './ResetPassword';
+import SecurityQuestions from './SecurityQuestions';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/settings" element={<Settings />} />
           <Route path="/accountRecovery" element={<AccountRecovery />} />
           <Route path="/resetPassword" element={<ResetPassword />} />
+          <Route path="/securityQuestions" element={<SecurityQuestions />} />
         </Routes>
       </Router>
     </div>

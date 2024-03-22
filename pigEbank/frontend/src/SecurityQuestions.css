@@ -1,0 +1,51 @@
+.SecurityQuestions-bg{
+    background: rgb(55,196,143);
+    background: linear-gradient(0deg, rgb(147, 229, 116) 0%, rgba(55,196,143,1)100%); ;
+    width: 100%;
+    height: 100vh;
+}
+
+.SecurityQuestions-box{
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(24, 99, 32, 0.268);
+    background-color: white;
+    width: 47vh;
+    font-family: DM_Sans-Regular;
+    margin-bottom: 100px;
+}
+
+.SecurityQuestions-form{
+    margin-left:10px;
+    margin-right:10px;
+}
+
+.SecurityQuestions-title{
+    font-family: Poppins-SemiBold;
+    text-align:center;
+    margin-bottom: 25px;
+    margin-top: -35px;
+    font-size: 31px;
+}
+
+.SecurityQuestions-5min-message{
+    text-align:center;
+    margin-top: -20px;
+}
+
+.SecurityQuestions-instruction{
+    color:rgba(0, 0, 0, 0.309);
+    font-size: 13px;
+    margin-left: 2px;
+}
+
+.SecurityQuestions-button{
+    object-position: center;
+    width: 100%;
+    margin-top: 3;
+
+}
+
+  
+  
+  
+  

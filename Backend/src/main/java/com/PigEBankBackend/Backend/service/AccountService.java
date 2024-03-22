@@ -113,6 +113,14 @@ public class AccountService {
         return answers;
     }
 
+    public List<String> getSecurityQAs(String email) {
+        Account current = findAccount(email);
+
+        List<String> all = current.getSecurityQA();
+
+        return all;
+    }
+
     public String updateTotalSavings(Account account) {
         //FIXME May become obsolete if the goal class updates this value instead
         //Find account with the email
