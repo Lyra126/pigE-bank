@@ -6,7 +6,7 @@
   align-items: center; /* Center vertically */
   height: 100vh; /* Make the background fill the entire viewport */
   font-family: Arial, sans-serif;
-  background-image: url("../public/images/test_background.png");
+  background-image: url("/public/images/dashboard/test_background.png");
   background-position-x: center;
   background-position-y: center;
   background-size:100%;

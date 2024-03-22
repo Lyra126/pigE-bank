@@ -85,7 +85,7 @@ function Login() {
                     <form onSubmit={handleSubmit} className="login-form-container">
                         {/* Logo Image */}
                         <div style = {{display: "flex", justifyContent: "center"}}>
-                        <img src="images/favicon.ico" alt="pig" className="login-piggy"/>
+                        <img src="images/piggies/other/favicon.ico" alt="pig" className="login-piggy"/>
                         </div>
                             <div className='mb-3'>
                             <login-label htmlFor='email'>Email</login-label>
