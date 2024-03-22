@@ -18,10 +18,8 @@ function SecurityQuestions() {
             setErrorMessage('');
         }, 30000); // Hides the error message after 30 seconds
 
-        
         var url = '/accounts/getQAs/' + email;
 
-        console.log(url);
         axios.get(url)
           .then(response => {
             setSQA(response.data);
@@ -45,7 +43,6 @@ function SecurityQuestions() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        console.log(securityAnswer1, securityAnswer2, securityAnswer3);
 
         if(securityAnswer1 == sQA[1] && securityAnswer2 == sQA[3] && securityAnswer3 == sQA[5]){
 
@@ -59,7 +56,6 @@ function SecurityQuestions() {
             setErrorMessage("At least one response is incorrect");
         }
 
-        console.log(email);
     }
 
         return (
