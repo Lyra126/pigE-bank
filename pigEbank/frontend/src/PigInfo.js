@@ -34,6 +34,7 @@ function PigInfo() {
     const [error, setError] = useState('');
     const [showPrompt, setShowPrompt] = useState(false); // State to control prompt display
     const navigate = useNavigate();
+    const [milestones, setMilestones] = useState([]);
 
     useEffect(() => {
         if (!document.cookie) {
@@ -104,6 +105,22 @@ function PigInfo() {
         setShowPrompt(false); // Set showPrompt state to false to hide the prompt
     };
 
+    const handleMilestones = (newMilestone) => {
+        // Adding the provided milestone to the milestones array
+        console.log(newMilestone);
+        setMilestones(prevMilestones => [...prevMilestones, newMilestone]);
+    };
+   
+    const [isOpen, setIsOpen] = useState(false);
+    const [sliderValue, setSliderValue] = useState(50); // Initial slider value
+    
+    const togglePopup = () => {
+        setIsOpen(!isOpen);
+    };
+    
+    const handleSliderChange = (event) => {
+        setSliderValue(event.target.value);
+    };
 
 
     const handleGoalUpdate = (event) => {
@@ -317,6 +334,26 @@ function PigInfo() {
                             }}
                             />                        
                         )}
+                        {/*
+                        <button onClick={togglePopup}>Set Milestones</button>
+                            {isOpen && (
+                                <div className="popup">
+                                <div className="popup_inner">
+                                    <h2>Slider Popup</h2>
+                                    <input
+                                    type="range"
+                                    min="0"
+                                    max={savingsGoal}
+                                    value={sliderValue}
+                                    onChange={handleSliderChange}
+                                    />
+                                    <p>Value: {sliderValue}</p>
+                                    <button onClick={() => handleMilestones(sliderValue)}>Submit</button>
+
+                                    <button onClick={togglePopup}>Close</button>
+                                </div>
+                                </div>
+                            )}*/}
                     </div>
                 </div>
 
