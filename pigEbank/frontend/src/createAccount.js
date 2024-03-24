@@ -85,12 +85,12 @@ function CreateAccount() {
                         <div className = 'createAccount-first-last-div'>
                         <div className='createAccount-input-field'>
                             <createAccount-label htmlFor='firstName'>First Name</createAccount-label>
-                            <input type='text' placeholder='Enter your first name' className='form-control'
+                            <input type='text' placeholder='Bobby' className='form-control name-control'
                                 onChange={e => setFirstName(e.target.value)} required/>
                         </div>
                         <div className='createAccount-input-field'>
                             <createAccount-label htmlFor='lastName'>Last Name</createAccount-label>
-                            <input type='text' placeholder='Enter your last name' className='form-control'
+                            <input type='text' placeholder='Bacon' className='form-control name-control'
                                 onChange={e => setLastName(e.target.value)} required/>
                         </div>
                         </div>
@@ -130,7 +130,7 @@ function CreateAccount() {
                         </div>
                         
                         <div className='createAccount-input-field'>
-                            <createAccount-label htmlFor='Question1'>Response to Question 1</createAccount-label>
+                            <createAccount-label htmlFor='Question1'>Your Answer</createAccount-label>
                             <input type='securityQuestion' placeholder='Response to Question 1' className='form-control'
                                 onChange={e => setSecurityAnswer1(e.target.value)} required/>
                         </div>
@@ -148,7 +148,7 @@ function CreateAccount() {
                         </div>
                         
                         <div className='createAccount-input-field'>
-                            <createAccount-label htmlFor='Question2'>Response to Question 2</createAccount-label>
+                            <createAccount-label htmlFor='Question2'>Your Answer</createAccount-label>
                             <input type='securityQuestion' placeholder='Response to Question 2' className='form-control'
                                 onChange={e => setSecurityAnswer2(e.target.value)} required/>
                         </div>
@@ -165,7 +165,7 @@ function CreateAccount() {
                             </select>
                         </div>
                         <div className='createAccount-input-field'>
-                            <createAccount-label htmlFor='Question3'>Response to Question 3</createAccount-label>
+                            <createAccount-label htmlFor='Question3'>Your Answer</createAccount-label>
                             <input type='securityQuestion' placeholder='Response to Question 3' className='form-control'
                                 onChange={e => setSecurityAnswer3(e.target.value)} required/>
                         </div>
