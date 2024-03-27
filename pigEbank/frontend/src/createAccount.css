@@ -1,62 +1,69 @@
-createAccount-label{
-    font-family: DM_Sans-SemiBold;
-    margin-left: 2px;
-}
-
 .createAccount-top-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 100px;
+    margin: 0 auto;
+
+    
     flex-direction: column;
+    background-color: #ffffff;
+    max-width: 900px; /* Limit the maximum width */
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 20px;
+    border-radius: 20px;
+    width: 80%; /* Adjust width as needed */
 }
 
 .createAccount-create-account-container {
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 20px;
-    width: 58vh;
-    margin-top: 65px;
+   
+    margin-top: 50px;
     font-family: DM_Sans-Regular;
+    display: flex;
 }
 
-.createAccount-first-last-div{
+.horizontal-div1 {
     display: flex;
-    justify-content: space-between;
+}
+
+.horizontal-div2 {
+    margin-bottom: 10px;
+    display: flex;
+}
+.createAccount-form-container,
+.createAccount-security-questions-container {
+    flex: 1; /* Equal width for both divs */
+    display: flex;
+    flex-direction: column; /* Stack fields vertically */
 }
 
 .createAccount-form-container {
-    display: grid;
-    gap: 1rem;
-    margin-right: 10px;
-    margin-left: 10px;
+    margin-right: 10px; /* Add some space between the divs */
 }
 
-.createAccount-instruction{
-    color:rgba(0, 0, 0, 0.309);
-    font-size: 13px;
-    margin-bottom: -10px;
-    margin-left: 2px;
+.createAccount-security-question {
+    margin-bottom: 10px;
+    
 }
 
 .btn {
     display: block;
+    margin: auto; /* Center align button */
 }
 
-.createAccount-input-field {
-    margin-bottom: 10px;
-}
-
-.createAccount-alr-have-acc-btn{
+.createAccount-alr-have-acc-btn {
     text-decoration: none;
     color: #656565;
-    margin: 0;
+    margin: 10px auto; /* Center align link */
     text-align: center;
-    padding-top: 10px;
-    transition: color 0.3s ease
 }
 
-.createAccount-alr-have-acc-btn:hover{
+.createAccount-alr-have-acc-btn:hover {
     color: darkslategrey;
 }
 
+.createAccount-name-container {
+    display: flex;
+}
+
+
+.createAccount-input-field label {
+    display: block;
+}

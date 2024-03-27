@@ -61,35 +61,45 @@ function AccountRecovery() {
                 </div>
             </nav>
 
-            <div className='d-flex flex-column vh-100 justify-content-center align-items-center' style = {{marginTop: -50}}>
-                <div className='p-3 AccountRecovery-box'>
-                    <div className="AccountRecovery-title-header-div">
-                    <h1 className="AccountRecovery-title-message" style={{ marginTop: 10 }}>Forgot your password?</h1>
-                    <p className="AccountRecovery-header-message"> No worries! Just type in your account's username and email and you'll be prompted to change your password!</p>
-                    </div>
-                        <form onSubmit={handleSubmit} className = "AccountRecovery-form">
-                        {/* Logo Image */}
-                        <img src="images/piggies/other/favicon.ico" alt="pig" className="AccountRecovery-piggy image-center"/>
-                        <div className='mb-3'>
-                            <label htmlFor='email' style={{ fontFamily: 'DM_Sans-SemiBold', marginLeft: 3}}>Email</label>
-                            <input type='email' placeholder='Enter Email' className='form-control'
-                                onChange={e => setEmail(e.target.value)} />
-                        </div>
-                        <div className='mb-3'>
-                            <label htmlFor='username' style={{ fontFamily: 'DM_Sans-SemiBold', marginLeft: 3}}>Username</label>
-                            <input type='username' placeholder='Enter Username' className='form-control'
-                                onChange={e => setUsername(e.target.value)} />
-                        </div>
-                        <div className='d-flex flex-column'>
-                            <button className='btn btn-success' style={{ fontFamily: 'DM_Sans-Medium', objectPosition: "center", minWidth: 300 }}>Find account</button>
-                            <p style={{ fontSize: 14, marginTop: 10, color: "red", textAlign: 'center', visibility: errorMessage ? 'visible' : 'hidden', marginBottom: 3}}>{errorMessage}</p>
-                        </div>
-                    </form>
+            <div className='d-flex flex-column vh-100 justify-content-center align-items-center' style={{ marginTop: -50 }}>
+    <div className='p-3 AccountRecovery-box'>
+        <div className="AccountRecovery-title-header-div">
+            <h1 className="AccountRecovery-title-message" style={{ marginTop: 10 }}>Forgot your password?</h1>
+            <p className="AccountRecovery-header-message"> No worries! Just type in your account's username and email, and you'll be prompted to change your password!</p>
+        </div>
+        <form onSubmit={handleSubmit} className="AccountRecovery-form">
+            {/* Logo Image */}
+            <img src="images/piggies/other/favicon.ico" alt="pig" className="AccountRecovery-piggy image-center" />
+            <div className='mb-3'>
+                <label htmlFor='email' style={{ fontFamily: 'DM_Sans-SemiBold', marginLeft: 3 }}>Email</label>
+                <input type='email' placeholder='Enter Email' className='form-control' onChange={e => setEmail(e.target.value)} />
+            </div>
+            <div className='mb-3'>
+                <label htmlFor='username' style={{ fontFamily: 'DM_Sans-SemiBold', marginLeft: 3 }}>Username</label>
+                <input type='username' placeholder='Enter Username' className='form-control' onChange={e => setUsername(e.target.value)} />
+            </div>
+            {/* Security Questions */}
+            <div className="d-flex flex-row">
+                <div className='mb-3 flex-fill'>
+                    <label htmlFor='securityQuestion1' style={{ fontFamily: 'DM_Sans-SemiBold', marginLeft: 3 }}>Security Question 1</label>
+                    <input type='text' placeholder='Enter Security Question 1' className='form-control' />
+                </div>
+                <div className='mb-3 flex-fill'>
+                    <label htmlFor='securityQuestion2' style={{ fontFamily: 'DM_Sans-SemiBold', marginLeft: 3 }}>Security Question 2</label>
+                    <input type='text' placeholder='Enter Security Question 2' className='form-control' />
                 </div>
             </div>
-            <footer style = {{marginTop: -75}}>
-                <p>&copy; 2024 Pig E-Bank</p>
-            </footer>
+            <div className='d-flex flex-column'>
+                <button className='btn btn-success' style={{ fontFamily: 'DM_Sans-Medium', objectPosition: "center", minWidth: 300 }}>Find account</button>
+                <p style={{ fontSize: 14, marginTop: 10, color: "red", textAlign: 'center', visibility: errorMessage ? 'visible' : 'hidden', marginBottom: 3 }}>{errorMessage}</p>
+            </div>
+        </form>
+    </div>
+</div>
+<footer style={{ marginTop: -75 }}>
+    <p>&copy; 2024 Pig E-Bank</p>
+</footer>
+
         </div>
     )
 }
