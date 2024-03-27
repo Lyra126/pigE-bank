@@ -26,7 +26,7 @@ function PigInfo() {
     const [newSavings, setNewSavings] = useState(); // State for newSavings
     const [savingsGoal, setSavingsGoal] = useState(0);
     const [creationDate, setCreationDate] = useState('');
-    const [pigId, setPigID] = useState('');
+    const [pigId, setPigID] = useState([]);
 
     const [monthlyContribution, setMonthlyContribution] = useState(0);
     const [goalAmount, setGoalAmount] = useState(0);
@@ -34,6 +34,7 @@ function PigInfo() {
     const [error, setError] = useState('');
     const [showPrompt, setShowPrompt] = useState(false); // State to control prompt display
     const navigate = useNavigate();
+    const [milestones, setMilestones] = useState([]);
 
     useEffect(() => {
         if (!document.cookie) {
@@ -52,7 +53,7 @@ function PigInfo() {
                   const goals = res.data;
                   const filteredGoals = goals.filter(goal => goal.pigName === pigName); // Filter goals by pigName
                   if (filteredGoals.length > 0) {
-                    const { goalName, goalType, stage, ownerEmail, currentSavings, savingsGoal, creation, id } = filteredGoals[0];
+                    const {goalName, goalType, stage, ownerEmail, currentSavings, savingsGoal, creation, id} = filteredGoals[0];
                     setGoalName(goalName);
                     setGoalType(goalType);
                     setStage(stage);
@@ -104,6 +105,22 @@ function PigInfo() {
         setShowPrompt(false); // Set showPrompt state to false to hide the prompt
     };
 
+    const handleMilestones = (newMilestone) => {
+        // Adding the provided milestone to the milestones array
+        console.log(newMilestone);
+        setMilestones(prevMilestones => [...prevMilestones, newMilestone]);
+    };
+   
+    const [isOpen, setIsOpen] = useState(false);
+    const [sliderValue, setSliderValue] = useState(50); // Initial slider value
+    
+    const togglePopup = () => {
+        setIsOpen(!isOpen);
+    };
+    
+    const handleSliderChange = (event) => {
+        setSliderValue(event.target.value);
+    };
 
 
     const handleGoalUpdate = (event) => {
@@ -283,7 +300,7 @@ function PigInfo() {
 
                     {/*pig image and percentage bar*/}
                     <div className="PigInfo-image-percentageBar">
-                        <img src="/images/pig_stage1_test.png" alt="pig" className = "PigInfo-pig-image"/>
+                        <img src="/images/piggies/education/education_5.png" alt="pig" className = "PigInfo-pig-image"/>
                         <div className="progress" style={{ height: '40px' }}>
                             <div className="progress-bar" role="progressbar" style={{ width: `${progress}%`, color: 'black' }} aria-valuenow={progress} aria-valuemin="0" aria-valuemax="100">
                                 {progress.toFixed(2)}%
@@ -313,10 +330,32 @@ function PigInfo() {
                                 console.log('Pig Name:', values.pigName);
                                 console.log('Goal Name:', values.goalName);
                                 console.log('Goal Amount:', values.goalAmount);
+                                console.log('ID:', pigId);
+                            
                                 handlePromptClose(); // Close the prompt after handling the values
                             }}
                             />                        
                         )}
+                        {/*
+                        <button onClick={togglePopup}>Set Milestones</button>
+                            {isOpen && (
+                                <div className="popup">
+                                <div className="popup_inner">
+                                    <h2>Slider Popup</h2>
+                                    <input
+                                    type="range"
+                                    min="0"
+                                    max={savingsGoal}
+                                    value={sliderValue}
+                                    onChange={handleSliderChange}
+                                    />
+                                    <p>Value: {sliderValue}</p>
+                                    <button onClick={() => handleMilestones(sliderValue)}>Submit</button>
+
+                                    <button onClick={togglePopup}>Close</button>
+                                </div>
+                                </div>
+                            )}*/}
                     </div>
                 </div>
 
