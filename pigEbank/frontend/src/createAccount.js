@@ -77,6 +77,8 @@ function CreateAccount() {
 
         {/* Create Account Div */}
             <div className="createAccount-top-div">
+
+                {/* Main User information box */}
                 <div className="createAccount-create-account-container box_shadow">
                     <h1 className="text-center mb-4" style = {{marginTop: 20, fontFamily: "Poppins-SemiBold", paddingBottom: 10}}>Create Your Account</h1>
                     <p className = "text-center" style = {{marginTop: -20}}>We're excited to see you've joined us!</p>
@@ -116,6 +118,13 @@ function CreateAccount() {
                             <input type='password' placeholder='Confirm Password' className='form-control'
                                 onChange={e => setConfPassword(e.target.value)} required/>
                         </div>
+                    </form>
+                </div>
+
+                {/* Security questions box*/}
+                <div className="createAccount-create-account-container box_shadow">
+                    <h3 className = "text-center" style = {{fontWeight: 2}}>Security Questions</h3>
+                    <form onSubmit={handleSubmit} className="createAccount-form-container">
                         {/* Dropdowns for security questions */}
                         <div className='createAccount-input-field'>
                             <createAccount-label htmlFor='securityQuestion1'>Security Question 1</createAccount-label>
@@ -125,7 +134,6 @@ function CreateAccount() {
                                 {securityQuestions.map((questionObj, index) => (
                                     <option key={index} value={questionObj.question}>{questionObj.question}</option>
                                 ))}
-
                             </select>
                         </div>
                         
@@ -134,6 +142,7 @@ function CreateAccount() {
                             <input type='securityQuestion' placeholder='Response to Question 1' className='form-control'
                                 onChange={e => setSecurityAnswer1(e.target.value)} required/>
                         </div>
+
                         {/* Dropdowns for security questions */}
                         <div className='createAccount-input-field'>
                             <createAccount-label htmlFor='securityQuestion2'>Security Question 2</createAccount-label>

@@ -30,21 +30,27 @@
 }
 
 .welcomePage-h1-title{
-  font-family: "PaytoneOne-Regular";
-  font-size: 170px;
-  margin-top: -40px;
+  font-family: CabinetGrotesk-Black;
+  font-size: 200px;
+  margin-top: 10px;
   text-align: center;
-  padding-bottom: 40px;
 }
 
 .welcomePage-description-container{
-position: absolute;
-font-family: DM_Sans-Regular;
+  position: absolute;
+  font-family: DM_Sans-Regular;
 }
 
 .welcomePage-container-text{
-padding: 8rem;
-margin: 50px;
+  padding: 8rem;
+  margin-right: 50px;
+
+}
+
+.welcomePage-container-text2{
+  padding: 8rem;
+  margin-left: 50px;
+
 }
 
 .welcomePage-description-header{
