@@ -69,7 +69,7 @@ function Dashboard() {
               <div className="content">
                 {index < numberOfGoals ? (
                   <Link to={`/PigInfo/${goalNames[index]}`}>
-                    <img src={`images/piggies/other/pig_stage1_test.png`} alt={`Pig ${index + 1}`} />
+                    <img className = "Dashboard-cubby" src={`images/dashboard/shelf_closed.png`} alt={`Pig ${index + 1}`} />
                     <div className="overlay">Visit {goalNames[index] || 'Loading...'}</div>
                   </Link>
                 ) : index === numberOfGoals ? (
