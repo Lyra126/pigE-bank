@@ -1,7 +1,5 @@
 .createAccount-top-div {
-    margin: 0 auto;
-
-    
+    margin: 0 auto;  
     flex-direction: column;
     background-color: #ffffff;
     max-width: 900px; /* Limit the maximum width */
@@ -13,7 +11,7 @@
 }
 
 .createAccount-create-account-container {
-   
+
     margin-top: 50px;
     font-family: DM_Sans-Regular;
     display: flex;
@@ -34,21 +32,25 @@
     flex-direction: column; /* Stack fields vertically */
 }
 
+.createAccount-first-last-div input{
+    width: 27vh;
+}
+
 .createAccount-form-container {
     margin-right: 10px; /* Add some space between the divs */
 }
 
 .createAccount-security-question {
     margin-bottom: 10px;
-    
 }
+
 
 .btn {
     display: block;
     margin: auto; /* Center align button */
 }
 
-.createAccount-alr-have-acc-btn {
+.createAccount-alr-have-acc-btn{
     text-decoration: none;
     color: #656565;
     margin: 10px auto; /* Center align link */

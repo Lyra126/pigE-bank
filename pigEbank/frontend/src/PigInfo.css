@@ -65,8 +65,6 @@
     align-items: center; /* Center vertically */
     flex-direction: row;
     justify-content: space-evenly;
-    padding-right: 25px;
-    padding-left: 25px;
     border-radius: 5px;
 }
 
@@ -79,6 +77,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    margin-right: 15px;
+    margin-left: 15px;
 }
 
 .PigInfo-savings-information h1 {
@@ -95,10 +95,9 @@
     text-align: center;
     padding: 5px;
     border-radius: 5px;
-    font-size: 33px;
+    font-size: 23px;
     margin-bottom: 5px;
 }
-
 
 .PigInfo-current-savings{
     text-align: center;
@@ -107,7 +106,7 @@
 }
 
 .PigInfo-current-savings p{
-    font-size: 50px;
+    font-size: 40px;
     font-family: DM_Sans-SemiBold;
     margin-top: -10px;
     margin-bottom: -5px;
@@ -132,7 +131,7 @@
 .PigInfo-calculator{
     text-align: center;
     display: flex;
-    padding: 10px;
+    padding-top: 5px;
     align-items: center; /* Center vertically */
     background-color: #dcc8b8;
     flex-direction: column;
@@ -143,8 +142,8 @@
 .PigInfo-what-is-this{
     cursor: pointer;
     margin-top: -10px;
-    margin-bottom: 10px;
-    font-size: 14px;
+    margin-bottom: 0px;
+    font-size: 12px;
     color: #775d49;
     text-decoration:none;
     transition: color ease 0.3s
@@ -157,11 +156,12 @@
 .PigInfo-calculator .message-css{
     background-color: white;
     color: black;
+    font-size: 15px;
 }
 
 .PigInfo-calculator .message-css-green{
     background-color: darkolivegreen;
-    font-size: 25px;
+    font-size: 15px;
 }
 
 .PigInfo-form-input{
@@ -176,7 +176,7 @@
 
 .PigInfo-form-input label{
     font-family: DM_Sans-Medium;
-    font-size: 17px;
+    font-size: 13px;
 }
 
 .PigInfo-form-input input{
@@ -187,7 +187,7 @@
 .PigInfo-btn-group{
     display: flex;
     justify-content: space-evenly;
-    padding: 5px;
+    padding: 3px;
 }
 
 .PigInfo-btn-calculate{
@@ -243,8 +243,8 @@
 
 .PigInfo-pig-image{
     align-content: center;
-    width: 900px;
-    height: 650px !important;
+    width: 760px;
+    height: 555px !important;
     border: 15px solid #1f1d1b;
     border-radius: 5px;
     margin-bottom: 15px;

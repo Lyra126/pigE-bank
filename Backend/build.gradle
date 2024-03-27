@@ -29,6 +29,8 @@ dependencies {
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
 	implementation group: 'me.paulschwarz', name: 'spring-dotenv', version: '2.3.0'
+	implementation 'io.github.cdimascio:dotenv-java:2.2.0'
+
 }
 
 tasks.named('test') {

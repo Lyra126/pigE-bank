@@ -80,6 +80,26 @@
   src: url(../public/fonts/Lexend/static/Lexend-Black.ttf)
 }
 
+@font-face{
+  font-family: ClashDisplay-Bold;
+  src: url(../public/fonts/Clash_Display/Fonts/OTF/ClashDisplay-Bold.otf);
+}
+
+@font-face{
+  font-family: CabinetGrotesk-Bold;
+  src: url(../public/fonts/Cabinet_Grotesk/Fonts/OTF/CabinetGrotesk-Bold.otf);
+}
+
+@font-face{
+  font-family: CabinetGrotesk-Extrabold;
+  src: url(../public/fonts/Cabinet_Grotesk/Fonts/OTF/CabinetGrotesk-Extrabold.otf);
+}
+
+@font-face{
+  font-family: CabinetGrotesk-Black;
+  src: url(../public/fonts/Cabinet_Grotesk/Fonts/OTF/CabinetGrotesk-Black.otf);
+}
+
 body {
   margin: 0;
   font-family: Poppins-Medium, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

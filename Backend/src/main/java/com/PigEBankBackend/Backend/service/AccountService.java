@@ -89,14 +89,10 @@ public class AccountService {
         Account current = findAccount(email);
 
         List<String> questions = new ArrayList<>();
-        List<String> securityList = current.getSecurityQA();
 
         if(current.getSecurityQA() != null) {
             for (int i = 0; i < current.getSecurityQA().size(); i += 2) {
-                Query findQ = new Query();
-                findQ.addCriteria(Criteria.where("associatedNum").is(Integer.valueOf(securityList.get(i))));
-                List<SecurityQs> sQuestions = mongoTemplate.find(findQ, SecurityQs.class);
-                questions.add(sQuestions.getFirst().getQuestion());
+                questions.add(current.getSecurityQA().get(i));
             }
         }
 
@@ -115,6 +111,14 @@ public class AccountService {
         }
 
         return answers;
+    }
+
+    public List<String> getSecurityQAs(String email) {
+        Account current = findAccount(email);
+
+        List<String> all = current.getSecurityQA();
+
+        return all;
     }
 
     public String updateTotalSavings(Account account) {

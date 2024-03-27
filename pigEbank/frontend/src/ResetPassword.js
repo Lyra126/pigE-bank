@@ -18,6 +18,14 @@ function ResetPassword() {
         return () => clearTimeout(timer);
     }, [errorMessage]);
 
+    useEffect(() => {
+        const timer2 = setTimeout(() => {
+            navigate('/');
+        }, (5 * 60 * 1000));
+
+        return () => clearTimeout(timer2);
+    })
+
     function handleSubmit(event) {
         event.preventDefault();
         if (password !== confPassword) {
@@ -25,7 +33,7 @@ function ResetPassword() {
         } else {
             event.preventDefault();
             const email = document.cookie.split('; ').find(row => row.startsWith('tempEmail=')).split('=')[1];
-
+            
             axios.put("/accounts/updatePassword", {email: email, password: password})
                 .then(res => {
                     console.log(res);

@@ -26,13 +26,14 @@ function AccountRecovery() {
                 const users = response.data;
                 const authenticatedUser = users.find(user => user.email === email && user.username === username);
                 if (authenticatedUser) {
-                    navigate('/resetPassword');
-
+                
                     var experationDate = new Date();
-                    var experation = experationDate.getTime() + (5 * 60 * 1000);
+                    var experation = experationDate.getTime() + (5 * 61 * 1000);
                     experationDate.setTime(experation);
 
                     document.cookie = 'tempEmail=' + authenticatedUser.email + '; expires=' + experationDate.toUTCString() +'; path=/;';
+
+                    navigate('/securityQuestions');
                 } else {
                     setErrorMessage("Invalid email and/or username.");
                 }

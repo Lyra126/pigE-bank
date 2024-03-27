@@ -53,6 +53,11 @@ public class AccountController {
         return new ResponseEntity<List<String>>(accountService.getSecurityAs(email), HttpStatus.OK);
     }
 
+    @GetMapping("/getQAs/{email}")
+    ResponseEntity<List<String>> getSecurityQAs(@PathVariable String email) {
+        return new ResponseEntity<List<String>>(accountService.getSecurityQAs(email), HttpStatus.OK);
+    }
+
     @PutMapping("/updateTotalSavings")
     ResponseEntity<String> updateAccountTotalSavings(@RequestBody Account account) {
         return new ResponseEntity<String>(accountService.updateTotalSavings(account), HttpStatus.OK);

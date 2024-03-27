@@ -70,10 +70,15 @@
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
   color: white; /* White text */
   opacity: 0; /* Initially make it transparent */
-  transition: opacity 0.3s; /* Add transition effect for opacity */
+}
+
+.grid-item:hover .Dashboard-cubby {
+  opacity: 0; /* Make the original image invisible */
 }
 
 .grid-item:hover .overlay {
+  background-image: url("/public/images/dashboard/shelf_open.png");
+  background-size: cover;
   opacity: 1; /* Show the overlay on hover */
 }
 
