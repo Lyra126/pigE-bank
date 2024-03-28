@@ -8,7 +8,6 @@ import Aboutus from './AboutUs';
 import Dashboard from './Dashboard';
 import PigInfo from './PigInfo';
 import Profile from './Profile';
-import Settings from './Settings';
 import AccountRecovery from './AccountRecovery';
 import ResetPassword from './ResetPassword';
 import SecurityQuestions from './SecurityQuestions';
@@ -27,7 +26,6 @@ function App() {
           <Route path="/PigInfo/:pigName" element={<PigInfo />} />
           <Route path="/createNewGoal" element={<CreateNewGoal />} />
           <Route path="/Profile" element={<Profile />} />
-          <Route path="/settings" element={<Settings />} />
           <Route path="/accountRecovery" element={<AccountRecovery />} />
           <Route path="/resetPassword" element={<ResetPassword />} />
           <Route path="/securityQuestions" element={<SecurityQuestions />} />

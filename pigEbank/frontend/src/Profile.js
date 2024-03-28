@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Profile.css';
 import axios from 'axios';
+import PasswordModal from "./update/updatePassword";
+import UsernameModal from "./update/updateUsername";
 
 function Profile() {
     const [username, setUsername] = useState('');
@@ -12,11 +14,9 @@ function Profile() {
     const [accountCreationDate, setCreationDate] = useState('');
     const [email, setEmail]  = useState('');
     const navigate = useNavigate();
+    const [passwordModalOpen, setPasswordModalOpen] = useState(false);
+    const [usernameModalOpen, setUsernameModalOpen] = useState(false);
 
-    // Function to toggle password visibility
-    const togglePasswordVisibility = () => {
-        setShowPassword(!showPassword);
-    };
 
     useEffect(() => {
         if (!document.cookie) {
@@ -24,6 +24,7 @@ function Profile() {
             return;
         }
         const email = document.cookie.split('; ').find(row => row.startsWith('email=')).split('=')[1];
+        
 
         axios.put("/accounts/updateTotalSavings", {email: email})
             .then(res => console.log(res))
@@ -45,6 +46,19 @@ function Profile() {
                 console.error('Error fetching user data:', error);
             });
     }, []);
+
+    const deleteAccount = (email) => {
+        var url = "/accounts/deleteAccount/" + email
+        console.log(email);
+        axios.delete(url)
+        .then(response => {
+            navigate('/');
+        })
+        .catch(error => {
+            console.log("Could not delete Account.");
+        });
+
+    }
 
     const logout = () => {
         document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
@@ -72,34 +86,39 @@ function Profile() {
                 </div>
             </nav>
 
-            <div className='d-flex flex-column vh-100 justify-content-center align-items-center'>
-                <div className="container-fluid bg-white py-4"> 
-                    <h1 className="p-8 text-center login_title_message" style={{ marginTop: 10 }}>Welcome Back {username}!</h1>
-                    <div className='p-3'>
-                    <p>Username: {username}</p>
-                    <p>Email: {email}</p>
-
-                        
-                        <div className='mb-3'>
-                            <p>Password: {showPassword ? (password) : '********'}</p>
-                            <button className='btn btn-success' style={{ fontFamily: 'DM_Sans-Medium', objectPosition: "center", minWidth: 300 }} onClick={togglePasswordVisibility}>
-                                {showPassword ? 'Hide Password' : 'Show Password'}
-                            </button>
-                            <Link to="/settings" style={{ objectPosition: "center", minWidth: 300 }}>Settings</Link>
-                        </div>
-                        
+            <div className='d-flex flex-row vh-100 justify-content-center align-items-center'>
+                <div className="container-fluid bg-white mx-2">
+                    <br/>
+                    <div className="d-flex justify-content-center">
+                        <img src="images/piggies/other/pig.jpg" alt="piggie" width="200" height="200" className="align-items-center" />
                     </div>
+                    <h1 className="text-center login_title_message" style={{ marginTop: 20, fontSize: 30, fontFamily: "Lexend-SemiBold"}}> Profile</h1>
+                    <p className="text-center " style={{ marginTop: 20, fontSize: 20, fontFamily: "Lexend-Regular"}}>Username: {username}</p>
+                    <p className="text-center " style={{ marginTop: 20, fontSize: 20, fontFamily: "Lexend-Regular"}}>Email: {email}</p>
                 </div>
 
-                <br/>
-                <div className="container-fluid bg-white py-4"> 
-                    <div className='mb-3'>
-                        <p>Total Currency: {totalCurrency}</p>
-                        <p>Total Number of Goals: {numberOfGoals}</p>
-                        <p>Creation Date: {accountCreationDate}</p>
+                <div className="d-flex flex-column"> 
+                    <div className='container-statistics'>
+                        <h1 className="text-center login_title_message" style={{ marginTop: 30, fontSize: 30, fontFamily: "Lexend-SemiBold"}}> Statistics</h1>
+                        <p className="text-center " style={{ marginTop: 10, fontSize: 20, fontFamily: "Lexend-Regular"}}>Total Currency: {totalCurrency}</p>
+                        <p className="text-center " style={{ marginTop: 10, fontSize: 20, fontFamily: "Lexend-Regular"}}>Total Number of Goals: {numberOfGoals}</p>
+                        <p className="text-center " style={{ marginTop: 10, fontSize: 20, fontFamily: "Lexend-Regular"}}>Creation Date: {accountCreationDate}</p>
+                    </div>
+                    <div style={{ margin: '5px 0' }} />
+                    <div className='edit-settings'>
+                        <h1 className="text-center login_title_message" style={{ marginTop: 30, fontSize: 30, fontFamily: "Lexend-SemiBold"}}> Edit Settings</h1>
+                        <p><button className="btn open-modal" onClick={() => {setPasswordModalOpen(true);}}> Change Password </button></p>
+                        {passwordModalOpen && <PasswordModal setOpenPasswordModal={setPasswordModalOpen} />}
+
+                        <p></p>
+                        <p><button className="btn open-modal" onClick={() => {setUsernameModalOpen(true);}}> Change Username </button></p>
+                        {usernameModalOpen && <UsernameModal setOpenUsernameModal={setUsernameModalOpen} />}
+
+                        <p></p>
+                        <p> <button className="btn delete-btn" onClick={()=> {deleteAccount(email)}}> Delete Account </button></p>
                     </div>
                 </div>
-            </div>
+             </div>
         </div>
     );
 }

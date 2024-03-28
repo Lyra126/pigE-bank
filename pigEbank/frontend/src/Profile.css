@@ -18,9 +18,9 @@
 .container-fluid.bg-white {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    margin: 20px auto; /* Center the box and add margin on top and bottom */
-    max-width: 600px; /* Set max-width to limit the width of the box */
-    padding: 20px; /* Add padding inside the box */
+    width: 500px;
+    height: 520px;
+
 }
 
 /* Page content styling */
@@ -32,7 +32,6 @@
 .login_piggy {
     width: 100px; /* Adjust size as needed */
     height: auto;
-    margin-top: 20px;
 }
 
 .btn-success {
@@ -42,7 +41,41 @@
     margin-top: 10px;
 }
 
-/* Additional styling for total currency and total pigs */
-.mb-3 p {
-    margin-bottom: 5px;
+
+.container-statistics{
+    background-color: white;
+
+    width: 500px;
+    height: 255px;
+    border-radius: 10px;
+}
+
+.edit-settings{
+    background-color: white;
+
+    width: 500px;
+    height: 255px;
+    border-radius: 10px;
+}
+
+.open-modal {
+    background-color: #28a745; /* Green color */
+    border-color: #28a745; /* Green border */
+    font-family: 'DM_Sans-Medium';
+    margin-top: 10px;
+}
+
+.open-modal:hover{
+    background-color: #17c640;
+}
+
+.delete-btn {
+    background-color: #af0606; 
+    border-color: #af0606; 
+    font-family: 'DM_Sans-Medium';
+    margin-top: 10px;
+}
+
+.delete-btn:hover{
+    background-color: #d40c0c;
 }
