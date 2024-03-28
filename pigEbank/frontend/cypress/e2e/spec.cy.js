@@ -18,12 +18,11 @@ describe('Login Sucess', () => {
     cy.visit('http://localhost:3000/');
     
     let accobj;
-    let gotObj = false;
+    
     await cy.request('GET', 'http://localhost:8080/accounts').then(response => {
       accobj = response.body;
       console.log('this is response body');
       console.log(response.body);
-      gotObj = true;
     });
 
        
