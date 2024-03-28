@@ -6,7 +6,7 @@ import 'animate.css/animate.min.css';
 function WelcomePage() {
   useEffect(() => {
     const handleScroll = () => {
-      const containers = document.querySelectorAll('.welcomePage-container-text, .welcomePage-header-image');
+      const containers = document.querySelectorAll('.welcomePage-container-text, .welcomePage-header-image, .welcomePage-container-text2');
       containers.forEach((container, index) => {
         const rect = container.getBoundingClientRect();
         // Adjust this condition to check if the container is halfway into view
@@ -86,7 +86,7 @@ function WelcomePage() {
 
           {/* container 2 */}
           <div className="welcomePage-container-2">
-            <div className="welcomePage-container-text">
+            <div className="welcomePage-container-text2">
               <h2 className="welcomePage-description-header">Transform your saving goals into delightful adventures with our charming Pig Banks!</h2>
               <p> Each Pig Bank represents a unique savings goal waiting to be achieved. Work diligently towards your goal to unlock exciting accessories and bring your Pig Bank's dream of becoming a real pig to life!</p>
             </div>

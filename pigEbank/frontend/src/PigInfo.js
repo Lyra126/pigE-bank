@@ -11,7 +11,7 @@ function ShootConfetti(){
     confetti({
         particleCount: 100,
         spread: 160,
-        origin: { x: 0.4, y: 0.5}
+        origin: { x: 0.5, y: 0.5}
     });
 }
 function PigInfo() {
