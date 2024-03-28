@@ -91,10 +91,8 @@ function CreateNewGoal() {
                             <select id="dropdown" value={selectedOption} onChange={handleSelectChange}>
                                 <option value="">Choose an option</option>
                                 <option value="asset">Asset</option>
-                                <option value="necessities">Necessities</option>
                                 <option value="education">Education</option>
                                 <option value="vacation">Vacation</option>
-                                <option value="entertainment">Entertainment</option>
                                 <option value="richie">Other</option>
                             </select>
                         </div>
