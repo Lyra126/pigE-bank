@@ -20,20 +20,13 @@ public class Goal {
     private ObjectId id;
     private String pigName;
     private String goalName;
-    private type goalType;
+    private String goalType;
     private int stage;
     private String ownerEmail;
     private int currentSavings;
     private int savingsGoal;
     private LocalDate creation;
 
-    enum type {
-        ASSET,
-        NECESSITIES,
-        EDUCATION,
-        VACATION,
-        ENTERTAINMENT,
-        RICH_PIGGY
-    }
+
 
 }
