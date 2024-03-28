@@ -35,7 +35,7 @@ public class GoalService {
 
         List<Account> accountList = mongoTemplate.find(query, Account.class);
         Account account = accountList.get(0);
-        if(account.getNumOfGoals() > 11){
+        if(account.getNumOfGoals() > 12){
             return "At max number of goals >:(";
         }
 
