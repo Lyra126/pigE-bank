@@ -13,6 +13,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
+import java.awt.*;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -26,6 +27,20 @@ public class GoalService {
 
     public List<Goal> getAllGoals() {
         return goalRepository.findAll();
+    }
+
+    public String getGoalId(String pigName, String ownerEmail) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("pigName").is(pigName));
+        query.addCriteria(Criteria.where("ownerEmail").is(ownerEmail));
+
+        List<Goal> foundGoal = mongoTemplate.find(query, Goal.class);
+
+        if(!foundGoal.isEmpty()) {
+            return foundGoal.get(0).getId().toString();
+        }
+
+        return "Goal not found";
     }
 
     public String addGoal(Goal goal) {
@@ -160,8 +175,6 @@ public class GoalService {
         }
 
         return "addToGoal: No Goal Found";
-
-
 
     }
 
