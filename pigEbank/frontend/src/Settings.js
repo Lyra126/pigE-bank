@@ -7,7 +7,7 @@ import UsernameModal from "./update/updateUsername";
 
 function Settings() {
     const navigate = useNavigate();
-    const email = "";
+    var email = "";
     useEffect(() => {
         if (!document.cookie) {
           navigate('/login');
