@@ -1,30 +1,52 @@
+createAccount-label {
+    font-weight: bold;
+    margin-left: 5px;
+}
+
 .createAccount-top-div {
-    margin: 0 auto;  
+    margin: 0 auto;
     flex-direction: column;
     background-color: #ffffff;
-    max-width: 900px; /* Limit the maximum width */
+    max-width: 60%; /* Limit the maximum width */
     margin-top: 50px;
     margin-bottom: 50px;
-    padding: 20px;
+    padding: 40px;
     border-radius: 20px;
     width: 80%; /* Adjust width as needed */
 }
 
 .createAccount-create-account-container {
-
-    margin-top: 50px;
+    margin-top: 20px;
     font-family: DM_Sans-Regular;
     display: flex;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    justify-content: space-evenly; /* Center items horizontally */
 }
+
 
 .horizontal-div1 {
     display: flex;
+    width: 100%;
+    /*background-color: red;*/
+    padding: 30px;
+}
+
+.horizontal-div1 input{
+    margin-bottom: 8px;
 }
 
 .horizontal-div2 {
-    margin-bottom: 10px;
+    width: 100%;
     display: flex;
+    padding: 30px;
+    padding-top: 45px;
 }
+
+.horizontal-div2 input{
+    margin-bottom: 14px;
+}
+
 .createAccount-form-container,
 .createAccount-security-questions-container {
     flex: 1; /* Equal width for both divs */
@@ -33,7 +55,7 @@
 }
 
 .createAccount-first-last-div input{
-    width: 27vh;
+    width: 25vh;
 }
 
 .createAccount-form-container {
@@ -41,13 +63,17 @@
 }
 
 .createAccount-security-question {
-    margin-bottom: 10px;
+    margin-bottom: 16px;
 }
 
+.form-control::placeholder {
+    color: rgba(82, 82, 82, 0.51); /* Adjust as needed */
+}
 
 .btn {
     display: block;
     margin: auto; /* Center align button */
+    box-shadow: 1px 2px 10px rgba(40, 44, 52, 0.31);
 }
 
 .createAccount-alr-have-acc-btn{
@@ -64,7 +90,6 @@
 .createAccount-name-container {
     display: flex;
 }
-
 
 .createAccount-input-field label {
     display: block;

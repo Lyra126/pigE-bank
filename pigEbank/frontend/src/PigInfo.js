@@ -207,13 +207,13 @@ function PigInfo() {
                         <div className="PigInfo-current-savings">
                         {/*Current savings*/}
                         {/*<h1>Savings</h1>*/}
-                            <h2 style = {{marginBottom: "-10px"}}>You've saved:</h2>
-                            <p>${currentSavings} </p>
+                            <h2 style = {{marginBottom: "-15px"}}>You've saved:</h2>
+                            <p style = {{color: "green", fontSize: 70}}>${currentSavings} </p>
                         </div>
 
                         {/* Updating savings */}
                         <div className = "PigInfo-update-savings">
-                            <h2 style = {{marginBottom: -10}}>Add Savings</h2>
+                            <h2 style = {{marginBottom: -18}}>Add Savings</h2>
                             <div>
                                 <input
                                     className='input-form PigInfo-input-form form-control'
@@ -307,21 +307,29 @@ function PigInfo() {
                             </div>
                         </div>
                     </div>
+
                     <div className="PigInfo-piggyBank-information">
+                        {/*More information about savings*/}
+                        <div className="PigInfo-more-savings-info">
+                            <h2 style={{fontFamily: "DM_Sans-Medium"}}>Savings Goal:</h2>
+                            <p style={{marginTop: -15, marginBottom: "10px"}}>${savingsGoal}</p>
+                            <h2 style={{fontFamily: "DM_Sans-Medium",  marginBottom: "1px", marginTop: "-5px"}}>Goal Name:</h2>
+                            <p style={{marginTop: -15, marginBottom: "10px"}}>{goalName}</p>
+                            <h2 style={{fontFamily: "DM_Sans-Medium", marginBottom: "1px"}}>Type:</h2>
+                            <p style={{marginTop: -15, marginBottom: "10px"}}>{goalType}</p>
+                        </div>
+
                         {/*Pig information*/}
                         <div className = "PigInfo-pig-info">
                             <h3 style = {{fontFamily: "DM_Sans-SemiBold"}}>Pig Information</h3>
-                            <p style={{fontFamily: "DM_Sans-Medium"}}>Stage: {stage} </p>
+                            <h2 style={{fontFamily: "DM_Sans-Medium", fontSize: 16}}>Stage: {stage} </h2>
+                            <h2 style={{fontFamily: "DM_Sans-Medium", fontSize: 16, marginBottom: "10px"}}>Creation Date: {creationDate} </h2>
                         </div>
-                        {/*More information about savings*/}
-                        <div className="PigInfo-more-savings-info">
-                            <p style={{fontFamily: "DM_Sans-Medium"}}>Savings Goal: ${savingsGoal} </p>
-                            <p style={{fontFamily: "DM_Sans-Medium", marginBottom: "1px"}}>Type: {goalType} </p>
-                            <p style={{fontFamily: "DM_Sans-Medium",  marginBottom: "1px", marginTop: "-5px"}}>Goal Name: {goalName} </p>
-                            <p style={{fontFamily: "DM_Sans-Medium"}}>Creation Date: {creationDate} </p>
-                        </div>
-                        <button className="popup-button" onClick={openPopup}>Edit Goal</button>
 
+
+                        <div className = "PigInfo-pig-info-buttons">
+                        {/* Editting goal button */}
+                        <button className="PigInfo-edit-goal-popup-button" onClick={openPopup}>Edit Goal</button>
                         {/* Render the prompt if showPrompt is true */}
                         {showPrompt && (
                             <Prompt
@@ -334,9 +342,14 @@ function PigInfo() {
                             
                                 handlePromptClose(); // Close the prompt after handling the values
                             }}
-                            />                        
+                            />
                         )}
-                        {/*
+                            {/*Deleting piggy button*/}
+                            <button className="PigInfo-delete-piggy-button">Delete Piggy</button>
+                        </div>
+                        {
+                            /*
+
                         <button onClick={togglePopup}>Set Milestones</button>
                             {isOpen && (
                                 <div className="popup">
@@ -356,9 +369,10 @@ function PigInfo() {
                                 </div>
                                 </div>
                             )}*/}
-                    </div>
+
                 </div>
 
+            </div>
             </div>
         </div>
     );

@@ -68,6 +68,33 @@
     border-radius: 5px;
 }
 
+.PigInfo-middle-row p{
+    font-size: 40px;
+    font-family: DM_Sans-SemiBold;
+    margin-top: -10px;
+    margin-bottom: -5px;
+}
+
+.PigInfo-middle-row h1 {
+    font-family:"Poppins-Bold";
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 40px;
+    margin-bottom: -2px;
+}
+
+.PigInfo-middle-row h2{
+    font-family:"DM_Sans-SemiBold";
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 23px;
+    margin-bottom: 5px;
+}
+
+/* ------- LEFT BOX -------- */
+
 /*#866148*/
 .PigInfo-savings-information{
     /*background-color: #ff0015;*/
@@ -81,45 +108,23 @@
     margin-left: 15px;
 }
 
-.PigInfo-savings-information h1 {
-    font-family:"Poppins-Bold";
-    text-align: center;
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 40px;
-    margin-bottom: -2px;
-}
-
-.PigInfo-savings-information h2{
-    font-family:"DM_Sans-SemiBold";
-    text-align: center;
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 23px;
-    margin-bottom: 5px;
-}
-
 .PigInfo-current-savings{
     text-align: center;
     background-color: #dcc8b8;
     border-radius: 10px;
+    height: 20%;
 }
 
-.PigInfo-current-savings p{
-    font-size: 40px;
-    font-family: DM_Sans-SemiBold;
-    margin-top: -10px;
-    margin-bottom: -5px;
-}
 
 .PigInfo-update-button {
     margin-top: 20px;
-    padding: 10px 20px;
+    padding: 10px 0px;
     background-color: #3e6e37;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 14px;
     font-family: DM_Sans-Medium;
     transition: background-color ease 0.3s;
 }
@@ -197,6 +202,7 @@
     color: #fff;
     border: none;
     border-radius: 5px;
+    font-size: 14px;
     cursor: pointer;
     font-family: DM_Sans-Medium;
     transition: background-color ease 0.3s;
@@ -218,8 +224,8 @@
 
 .PigInfo-input-form{
     border-radius: 10px;
-    height: 55px;
-    font-size: 25px;
+    margin-bottom: -10px;
+    font-size: 20px;
     font-family: DM_Sans-Medium;
 }
 
@@ -230,15 +236,18 @@
 
 
 
+/* ------- MIDDLE BOX -------- */
 
 .PigInfo-image-percentageBar{
     display: flex;
     flex-direction: column;
     /*background-color: red;*/
     height: 85vh;
+    padding-top: 15px;
     border-radius: 5px;
     justify-content: center;
     align-items: center;
+    padding-bottom: 15px;
 }
 
 .PigInfo-pig-image{
@@ -251,10 +260,10 @@
 }
 
 .progress {
-    width: 97vh !important;
+    width: 100% !important;
     height: 60px !important;
     font-family: DM_Sans-Medium;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .progress-bar {
@@ -271,21 +280,46 @@
     }
 }
 
-
+/* ------- RIGHT BOX -------- */
 .PigInfo-piggyBank-information{
-    background-color: #ff0000;
-    height: 100%;
+    /*background-color: #ff0000;*/
+    height: 85vh;
     width: 20%;
-    padding: 20px;
     border-radius: 10px;
-}
-
-.PigInfo-pig-info{
-    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-right: 15px;
+    margin-left: 15px;
 }
 
 .PigInfo-more-savings-info{
-    background-color: white;
+    text-align: center;
+    background-color: #dcc8b8;
+    border-radius: 10px;
+    height: 47%;
+}
+
+.PigInfo-pig-info{
+    text-align: center;
+    display: flex;
+    padding-top: 5px;
+    align-items: center; /* Center vertically */
+    background-color: #dcc8b8;
+    flex-direction: column;
+    border-radius: 8px;
+    /*height: 40%;*/
+}
+
+.PigInfo-pig-info-buttons{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #dcc8b8;
+    border-radius: 10px;
+    height: 24%;
+    align-items: center; /* Center vertically */
+    justify-content: center;
 }
 
 
@@ -295,20 +329,34 @@
     margin-top: 20px; /* Adjusted margin for consistency */
 }
 
-.edit-goal-btn {
-    padding: 10px 20px;
-    background-color: #3e6e37;
-    font-family: PaytoneOne-Regular;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
 .dashboard-button:hover, .edit-goal-btn:hover {
     background-color: #52814a;
 }
 
-.popup{
-    background-color: white;
+.PigInfo-edit-goal-popup-button{
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #3e6e37;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    width: 80%;
+    cursor: pointer;
+    font-family: DM_Sans-Medium;
+    transition: background-color ease 0.3s;
+}
+
+.PigInfo-delete-piggy-button{
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #c04545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    width: 80%;
+    cursor: pointer;
+    font-family: DM_Sans-Medium;
+    transition: background-color ease 0.3s;
 }
