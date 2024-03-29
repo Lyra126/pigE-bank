@@ -52,7 +52,6 @@
 
 .edit-settings{
     background-color: white;
-
     width: 500px;
     height: 255px;
     border-radius: 10px;
@@ -63,13 +62,16 @@
     border-color: #28a745; /* Green border */
     font-family: 'DM_Sans-Medium';
     margin-top: 10px;
+    color: white;
 }
 
 .open-modal:hover{
     background-color: #17c640;
+    color: white;
 }
 
 .delete-btn {
+    color: white;
     background-color: #af0606; 
     border-color: #af0606; 
     font-family: 'DM_Sans-Medium';
@@ -78,4 +80,5 @@
 
 .delete-btn:hover{
     background-color: #d40c0c;
+    color: white;
 }

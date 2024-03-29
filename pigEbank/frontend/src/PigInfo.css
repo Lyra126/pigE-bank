@@ -23,9 +23,10 @@
 
 .Pig-Info-db-button-div {
     margin: 10px;
+    margin-top: -15px;
     margin-left: 40px;
     margin-right:-75px;
-    font-size: 50px;
+    font-size: 80px;
 }
 
 .Pig-Info-db-button{
@@ -367,4 +368,17 @@
 
 .PigInfo-delete-piggy-button:hover{
     background-color: #a23838;
+}
+
+.PigInfo-edit-goal-prompt-popup{
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Spacing inside the popup */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    width: 300px; /* Fixed width, adjust as necessary */
+    position: absolute; /* Positioning relative to its closest positioned ancestor */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to truly center */
+    z-index: 100; /* Ensure it's above other content */
+
 }

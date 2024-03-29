@@ -6,6 +6,7 @@ import { Tooltip } from 'react-tooltip'
 import confetti from 'canvas-confetti';
 import Popup from 'react-popup'; // Import Popup component
 import Prompt from './Prompt';
+import { TiChevronLeft } from "react-icons/ti";
 
 function ShootConfetti(){
     confetti({
@@ -206,7 +207,7 @@ function PigInfo() {
                 <div className = "PigInfo-top-row">
                     {/* going back to dashboard button*/}
                     <div className="Pig-Info-db-button-div ">
-                        <Link to="/dashboard" className='Pig-Info-db-button'>⬅</Link>
+                        <Link to="/dashboard" className='Pig-Info-db-button'><TiChevronLeft /></Link>
                     </div>
                 {/* Div with Pig name*/}
                     <div className="PigInfo-pigName">
@@ -349,11 +350,13 @@ function PigInfo() {
 
 
                         <div className = "PigInfo-pig-info-buttons">
-                        {/* Editting goal button */}
+                        {/* Editing goal button */}
                         <button className="PigInfo-edit-goal-popup-button" onClick={openPopup}>Edit Goal</button>
                         {/* Render the prompt if showPrompt is true */}
                         {showPrompt && (
                             <Prompt
+                            className="PigInfo-edit-goal-prompt-popup"
+
                             onClose={handlePromptClose}
                             onChange={(values) => {
                                 console.log('Pig Name:', values.pigName);

@@ -1,23 +1,64 @@
-.top-div2 {
+.createNewGoal {
     display: flex;
     justify-content: center;
-    margin-bottom: 200px;
+    height: 100vh;
 }
 
-.btn-goal {
+.createNewGoal-new-goal-div{
+    background-color: white;
+    height: 75vh;
+    width: 30%;
+    border-radius: 10px;
+    margin-top: 80px;
+    font-family: DM_Sans-Regular;
+}
+
+.createNewGoal-form-container{
+    /*background-color: red;*/
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.createNewGoal-input-field label{
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.createNewGoal-input-field input{
+    margin-left: 20px;
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+.createNewGoal-dropdown-div label{
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.createNewGoal-dropdown{
+    border: 1.5px solid #9f9f9f;
+    margin-left: 20px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #e5e5e5;
+}
+
+.createNewGoal-btn-goal {
     padding: 15px;
     font-size: 16px;
     background-color: #1b9140;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
     cursor: pointer;
     margin: 20px;
     text-align: center;
     text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
-
-.btn-goal:hover {
+.createNewGoal-btn-goal:hover {
     background-color: #26c480;
 }

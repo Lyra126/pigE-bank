@@ -64,31 +64,31 @@ function CreateNewGoal() {
                 </div>
             </nav>
 
-            <div className="top-div2">
-                <div className="create-account-container box_shadow">
-                    <h1 className="text-center mb-4" style = {{marginTop: 20, fontFamily: "Poppins-SemiBold", paddingBottom: 10}}>Create a New Goal</h1>
+            <div className="createNewGoal">
+                <div className="createNewGoal-new-goal-div ">
+                    <h1 className="text-center mb-4" style = {{marginTop: 30, fontFamily: "Poppins-SemiBold", paddingBottom: 5}}>Create a New Goal</h1>
                     <p className = "text-center" style = {{marginTop: -20}}>Add a new pig to your stables!</p>
-                    <form onSubmit={handleSubmit} className="form-container">
-                        <div className='input-field'>
+                    <form onSubmit={handleSubmit} className="createNewGoal-form-container">
+                        <div className='createNewGoal-input-field'>
                             <label>Pig Name</label>
                             <input type='text' placeholder='Enter your new pigs name' className='form-control'
                                 onChange={e => setPigName(e.target.value)} required/>
                         </div>
-                        <div className='input-field'>
+                        <div className='createNewGoal-input-field'>
                             <label>Goal Name</label>
                             <input type='text' placeholder='Enter your new goal name' className='form-control'
                                 onChange={e => setGoalName(e.target.value)} required/>
                         </div>
-                        <div className='input-field'>
+                        <div className='createNewGoal-input-field'>
                             <label>Goal Amount</label>
                             <input type='text' placeholder='Enter your desired goal amount' className='form-control'
                                 onChange={e => setSavingsGoal(e.target.value)} required/>
                         </div>
 
-                        <div>
-                        <label htmlFor="dropdown">Select an option:</label>
-                        <br/>
-                            <select id="dropdown" value={selectedOption} onChange={handleSelectChange}>
+                        <div className = "createNewGoal-dropdown-div">
+                            <label>Goal Type</label>
+                            <br/>
+                            <select id="dropdown" className = "createNewGoal-dropdown" value={selectedOption} onChange={handleSelectChange}>
                                 <option value="">Choose an option</option>
                                 <option value="asset">Asset</option>
                                 <option value="education">Education</option>
@@ -97,7 +97,7 @@ function CreateNewGoal() {
                             </select>
                         </div>
                       
-                        <button className='btn-goal'>Submit</button>
+                        <button className='createNewGoal-btn-goal'>Submit</button>
                         
                     </form>
                 </div>
