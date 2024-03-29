@@ -63,6 +63,10 @@ public class AccountService {
         List<Account> user = findAccountList(email);
 
         List<Goal> goals = new ArrayList<>();
+
+        if (user.get(0).getGoalsID() == null){
+            return goals;
+        }
         for(int i = 0; i < user.get(0).getGoalsID().size(); i++) {
             //Find the goals associated with the account
             Query findGoal = new Query();

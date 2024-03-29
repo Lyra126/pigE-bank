@@ -13,6 +13,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
+import java.awt.*;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -28,6 +29,20 @@ public class GoalService {
         return goalRepository.findAll();
     }
 
+    public String getGoalId(String pigName, String ownerEmail) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("pigName").is(pigName));
+        query.addCriteria(Criteria.where("ownerEmail").is(ownerEmail));
+
+        List<Goal> foundGoal = mongoTemplate.find(query, Goal.class);
+
+        if(!foundGoal.isEmpty()) {
+            return foundGoal.get(0).getId().toString();
+        }
+
+        return "Goal not found";
+    }
+
     public String addGoal(Goal goal) {
         //find the account first and check if they have 11 goals or less so they can add one
         Query query = new Query();
@@ -35,7 +50,7 @@ public class GoalService {
 
         List<Account> accountList = mongoTemplate.find(query, Account.class);
         Account account = accountList.get(0);
-        if(account.getNumOfGoals() > 11){
+        if(account.getNumOfGoals() > 12){
             return "At max number of goals >:(";
         }
 
@@ -160,8 +175,6 @@ public class GoalService {
         }
 
         return "addToGoal: No Goal Found";
-
-
 
     }
 

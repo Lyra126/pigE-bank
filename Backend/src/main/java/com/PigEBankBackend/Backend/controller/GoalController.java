@@ -23,6 +23,11 @@ public class GoalController {
         return new ResponseEntity<List<Goal>>(goalService.getAllGoals(), HttpStatus.OK);
     }
 
+    @GetMapping("/getGoalId")
+    public ResponseEntity<String> getGoalId(String pigName, String ownerEmail) {
+        return new ResponseEntity<String>(goalService.getGoalId(pigName, ownerEmail), HttpStatus.OK);
+    }
+
     @PostMapping("/newGoal")
     public ResponseEntity<String> createGoal(@RequestBody Goal goal) {
         return new ResponseEntity<String>(goalService.addGoal(goal), HttpStatus.OK);
@@ -58,6 +63,7 @@ public class GoalController {
     public ResponseEntity<String> addToCurrentSavings(String id, int money){
         return new ResponseEntity<String>(goalService.addToCurrentSavings(id, money), HttpStatus.OK);
     }
+
 
     @PutMapping("/updateSavingsGoal")
     public ResponseEntity<String> updateSavingsGoal(@RequestBody Goal goal) {

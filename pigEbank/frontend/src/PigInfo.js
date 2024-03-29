@@ -26,7 +26,8 @@ function PigInfo() {
     const [newSavings, setNewSavings] = useState(); // State for newSavings
     const [savingsGoal, setSavingsGoal] = useState(0);
     const [creationDate, setCreationDate] = useState('');
-    const [pigId, setPigID] = useState([]);
+    const [ownerEmail, setOwnerEmail] = useState('');
+    const [pigId, setPigId] = useState('');
 
     const [monthlyContribution, setMonthlyContribution] = useState(0);
     const [goalAmount, setGoalAmount] = useState(0);
@@ -61,8 +62,16 @@ function PigInfo() {
                     setSavingsGoal(savingsGoal);
                     setCreationDate(creation);
                     setProgress((currentSavings / savingsGoal) * 100);
-                    setPigID(id);
                   }
+
+                  var getUrl = '/goals/getGoalId?pigName=' + pigName + "&ownerEmail=" + email;
+                    axios.get(getUrl)
+                    .then(response => {
+                        setPigId(response.data)
+                        })
+                    .catch(error => {
+                    console.error('Error fetching the goal information', error);
+                    });
                 })
                 .catch(err => console.log(err));
             }
@@ -124,31 +133,43 @@ function PigInfo() {
 
 
     const handleGoalUpdate = (event) => {
-        const newValue = parseInt(event);
-        if (newValue.empty){
+
+        if(event == undefined) {
             alert("You have not entered a new value.");
-        }
-        if (newValue < 0) {
-            setError('Value cannot be negative.');
-        } else if (newValue === 0) {
-            setError('You have not added new savings. Enter a value above 0.');
-        } else if (newValue + currentSavings > savingsGoal) {
-            window.alert("You've reached your goal of " + {goalAmount} + (currentSavings + newValue) - savingsGoal + " left over!!");
-            setCurrentSavings(savingsGoal);
-            setProgress((currentSavings / savingsGoal) * 100);
-            setError('');
         } else {
-            setCurrentSavings(currentSavings + newValue);
-            setProgress((currentSavings / savingsGoal) * 100);
-            ShootConfetti();
 
-            axios.put("/goals/addToCurrentSavings?id=" + pigId + "&money="+ newValue)
-            .then(res => console.log(res))
-            .catch(err => console.log(err));
+            const newValue = parseInt(event);
 
-            setError(''); // Reset error message
-        }
+            if(newValue == NaN) {
+                console.log("Nope")
+            }
 
+            if (newValue.empty){
+                alert("You have not entered a new value.");
+            }
+            if (newValue < 0) {
+                setError('Value cannot be negative.');
+            } else if (newValue === 0) {
+                setError('You have not added new savings. Enter a value above 0.');
+            } else if (newValue + currentSavings > savingsGoal) {
+                console.log((currentSavings + newValue) - savingsGoal);
+                var leftOver = (currentSavings + newValue) - savingsGoal;
+                window.alert("You've reached your goal of " + goalAmount + " -> " + leftOver + " left over!!");
+                setCurrentSavings(savingsGoal);
+                setProgress((currentSavings / savingsGoal) * 100);
+                setError('');
+            } else {
+                setCurrentSavings(currentSavings + newValue);
+                setProgress((currentSavings / savingsGoal) * 100);
+                ShootConfetti();
+
+                axios.put("/goals/addToCurrentSavings?id=" + pigId + "&money="+ newValue)
+                    .then(res => console.log(res))
+                    .catch(err => console.log(err));
+                
+                setError(''); // Reset error message
+            }
+         }
     };
 
     const logout = () => {
@@ -338,7 +359,24 @@ function PigInfo() {
                                 console.log('Pig Name:', values.pigName);
                                 console.log('Goal Name:', values.goalName);
                                 console.log('Goal Amount:', values.goalAmount);
-                                console.log('ID:', pigId);
+
+                                axios.put("/goals/updatePigName", {id: pigId, pigName: values.pigName})
+                                .then(res => {
+                                    
+                                })
+                                .catch(err => console.log(err));
+
+                                axios.put("/goals/updateGoalName", {id: pigId, goalName: values.goalName})
+                                .then(res => {
+                                    setGoalName(values.goalName);
+                                })
+                                .catch(err => console.log(err));
+
+                                axios.put("/goals/updateSavingsGoal", {id: pigId, savingsGoal: values.goalAmount})
+                                .then(res => {
+                                    setGoalAmount(values.goalAmount);
+                                })
+                                .catch(err => console.log(err));
                             
                                 handlePromptClose(); // Close the prompt after handling the values
                             }}
