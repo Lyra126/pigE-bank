@@ -51,7 +51,7 @@ class Prompt extends React.Component {
             <div className="prompt-container">
                 <div className="prompt-content">
                     <div className="form-group">
-                        <label htmlFor="pigName">Pig Name:</label>
+                        <label htmlFor="pigName" style={{marginRight: 10}}>New Pig Name: </label>
                         <input
                             type="text"
                             name="pigName"
@@ -62,7 +62,7 @@ class Prompt extends React.Component {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="goalName">Goal Name:</label>
+                        <label htmlFor="goalName" style={{marginRight: 10}}>New Goal Name: </label>
                         <input
                             type="text"
                             name="goalName"
@@ -73,7 +73,7 @@ class Prompt extends React.Component {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="goalAmount">Goal Amount:</label>
+                        <label htmlFor="goalAmount" style={{marginRight: 10}}>New Goal Amount: </label>
                         <input
                             type="number"
                             name="goalAmount"
@@ -83,9 +83,9 @@ class Prompt extends React.Component {
                             placeholder="Enter goal amount"
                         />
                     </div>
-                    <div className="button-group">
-                        <button className="prompt-button" onClick={this.handleSave}>Save</button>
-                        <button className="prompt-button" onClick={this.props.onClose}>Cancel</button>
+                    <div className="prompt-button-group">
+                        <button className="prompt-save-button" style = {{width: 200, backgroundColor: "green"}}onClick={this.handleSave}>Save</button>
+                        <button className="prompt-cancel-button" style = {{color: "black"}} onClick={this.props.onClose}>Cancel</button>
                     </div>
                 </div>
             </div>
