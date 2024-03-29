@@ -347,6 +347,10 @@
     transition: background-color ease 0.3s;
 }
 
+.PigInfo-edit-goal-popup-button:hover{
+    background-color: #335b36;
+}
+
 .PigInfo-delete-piggy-button{
     margin-top: 10px;
     padding: 10px 20px;
@@ -359,4 +363,8 @@
     cursor: pointer;
     font-family: DM_Sans-Medium;
     transition: background-color ease 0.3s;
+}
+
+.PigInfo-delete-piggy-button:hover{
+    background-color: #a23838;
 }
