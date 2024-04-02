@@ -2,7 +2,7 @@
 .AboutUs-about-header {
     padding: 20px;
     margin-top: 30px;
-    font-family: "Poppins-Bold", Arial;
+    font-family: "Poppins-Bold", Arial, sans-serif;
 }
 
 .AboutUs-developer-img {
@@ -31,7 +31,7 @@
 .AboutUs-developer {
     margin: 20px;
     text-align: center;
-    font-family: "Poppins-Medium", Arial;
+    font-family: "Poppins-Medium", Arial, sans-serif;
 }
 
 .AboutUs-socials{
