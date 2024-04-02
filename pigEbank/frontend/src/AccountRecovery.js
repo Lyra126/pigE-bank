@@ -27,8 +27,8 @@ function AccountRecovery() {
                 const authenticatedUser = users.find(user => user.email === email && user.username === username);
                 if (authenticatedUser) {
                 
-                    var experationDate = new Date();
-                    var experation = experationDate.getTime() + (5 * 61 * 1000);
+                    let experationDate = new Date();
+                    let experation = experationDate.getTime() + (5 * 61 * 1000);
                     experationDate.setTime(experation);
 
                     document.cookie = 'tempEmail=' + authenticatedUser.email + '; expires=' + experationDate.toUTCString() +'; path=/;';

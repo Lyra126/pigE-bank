@@ -140,7 +140,7 @@ function PigInfo() {
 
             const newValue = parseInt(event);
 
-            if(newValue == NaN) {
+            if(isNaN(newValue)) {
                 console.log("Nope")
             }
 
