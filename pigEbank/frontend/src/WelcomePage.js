@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './WelcomePage.css';
 import 'animate.css/animate.min.css';
@@ -21,18 +21,7 @@ function WelcomePage() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-
-    const handleBeforeUnload = (event) => {
-      event.preventDefault();
-      event.returnValue = 'Are you sure you want to leave?';
-      window.location.reload();
-    };
-
-    window.addEventListener('beforeunload', handleBeforeUnload);
-    return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload);
-    };
-  }, []); // Empty dependency array to ensure the effect runs only once
+  }, []);
 
   return (
     <div>

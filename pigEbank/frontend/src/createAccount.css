@@ -1,4 +1,4 @@
-createAccount-label {
+.createAccount-label {
     font-weight: bold;
     margin-left: 5px;
 }
@@ -17,7 +17,7 @@ createAccount-label {
 
 .createAccount-create-account-container {
     margin-top: 20px;
-    font-family: DM_Sans-Regular;
+    font-family: "DM_Sans-Regular";
     display: flex;
     background-color: #f1f1f1;
     border-radius: 10px;
@@ -28,7 +28,6 @@ createAccount-label {
 .horizontal-div1 {
     display: flex;
     width: 100%;
-    /*background-color: red;*/
     padding: 30px;
 }
 

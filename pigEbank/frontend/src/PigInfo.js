@@ -4,7 +4,6 @@ import { Link, useParams, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Tooltip } from 'react-tooltip'
 import confetti from 'canvas-confetti';
-import Popup from 'react-popup'; // Import Popup component
 import Prompt from './Prompt';
 import { TiChevronLeft } from "react-icons/ti";
 
@@ -18,7 +17,6 @@ function ShootConfetti(){
 function PigInfo() {
     const { pigName } = useParams();
     const [timeToReachGoal, setTimeToReachGoal] = useState(0);
-    const [showMessage, setShowMessage] = useState(false); // State to control message display
 
     const [goalName, setGoalName] = useState('');
     const [goalType, setGoalType] = useState('');
@@ -27,8 +25,8 @@ function PigInfo() {
     const [newSavings, setNewSavings] = useState(); // State for newSavings
     const [savingsGoal, setSavingsGoal] = useState(0);
     const [creationDate, setCreationDate] = useState('');
-    const [ownerEmail, setOwnerEmail] = useState('');
     const [pigId, setPigId] = useState('');
+    const [ownerEmail, setOwnerEmail] = useState('');
 
     const [monthlyContribution, setMonthlyContribution] = useState(0);
     const [goalAmount, setGoalAmount] = useState(0);
@@ -36,14 +34,12 @@ function PigInfo() {
     const [error, setError] = useState('');
     const [showPrompt, setShowPrompt] = useState(false); // State to control prompt display
     const navigate = useNavigate();
-    const [milestones, setMilestones] = useState([]);
 
     useEffect(() => {
         if (!document.cookie) {
             navigate('/login');
             return;
         }
-        const username = document.cookie.split('; ').find(row => row.startsWith('username=')).split('=')[1];
         const email = document.cookie.split('; ').find(row => row.startsWith('email=')).split('=')[1];
       
         axios.get('/accounts')
@@ -65,8 +61,7 @@ function PigInfo() {
                     setProgress((currentSavings / savingsGoal) * 100);
                   }
 
-                  var getUrl = '/goals/getGoalId?pigName=' + pigName + "&ownerEmail=" + email;
-                    axios.get(getUrl)
+                    axios.get('/goals/getGoalId?pigName=' + pigName + "&ownerEmail=" + email)
                     .then(response => {
                         setPigId(response.data)
                         })
@@ -114,25 +109,7 @@ function PigInfo() {
     const handlePromptClose = () => {
         setShowPrompt(false); // Set showPrompt state to false to hide the prompt
     };
-
-    const handleMilestones = (newMilestone) => {
-        // Adding the provided milestone to the milestones array
-        console.log(newMilestone);
-        setMilestones(prevMilestones => [...prevMilestones, newMilestone]);
-    };
-   
-    const [isOpen, setIsOpen] = useState(false);
-    const [sliderValue, setSliderValue] = useState(50); // Initial slider value
     
-    const togglePopup = () => {
-        setIsOpen(!isOpen);
-    };
-    
-    const handleSliderChange = (event) => {
-        setSliderValue(event.target.value);
-    };
-
-
     const handleGoalUpdate = (event) => {
 
         if(event == undefined) {

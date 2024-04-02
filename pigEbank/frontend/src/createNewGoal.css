@@ -10,11 +10,10 @@
     width: 30%;
     border-radius: 10px;
     margin-top: 80px;
-    font-family: DM_Sans-Regular;
+    font-family: "DM_Sans-Regular";
 }
 
 .createNewGoal-form-container{
-    /*background-color: red;*/
     display: flex;
     flex-direction: column;
     padding: 20px;

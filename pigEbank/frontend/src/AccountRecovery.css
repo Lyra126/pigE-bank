@@ -1,6 +1,6 @@
 .AccountRecovery-bg{
   background: rgb(55,196,143);
-  background: linear-gradient(0deg, rgb(147, 229, 116) 0%, rgba(55,196,143,1)100%); ;
+  background: linear-gradient(0deg, rgb(147, 229, 116) 0%, rgba(55,196,143,1)100%);
   width: 100%;
   height: 100%;
 }
@@ -14,7 +14,7 @@
   box-shadow: 0 0 15px rgba(24, 99, 32, 0.268);
   background-color: white;
   width: 52vh;
-  font-family: DM_Sans-Regular;
+  font-family: "DM_Sans-Regular";
 }
 
 .AccountRecovery-title-header-div{
@@ -24,7 +24,7 @@
 }
 
 .AccountRecovery-title-message{
-  font-family: Poppins-SemiBold;
+  font-family: "Poppins-SemiBold";
   font-size: 31px;
   margin-bottom: 25px;
   margin-top: -35px;

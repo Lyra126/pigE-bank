@@ -28,9 +28,9 @@
 .grid-item img {
   max-width: 100%;
   height: auto;
-  width: 200px; /* Set the desired width */
-  height: 150px; /* Set the desired height */
-  object-fit: cover; /* Ensure the image maintains its aspect ratio */
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
 }
 
 .grid-item button {
