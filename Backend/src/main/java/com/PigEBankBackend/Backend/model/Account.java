@@ -24,6 +24,7 @@ public class Account {
     private String firstName;
     private String lastName;
     private String email;
+    private boolean confirmation;
 
     //Find out how to encrypt
     private String password;

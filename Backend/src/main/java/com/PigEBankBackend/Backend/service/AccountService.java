@@ -153,6 +153,7 @@ public class AccountService {
     public Account addAccount(Account account) {
         account.setId(new ObjectId());
         account.setCreation(LocalDate.now());
+        account.setConfirmation(false);
         return accountRepository.save(account);
     }
 
@@ -229,5 +230,15 @@ public class AccountService {
         UpdateResult updateResult = mongoTemplate.updateFirst(query, update, Account.class);
 
         return "Updated username: " + updateResult.getMatchedCount();
+    }
+
+    public String confirmAccount(String email){
+        Query query = new Query();
+        query.addCriteria(Criteria.where("email").is(email));
+
+        Update update = new Update().set("Confirmation", true);
+        UpdateResult updateResult = mongoTemplate.updateFirst(query, update, Account.class);
+
+        return "Account Confirmation return" + updateResult.getMatchedCount();
     }
 }

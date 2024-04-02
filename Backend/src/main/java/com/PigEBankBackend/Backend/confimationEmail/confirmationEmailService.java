@@ -1,4 +1,4 @@
-package confimationEmail;
+package com.PigEBankBackend.Backend.confimationEmail;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

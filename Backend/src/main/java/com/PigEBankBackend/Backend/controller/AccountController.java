@@ -12,11 +12,16 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+import com.PigEBankBackend.Backend.confimationEmail.confirmationEmailService;
+
 @RestController
 @RequestMapping("/accounts")
 public class AccountController {
     @Autowired
     private AccountService accountService;
+
+    @Autowired
+    private confirmationEmailService email;
 
     @GetMapping
     public ResponseEntity<List<Account>> getAllAccounts() {
@@ -66,7 +71,9 @@ public class AccountController {
     @PostMapping("/newAccount")
     @ResponseStatus(HttpStatus.CREATED)
     public Account createAccount(@RequestBody Account account) {
-        return accountService.addAccount(account);
+        Account acc = accountService.addAccount(account);
+        email.sendEmail(acc.getEmail(), "PigE-Bank Account Confirmation", "localhost:8080/accounts/confirm/" + acc.getEmail());
+        return acc;
     }
 
     @PutMapping("/updateSecurityQA")
@@ -106,6 +113,11 @@ public class AccountController {
     @DeleteMapping("/deleteAccount/{email}")
     public ResponseEntity<String> deleteAccount(@PathVariable String email) {
         return new ResponseEntity<String>(accountService.deleteAccount(email), HttpStatus.OK);
+    }
+
+    @PutMapping("/confirm/{email}")
+    public ResponseEntity<String> confirmAccount(@PathVariable String email) {
+        return new ResponseEntity<String>(accountService.confirmAccount(email), HttpStatus.OK);
     }
 
 }
