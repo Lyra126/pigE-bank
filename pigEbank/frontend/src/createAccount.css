@@ -17,7 +17,7 @@
 
 .createAccount-create-account-container {
     margin-top: 20px;
-    font-family: "DM_Sans-Regular";
+    font-family: "DM_Sans-Regular", Arial;
     display: flex;
     background-color: #f1f1f1;
     border-radius: 10px;
