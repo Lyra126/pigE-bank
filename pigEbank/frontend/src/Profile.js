@@ -7,11 +7,9 @@ import UsernameModal from "./update/updateUsername";
 
 function Profile() {
     const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
     const [numberOfGoals, setNumberOfGoals] = useState(0);
-    const [showPassword, setShowPassword] = useState(false);
     const [totalCurrency, setTotalCurrency] = useState('0');
-    const [accountCreationDate, setCreationDate] = useState('');
+    const [accountCreationDate, setAccountCreationDate] = useState('');
     const [email, setEmail]  = useState('');
     const navigate = useNavigate();
     const [passwordModalOpen, setPasswordModalOpen] = useState(false);
@@ -37,7 +35,7 @@ function Profile() {
                     setUsername(user.username);
                     setPassword(user.password);
                     setNumberOfGoals(user.numOfGoals);
-                    setCreationDate(user.creation);
+                    setAccountCreationDate(user.creation);
                     setEmail(user.email);
                     setTotalCurrency(user.totalSavings)
                 }
@@ -48,7 +46,7 @@ function Profile() {
     }, []);
 
     const deleteAccount = (email) => {
-        var url = "/accounts/deleteAccount/" + email
+        let url = "/accounts/deleteAccount/" + email
         console.log(email);
         axios.delete(url)
         .then(response => {

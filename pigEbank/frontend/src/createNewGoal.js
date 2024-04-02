@@ -13,7 +13,6 @@ function CreateNewGoal() {
     useEffect(() => {
         if (!document.cookie) {
           navigate('/login');
-          return;
         }
     });
 

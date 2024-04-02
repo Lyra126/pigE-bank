@@ -130,7 +130,7 @@ function PigInfo() {
                 setError('You have not added new savings. Enter a value above 0.');
             } else if (newValue + currentSavings > savingsGoal) {
                 console.log((currentSavings + newValue) - savingsGoal);
-                var leftOver = (currentSavings + newValue) - savingsGoal;
+                let leftOver = (currentSavings + newValue) - savingsGoal;
                 window.alert("You've reached your goal of " + goalAmount + " -> " + leftOver + " left over!!");
                 setCurrentSavings(savingsGoal);
                 setProgress((currentSavings / savingsGoal) * 100);
@@ -149,6 +149,7 @@ function PigInfo() {
          }
     };
 
+    /*TODO: Add the logout functionality in pigInfo page*/
     const logout = () => {
         document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
         document.cookie = 'email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';

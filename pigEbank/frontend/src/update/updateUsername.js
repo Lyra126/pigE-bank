@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import "./updateUsername.css";
 import axios from 'axios';
 

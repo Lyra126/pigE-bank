@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './SecurityQuestions.css';
 import './bootstrap/dist/css/bootstrap.min.css';
-import { Link, useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function SecurityQuestions() {
@@ -18,7 +18,7 @@ function SecurityQuestions() {
             setErrorMessage('');
         }, 30000); // Hides the error message after 30 seconds
 
-        var url = '/accounts/getQAs/' + email;
+        let url = '/accounts/getQAs/' + email;
 
         axios.get(url)
           .then(response => {
@@ -46,8 +46,8 @@ function SecurityQuestions() {
 
         if(securityAnswer1 == sQA[1] && securityAnswer2 == sQA[3] && securityAnswer3 == sQA[5]){
 
-            var experationDate = new Date();
-            var experation = experationDate.getTime() + (5 * 61 * 1000);
+            let experationDate = new Date();
+            let experation = experationDate.getTime() + (5 * 61 * 1000);
             experationDate.setTime(experation);
             document.cookie = 'tempEmail=' + email + '; expires=' + experationDate.toUTCString() +'; path=/;';
 

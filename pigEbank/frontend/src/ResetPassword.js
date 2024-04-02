@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ResetPassword.css';
 import './bootstrap/dist/css/bootstrap.min.css';
-import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function ResetPassword() {
