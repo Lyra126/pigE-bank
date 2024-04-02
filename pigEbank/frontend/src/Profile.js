@@ -33,7 +33,7 @@ function Profile() {
                 const user = response.data.find(user => user.email === email);
                 if (user) {
                     setUsername(user.username);
-                    setPassword(user.password);
+                    //setPassword(user.password);
                     setNumberOfGoals(user.numOfGoals);
                     setAccountCreationDate(user.creation);
                     setEmail(user.email);
