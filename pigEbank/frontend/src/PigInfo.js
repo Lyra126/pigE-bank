@@ -26,7 +26,6 @@ function PigInfo() {
     const [savingsGoal, setSavingsGoal] = useState(0);
     const [creationDate, setCreationDate] = useState('');
     const [pigId, setPigId] = useState('');
-    const [ownerEmail, setOwnerEmail] = useState('');
 
     const [monthlyContribution, setMonthlyContribution] = useState(0);
     const [goalAmount, setGoalAmount] = useState(0);
@@ -51,7 +50,7 @@ function PigInfo() {
                   const goals = res.data;
                   const filteredGoals = goals.filter(goal => goal.pigName === pigName); // Filter goals by pigName
                   if (filteredGoals.length > 0) {
-                    const {goalName, goalType, stage, ownerEmail, currentSavings, savingsGoal, creation, id} = filteredGoals[0];
+                    const {goalName, goalType, stage, currentSavings, savingsGoal, creation} = filteredGoals[0];
                     setGoalName(goalName);
                     setGoalType(goalType);
                     setStage(stage);

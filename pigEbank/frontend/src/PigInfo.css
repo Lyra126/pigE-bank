@@ -241,7 +241,6 @@
 .PigInfo-image-percentageBar{
     display: flex;
     flex-direction: column;
-    /*background-color: red;*/
     height: 85vh;
     padding-top: 15px;
     border-radius: 5px;
