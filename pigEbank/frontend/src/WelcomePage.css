@@ -24,13 +24,13 @@
 }
 
 .welcomePage-h2-subtitle{
-  font-family: "DM_Sans-SemiBold";
+  font-family: "DM_Sans-SemiBold", Arial, sans-serif;
   font-size: 40px;
   margin-top: -30px;
 }
 
 .welcomePage-h1-title{
-  font-family: CabinetGrotesk-Black;
+  font-family: "CabinetGrotesk-Black", Arial, sans-serif;
   font-size: 200px;
   margin-top: 10px;
   text-align: center;
@@ -38,7 +38,7 @@
 
 .welcomePage-description-container{
   position: absolute;
-  font-family: DM_Sans-Regular;
+  font-family: "DM_Sans-Regular", Arial, sans-serif;
 }
 
 .welcomePage-container-text{
@@ -54,7 +54,7 @@
 }
 
 .welcomePage-description-header{
-font-family: PaytoneOne-Regular;
+font-family: "PaytoneOne-Regular", Arial, sans-serif;
 font-size: 40px;
 }
 
@@ -83,20 +83,19 @@ flex-direction: row-reverse;
   padding: 4em 0;
   align-items: center;
     height: 100vh;
-  }
+}
 
 .welcomePage-header-image {
-  /* Adjust the width of the image container */
-text-align: center; /* Center the image */
+  text-align: center; /* Center the image */
 }
 
 .welcomePage-header-image img {
-max-width: 80%; /* Adjust the width of the image */
-height: auto;
+  max-width: 80%; /* Adjust the width of the image */
+  height: auto;
 }
 
 .welcomePage-get-started-description-header{
-  font-family: Poppins-Bold;
+  font-family: "Poppins-Bold", Arial, sans-serif;
   font-size: 40px;
 }
 
@@ -111,7 +110,7 @@ height: auto;
   align-items: center; /* Center text vertically */
   font-size: 25px;
   border-radius: 8px;
-  font-family: DM_Sans-SemiBold;
+  font-family: "DM_Sans-SemiBold", Arial, sans-serif;
   margin-top: 20px;
   width: 30vh; /* Adjust as needed */
   height: 90px; /* Adjust as needed */

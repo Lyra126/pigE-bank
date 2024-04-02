@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { Empty } from 'antd';
 
 function Dashboard() {
   const [numberOfGoals, setNumberOfGoals] = useState(0);
@@ -15,7 +14,6 @@ function Dashboard() {
         return;
       }
     
-    const username = document.cookie.split('; ').find(row => row.startsWith('username=')).split('=')[1];
     const email = document.cookie.split('; ').find(row => row.startsWith('email=')).split('=')[1];
     
     axios.get('/accounts')

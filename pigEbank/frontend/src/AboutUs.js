@@ -45,8 +45,8 @@ function Aboutus() {
             <p style ={{margin: 15}}>Hi! I'm Clarissa Cheung, and I'm a 2nd year Computer Science major and Economics minor at UF.</p>
             <br/>
               <section className = "AboutUs-socials">
-            <a href="https://instagram.com/clynae2"><img src = "images/icons/instagram_logo.png" width="50" height="50" /></a>
-            <a href="www.linkedin.com/in/clarissa-cheung2" ><img src = "images/icons/linkedIn_logo.png" width="40" height="40"/></a>
+            <a href="https://instagram.com/clynae2"><img src = "images/icons/instagram_logo.png" alt="insta" width="50" height="50" /></a>
+            <a href="www.linkedin.com/in/clarissa-cheung2" ><img src = "images/icons/linkedIn_logo.png" alt="linkedin" width="40" height="40"/></a>
               </section>
           </div>
 
@@ -56,8 +56,8 @@ function Aboutus() {
             <img src="images/developers/Rachel_Pu.png" alt="Rachel Pu"  width="200" height="200" className = "AboutUs-developer-img"/>
             <p style ={{margin: 15}}> Hello! I'm Rachel Pu, and I'm a 2nd year Computer Science major at UF. I enjoy drawing colorful, silly pigs and giving them sunglasses.</p>
               <section className = "AboutUs-socials">
-            <a href="https://instagram.com/kazuhimi"><img src = "images/icons/instagram_logo.png" width="50" height="50"/></a>
-            <a href="https://www.linkedin.com/in/rachel-pu-ufl/"><img src = "images/icons/linkedIn_logo.png" width="40" height="40"/></a>
+            <a href="https://instagram.com/kazuhimi"><img src = "images/icons/instagram_logo.png" alt="insta" width="50" height="50"/></a>
+            <a href="https://www.linkedin.com/in/rachel-pu-ufl/"><img src = "images/icons/linkedIn_logo.png"alt="linkedin"  width="40" height="40"/></a>
               </section>
           </div>
 
@@ -69,8 +69,8 @@ function Aboutus() {
             <br/>
             <br/>
             <section className = "AboutUs-socials">
-            <a href="https://instagram.com"><img src = "images/icons/instagram_logo.png" width="50" height="50"/></a>
-            <a href="https://linkedIn.com"><img src = "images/icons/linkedIn_logo.png" width="40" height="40"/></a>
+            <a href="https://instagram.com"><img src = "images/icons/instagram_logo.png" alt="insta" width="50" height="50"/></a>
+            <a href="https://linkedIn.com"><img src = "images/icons/linkedIn_logo.png" alt="linkedin" width="40" height="40"/></a>
               </section>
           </div>
 
@@ -82,8 +82,8 @@ function Aboutus() {
             <br/>
             <br/>
             <section className = "AboutUs-socials">
-            <a href="https://instagram.com"><img src = "images/icons/instagram_logo.png" width="50" height="50"/></a>
-            <a href="https://linkedIn.com"><img src = "images/icons/linkedIn_logo.png" width="40" height="40"/></a>
+            <a href="https://instagram.com"><img src = "images/icons/instagram_logo.png" alt="insta" width="50" height="50"/></a>
+            <a href="https://linkedIn.com"><img src = "images/icons/linkedIn_logo.png" alt="linkedin"width="40" height="40"/></a>
               </section> 
           </div>
           </div>

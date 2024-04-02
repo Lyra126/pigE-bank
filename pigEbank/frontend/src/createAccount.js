@@ -78,39 +78,39 @@ function CreateAccount() {
             </nav>
 
             <div className="createAccount-top-div">
-            <h1 className="text-center mb-4" style={{ fontFamily: "Poppins-SemiBold"}}>Create Your Account</h1>
-        <p className="text-center" >We're excited to see you've joined us! <br/> Just a few more steps and you'll be a part of our Pig-E family!</p>
+            <h1 className="text-center mb-4" style={{ fontFamily: "Poppins-SemiBold", paddingTop: 10}}>Create Your Account</h1>
+        <p className="text-center" style = {{paddingBottom: 17}}>We're excited to see you've joined us! <br/> Just a few more steps and you'll be a part of our Pig-E family!</p>
         
     <div className="createAccount-create-account-container">
         <form onSubmit={handleSubmit} className="createAccount-form-container">
-            <div className = 'horizontal-di1'>
+            {/* Creating Account (main information) */}
+            <div className = 'horizontal-div1'>
                 <div className='createAccount-first-last-div'>
-                
                     <div className='createAccount-name-container'>
                         <div className='createAccount-input-field'>
-                            <label htmlFor='firstName'>First Name</label>
-                            <input type='text'  style={{width: 200, marginRight: 20 }}placeholder='Enter your first name' className='form-control' onChange={e => setFirstName(e.target.value)} required />
+                            <createAccount-label htmlFor='firstName'>First Name</createAccount-label>
+                            <input type='text'  style={{width: 165, marginRight: 20}} placeholder='Enter first name' className='form-control' onChange={e => setFirstName(e.target.value)} required />
                         </div>
             
                         <div className='createAccount-input-field'>
-                            <label htmlFor='lastName'>Last Name</label>
-                            <input type='text' style={{width: 200}} placeholder='Enter your last name' className='form-control' onChange={e => setLastName(e.target.value)} required />
+                            <createAccount-label htmlFor='lastName'>Last Name</createAccount-label>
+                            <input type='text' style={{width: 165}} placeholder='Enter last name' className='form-control' onChange={e => setLastName(e.target.value)} required />
                         </div>
                     </div>
 
-                    <label htmlFor='email'>Email</label>
-                    <input type='text'  style={{width: 420}}placeholder='Enter your email' className='form-control' onChange={e => setEmail(e.target.value)} required />
+                    <createAccount-label htmlFor='email'>Email</createAccount-label>
+                    <input type='text' style={{width: 350}}  placeholder='Enter your email' className='form-control' onChange={e => setEmail(e.target.value)} required />
                
-                    <label htmlFor='username'>Username</label>
-                    <input type='text' style={{width: 420}} placeholder='Enter Username' className='form-control' onChange={e => setUsername(e.target.value)} required pattern="[a-zA-Z0-9]{4,}" />
-                    <p className="createAccount-instruction" style={{fontSize:11}}>Username must be at least 4 characters & contain only letters and numbers</p>
+                    <createAccount-label htmlFor='username'>Username</createAccount-label>
+                    <input type='text' placeholder='Enter Username' style={{width: 350}} className='form-control' onChange={e => setUsername(e.target.value)} required pattern="[a-zA-Z0-9]{4,}" />
+                    <p className="createAccount-instruction" style={{fontSize:11, marginTop: -6, marginLeft: 5}}>Username must be at least 4 characters & contain only letters and numbers</p>
               
-                    <label htmlFor='password'>Password</label>
-                    <input type='password'  style={{width: 420}}placeholder='Enter Password' className='form-control' onChange={e => setPassword(e.target.value)} pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]+$" />
-                    <p className="createAccount-instruction" style={{fontSize:11}}>Password must include upper case, lower case, a number & a special character</p>
+                    <createAccount-label htmlFor='password'>Password</createAccount-label>
+                    <input type='password'style={{width: 350}} placeholder='Enter Password' className='form-control' onChange={e => setPassword(e.target.value)} pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]+$" />
+                    <p className="createAccount-instruction" style={{fontSize:11, marginTop: -6, marginLeft: 5}}>Password must include upper case, lower case, a number & a special character</p>
                
-                    <label htmlFor='confPassword'>Re-enter Password</label>
-                    <input type='password'  style={{width: 420}} placeholder='Confirm Password' className='form-control' onChange={e => setConfPassword(e.target.value)} required />
+                    <createAccount-label htmlFor='confPassword'>Re-enter Password</createAccount-label>
+                    <input type='password' style={{width: 350}} placeholder='Confirm Password' className='form-control' onChange={e => setConfPassword(e.target.value)} required />
                 </div>
                 
             </div>
@@ -119,43 +119,44 @@ function CreateAccount() {
             <div className = 'horizontal-div2'>
                 <div className='createAccount-security-questions-container'>
                     <div className='createAccount-security-question'>
-                        <label htmlFor='securityQuestion1'>Security Question 1</label>
-                        <select id='securityQuestion1' value={securityQuestion1} onChange={e => setSecurityQuestion1(e.target.value)} className='form-control'>
+                        <createAccount-label htmlFor='securityQuestion1'>Security Question 1</createAccount-label>
+                        <select style={{width: 350}} id='securityQuestion1' value={securityQuestion1} onChange={e => setSecurityQuestion1(e.target.value)} className='form-control'>
                             <option value="">Choose a question</option>
                             {securityQuestions.map((questionObj, index) => (
                                 <option key={index} value={questionObj.question}>{questionObj.question}</option>
                             ))}
                         </select>
                         <div style={{ margin: '10px 0' }} />
-                        <input type='text' placeholder='Response to Question 1' className='form-control' onChange={e => setSecurityAnswer1(e.target.value)} required />
+                        <input style={{width: 350}} type='text' placeholder='Response to Question 1' className='form-control' onChange={e => setSecurityAnswer1(e.target.value)} required />
                     </div>
                     <div className='createAccount-security-question'>
-                        <label htmlFor='securityQuestion2'>Security Question 2</label>
-                        <select id='securityQuestion2' value={securityQuestion2} onChange={e => setSecurityQuestion2(e.target.value)} className='form-control'>
+                        <createAccount-label htmlFor='securityQuestion2'>Security Question 2</createAccount-label>
+                        <select style={{width: 350}} id='securityQuestion2' value={securityQuestion2} onChange={e => setSecurityQuestion2(e.target.value)} className='form-control'>
                             <option value="">Choose a question</option>
                             {securityQuestions.map((questionObj, index) => (
                                 <option key={index} value={questionObj.question}>{questionObj.question}</option>
                             ))}
                         </select>
                         <div style={{ margin: '10px 0' }} />
-                        <input type='text' placeholder='Response to Question 2' className='form-control' onChange={e => setSecurityAnswer2(e.target.value)} required />
+                        <input type='text' style={{width: 350}} placeholder='Response to Question 2' className='form-control' onChange={e => setSecurityAnswer2(e.target.value)} required />
                     </div>
                     
                     <div className='createAccount-security-question'>
-                        <label htmlFor='securityQuestion3'>Security Question 3</label>
-                        <select id='securityQuestion3' value={securityQuestion3} onChange={e => setSecurityQuestion3(e.target.value)} className='form-control'>
+                        <createAccount-label htmlFor='securityQuestion3'>Security Question 3</createAccount-label>
+                        <select style={{width: 350}} id='securityQuestion3' value={securityQuestion3} onChange={e => setSecurityQuestion3(e.target.value)} className='form-control'>
                             <option value="">Choose a question</option>
                             {securityQuestions.map((questionObj, index) => (
                                 <option key={index} value={questionObj.question}>{questionObj.question}</option>
                             ))}
                         </select>
                         <div style={{ margin: '10px 0' }} />
-                        <input type='text' placeholder='Response to Question 3' className='form-control' onChange={e => setSecurityAnswer3(e.target.value)} required />
+                        <input style={{width: 350}} type='text' placeholder='Response to Question 3' className='form-control' onChange={e => setSecurityAnswer3(e.target.value)} required />
                     </div>
+
                 </div>
-                </div>
-            
+
             </div>
+    </div>
             <p style={{ fontSize: 14, color: "red", textAlign: 'center', fontFamily: 'DM_Sans-Regular', visibility: errorMessage ? 'visible' : 'hidden', marginTop: -14 }}>{errorMessage}</p>
             <button className='btn btn-success' style={{ marginTop: 50, width: 200, height: 50 }}>Create Account</button>
             <Link className='createAccount-alr-have-acc-btn' to='/login' style={{ display: 'block', width: 200, textAlign: 'center' }}>Already have an account?</Link>

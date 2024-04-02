@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './AccountRecovery.css';
 import './bootstrap/dist/css/bootstrap.min.css';
-import {Link, useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function AccountRecovery() {

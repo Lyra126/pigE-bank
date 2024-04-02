@@ -80,7 +80,7 @@ function Login() {
             </nav>
 
             <div className='login-main-div'>
-                <h1 className="p-8 text-center login-title-message"> Howdy! Great to see you again!</h1>
+                <h1 className="p-8 text-center login-title-message" style = {{paddingTop: 80}}> Howdy! Great to see you again!</h1>
                 <div className='p-3 login-box'>
                     <form onSubmit={handleSubmit} className="login-form-container">
                         {/* Logo Image */}
