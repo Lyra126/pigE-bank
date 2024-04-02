@@ -24,13 +24,13 @@
 }
 
 .welcomePage-h2-subtitle{
-  font-family: "DM_Sans-SemiBold", Arial;
+  font-family: "DM_Sans-SemiBold", Arial, sans-serif;
   font-size: 40px;
   margin-top: -30px;
 }
 
 .welcomePage-h1-title{
-  font-family: "CabinetGrotesk-Black", Arial;
+  font-family: "CabinetGrotesk-Black", Arial, sans-serif;
   font-size: 200px;
   margin-top: 10px;
   text-align: center;

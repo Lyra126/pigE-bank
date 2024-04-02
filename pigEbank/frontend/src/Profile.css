@@ -37,7 +37,7 @@
 .btn-success {
     background-color: #28a745; /* Green color */
     border-color: #28a745; /* Green border */
-    font-family: 'DM_Sans-Medium', Arial;
+    font-family: 'DM_Sans-Medium', Arial, sans-serif;
     margin-top: 10px;
 }
 
@@ -60,7 +60,7 @@
 .open-modal {
     background-color: #28a745; /* Green color */
     border-color: #28a745; /* Green border */
-    font-family: 'DM_Sans-Medium', Arial;
+    font-family: 'DM_Sans-Medium', Arial, sans-serif;
     margin-top: 10px;
     color: white;
 }
@@ -74,7 +74,7 @@
     color: white;
     background-color: #af0606; 
     border-color: #af0606; 
-    font-family: 'DM_Sans-Medium', Arial;
+    font-family: 'DM_Sans-Medium', Arial, sans-serif;
     margin-top: 10px;
 }
 

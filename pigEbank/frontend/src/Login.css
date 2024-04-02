@@ -1,5 +1,5 @@
 login-label{
-    font-family: "DM_Sans-SemiBold", Arial;
+    font-family: "DM_Sans-SemiBold", Arial, sans-serif;
     margin-left: 2px;
 }
 
@@ -12,7 +12,7 @@ login-label{
 }
 
 .login-title-message{
-    font-family: "Poppins-SemiBold", Arial;
+    font-family: "Poppins-SemiBold", Arial, sans-serif;
     margin-bottom: 25px;
     margin-top: -50px;
 }
@@ -22,7 +22,7 @@ login-label{
     box-shadow: 0 0 15px rgba(24, 99, 32, 0.268);
     background-color: white;
     width: 50vh;
-    font-family: "DM_Sans-Regular", Arial;
+    font-family: "DM_Sans-Regular", Arial, sans-serif;
 }
 
 .login-form-container{

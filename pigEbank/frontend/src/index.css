@@ -120,14 +120,14 @@ nav{
   background-color: rgb(225, 255, 208);
   padding-top: 0;
   box-shadow: 0 0 5px rgba(55, 57, 55, 0.268);
-  font-family: "DM_Sans-Medium", Arial;
+  font-family: "DM_Sans-Medium", Arial, sans-serif;
 }
 
 footer {
   margin-top: 40px;
   text-align: center;
   padding: 20px 0;
-  font-family: "DM_Sans-Regular", Arial;
+  font-family: "DM_Sans-Regular", Arial, sans-serif;
 }
 
 .box_shadow{
