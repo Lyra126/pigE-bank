@@ -26,7 +26,7 @@ function CreateNewGoal() {
 
       //Add backend code
       const email = document.cookie.split('; ').find(row => row.startsWith('email=')).split('=')[1];
-      axios.post("/goals/newGoal", {goalName: goalName, pigName: pigName, savingsGoal: savingsGoal, ownerEmail: email})
+      axios.post("/goals/newGoal", {goalName: goalName, pigName: pigName, savingsGoal: savingsGoal, ownerEmail: email, goalType: selectedOption})
         .then(res => {
             console.log(res)
             navigate('/dashboard');
