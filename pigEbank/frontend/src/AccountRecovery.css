@@ -14,7 +14,7 @@
   box-shadow: 0 0 15px rgba(24, 99, 32, 0.268);
   background-color: white;
   width: 52vh;
-  font-family: "DM_Sans-Regular", Arial;
+  font-family: "DM_Sans-Regular", Arial, sans-serif;
 }
 
 .AccountRecovery-title-header-div{
@@ -24,7 +24,7 @@
 }
 
 .AccountRecovery-title-message{
-  font-family: "Poppins-SemiBold", Arial;
+  font-family: "Poppins-SemiBold", Arial, sans-serif;
   font-size: 31px;
   margin-bottom: 25px;
   margin-top: -35px;
