@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './AccountRecovery.css';
 import './bootstrap/dist/css/bootstrap.min.css';
-import {Link, useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function AccountRecovery() {
@@ -27,8 +27,8 @@ function AccountRecovery() {
                 const authenticatedUser = users.find(user => user.email === email && user.username === username);
                 if (authenticatedUser) {
                 
-                    var experationDate = new Date();
-                    var experation = experationDate.getTime() + (5 * 61 * 1000);
+                    let experationDate = new Date();
+                    let experation = experationDate.getTime() + (5 * 61 * 1000);
                     experationDate.setTime(experation);
 
                     document.cookie = 'tempEmail=' + authenticatedUser.email + '; expires=' + experationDate.toUTCString() +'; path=/;';
@@ -78,17 +78,6 @@ function AccountRecovery() {
             <div className='mb-3'>
                 <label htmlFor='username' style={{ fontFamily: 'DM_Sans-SemiBold', marginLeft: 3 }}>Username</label>
                 <input type='username' placeholder='Enter Username' className='form-control' onChange={e => setUsername(e.target.value)} />
-            </div>
-            {/* Security Questions */}
-            <div className="d-flex flex-row">
-                <div className='mb-3 flex-fill'>
-                    <label htmlFor='securityQuestion1' style={{ fontFamily: 'DM_Sans-SemiBold', marginLeft: 3 }}>Security Question 1</label>
-                    <input type='text' placeholder='Enter Security Question 1' className='form-control' />
-                </div>
-                <div className='mb-3 flex-fill'>
-                    <label htmlFor='securityQuestion2' style={{ fontFamily: 'DM_Sans-SemiBold', marginLeft: 3 }}>Security Question 2</label>
-                    <input type='text' placeholder='Enter Security Question 2' className='form-control' />
-                </div>
             </div>
             <div className='d-flex flex-column'>
                 <button className='btn btn-success' style={{ fontFamily: 'DM_Sans-Medium', objectPosition: "center", minWidth: 300 }}>Find account</button>

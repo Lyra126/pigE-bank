@@ -1,6 +1,6 @@
 .SecurityQuestions-bg{
     background: rgb(55,196,143);
-    background: linear-gradient(0deg, rgb(147, 229, 116) 0%, rgba(55,196,143,1)100%); ;
+    background: linear-gradient(0deg, rgb(147, 229, 116) 0%, rgba(55,196,143,1)100%);
     width: 100%;
     height: 100vh;
 }
@@ -10,7 +10,7 @@
     box-shadow: 0 0 15px rgba(24, 99, 32, 0.268);
     background-color: white;
     width: 47vh;
-    font-family: DM_Sans-Regular;
+    font-family: "DM_Sans-Regular", Arial, sans-serif;
     margin-bottom: 100px;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .SecurityQuestions-title{
-    font-family: Poppins-SemiBold;
+    font-family: "Poppins-SemiBold", Arial, sans-serif;
     text-align:center;
     margin-bottom: 25px;
     margin-top: -35px;

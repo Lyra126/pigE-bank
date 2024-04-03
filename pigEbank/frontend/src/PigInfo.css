@@ -71,13 +71,13 @@
 
 .PigInfo-middle-row p{
     font-size: 40px;
-    font-family: DM_Sans-SemiBold;
+    font-family: "DM_Sans-SemiBold", Arial, sans-serif;
     margin-top: -10px;
     margin-bottom: -5px;
 }
 
 .PigInfo-middle-row h1 {
-    font-family:"Poppins-Bold";
+    font-family:"Poppins-Bold", Arial, sans-serif;
     text-align: center;
     padding: 5px;
     border-radius: 5px;
@@ -86,7 +86,7 @@
 }
 
 .PigInfo-middle-row h2{
-    font-family:"DM_Sans-SemiBold";
+    font-family:"DM_Sans-SemiBold", Arial, sans-serif;
     text-align: center;
     padding: 5px;
     border-radius: 5px;
@@ -98,7 +98,6 @@
 
 /*#866148*/
 .PigInfo-savings-information{
-    /*background-color: #ff0015;*/
     height: 85vh;
     width: 20%;
     border-radius: 10px;
@@ -126,7 +125,7 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
-    font-family: DM_Sans-Medium;
+    font-family: "DM_Sans-Medium", Arial, sans-serif;
     transition: background-color ease 0.3s;
 }
 
@@ -181,7 +180,7 @@
 }
 
 .PigInfo-form-input label{
-    font-family: DM_Sans-Medium;
+    font-family: "DM_Sans-Medium", Arial, sans-serif;
     font-size: 13px;
 }
 
@@ -205,7 +204,7 @@
     border-radius: 5px;
     font-size: 14px;
     cursor: pointer;
-    font-family: DM_Sans-Medium;
+    font-family: "DM_Sans-Medium", Arial, sans-serif;
     transition: background-color ease 0.3s;
 }
 
@@ -227,7 +226,7 @@
     border-radius: 10px;
     margin-bottom: -10px;
     font-size: 20px;
-    font-family: DM_Sans-Medium;
+    font-family: "DM_Sans-Medium", Arial, sans-serif;
 }
 
 .PigInfo-input-form::placeholder{
@@ -242,7 +241,6 @@
 .PigInfo-image-percentageBar{
     display: flex;
     flex-direction: column;
-    /*background-color: red;*/
     height: 85vh;
     padding-top: 15px;
     border-radius: 5px;
@@ -263,7 +261,7 @@
 .progress {
     width: 100% !important;
     height: 60px !important;
-    font-family: DM_Sans-Medium;
+    font-family: "DM_Sans-Medium", Arial, sans-serif;
     font-size: 20px;
 }
 
@@ -283,7 +281,6 @@
 
 /* ------- RIGHT BOX -------- */
 .PigInfo-piggyBank-information{
-    /*background-color: #ff0000;*/
     height: 85vh;
     width: 20%;
     border-radius: 10px;
@@ -309,7 +306,6 @@
     background-color: #dcc8b8;
     flex-direction: column;
     border-radius: 8px;
-    /*height: 40%;*/
 }
 
 .PigInfo-pig-info-buttons{
@@ -344,7 +340,7 @@
     font-size: 20px;
     width: 80%;
     cursor: pointer;
-    font-family: DM_Sans-Medium;
+    font-family: "DM_Sans-Medium", Arial, sans-serif;
     transition: background-color ease 0.3s;
 }
 
@@ -362,7 +358,7 @@
     font-size: 20px;
     width: 80%;
     cursor: pointer;
-    font-family: DM_Sans-Medium;
+    font-family: "DM_Sans-Medium", Arial, sans-serif;
     transition: background-color ease 0.3s;
 }
 

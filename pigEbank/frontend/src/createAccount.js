@@ -40,12 +40,10 @@ function CreateAccount() {
             setErrorMessage("Passwords don't match!");
         } else{
 
-            //To make sure another doesn't have the same username, should there be a function that checks before adding it into the database?
-                //Problems w/ making unique usernames
-                    //Searching for a similar username can be a hassel bc of how capital and lowercase letters work
-                    //Putting the username in lowercase removes any captial letters a user may want -> iAmAUser vs iamauser
-                        //Solution -> lowercase only or have another attribute for username or use unique emails instead
-            axios.post("/accounts/newAccount", {firstName: firstName, lastName: lastName, username: username, password: password, numOfGoals: 0})
+           //TODO: Set up the answers to be sent to the backend
+           let securityQA = [securityQuestion1, securityAnswer1, securityQuestion2, securityAnswer2, securityQuestion3, securityAnswer3];
+
+            axios.post("/accounts/newAccount", {firstName: firstName, lastName: lastName, username: username, password: password, numOfGoals: 0, securityQA: securityQA})
                 .then(res => {
                     console.log(res);       
                     document.cookie = `username=${username}`;  
