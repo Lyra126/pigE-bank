@@ -2,6 +2,7 @@ package com.PigEBankBackend.Backend.controller;
 
 import com.PigEBankBackend.Backend.model.Account;
 import com.PigEBankBackend.Backend.model.Goal;
+import com.PigEBankBackend.Backend.model.Login;
 import com.PigEBankBackend.Backend.service.AccountService;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,13 @@ public class AccountController {
     public ResponseEntity<List<Account>> getAllAccounts() {
         return new ResponseEntity<List<Account>>(accountService.getAllAccounts(), HttpStatus.OK);
     }
+
+    @PostMapping("/login")
+    ResponseEntity<List<Account>> login(@RequestBody Login login) {
+        return new ResponseEntity<List<Account>>(accountService.tryLogin(login), HttpStatus.OK);
+    }
+
+
 
     @GetMapping("/{username}")
     ResponseEntity<Optional<Account>> getSingleAccount(@PathVariable String username) {

@@ -2,8 +2,10 @@ package com.PigEBankBackend.Backend.service;
 
 import com.PigEBankBackend.Backend.model.Account;
 import com.PigEBankBackend.Backend.model.Goal;
+import com.PigEBankBackend.Backend.model.Login;
 import com.PigEBankBackend.Backend.model.SecurityQs;
 import com.PigEBankBackend.Backend.repository.AccountRepository;
+import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.UpdateResult;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +45,14 @@ public class AccountService {
     }
     public List<Account> getAllAccounts() {
         return accountRepository.findAll();
+    }
+
+    public List<Account> tryLogin(Login login){
+        Query findAccount = new Query();
+        findAccount.addCriteria(Criteria.where("email").is(login.getEmail()));
+        findAccount.addCriteria(Criteria.where("password").is(login.getPassword()));
+        return mongoTemplate.find(findAccount, Account.class);
+
     }
 
     public Optional<Account> findAccountByUsername(String username) {
@@ -157,11 +167,22 @@ public class AccountService {
     }
 
     public String deleteAccount(String email) {
-        Query query = new Query();
-        query.addCriteria(Criteria.where("email").is(email));
+        Query findAccount = new Query();
+        findAccount.addCriteria(Criteria.where("email").is(email));
+        List<Account> user = mongoTemplate.find(findAccount, Account.class);
+        List<ObjectId> goalIds = user.get(0).getGoalsID();
 
-        mongoTemplate.remove(query, Account.class);
-        return "Account was deleted";
+        if(!goalIds.isEmpty()) {
+            for(int i = 0; i < goalIds.size(); i++) {
+                Query findGoal = new Query();
+                findGoal.addCriteria(Criteria.where("id").is(goalIds.get(i)));
+                mongoTemplate.remove(findGoal, Goal.class);
+            }
+        }
+
+
+        DeleteResult deleteResult =  mongoTemplate.remove(findAccount, Account.class);
+        return "Account was deleted: " + deleteResult;
     }
 
     public String updateSecurityQA(Account account) {

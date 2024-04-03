@@ -40,7 +40,12 @@ function CreateAccount() {
         if(password!=confPassword){
             setErrorMessage("Passwords don't match!");
         } else{
-            axios.post("/accounts/newAccount", {firstName: firstName, lastName: lastName, username: username, password: password, numOfGoals: 0})
+
+
+           //TODO: Set up the answers to be sent to the backend
+           let securityQA = [securityQuestion1, securityAnswer1, securityQuestion2, securityAnswer2, securityQuestion3, securityAnswer3];
+
+            axios.post("/accounts/newAccount", {firstName: firstName, lastName: lastName, username: username, password: password, numOfGoals: 0, securityQA: securityQA})
                 .then(res => {
                     console.log(res);       
                     document.cookie = `username=${username}`;  

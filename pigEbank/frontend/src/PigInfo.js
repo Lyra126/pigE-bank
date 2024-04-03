@@ -17,7 +17,7 @@ function ShootConfetti(){
 function PigInfo() {
     const { pigName } = useParams();
     const [timeToReachGoal, setTimeToReachGoal] = useState(0);
-
+    const [showMessage, setShowMessage] = useState(false)
     const [goalName, setGoalName] = useState('');
     const [goalType, setGoalType] = useState('');
     const [stage, setStage] = useState('');
@@ -26,14 +26,11 @@ function PigInfo() {
     const [savingsGoal, setSavingsGoal] = useState(0);
     const [creationDate, setCreationDate] = useState('');
     const [pigId, setPigId] = useState('');
-    const [ownerEmail, setOwnerEmail] = useState('');
-
     const [monthlyContribution, setMonthlyContribution] = useState(0);
     const [goalAmount, setGoalAmount] = useState(0);
     const[progress, setProgress] = useState(0);
     const [error, setError] = useState('');
     const [showPrompt, setShowPrompt] = useState(false); // State to control prompt display
-    const [message, setShowMessage] = useState(false); // State to control prompt display
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -52,7 +49,7 @@ function PigInfo() {
                   const goals = res.data;
                   const filteredGoals = goals.filter(goal => goal.pigName === pigName); // Filter goals by pigName
                   if (filteredGoals.length > 0) {
-                    const {goalName, goalType, stage, ownerEmail, currentSavings, savingsGoal, creation, id} = filteredGoals[0];
+                    const {goalName, goalType, stage, currentSavings, savingsGoal, creation} = filteredGoals[0];
                     setGoalName(goalName);
                     setGoalType(goalType);
                     setStage(stage);
@@ -119,7 +116,7 @@ function PigInfo() {
 
             const newValue = parseInt(event);
 
-            if(newValue == NaN) {
+            if(isNaN(newValue)) {
                 console.log("Nope")
             }
 
@@ -132,7 +129,7 @@ function PigInfo() {
                 setError('You have not added new savings. Enter a value above 0.');
             } else if (newValue + currentSavings > savingsGoal) {
                 console.log((currentSavings + newValue) - savingsGoal);
-                var leftOver = (currentSavings + newValue) - savingsGoal;
+                let leftOver = (currentSavings + newValue) - savingsGoal;
                 window.alert("You've reached your goal of " + goalAmount + " -> " + leftOver + " left over!!");
                 setCurrentSavings(savingsGoal);
                 setProgress((currentSavings / savingsGoal) * 100);
@@ -151,6 +148,19 @@ function PigInfo() {
          }
     };
 
+    const deletePig= () => {
+        //TODO: insert "Are you sure you want to delete *pigName*?" message
+        let url = "/goals/deleteGoal?id=" + pigId;
+        axios.delete(url)
+        .then(response => {
+            navigate('/dashboard');
+        })
+        .catch(error => {
+            console.log("Could not delete Account.");
+        });
+    }
+
+    /*TODO Add the logout functionality in pigInfo page*/
     const logout = () => {
         document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
         document.cookie = 'email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
@@ -365,7 +375,7 @@ function PigInfo() {
                             />
                         )}
                             {/*Deleting piggy button*/}
-                            <button className="PigInfo-delete-piggy-button">Delete Piggy</button>
+                            <button className="PigInfo-delete-piggy-button" onClick={deletePig}>Delete Piggy</button>
                         </div>
                         {
                             /*
