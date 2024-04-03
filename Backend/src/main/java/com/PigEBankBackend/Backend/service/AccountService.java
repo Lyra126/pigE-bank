@@ -2,6 +2,7 @@ package com.PigEBankBackend.Backend.service;
 
 import com.PigEBankBackend.Backend.model.Account;
 import com.PigEBankBackend.Backend.model.Goal;
+import com.PigEBankBackend.Backend.model.Login;
 import com.PigEBankBackend.Backend.model.SecurityQs;
 import com.PigEBankBackend.Backend.repository.AccountRepository;
 import com.mongodb.client.result.DeleteResult;
@@ -44,6 +45,14 @@ public class AccountService {
     }
     public List<Account> getAllAccounts() {
         return accountRepository.findAll();
+    }
+
+    public List<Account> tryLogin(Login login){
+        Query findAccount = new Query();
+        findAccount.addCriteria(Criteria.where("email").is(login.getEmail()));
+        findAccount.addCriteria(Criteria.where("password").is(login.getPassword()));
+        return mongoTemplate.find(findAccount, Account.class);
+
     }
 
     public Optional<Account> findAccountByUsername(String username) {
