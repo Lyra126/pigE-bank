@@ -32,6 +32,7 @@ function CreateAccount() {
     }, []);
 
     function handleSubmit(event) {
+        console.log("it's working");
         event.preventDefault();
         const user={firstName, lastName, username}
         console.log(user)
@@ -39,12 +40,6 @@ function CreateAccount() {
         if(password!=confPassword){
             setErrorMessage("Passwords don't match!");
         } else{
-
-            //To make sure another doesn't have the same username, should there be a function that checks before adding it into the database?
-                //Problems w/ making unique usernames
-                    //Searching for a similar username can be a hassel bc of how capital and lowercase letters work
-                    //Putting the username in lowercase removes any captial letters a user may want -> iAmAUser vs iamauser
-                        //Solution -> lowercase only or have another attribute for username or use unique emails instead
             axios.post("/accounts/newAccount", {firstName: firstName, lastName: lastName, username: username, password: password, numOfGoals: 0})
                 .then(res => {
                     console.log(res);       
@@ -158,7 +153,7 @@ function CreateAccount() {
             </div>
     </div>
             <p style={{ fontSize: 14, color: "red", textAlign: 'center', fontFamily: 'DM_Sans-Regular', visibility: errorMessage ? 'visible' : 'hidden', marginTop: -14 }}>{errorMessage}</p>
-            <button className='btn btn-success' style={{ marginTop: 50, width: 200, height: 50 }}>Create Account</button>
+            <button onClick={handleSubmit} className='btn btn-success' style={{ marginTop: 50, width: 200, height: 50 }}>Create Account</button>
             <Link className='createAccount-alr-have-acc-btn' to='/login' style={{ display: 'block', width: 200, textAlign: 'center' }}>Already have an account?</Link>
 
         

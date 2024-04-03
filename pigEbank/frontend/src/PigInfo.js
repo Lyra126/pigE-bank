@@ -33,6 +33,7 @@ function PigInfo() {
     const[progress, setProgress] = useState(0);
     const [error, setError] = useState('');
     const [showPrompt, setShowPrompt] = useState(false); // State to control prompt display
+    const [message, setShowMessage] = useState(false); // State to control prompt display
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -153,6 +154,7 @@ function PigInfo() {
     const logout = () => {
         document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
         document.cookie = 'email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+
     };
 
     return (
@@ -172,7 +174,7 @@ function PigInfo() {
                                 <a className="nav-link" href="/profile">Profile</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/logout">Logout</a>
+                                <Link className="nav-link" to="/" onClick={logout}>Log Out</Link>
                             </li>
                         </ul>
                     </div>
