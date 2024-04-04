@@ -32,6 +32,7 @@ function CreateAccount() {
     }, []);
 
     function handleSubmit(event) {
+        console.log("it's working");
         event.preventDefault();
         const user={firstName, lastName, username}
         console.log(user)
@@ -39,6 +40,7 @@ function CreateAccount() {
         if(password!=confPassword){
             setErrorMessage("Passwords don't match!");
         } else{
+
 
            //TODO: Set up the answers to be sent to the backend
            let securityQA = [securityQuestion1, securityAnswer1, securityQuestion2, securityAnswer2, securityQuestion3, securityAnswer3];
@@ -156,7 +158,7 @@ function CreateAccount() {
             </div>
     </div>
             <p style={{ fontSize: 14, color: "red", textAlign: 'center', fontFamily: 'DM_Sans-Regular', visibility: errorMessage ? 'visible' : 'hidden', marginTop: -14 }}>{errorMessage}</p>
-            <button className='btn btn-success' style={{ marginTop: 50, width: 200, height: 50 }}>Create Account</button>
+            <button onClick={handleSubmit} className='btn btn-success' style={{ marginTop: 50, width: 200, height: 50 }}>Create Account</button>
             <Link className='createAccount-alr-have-acc-btn' to='/login' style={{ display: 'block', width: 200, textAlign: 'center' }}>Already have an account?</Link>
 
         

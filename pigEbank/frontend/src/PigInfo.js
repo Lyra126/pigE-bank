@@ -164,6 +164,7 @@ function PigInfo() {
     const logout = () => {
         document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
         document.cookie = 'email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+
     };
 
     return (
@@ -183,7 +184,7 @@ function PigInfo() {
                                 <a className="nav-link" href="/profile">Profile</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/logout">Logout</a>
+                                <Link className="nav-link" to="/" onClick={logout}>Log Out</Link>
                             </li>
                         </ul>
                     </div>
