@@ -32,20 +32,24 @@ function PigInfo() {
     const [error, setError] = useState('');
     const [showPrompt, setShowPrompt] = useState(false); // State to control prompt display
     const navigate = useNavigate();
+    const [goalImage, setGoalImage] = useState('');
+    const [email_n, setEmail] = useState('');
 
     useEffect(() => {
         if (!document.cookie) {
             navigate('/login');
             return;
         }
-        const email = document.cookie.split('; ').find(row => row.startsWith('email=')).split('=')[1];
-      
+        const email = (document.cookie.split('; ').find(row => row.startsWith('email=')).split('=')[1]);
+        setEmail(email);
         axios.get('/accounts')
           .then(response => {
             const user = response.data.find(user => user.email === email);
             if (user) {
+
               axios.get('/accounts/getGoals/' + email)
                 .then(res => {
+        
                   const goals = res.data;
                   const filteredGoals = goals.filter(goal => goal.pigName === pigName); // Filter goals by pigName
                   if (filteredGoals.length > 0) {
@@ -57,7 +61,9 @@ function PigInfo() {
                     setSavingsGoal(savingsGoal);
                     setCreationDate(creation);
                     setProgress((currentSavings / savingsGoal) * 100);
-                  }
+                    setGoalImage("/images/piggies/" + goalType + "/" + goalType + "_" + stage + ".png");
+                    console.log(goalImage);
+                }
 
                     axios.get('/goals/getGoalId?pigName=' + pigName + "&ownerEmail=" + email)
                     .then(response => {
@@ -143,6 +149,24 @@ function PigInfo() {
                     .then(res => console.log(res))
                     .catch(err => console.log(err));
                 
+                //gets the stage again just in case the pig updates to new milestone
+                axios.get('/accounts')
+                    .then(response => {
+                      const user = response.data.find(user => user.email_n === email_n);
+                      if (user) {
+                        axios.get('/accounts/getGoals/' + email_n)
+                          .then(res => {
+                            const goals = res.data;
+                            const filteredGoals = goals.filter(goal => goal.pigName === pigName); // Filter goals by pigName
+                            if (filteredGoals.length > 0) {
+                              const {goalName, goalType, stage, currentSavings, savingsGoal, creation} = filteredGoals[0];
+                              setStage(stage);
+                              setGoalImage("/images/piggies/" + goalType + "/" + goalType + "_" + goalName + ".png");
+                            }
+                        });
+                    }
+                });
+
                 setError(''); // Reset error message
             }
          }
@@ -311,7 +335,7 @@ function PigInfo() {
 
                     {/*pig image and percentage bar*/}
                     <div className="PigInfo-image-percentageBar">
-                        <img src="/images/piggies/education/education_5.png" alt="pig" className = "PigInfo-pig-image"/>
+                        <img src={goalImage} alt="pig" className = "PigInfo-pig-image"/>
                         <div className="progress" style={{ height: '40px' }}>
                             <div className="progress-bar" role="progressbar" style={{ width: `${progress}%`, color: 'black' }} aria-valuenow={progress} aria-valuemin="0" aria-valuemax="100">
                                 {progress.toFixed(2)}%
