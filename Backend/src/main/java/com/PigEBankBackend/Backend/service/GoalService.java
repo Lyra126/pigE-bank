@@ -156,14 +156,29 @@ public class GoalService {
 
         UpdateResult updateGoalResult;
         UpdateResult updateAccountResult;
-        List<Goal> goal = mongoTemplate.find(findGoal, Goal.class);
+        Goal goal = mongoTemplate.find(findGoal, Goal.class).getFirst();
 
-        if(!goal.isEmpty()) {
-            Update updateGoal = new Update().set("currentSavings", goal.get(0).getCurrentSavings() + money);
+        if(goal != null) {
+            Update updateGoal = new Update().set("currentSavings", goal.getCurrentSavings() + money);
+            int completion = (goal.getCurrentSavings() + money)*100/goal.getSavingsGoal();
+            int stage;
+            if(completion < 25){
+                stage = 0;
+            } else if(completion < 50){
+                stage = 1;
+            } else if(completion < 75){
+                stage = 2;
+            } else {
+                stage = 3;
+            }
+            updateGoal.set("stage", stage);
             updateGoalResult = mongoTemplate.updateFirst(findGoal, updateGoal, Goal.class);
 
+
+
+
             Query findAccount = new Query();
-            findAccount.addCriteria(Criteria.where("email").is(goal.get(0).getOwnerEmail()));
+            findAccount.addCriteria(Criteria.where("email").is(goal.getOwnerEmail()));
             List<Account> user = mongoTemplate.find(findAccount, Account.class);
 
             if (!user.isEmpty()) {
