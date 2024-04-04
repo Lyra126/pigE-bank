@@ -58,7 +58,7 @@ public class GoalService {
         goal.setId(new ObjectId());
         goal.setCreation(LocalDate.now());
         goal.setCurrentSavings(0);
-        goal.setStage(1);
+        goal.setStage(0);
 
         //Update Account (Each goal must be associated w/ and account)
         Update update = new Update().push("goalsID").value(goal.getId());
@@ -68,6 +68,8 @@ public class GoalService {
         //increment the number of goals in the account
         Update updateNumOfGoals = new Update().set("numOfGoals", account.getNumOfGoals() + 1);
         UpdateResult updateResultNumOfGoals = mongoTemplate.updateFirst(query, updateNumOfGoals, Account.class);
+
+
 
         goalRepository.save(goal);
 
