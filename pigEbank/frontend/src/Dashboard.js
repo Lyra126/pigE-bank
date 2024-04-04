@@ -15,8 +15,9 @@ function Dashboard() {
       }
     
     const email = document.cookie.split('; ').find(row => row.startsWith('email=')).split('=')[1];
+    const username = document.cookie.split('; ').find(row => row.startsWith('username=')).split('=')[1];
     
-    axios.get('/accounts')
+    axios.get('/accounts/' + username)
       .then(response => {
         const user = response.data.find(user => user.email === email);
         if (user) {

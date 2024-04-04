@@ -86,7 +86,7 @@ function AccountRecovery() {
         </form>
     </div>
 </div>
-<footer style={{ marginTop: -75 }}>
+<footer style={{ paddingTop: 10 }}>
     <p>&copy; 2024 Pig E-Bank</p>
 </footer>
 

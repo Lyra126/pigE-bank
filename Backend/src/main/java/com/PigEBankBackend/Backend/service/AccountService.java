@@ -55,8 +55,10 @@ public class AccountService {
 
     }
 
-    public Optional<Account> findAccountByUsername(String username) {
-        return accountRepository.findAccountByUsername(username);
+    public List<Account> findAccountByUsername(String username) {
+        Query findAccount = new Query();
+        findAccount.addCriteria(Criteria.where("username").is(username));
+        return mongoTemplate.find(findAccount, Account.class);
     }
 
     public ObjectId getAccountID(String username) {

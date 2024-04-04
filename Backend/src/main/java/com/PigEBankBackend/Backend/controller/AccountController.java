@@ -32,8 +32,8 @@ public class AccountController {
 
 
     @GetMapping("/{username}")
-    ResponseEntity<Optional<Account>> getSingleAccount(@PathVariable String username) {
-        return new ResponseEntity<Optional<Account>>(accountService.findAccountByUsername(username), HttpStatus.OK);
+    ResponseEntity<List<Account>> getSingleAccount(@PathVariable String username) {
+        return new ResponseEntity<List<Account>>(accountService.findAccountByUsername(username), HttpStatus.OK);
     }
 
     @GetMapping("/{username}/id")
