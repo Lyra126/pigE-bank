@@ -54,7 +54,7 @@ function CreateAccount() {
                     confetti({
                         particleCount: 500,
                         spread: 100,
-                        origin: { x: 0.4, y: 0.5 },
+                        origin: { x: 0.5, y: 0.5 },
 
                     });
                 })
@@ -157,8 +157,8 @@ function CreateAccount() {
 
             </div>
     </div>
-            <p style={{ fontSize: 14, color: "red", textAlign: 'center', fontFamily: 'DM_Sans-Regular', visibility: errorMessage ? 'visible' : 'hidden', marginTop: -14 }}>{errorMessage}</p>
-            <button onClick={handleSubmit} className='btn btn-success' style={{ marginTop: 50, width: 200, height: 50 }}>Create Account</button>
+            <p style={{ fontSize: 14, color: "red", textAlign: 'center', fontFamily: 'DM_Sans-Regular', visibility: errorMessage ? 'visible' : 'hidden', marginTop: 15 }}>{errorMessage}</p>
+            <button onClick={handleSubmit} className='btn btn-success' style={{ width: 200, height: 50 }}>Create Account</button>
             <Link className='createAccount-alr-have-acc-btn' to='/login' style={{ display: 'block', width: 200, textAlign: 'center' }}>Already have an account?</Link>
 
         
