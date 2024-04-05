@@ -62,7 +62,6 @@ function PigInfo() {
                     setCreationDate(creation);
                     setProgress((currentSavings / savingsGoal) * 100);
                     setGoalImage("/images/piggies/" + goalType + "/" + goalType + "_" + stage + ".png");
-                    console.log(goalImage);
                 }
 
                     axios.get('/goals/getGoalId?pigName=' + pigName + "&ownerEmail=" + email)
@@ -106,6 +105,12 @@ function PigInfo() {
         setProgress(newProgress);
     }, [currentSavings, savingsGoal]);    
 
+    useEffect(() => {
+        if (stage !== '') {
+            setGoalImage(`/images/piggies/${goalType}/${goalType}_${stage}.png`);
+        }
+    }, [stage, goalType]);
+
     const openPopup = () => {
         setShowPrompt(true); // Set showPrompt state to true to display the prompt
     };
@@ -148,26 +153,31 @@ function PigInfo() {
                 axios.put("/goals/addToCurrentSavings?id=" + pigId + "&money="+ newValue)
                     .then(res => console.log(res))
                     .catch(err => console.log(err));
-                
-                //gets the stage again just in case the pig updates to new milestone
+
+            
+            
+                //gets the stage again just in cease the pig updates to new milestone
                 axios.get('/accounts')
                     .then(response => {
-                      const user = response.data.find(user => user.email_n === email_n);
+                      const user = response.data.find(user => user.email === email_n);
                       if (user) {
                         axios.get('/accounts/getGoals/' + email_n)
                           .then(res => {
+                            
                             const goals = res.data;
                             const filteredGoals = goals.filter(goal => goal.pigName === pigName); // Filter goals by pigName
                             if (filteredGoals.length > 0) {
                               const {goalName, goalType, stage, currentSavings, savingsGoal, creation} = filteredGoals[0];
                               setStage(stage);
-                              setGoalImage("/images/piggies/" + goalType + "/" + goalType + "_" + goalName + ".png");
-                              //.getElementById("goalImage").src = goalImage;
-                              //document.getElementById("goalStage").textContent = stage;
+                              document.getElementById("goalStage").textContent = stage;
                             }
                         });
                     }
                 });
+
+               // setGoalImage("/images/piggies/" + goalType + "/" + goalType + "_" + stage + ".png");
+               // document.getElementById("goal-Image").src = goalImage;
+                //console.log(goalImage);
 
                 setError(''); // Reset error message
             }
@@ -337,7 +347,7 @@ function PigInfo() {
 
                     {/*pig image and percentage bar*/}
                     <div className="PigInfo-image-percentageBar">
-                        <img id="goalImage" src={goalImage} alt="pig" className = "PigInfo-pig-image"/>
+                        <img id="goal-Image" src={goalImage} alt="pig" className = "PigInfo-pig-image"/>
                         <div className="progress" style={{ height: '40px' }}>
                             <div className="progress-bar" role="progressbar" style={{ width: `${progress}%`, color: 'black' }} aria-valuenow={progress} aria-valuemin="0" aria-valuemax="100">
                                 {progress.toFixed(2)}%
