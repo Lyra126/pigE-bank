@@ -162,6 +162,8 @@ function PigInfo() {
                               const {goalName, goalType, stage, currentSavings, savingsGoal, creation} = filteredGoals[0];
                               setStage(stage);
                               setGoalImage("/images/piggies/" + goalType + "/" + goalType + "_" + goalName + ".png");
+                              //.getElementById("goalImage").src = goalImage;
+                              //document.getElementById("goalStage").textContent = stage;
                             }
                         });
                     }
@@ -335,7 +337,7 @@ function PigInfo() {
 
                     {/*pig image and percentage bar*/}
                     <div className="PigInfo-image-percentageBar">
-                        <img src={goalImage} alt="pig" className = "PigInfo-pig-image"/>
+                        <img id="goalImage" src={goalImage} alt="pig" className = "PigInfo-pig-image"/>
                         <div className="progress" style={{ height: '40px' }}>
                             <div className="progress-bar" role="progressbar" style={{ width: `${progress}%`, color: 'black' }} aria-valuenow={progress} aria-valuemin="0" aria-valuemax="100">
                                 {progress.toFixed(2)}%
@@ -357,7 +359,7 @@ function PigInfo() {
                         {/*Pig information*/}
                         <div className = "PigInfo-pig-info">
                             <h3 style = {{fontFamily: "DM_Sans-SemiBold"}}>Pig Information</h3>
-                            <h2 style={{fontFamily: "DM_Sans-Medium", fontSize: 16}}>Stage: {stage} </h2>
+                            <h2 id = "goalStage" style={{fontFamily: "DM_Sans-Medium", fontSize: 16}}>Stage: {stage} </h2>
                             <h2 style={{fontFamily: "DM_Sans-Medium", fontSize: 16, marginBottom: "10px"}}>Creation Date: {creationDate} </h2>
                         </div>
 
