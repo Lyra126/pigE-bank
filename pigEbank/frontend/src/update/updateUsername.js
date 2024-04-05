@@ -14,6 +14,7 @@ function UsernameModal({ setOpenUsernameModal }) {
             .catch(err => console.log(err));
 
         setOpenUsernameModal(false);
+        window.location.reload();
     }
 
   return (
