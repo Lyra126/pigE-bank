@@ -8,7 +8,6 @@ class Prompt extends React.Component {
         this.state = {
             pigName: '',
             goalName: '',
-            goalAmount: ''
         };
 
         this.onChange = this.onChange.bind(this);
@@ -21,7 +20,7 @@ class Prompt extends React.Component {
     }
 
     handleSave() {
-        const { pigName, goalName, goalAmount } = this.state;
+        const { pigName, goalName } = this.state;
 
         // Validate pig name length
         if (pigName.length > 20) {
@@ -35,15 +34,8 @@ class Prompt extends React.Component {
             return;
         }
 
-        // Validate goal amount
-        const amount = parseFloat(goalAmount);
-        if (isNaN(amount) || amount <= 0) {
-            alert('Goal amount must be a decimal larger than 0.');
-            return;
-        }
-
         // If all validations pass, call the onChange callback with the values
-        this.props.onChange({ pigName, goalName, goalAmount });
+        this.props.onChange({ pigName, goalName });
     }
 
     render() {
@@ -59,6 +51,7 @@ class Prompt extends React.Component {
                             onChange={this.onChange}
                             className="mm-popup__input"
                             placeholder="Enter pig name"
+                            required
                         />
                     </div>
                     <div className="form-group">
@@ -70,17 +63,7 @@ class Prompt extends React.Component {
                             onChange={this.onChange}
                             className="mm-popup__input"
                             placeholder="Enter goal name"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="goalAmount" style={{marginRight: 10}}>New Goal Amount: </label>
-                        <input
-                            type="number"
-                            name="goalAmount"
-                            value={this.state.goalAmount}
-                            onChange={this.onChange}
-                            className="mm-popup__input"
-                            placeholder="Enter goal amount"
+                            required
                         />
                     </div>
                     <div className="prompt-button-group">
