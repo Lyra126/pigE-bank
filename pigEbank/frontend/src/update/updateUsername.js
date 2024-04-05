@@ -10,7 +10,10 @@ function UsernameModal({ setOpenUsernameModal }) {
         event.preventDefault();
         const email = document.cookie.split('; ').find(row => row.startsWith('email=')).split('=')[1];
         axios.put("/accounts/updateUsername", {email: email, username: username})
-            .then(res => console.log(res))
+            .then(res => {
+              console.log(res);
+              document.cookie = `username=${username}`;
+            })
             .catch(err => console.log(err));
 
         setOpenUsernameModal(false);
