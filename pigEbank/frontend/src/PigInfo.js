@@ -111,13 +111,6 @@ function PigInfo() {
         }
     }, [stage, goalType]);
 
-    const openPopup = () => {
-        setShowPrompt(true); // Set showPrompt state to true to display the prompt
-    };
-
-    const handlePromptClose = () => {
-        setShowPrompt(false); // Set showPrompt state to false to hide the prompt
-    };
     
     const handleGoalUpdate = (event) => {
 
@@ -375,70 +368,12 @@ function PigInfo() {
 
 
                         <div className = "PigInfo-pig-info-buttons">
-                        {/* Editing goal button */}
-                        <button className="PigInfo-edit-goal-popup-button" onClick={openPopup}>Edit Goal</button>
-                        {/* Render the prompt if showPrompt is true */}
-                        {showPrompt && (
-                            <Prompt
-                            className="PigInfo-edit-goal-prompt-popup"
-
-                            onClose={handlePromptClose}
-                            onChange={(values) => {
-                                console.log('Pig Name:', values.pigName);
-                                console.log('Goal Name:', values.goalName);
-                                console.log('Goal Amount:', values.goalAmount);
-
-                                axios.put("/goals/updatePigName", {id: pigId, pigName: values.pigName})
-                                .then(res => {
-                                    
-                                })
-                                .catch(err => console.log(err));
-
-                                axios.put("/goals/updateGoalName", {id: pigId, goalName: values.goalName})
-                                .then(res => {
-                                    setGoalName(values.goalName);
-                                })
-                                .catch(err => console.log(err));
-
-                                axios.put("/goals/updateSavingsGoal", {id: pigId, savingsGoal: values.goalAmount})
-                                .then(res => {
-                                    setGoalAmount(values.goalAmount);
-                                })
-                                .catch(err => console.log(err));
-                            
-                                handlePromptClose(); // Close the prompt after handling the values
-                            }}
-                            />
-                        )}
+                
                             {/*Deleting piggy button*/}
                             <button className="PigInfo-delete-piggy-button" onClick={deletePig}>Delete Piggy</button>
                         </div>
-                        {
-                            /*
-
-                        <button onClick={togglePopup}>Set Milestones</button>
-                            {isOpen && (
-                                <div className="popup">
-                                <div className="popup_inner">
-                                    <h2>Slider Popup</h2>
-                                    <input
-                                    type="range"
-                                    min="0"
-                                    max={savingsGoal}
-                                    value={sliderValue}
-                                    onChange={handleSliderChange}
-                                    />
-                                    <p>Value: {sliderValue}</p>
-                                    <button onClick={() => handleMilestones(sliderValue)}>Submit</button>
-
-                                    <button onClick={togglePopup}>Close</button>
-                                </div>
-                                </div>
-                            )}*/}
-
+                    </div>
                 </div>
-
-            </div>
             </div>
         </div>
     );
