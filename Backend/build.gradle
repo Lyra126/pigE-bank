@@ -31,7 +31,7 @@ dependencies {
 	implementation group: 'me.paulschwarz', name: 'spring-dotenv', version: '2.3.0'
 	implementation 'io.github.cdimascio:dotenv-java:2.2.0'
 	implementation 'org.springframework.boot:spring-boot-starter-mail'
-
+	implementation 'org.jasypt:jasypt:1.9.3'
 }
 
 tasks.named('test') {
