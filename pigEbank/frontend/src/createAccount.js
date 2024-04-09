@@ -39,6 +39,16 @@ function CreateAccount() {
 
         if(password!=confPassword){
             setErrorMessage("Passwords don't match!");
+        } else if (!securityQuestion1 || !securityQuestion2 || !securityQuestion3) { //make sure all security question fields are filled out
+            setErrorMessage("Please select all security questions.");
+        } else if ( //make sure they aren't duplicates
+            securityQuestion1 === securityQuestion2 ||
+            securityQuestion1 === securityQuestion3 ||
+            securityQuestion2 === securityQuestion3
+        ) {
+            setErrorMessage("Please choose different security questions.");
+        }else if (!securityAnswer1 || !securityAnswer2 || !securityAnswer3) {
+            setErrorMessage("Please provide answers to all security questions.");
         } else{
 
 
