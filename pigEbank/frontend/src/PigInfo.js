@@ -27,7 +27,6 @@ function PigInfo() {
     const [creationDate, setCreationDate] = useState('');
     const [pigId, setPigId] = useState('');
     const [monthlyContribution, setMonthlyContribution] = useState(0);
-    const [goalAmount, setGoalAmount] = useState(0);
     const[progress, setProgress] = useState(0);
     const [error, setError] = useState('');
     const [showPrompt, setShowPrompt] = useState(false); // State to control prompt display
@@ -84,14 +83,14 @@ function PigInfo() {
 
     function calculateTimeToReachGoal(event) {
         event.preventDefault();
-        setTimeToReachGoal(((goalAmount-currentSavings) / monthlyContribution).toFixed(2));
+        setTimeToReachGoal(((savingsGoal-currentSavings) / monthlyContribution).toFixed(2));
         setShowMessage(true); 
     }
 
     function clearVariablesAndMessage() {
         setCurrentSavings(0);
         setMonthlyContribution(0);
-        setGoalAmount(0);
+        setSavingsGoal(0);
         setTimeToReachGoal(0);
         setShowMessage(false);
     }
@@ -134,7 +133,7 @@ function PigInfo() {
             } else if (newValue + currentSavings > savingsGoal) {
                 console.log((currentSavings + newValue) - savingsGoal);
                 let leftOver = (currentSavings + newValue) - savingsGoal;
-                window.alert("You've reached your goal of " + goalAmount + " -> " + leftOver + " left over!!");
+                window.alert("You've reached your goal of " + savingsGoal + " -> " + leftOver + " left over!!");
                 setCurrentSavings(savingsGoal);
                 setProgress((currentSavings / savingsGoal) * 100);
                 setError('');
@@ -257,8 +256,7 @@ function PigInfo() {
                             <div>
                                 <input
                                     className='input-form PigInfo-input-form form-control'
-                                    type="text"
-                                    pattern="[0-9]*"
+                                    type="number"
                                     value={newSavings}
                                     placeholder="Enter here!"
                                     onChange={e => setNewSavings(e.target.value)}
@@ -296,13 +294,11 @@ function PigInfo() {
                                                     className="form-control"
                                                 />
                                             </div>
-                                            <label htmlFor="goalAmount">Goal Amount:</label>
+                                            <label htmlFor="savingsGoal">Goal Amount:</label>
                                             <input
                                                 type="number"
-                                                id="goalAmount"
-                                                placeholder={savingsGoal}
-                                                value={goalAmount}
-                                                onChange={e => setGoalAmount(parseFloat(e.target.value))}
+                                                id="savingsGoal"
+                                                value={savingsGoal}
                                                 className="form-control"
                                             />
                                         </div>
