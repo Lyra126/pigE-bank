@@ -71,17 +71,17 @@ function CreateNewGoal() {
                         <div className='createNewGoal-input-field'>
                             <label>Pig Name</label>
                             <input type='text' placeholder='Enter your new pigs name' className='form-control'
-                                onChange={e => setPigName(e.target.value)} required/>
+                                onChange={e => setPigName(e.target.value)} required maxLength={50}/>
                         </div>
                         <div className='createNewGoal-input-field'>
                             <label>Goal Name</label>
                             <input type='text' placeholder='Enter your new goal name' className='form-control'
-                                onChange={e => setGoalName(e.target.value)} required/>
+                                onChange={e => setGoalName(e.target.value)} required maxLength={50}/>
                         </div>
                         <div className='createNewGoal-input-field'>
                             <label>Goal Amount</label>
                             <input type='text' placeholder='Enter your desired goal amount' className='form-control'
-                                onChange={e => setSavingsGoal(e.target.value)} required/>
+                                onChange={e => setSavingsGoal(e.target.value)} required maxLength={10}/>
                         </div>
 
                         <div className = "createNewGoal-dropdown-div">
