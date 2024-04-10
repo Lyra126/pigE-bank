@@ -4,6 +4,7 @@ import './Profile.css';
 import axios from 'axios';
 import PasswordModal from "./update/updatePassword";
 import UsernameModal from "./update/updateUsername";
+import ViewArchived from "./ViewArchived.js";
 
 function Profile() {
     const [username, setUsername] = useState('');
@@ -13,8 +14,11 @@ function Profile() {
     const [email, setEmail]  = useState('');
     const navigate = useNavigate();
     const [passwordModalOpen, setPasswordModalOpen] = useState(false);
+    const [archiveModalOpen, setArchiveModalOpen] = useState(false);
     const [usernameModalOpen, setUsernameModalOpen] = useState(false);
-
+    const [goalNames, setGoalNames] = useState([]);
+    const [goalSavings, setGoalSavings] = useState([]);
+    const [goalTypes, setGoalTypes] = useState([]);
 
     useEffect(() => {
         if (!document.cookie) {
@@ -43,6 +47,16 @@ function Profile() {
             .catch(error => {
                 console.error('Error fetching user data:', error);
             });
+        axios.get('/accounts/getArchivedGoals/' + email)
+        .then(response => {
+                const goals = response.data;
+                setGoalNames(goals.map(goal => goal.goalName));
+                setGoalSavings(goals.map(goal => goal.savingsGoal));
+                setGoalTypes(goals.map(goal => goal.goalType));
+            })
+        .catch(error => {
+            console.error('Error fetching archived goals:', error);
+        });
     }, []);
 
     const deleteAccount = (email) => {
@@ -93,6 +107,10 @@ function Profile() {
                     <h1 className="text-center login_title_message" style={{ marginTop: 20, fontSize: 30, fontFamily: "Lexend-SemiBold"}}> Profile</h1>
                     <p className="text-center " style={{ marginTop: 20, fontSize: 20, fontFamily: "Lexend-Regular"}}>Username: {username}</p>
                     <p className="text-center " style={{ marginTop: 20, fontSize: 20, fontFamily: "Lexend-Regular"}}>Email: {email}</p>
+                    <p className="text-center " style={{ marginTop: 20, fontSize: 20, fontFamily: "Lexend-Regular"}}>Total Archived Goals: {Object.keys(goalNames).length}</p>
+                    <p><button className="btn open-modal" onClick={() => {setArchiveModalOpen(true);}}> View Archived Goals </button></p>
+                        {archiveModalOpen && <ViewArchived setOpenArchive={setArchiveModalOpen} />}
+
                 </div>
 
                 <div className="d-flex flex-column"> 
