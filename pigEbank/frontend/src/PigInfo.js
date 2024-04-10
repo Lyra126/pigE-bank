@@ -178,6 +178,7 @@ function PigInfo() {
 
     const deletePig= () => {
         //TODO: insert "Are you sure you want to delete *pigName*?" message
+        //This is where the goal gets deleted
         let url = "/goals/deleteGoal?id=" + pigId;
         axios.delete(url)
         .then(response => {
