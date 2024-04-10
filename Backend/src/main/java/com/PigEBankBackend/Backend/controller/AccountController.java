@@ -61,6 +61,11 @@ public class AccountController {
         return new ResponseEntity<List<String>>(accountService.getSecurityAs(email), HttpStatus.OK);
     }
 
+    @GetMapping("/getArchivedGoals/{email}")
+    ResponseEntity<List<Goal>> getArchivedGoals(@PathVariable String email) {
+        return new ResponseEntity<List<Goal>>(accountService.getArchivedGoals(email), HttpStatus.OK);
+    }
+
     @GetMapping("/getQAs/{email}")
     ResponseEntity<List<String>> getSecurityQAs(@PathVariable String email) {
         return new ResponseEntity<List<String>>(accountService.getSecurityQAs(email), HttpStatus.OK);

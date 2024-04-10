@@ -137,6 +137,36 @@ public class AccountService {
         return all;
     }
 
+    public List<Goal> getArchivedGoals(String email) {
+        List<Account> user = findAccountList(email);
+        List<Goal> goals = new ArrayList<>();
+
+        if (user.get(0).getGoalsID() == null){
+            return goals;
+        }
+        for(int i = 0; i < user.get(0).getGoalsID().size(); i++) {
+            //Find the goals associated with the account
+            Query findGoal = new Query();
+            findGoal.addCriteria(Criteria.where("id").is(user.get(0).getGoalsID().get(i)));
+            findGoal.addCriteria(Criteria.where("archived").is(true));
+            List<Goal> foundGoal = mongoTemplate.find(findGoal, Goal.class);
+
+            if(foundGoal.isEmpty()) {
+                //This goal doesn't exist for some reason, delete it
+                List<ObjectId> goalIds = user.getFirst().getGoalsID();
+                goalIds.remove(i);
+
+                user.getFirst().setNumOfGoals(goalIds.size());
+                user.getFirst().setGoalsID(goalIds);
+                accountRepository.save(user.getFirst());
+            } else {
+                goals.add(foundGoal.getFirst());
+            }
+
+        }
+        return goals;
+    }
+
     public String updateTotalSavings(Account account) {
         //FIXME May become obsolete if the goal class updates this value instead
         //Find account with the email

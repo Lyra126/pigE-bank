@@ -59,6 +59,7 @@ public class GoalService {
         goal.setCreation(LocalDate.now());
         goal.setCurrentSavings(0);
         goal.setStage(0);
+        goal.setArchived(false);
 
         //Update Account (Each goal must be associated w/ and account)
         Update update = new Update().push("goalsID").value(goal.getId());
@@ -112,6 +113,17 @@ public class GoalService {
         return "Updated pigName: " + updateResult.getMatchedCount();
     }
 
+    public String updateArchived(Goal goal){
+        //find the goal to update from its ID
+        Query query = new Query();
+        query.addCriteria(Criteria.where("id").is(goal.getId()));
+
+        Update update = new Update().set("archived", goal.isArchived());
+        UpdateResult updateResult = mongoTemplate.updateFirst(query, update, Goal.class);
+
+        //return the result of 1 for success, 0 for failure
+        return "Updated archived: " + updateResult.getMatchedCount();
+    }
     public String updateGoalName(Goal goal){
         //find the goal to update from its ID
         Query query = new Query();

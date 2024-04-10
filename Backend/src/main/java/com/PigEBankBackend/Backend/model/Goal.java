@@ -25,6 +25,7 @@ public class Goal {
     private String ownerEmail;
     private int currentSavings;
     private int savingsGoal;
+    boolean archived;
     private LocalDate creation;
 
 

@@ -64,9 +64,13 @@ public class GoalController {
         return new ResponseEntity<String>(goalService.addToCurrentSavings(id, money), HttpStatus.OK);
     }
 
-
     @PutMapping("/updateSavingsGoal")
     public ResponseEntity<String> updateSavingsGoal(@RequestBody Goal goal) {
         return new ResponseEntity<String>(goalService.updateSavingsGoal(goal), HttpStatus.OK);
+    }
+
+    @PutMapping("/updateArchived")
+    public ResponseEntity<String> updateArchived(@RequestBody Goal goal) {
+        return new ResponseEntity<String>(goalService.updateArchived(goal), HttpStatus.OK);
     }
 }
