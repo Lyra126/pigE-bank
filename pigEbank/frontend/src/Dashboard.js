@@ -21,17 +21,18 @@ function Dashboard() {
       .then(response => {
         const user = response.data.find(user => user.email === email);
         if (user) {
-          setNumberOfGoals(user.numOfGoals);
-
           axios.get('/accounts/getGoals/' + email)
             .then(res => {
               const goals = res.data;
-              const goalNamesArray = goals.map(goal => goal.pigName);
+              const activeGoals = goals.filter(goal => !goal.archived); // Filter out archived goals
+              const goalNamesArray = activeGoals.map(goal => goal.pigName);
+              setNumberOfGoals(activeGoals.length);
               setGoalNames(goalNamesArray);
             })
             .catch(err => console.log(err));
-        }
-      })
+
+              }
+            })
       .catch(error => {
         console.error('Error fetching number of goals:', error);
       });
