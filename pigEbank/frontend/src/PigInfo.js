@@ -131,10 +131,11 @@ function PigInfo() {
             } else if (newValue === 0) {
                 setError('You have not added new savings. Enter a value above 0.');
             } else if (newValue + currentSavings > savingsGoal) {
-                console.log((currentSavings + newValue) - savingsGoal);
+                //console.log((currentSavings + newValue) - savingsGoal);
                 let leftOver = (currentSavings + newValue) - savingsGoal;
                 window.alert("You've reached your goal of " + savingsGoal + " -> " + leftOver + " left over!!");
                 setCurrentSavings(savingsGoal);
+                addNewSavings(newValue - leftOver);
                 setProgress((currentSavings / savingsGoal) * 100);
                 setError('');
             } else {
@@ -142,11 +143,7 @@ function PigInfo() {
                 setProgress((currentSavings / savingsGoal) * 100);
                 ShootConfetti();
 
-                axios.put("/goals/addToCurrentSavings?id=" + pigId + "&money="+ newValue)
-                    .then(res => console.log(res))
-                    .catch(err => console.log(err));
-
-            
+                addNewSavings(newValue);
             
                 //gets the stage again just in cease the pig updates to new milestone
                 axios.get('/accounts')
@@ -167,6 +164,12 @@ function PigInfo() {
                     }
                 });
 
+                if((currentSavings + newValue) >= savingsGoal) {
+                    axios.put("/goals/addToCurrentSavings?id=" + pigId)
+                    .then(res => console.log(res))
+                    .catch(err => console.log(err)); 
+                }
+
                // setGoalImage("/images/piggies/" + goalType + "/" + goalType + "_" + stage + ".png");
                // document.getElementById("goal-Image").src = goalImage;
                 //console.log(goalImage);
@@ -175,6 +178,13 @@ function PigInfo() {
             }
          }
     };
+
+    function addNewSavings(newValue) {
+        axios.put("/goals/updateArchived", {id: pigId, archived: true})
+                    .then(res => console.log(res))
+                    .catch(err => console.log(err)); 
+    }
+
 
     const deletePig= () => {
         //TODO: insert "Are you sure you want to delete *pigName*?" message
