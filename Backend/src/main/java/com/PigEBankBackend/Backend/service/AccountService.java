@@ -15,6 +15,8 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
+import org.jasypt.encryption.StringEncryptor;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,12 +30,15 @@ public class AccountService {
     @Autowired
     private MongoTemplate mongoTemplate;
 
+    @Autowired
+    public EncryptionService encryptor;
+
     private Account findAccount(String email){
         Query findAccount = new Query();
         findAccount.addCriteria(Criteria.where("email").is(email));
         List<Account> user = mongoTemplate.find(findAccount, Account.class);
 
-        return user.getFirst();
+        return user.get(0);
     }
 
     private List<Account> findAccountList(String email){
@@ -50,8 +55,19 @@ public class AccountService {
     public List<Account> tryLogin(Login login){
         Query findAccount = new Query();
         findAccount.addCriteria(Criteria.where("email").is(login.getEmail()));
-        findAccount.addCriteria(Criteria.where("password").is(login.getPassword()));
-        return mongoTemplate.find(findAccount, Account.class);
+        List<Account> account = mongoTemplate.find(findAccount, Account.class);
+
+
+        if(account.isEmpty()){
+            return null;
+        }
+        System.out.println(encryptor.decrypt(account.get(0).getPassword()));
+        System.out.println(login.getPassword());
+        System.out.println(encryptor.decrypt(account.get(0).getPassword()).equals(login.getPassword()));
+
+        if(encryptor.decrypt(account.get(0).getPassword()).equals(login.getPassword()))
+            return account;
+        return null;
 
     }
 
@@ -87,14 +103,14 @@ public class AccountService {
 
             if(foundGoal.isEmpty()) {
                 //This goal doesn't exist for some reason, delete it
-                List<ObjectId> goalIds = user.getFirst().getGoalsID();
+                List<ObjectId> goalIds = user.get(0).getGoalsID();
                 goalIds.remove(i);
 
-                user.getFirst().setNumOfGoals(goalIds.size());
-                user.getFirst().setGoalsID(goalIds);
-                accountRepository.save(user.getFirst());
+                user.get(0).setNumOfGoals(goalIds.size());
+                user.get(0).setGoalsID(goalIds);
+                accountRepository.save(user.get(0));
             } else {
-                goals.add(foundGoal.getFirst());
+                goals.add(foundGoal.get(0));
             }
 
         }
@@ -153,14 +169,14 @@ public class AccountService {
 
             if(foundGoal.isEmpty()) {
                 //This goal doesn't exist for some reason, delete it
-                List<ObjectId> goalIds = user.getFirst().getGoalsID();
+                List<ObjectId> goalIds = user.get(0).getGoalsID();
                 goalIds.remove(i);
 
-                user.getFirst().setNumOfGoals(goalIds.size());
-                user.getFirst().setGoalsID(goalIds);
-                accountRepository.save(user.getFirst());
+                user.get(0).setNumOfGoals(goalIds.size());
+                user.get(0).setGoalsID(goalIds);
+                accountRepository.save(user.get(0));
             } else {
-                goals.add(foundGoal.getFirst());
+                goals.add(foundGoal.get(0));
             }
 
         }
@@ -182,7 +198,7 @@ public class AccountService {
             findGoal.addCriteria(Criteria.where("id").is(user.get(0).getGoalsID().get(i)));
             List<Goal> goals = mongoTemplate.find(findGoal, Goal.class);
 
-            totalSavings += goals.getFirst().getCurrentSavings();
+            totalSavings += goals.get(0).getCurrentSavings();
         }
 
         Update update = new Update().set("totalSavings", totalSavings);
@@ -195,6 +211,7 @@ public class AccountService {
     public Account addAccount(Account account) {
         account.setId(new ObjectId());
         account.setCreation(LocalDate.now());
+        account.setPassword(encryptor.encrypt(account.getPassword()));
         return accountRepository.save(account);
     }
 
@@ -240,7 +257,7 @@ public class AccountService {
         currentAccount.setUsername(account.getUsername());
         currentAccount.setFirstName(account.getFirstName());
         currentAccount.setLastName(account.getLastName());
-        currentAccount.setPassword(account.getPassword());
+        currentAccount.setPassword(encryptor.encrypt(account.getPassword()));
         currentAccount.setNumOfGoals(account.getNumOfGoals());
         return accountRepository.save(currentAccount);
     }
@@ -249,7 +266,7 @@ public class AccountService {
         Query query = new Query();
         query.addCriteria(Criteria.where("email").is(account.getEmail()));
 
-        Update update = new Update().set("password", account.getPassword());
+        Update update = new Update().set("password", encryptor.encrypt(account.getPassword()));
         UpdateResult updateResult = mongoTemplate.updateFirst(query, update, Account.class);
         return "Updated Password: " + updateResult.getMatchedCount();
     }

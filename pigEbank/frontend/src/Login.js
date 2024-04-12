@@ -34,11 +34,11 @@ function Login() {
             setErrorMessage('You have exceeded the maximum number of failed attempts. Please try again later.');
             return;
         }
-        
+        console.log(password);
         axios.post('/accounts/login',{email: email, password: password})
             .then(response => {
                 const users = response.data;
-                const authenticatedUser = users.find(user => user.email === email && user.password === password);
+                const authenticatedUser = users.find(user => user.email === email);
                 if (authenticatedUser) {
                     navigate('/dashboard');
                     document.cookie = `username=${authenticatedUser.username}`;

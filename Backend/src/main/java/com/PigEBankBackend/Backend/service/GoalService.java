@@ -80,13 +80,13 @@ public class GoalService {
     public String deleteGoal(String id){
         Query findGoal = new Query();
         findGoal.addCriteria(Criteria.where("id").is(id));
-        Goal goal = mongoTemplate.find(findGoal, Goal.class).getFirst();
+        Goal goal = mongoTemplate.find(findGoal, Goal.class).get(0);
 
         //first dec count of owner account
         Query findAccount = new Query();
         findAccount.addCriteria(Criteria.where("email").is(goal.getOwnerEmail()));
 
-        Account account = mongoTemplate.find(findAccount, Account.class).getFirst();
+        Account account = mongoTemplate.find(findAccount, Account.class).get(0);
         Update decNumOfGoals = new Update().set("numOfGoals", account.getNumOfGoals() - 1);
         UpdateResult decNumOfGoalsResult = mongoTemplate.updateFirst(findAccount, decNumOfGoals, Account.class);
 
@@ -170,7 +170,7 @@ public class GoalService {
 
         UpdateResult updateGoalResult;
         UpdateResult updateAccountResult;
-        Goal goal = mongoTemplate.find(findGoal, Goal.class).getFirst();
+        Goal goal = mongoTemplate.find(findGoal, Goal.class).get(0);
 
         if(goal != null) {
             Update updateGoal = new Update().set("currentSavings", goal.getCurrentSavings() + money);

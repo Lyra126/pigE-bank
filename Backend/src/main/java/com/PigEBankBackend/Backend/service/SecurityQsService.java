@@ -52,7 +52,7 @@ public class SecurityQsService {
     public String specificQ(int associatedNum){
         Query query = new Query();
         query.addCriteria(Criteria.where("associatedNum").is(associatedNum));
-        String sQ = (mongoTemplate.find(query, SecurityQs.class)).getFirst().getQuestion();
+        String sQ = (mongoTemplate.find(query, SecurityQs.class)).get(0).getQuestion();
         return sQ;
     }
 }
