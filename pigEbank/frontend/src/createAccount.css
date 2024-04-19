@@ -21,18 +21,17 @@
     display: flex;
     background-color: #f1f1f1;
     border-radius: 10px;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     justify-content: space-evenly; /* Center items horizontally */
     padding: 20px;
     margin-bottom: 40px;
 }
 
-
 .horizontal-div1 {
     display: flex;
     width: 100%;
-    padding: 30px;
+    padding: 20px;
     /*padding-left: 100px;*/
 }
 
@@ -42,10 +41,11 @@
 
 .horizontal-div2 {
     /*background-color: red;*/
+    margin-left: -30px;
     width: 50%;
     display: flex;
     padding: 30px;
-    padding-top: 45px;
+    padding-top: 20px;
 }
 
 .horizontal-div2 input{
@@ -70,7 +70,7 @@
 .createAccount-security-question {
     margin-bottom: 16px;
     /*background-color: blue;*/
-    /*width: 100% !important;*/
+    width: 70% !important;
 }
 
 .form-control::placeholder {
