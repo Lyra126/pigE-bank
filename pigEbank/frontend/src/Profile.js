@@ -139,10 +139,12 @@ function Profile() {
                                      events={['click']}
                                      style = {{padding: '15px'}}
                                      place="right"
-                                     clickable={true}>
+                                     clickable={true}
+                                     globalEventOff="click">
+
                                 <div>
                                     <h2 style = {{fontSize: "15px"}}> Are you sure you want to delete?</h2>
-                                    <button style={{fontSize: "15px", width: '100%'}} className="btn delete-btn" onClick={()=> {deleteAccount(email)}}> Delete Account </button>
+                                    <button style={{fontSize: "15px", width: '100%'}} className="btn delete-btn" onClick={()=> {deleteAccount(email)}}> Confirm Delete </button>
                                 </div>
                             </Tooltip>
                         </p>
