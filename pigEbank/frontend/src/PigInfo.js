@@ -137,15 +137,18 @@ function PigInfo() {
                 setCurrentSavings(savingsGoal);
                 addNewSavings(newValue - leftOver);
                 setProgress((currentSavings / savingsGoal) * 100);
-                setError('');
+                ShootConfetti();
+
+
+
+                setError(''); // Reset error message
             } else {
                 setCurrentSavings(currentSavings + newValue);
                 setProgress((currentSavings / savingsGoal) * 100);
                 ShootConfetti();
-
                 addNewSavings(newValue);
-            
-                //gets the stage again just in cease the pig updates to new milestone
+
+                //gets the stage again just in case the pig updates to new milestone
                 axios.get('/accounts')
                     .then(response => {
                       const user = response.data.find(user => user.email === email_n);
@@ -165,9 +168,10 @@ function PigInfo() {
                 });
 
                 if((currentSavings + newValue) >= savingsGoal) {
-                    axios.put("/goals/addToCurrentSavings?id=" + pigId)
+            
+                    axios.put("/goals/updateArchived", {id: pigId, archived: true}) 
                     .then(res => console.log(res))
-                    .catch(err => console.log(err)); 
+                    .catch(err => console.log(err));
                 }
 
                // setGoalImage("/images/piggies/" + goalType + "/" + goalType + "_" + stage + ".png");
@@ -180,9 +184,9 @@ function PigInfo() {
     };
 
     function addNewSavings(newValue) {
-        axios.put("/goals/updateArchived", {id: pigId, archived: true})
-                    .then(res => console.log(res))
-                    .catch(err => console.log(err)); 
+        axios.put("/goals/addToCurrentSavings?id=" + pigId + "&money="+ newValue)
+            .then(res => console.log(res))
+            .catch(err => console.log(err));
     }
 
 
