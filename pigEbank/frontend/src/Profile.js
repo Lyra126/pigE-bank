@@ -5,6 +5,7 @@ import axios from 'axios';
 import PasswordModal from "./update/updatePassword";
 import UsernameModal from "./update/updateUsername";
 import ViewArchived from "./ViewArchived.js";
+import { Tooltip, toggleTooltip } from 'react-tooltip'
 
 function Profile() {
     const [username, setUsername] = useState('');
@@ -131,7 +132,20 @@ function Profile() {
                         {usernameModalOpen && <UsernameModal setOpenUsernameModal={setUsernameModalOpen} />}
 
                         <p></p>
-                        <p> <button className="btn delete-btn" onClick={()=> {deleteAccount(email)}}> Delete Account </button></p>
+                        <p>
+                            {/*<button className="btn delete-btn" onClick={()=> {deleteAccount(email)}}> Delete Account </button></p>*/}
+                            <a className = "btn delete-btn" data-tooltip-id="my-tooltip-click">Delete Account</a>
+                            <Tooltip id="my-tooltip-click"
+                                     events={['click']}
+                                     style = {{padding: '15px'}}
+                                     place="right"
+                                     clickable={true}>
+                                <div>
+                                    <h2 style = {{fontSize: "15px"}}> Are you sure you want to delete?</h2>
+                                    <button style={{fontSize: "15px", width: '100%'}} className="btn delete-btn" onClick={()=> {deleteAccount(email)}}> Delete Account </button>
+                                </div>
+                            </Tooltip>
+                        </p>
                     </div>
                 </div>
              </div>

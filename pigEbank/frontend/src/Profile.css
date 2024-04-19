@@ -76,6 +76,7 @@
     border-color: #af0606; 
     font-family: 'DM_Sans-Medium', Arial, sans-serif;
     margin-top: 10px;
+    width: 35%
 }
 
 .delete-btn:hover{
