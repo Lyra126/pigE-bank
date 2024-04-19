@@ -221,7 +221,7 @@ public class AccountService {
         List<Account> user = mongoTemplate.find(findAccount, Account.class);
         List<ObjectId> goalIds = user.get(0).getGoalsID();
 
-        if(!goalIds.isEmpty()) {
+        if(goalIds != null && !goalIds.isEmpty()) {
             for(int i = 0; i < goalIds.size(); i++) {
                 Query findGoal = new Query();
                 findGoal.addCriteria(Criteria.where("id").is(goalIds.get(i)));

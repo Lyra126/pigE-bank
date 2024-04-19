@@ -174,21 +174,19 @@ public class GoalService {
 
         if(goal != null) {
             Update updateGoal = new Update().set("currentSavings", goal.getCurrentSavings() + money);
-            int completion = (goal.getCurrentSavings() + money)*100/goal.getSavingsGoal();
+            int completion = (goal.getCurrentSavings() + money) * 100 / goal.getSavingsGoal();
             int stage;
-            if(completion < 25){
+            if (completion < 25) {
                 stage = 0;
-            } else if(completion < 50){
+            } else if (completion < 50) {
                 stage = 1;
-            } else if(completion < 75){
+            } else if (completion < 75) {
                 stage = 2;
             } else {
                 stage = 3;
             }
             updateGoal.set("stage", stage);
             updateGoalResult = mongoTemplate.updateFirst(findGoal, updateGoal, Goal.class);
-
-
 
 
             Query findAccount = new Query();
@@ -198,11 +196,10 @@ public class GoalService {
             if (!user.isEmpty()) {
                 Update updateAccount = new Update().set("totalSavings", user.get(0).getTotalSavings() + money);
                 updateAccountResult = mongoTemplate.updateFirst(findAccount, updateAccount, Account.class);
-                return "addToGoal: " + updateGoalResult +"\naddToAccount: " + updateAccountResult;
+                return "addToGoal: " + updateGoalResult + "\naddToAccount: " + updateAccountResult;
             }
-            return "addToGoal: " + updateGoalResult +"\naddToAccount: No Account Found";
+            return "addToGoal: " + updateGoalResult + "\naddToAccount: No Account Found";
         }
-
         return "addToGoal: No Goal Found";
 
     }
