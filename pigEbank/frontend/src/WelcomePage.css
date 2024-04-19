@@ -134,3 +134,7 @@ flex-direction: row-reverse;
   text-align: right;
   justify-content: center;
 }
+
+.window_image_piggy{
+  width: auto
+}

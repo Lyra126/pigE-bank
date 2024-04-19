@@ -80,7 +80,7 @@ function WelcomePage() {
               <p> Each Pig Bank represents a unique savings goal waiting to be achieved. Work diligently towards your goal to unlock exciting accessories and bring your Pig Bank's dream of becoming a real pig to life!</p>
             </div>
             <div className="welcomePage-header-image" style={{ marginTop: 100 }}>
-              <img src="images/piggies/other/money_pig.png" alt="money_pig" />
+            <img src="images/piggies/richie/richie_1.png" class="large-image" alt="money_pig" style = {{borderRadius: "10px"}}/>
             </div>
           </div>
 
@@ -91,7 +91,7 @@ function WelcomePage() {
               <p>With each Pig added to the stable, unlock a plethora of prizes and rewards. Aim high and complete all five saving goal categories, plus other achievements, to uncover special surprises waiting just for you! Start saving today and turn your dreams into reality!</p>
             </div>
             <div className="welcomePage-header-image" style={{ marginTop: 100 }}>
-              <img src="images/piggies/other/money_pig.png" alt="money_pig" />
+              <img src="images/piggies/other/piggy_demo_computer.png" alt="money_pig" />
             </div>
           </div>
 
